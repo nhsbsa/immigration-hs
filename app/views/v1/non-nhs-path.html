@@ -13,23 +13,131 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Add employer</h1>
+      <h1 class="govuk-heading-xl">What are your employment details?</h1>
 
-      <form class="form" action="/v1/dob" method="post">
-
+      <form class="form" action="/another-job" method="post">
         <div class="govuk-form-group">
           <label class="govuk-label" for="full-name">
-            Name of the employer
+            Employer name
           </label>
+          <span id="telephone-number-hint" class="govuk-hint">
+            This is the name of the company the you work for.
+          </span>
           <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
         </div>
 
+      
         <div class="govuk-form-group">
-          <label class="govuk-label" for="full-name">
-            Family name
-          </label>
-          <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <label class="govuk-label" for="full-name">
+                Employment starting date
+              </label>
+            </legend>
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 27 4 2020
+            </span>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
         </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <label class="govuk-label" for="full-name">
+                Employment ending date
+              </label>
+            </legend>
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 27 4 2020
+            </span>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+  
+
+   
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="another-job-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h2 class="govuk-heading-l">
+                Do you have another job within NHS?
+              </h2>
+            </legend>            
+            <!-- <span id="another-job-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="another-job-conditional" name="another-job" type="radio" value="yes" data-aria-controls="conditional-another-job-conditional">
+                <label class="govuk-label govuk-radios__label" for="another-job-conditional">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="another-job-conditional-2" name="another-job" type="radio" value="no" data-aria-controls="conditional-another-job-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="another-job-conditional-2">
+                  No
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
