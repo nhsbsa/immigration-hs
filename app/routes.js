@@ -59,4 +59,15 @@ router.post('/nhs-question', function(req,res){
 
 })
 
+router.post('/another-job', function(req,res){
+    var contacted = req.session.data['another-job']
+    if (contacted == "yes"){
+        res.redirect('/v1/another-job')
+    }
+    else {
+        res.redirect('/v1/telephone-number')
+    }
+
+})
+
 module.exports = router;
