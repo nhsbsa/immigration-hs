@@ -81,4 +81,27 @@ router.post('/non-nhs-path-another-job', function(req,res){
 
 })
 
+router.post('/attachment-decision', function(req,res){
+    var contacted = req.session.data['attachment-decision']
+    if (contacted == "yes"){
+        res.redirect('/v1/attachments-add')
+    }
+    else {
+        res.redirect('/v1/attachments')
+    }
+
+})
+
+router.post('/attachments-add', function(req,res){
+    var contacted = req.session.data['attachments-add']
+    if (contacted == "yes"){
+        res.redirect('/v1/attachments')
+    }
+    else {
+        res.redirect('/v1/telephone-number')
+    }
+
+})
+
+
 module.exports = router;
