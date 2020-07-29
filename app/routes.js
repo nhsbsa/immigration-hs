@@ -136,4 +136,16 @@ router.post('/dependant-details2', function(req,res){
 
 })
 
+router.post('/main-or-dependant', function(req,res){
+    var contacted = req.session.data['main-or-dependant']
+    if (contacted == "yes"){
+        res.redirect('/v1/dependant-details2')
+    }
+    else {
+        res.redirect('/v1/nhs-question')
+    }
+
+})
+
+
 module.exports = router;
