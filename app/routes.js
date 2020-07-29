@@ -4,10 +4,10 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 // Branching
 
-router.post('/ihs-payment-date', function(req,res){
-    var contacted = req.session.data['ihs-payment-date']
+router.post('/ihs-question', function(req,res){
+    var contacted = req.session.data['ihs-question']
     if (contacted == "yes"){
-        res.redirect('/v1/work-question')
+        res.redirect('/v1/ihs-payment-date')
     }
     else {
         res.redirect('/v1/not-entitled')
@@ -103,5 +103,37 @@ router.post('/attachments-add', function(req,res){
 
 })
 
+router.post('/dependant-question', function(req,res){
+    var contacted = req.session.data['dependant-question']
+    if (contacted == "yes"){
+        res.redirect('/v1/dependant-details')
+    }
+    else {
+        res.redirect('/v1/nhs-question')
+    }
+
+})
+
+router.post('/dependant-details', function(req,res){
+    var contacted = req.session.data['dependant-details']
+    if (contacted == "yes"){
+        res.redirect('/v1/dependant-details2')
+    }
+    else {
+        res.redirect('/v1/nhs-question')
+    }
+
+})
+
+router.post('/dependant-details2', function(req,res){
+    var contacted = req.session.data['dependant-details2']
+    if (contacted == "yes"){
+        res.redirect('/v1/dependant-details2')
+    }
+    else {
+        res.redirect('/v1/nhs-question')
+    }
+
+})
 
 module.exports = router;
