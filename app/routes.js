@@ -243,7 +243,7 @@ router.post('/attachments-add-v2', function(req,res){
         res.redirect('/v2/attachments2')
     }
     else {
-        res.redirect('/v2/telephone-number')
+        res.redirect('/v2/check-your-answers-nhs-path')
     }
 
 })
