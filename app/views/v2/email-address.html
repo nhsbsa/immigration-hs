@@ -9,7 +9,15 @@
 {% endblock %}
 
 {% block content %}
-
+<script>
+    function printEmail() {
+      $('#email').keyup(function(event) {
+        newText = event.target.value;
+        $('#email-show').text(newText);
+      });
+    } 
+    window.onload=printEmail;
+</script>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
