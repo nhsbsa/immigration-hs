@@ -453,7 +453,7 @@ router.post('/ihs-question-v4', function(req,res){
 router.post('/work-question-v4', function(req,res){
     var contacted = req.session.data['work-question-v4']
     if (contacted == "yes"){
-        res.redirect('/v4/non-nhs-path')
+        res.redirect('/v4/6-months')
     }
     else {
         res.redirect('/v4/not-entitled')
@@ -483,17 +483,6 @@ router.post('/average-time-v4', function(req,res){
 
 })
 
-router.post('/nhs-question-v4', function(req,res){
-    var contacted = req.session.data['nhs-question-v4']
-    if (contacted == "yes"){
-        res.redirect('/v4/nhs-path')
-    }
-    else {
-        res.redirect('/v4/non-nhs-path')
-    }
-
-})
-
 router.post('/another-job-v4', function(req,res){
     var contacted = req.session.data['another-job-v4']
     if (contacted == "yes"){
@@ -511,7 +500,18 @@ router.post('/non-nhs-path-another-job-v4', function(req,res){
         res.redirect('/v4/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v4/6-months')
+        res.redirect('/v4/attachments')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v4', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v4/attachments')
     }
 
 })
@@ -544,7 +544,7 @@ router.post('/dependant-question-v4', function(req,res){
         res.redirect('/v4/dependant-details')
     }
     else {
-        res.redirect('/v4/attachments')
+        res.redirect('/v4/ihs-payment-date')
     }
 
 })
@@ -555,7 +555,7 @@ router.post('/dependant-details-v4', function(req,res){
         res.redirect('/v4/dependant-details2')
     }
     else {
-        res.redirect('/v4/attachments')
+        res.redirect('/v4/ihs-payment-date')
     }
 
 })
@@ -566,18 +566,7 @@ router.post('/dependant-details2-v4', function(req,res){
         res.redirect('/v4/dependant-details2')
     }
     else {
-        res.redirect('/v4/check-your-answers-nhs-path')
-    }
-
-})
-
-router.post('/main-or-dependant-v4', function(req,res){
-    var contacted = req.session.data['main-or-dependant-v4']
-    if (contacted == "yes"){
-        res.redirect('/v4/dependant-details2')
-    }
-    else {
-        res.redirect('/v4/nhs-question')
+        res.redirect('/v4/ihs-payment-date')
     }
 
 })
