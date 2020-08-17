@@ -437,5 +437,150 @@ router.post('/main-or-dependant-v3', function(req,res){
 
 })
 
+//v4
+
+router.post('/ihs-question-v4', function(req,res){
+    var contacted = req.session.data['ihs-question-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/work-question')
+    }
+    else {
+        res.redirect('/v4/not-entitled')
+    }
+
+})
+
+router.post('/work-question-v4', function(req,res){
+    var contacted = req.session.data['work-question-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/non-nhs-path')
+    }
+    else {
+        res.redirect('/v4/not-entitled')
+    }
+
+})
+
+router.post('/6-months-v4', function(req,res){
+    var contacted = req.session.data['6-months-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/average-time')
+    }
+    else {
+        res.redirect('/v4/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v4', function(req,res){
+    var contacted = req.session.data['average-time-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/declaration')
+    }
+    else {
+        res.redirect('/v4/not-entitled')
+    }
+
+})
+
+router.post('/nhs-question-v4', function(req,res){
+    var contacted = req.session.data['nhs-question-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/nhs-path')
+    }
+    else {
+        res.redirect('/v4/non-nhs-path')
+    }
+
+})
+
+router.post('/another-job-v4', function(req,res){
+    var contacted = req.session.data['another-job-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/another-job')
+    }
+    else {
+        res.redirect('/v4/telephone-number')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v4', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v4/6-months')
+    }
+
+})
+
+router.post('/attachment-decision-v4', function(req,res){
+    var contacted = req.session.data['attachment-decision-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/attachments-add')
+    }
+    else {
+        res.redirect('/v4/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v4', function(req,res){
+    var contacted = req.session.data['attachments-add-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/attachments2')
+    }
+    else {
+        res.redirect('/v4/check-your-answers-nhs-path')
+    }
+
+})
+
+router.post('/dependant-question-v4', function(req,res){
+    var contacted = req.session.data['dependant-question-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/dependant-details')
+    }
+    else {
+        res.redirect('/v4/attachments')
+    }
+
+})
+
+router.post('/dependant-details-v4', function(req,res){
+    var contacted = req.session.data['dependant-details-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/dependant-details2')
+    }
+    else {
+        res.redirect('/v4/attachments')
+    }
+
+})
+
+router.post('/dependant-details2-v4', function(req,res){
+    var contacted = req.session.data['dependant-details2-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/dependant-details2')
+    }
+    else {
+        res.redirect('/v4/check-your-answers-nhs-path')
+    }
+
+})
+
+router.post('/main-or-dependant-v4', function(req,res){
+    var contacted = req.session.data['main-or-dependant-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/dependant-details2')
+    }
+    else {
+        res.redirect('/v4/nhs-question')
+    }
+
+})
+
 
 module.exports = router;
