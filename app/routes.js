@@ -544,7 +544,7 @@ router.post('/dependant-question-v4', function(req,res){
         res.redirect('/v4/dependant-details')
     }
     else {
-        res.redirect('/v4/ihs-payment-date')
+        res.redirect('/v4/claim-dates')
     }
 
 })
@@ -555,7 +555,7 @@ router.post('/dependant-details-v4', function(req,res){
         res.redirect('/v4/dependant-details2')
     }
     else {
-        res.redirect('/v4/ihs-payment-date')
+        res.redirect('/v4/claim-dates')
     }
 
 })
@@ -566,7 +566,7 @@ router.post('/dependant-details2-v4', function(req,res){
         res.redirect('/v4/dependant-details2')
     }
     else {
-        res.redirect('/v4/ihs-payment-date')
+        res.redirect('/v4/claim-dates')
     }
 
 })
