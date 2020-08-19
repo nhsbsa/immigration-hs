@@ -355,7 +355,7 @@ router.post('/another-job-v3', function(req,res){
         res.redirect('/v3/another-job')
     }
     else {
-        res.redirect('/v3/telephone-number')
+        res.redirect('/v3/check-your-answers-nhs-path')
     }
 
 })
@@ -366,7 +366,7 @@ router.post('/non-nhs-path-another-job-v3', function(req,res){
         res.redirect('/v3/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v3/6-months')
+        res.redirect('/v3/check-your-answers-nhs-path')
     }
 
 })
@@ -410,7 +410,7 @@ router.post('/dependant-details-v3', function(req,res){
         res.redirect('/v3/dependant-details2')
     }
     else {
-        res.redirect('/v3/check-your-answers-nhs-path')
+        res.redirect('/v3/non-nhs-path')
     }
 
 })
@@ -421,7 +421,7 @@ router.post('/dependant-details2-v3', function(req,res){
         res.redirect('/v3/dependant-details2')
     }
     else {
-        res.redirect('/v3/check-your-answers-nhs-path')
+        res.redirect('/v3/non-nhs-path')
     }
 
 })
