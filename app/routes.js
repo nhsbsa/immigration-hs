@@ -505,6 +505,17 @@ router.post('/non-nhs-path-another-job-v4', function(req,res){
 
 })
 
+router.post('/add-employer-v4', function(req,res){
+    var contacted = req.session.data['add-employer-v4']
+    if (contacted == "yes"){
+        res.redirect('/v4/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v4/attachments')
+    }
+
+})
+
 router.post('/non-nhs-path-another-job2-v4', function(req,res){
     var contacted = req.session.data['non-nhs-path-another-job2-v4']
     if (contacted == "yes"){
