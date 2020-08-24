@@ -582,5 +582,149 @@ router.post('/dependant-details2-v4', function(req,res){
 
 })
 
+//v5
+
+router.post('/ihs-question-v5', function(req,res){
+    var contacted = req.session.data['ihs-question-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/work-question')
+    }
+    else {
+        res.redirect('/v5/not-entitled')
+    }
+
+})
+
+router.post('/work-question-v5', function(req,res){
+    var contacted = req.session.data['work-question-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/6-months')
+    }
+    else {
+        res.redirect('/v5/not-entitled')
+    }
+
+})
+
+router.post('/6-months-v5', function(req,res){
+    var contacted = req.session.data['6-months-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/average-time')
+    }
+    else {
+        res.redirect('/v5/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v5', function(req,res){
+    var contacted = req.session.data['average-time-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/declaration')
+    }
+    else {
+        res.redirect('/v5/not-entitled')
+    }
+
+})
+
+router.post('/another-job-v5', function(req,res){
+    var contacted = req.session.data['another-job-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/another-job')
+    }
+    else {
+        res.redirect('/v5/telephone-number')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v5', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v5/attachments')
+    }
+
+})
+
+router.post('/add-employer-v5', function(req,res){
+    var contacted = req.session.data['add-employer-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v5/attachments')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v5', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v5/attachments')
+    }
+
+})
+
+router.post('/attachment-decision-v5', function(req,res){
+    var contacted = req.session.data['attachment-decision-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/attachments-add')
+    }
+    else {
+        res.redirect('/v5/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v5', function(req,res){
+    var contacted = req.session.data['attachments-add-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/attachments2')
+    }
+    else {
+        res.redirect('/v5/check-your-answers-nhs-path')
+    }
+
+})
+
+router.post('/dependant-question-v5', function(req,res){
+    var contacted = req.session.data['dependant-question-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/dependant-details')
+    }
+    else {
+        res.redirect('/v5/claim-dates')
+    }
+
+})
+
+router.post('/dependant-details-v5', function(req,res){
+    var contacted = req.session.data['dependant-details-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/dependant-details2')
+    }
+    else {
+        res.redirect('/v5/claim-dates')
+    }
+
+})
+
+router.post('/dependant-details2-v5', function(req,res){
+    var contacted = req.session.data['dependant-details2-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/dependant-details2')
+    }
+    else {
+        res.redirect('/v5/claim-dates')
+    }
+
+})
 
 module.exports = router;
