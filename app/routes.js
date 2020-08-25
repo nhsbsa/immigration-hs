@@ -620,7 +620,7 @@ router.post('/6-months-v5', function(req,res){
 router.post('/average-time-v5', function(req,res){
     var contacted = req.session.data['average-time-v5']
     if (contacted == "yes"){
-        res.redirect('/v5/declaration')
+        res.redirect('/v5/name')
     }
     else {
         res.redirect('/v5/not-entitled')

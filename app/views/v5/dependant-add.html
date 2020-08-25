@@ -17,37 +17,82 @@
       <form class="form" action="/dependant-details-v5" method="post">
         <h1 class="govuk-heading-l">Dependant details</h1>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Dependant 1
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Michelle Philips
-            IHS123456789
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="">Change</a> 
-            or 
-            <a href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Dependant 2
-          </dt>
-          <dd class="govuk-summary-list__value">
-            William Philips
-            IHS123456789
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="">Change</a> 
-            or <a href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
-          </dd>
-        </div>
-      </dl>
-            
+      <!--via https://github.com/alphagov/govuk-design-system-backlog/issues/210 -->
+      <h2 class="govuk-heading-m" style="display: inline">Dependant 1</h2>
+      <span style="float:middle; margin-left: 50px">
+        <a href="#">Delete dependant
+          <span class="govuk-visually-hidden"> dependant 1</span>
+        </a>
+      </span>
+       
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <!--<h3 class="govuk-heading-s" style="line-height: 1.25;color: #0b0c0c;font-weight: bold; display: inline">Dependant 1</h3>   <span style="float:right"><a href="#">Delete <span class="govuk-visually-hidden"> dependant 1</span></span></a>-->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Michelle Philips
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Immigration health surcharge number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              IHS123456789
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact information</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+        <h2 class="govuk-heading-m" style="display: inline">Dependant 2</h2>
+        <span style="float:middle; margin-left: 44px">
+          <a href="#">Delete dependant
+            <span class="govuk-visually-hidden"> dependant 1</span>
+          </a>
+        </span>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                William Philips
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                  <span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Immigration health surcharge number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  IHS123456789
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="#">
+                    Change
+                    <span class="govuk-visually-hidden"> contact information</span>
+                  </a>
+                </dd>
+            </div>
+        </dl>   
             
    
 
