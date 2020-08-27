@@ -13,13 +13,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">What's the starting date of the 6-month period the applicant is claiming for?</h1>
+      <!--<h1 class="govuk-heading-l">What's the starting date of the 6-month period the applicant is claiming for?</h1>-->
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the starting date of the 6-month period the applicant is claiming for?
+      </h1>
 
       <form class="form" action="/v5/non-nhs-path" method="post">
         <div id="changed-name-hint" class="govuk-hint">
-            <p style="background: pink"></p>
-            This date must be on or after 31 March 2020. 
-        We will automatically work out the end date of the 6-month period you're claiming for.
+            Due to legal changes, this date must be on or after 31 March 2020. 
+            Once a start date is entered, we'll automatically work out the end date of the 6-month period the applicant is claiming for.
           </div>
         
         <div class="govuk-form-group">
@@ -55,18 +58,17 @@
             </div>
           </fieldset>
         </div>
+
         <div class="govuk-inset-text" style="overflow:hidden;" id="validEmail">
             <span class="govuk-hint govuk-!-margin-bottom-0">
-              You'll need to reapply again after: &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
+                The applicant may be eligible to reapply again after: &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
             </span>
-            <p style="background: pink">wording needs changing. does 2 things at once. 1. this is the end date of your claim and you MAY need to reapply if eligible after this date</p>
-            <p style="background: pink">you can optin to our reminder service at the end of the application</p>
         </div>
 
+        <p>There'll be an option to use a reminder service that will notify the applicant that they may need to reapply.</p>
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
-
       </form>
-
     </div>
   </div>
 
