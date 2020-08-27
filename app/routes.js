@@ -689,7 +689,7 @@ router.post('/attachments-add-v5', function(req,res){
         res.redirect('/v5/attachments2')
     }
     else {
-        res.redirect('/v5/check-your-answers-nhs-path')
+        res.redirect('/v5/comments')
     }
 
 })
