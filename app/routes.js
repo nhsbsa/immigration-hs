@@ -694,6 +694,17 @@ router.post('/attachments-add-v5', function(req,res){
 
 })
 
+router.post('/attachments-add-delete-v5', function(req,res){
+    var contacted = req.session.data['attachments-add-delete-v5']
+    if (contacted == "yes"){
+        res.redirect('/v5/attachments2')
+    }
+    else {
+        res.redirect('/v5/comments')
+    }
+
+})
+
 router.post('/dependant-question-v5', function(req,res){
     var contacted = req.session.data['dependant-question-v5']
     if (contacted == "yes"){
