@@ -16,30 +16,26 @@
       <!--<h1 class="govuk-heading-l">What are the applicant's employment details?</h1>-->
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          What are the applicant's employment details?
+          What are the applicant's job title?
       </h1>
 
       <div id="changed-name-hint" class="govuk-hint">
-        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
+        This is a hint text explaining why we need this information and how we'll use it
       </div>
+
       <!--via https://github.com/UKHomeOffice/design-system/issues/84-->
-      <form class="form" action="/v5/non-nhs-path-add2" method="post">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="full-name">
-              Employer name
-          </label>
-          <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
-        </div>
+      <form class="form" action="/v5/employer-not-found3" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="full-name">
               Job title
           </label>
-          <span id="national-insurance-number-hint" class="govuk-hint">
+          <!--<span id="national-insurance-number-hint" class="govuk-hint">
             here is a hint text explaining why we need this info
-          </span>
+          </span>-->
           <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
         </div>
+          
         <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
     </div>

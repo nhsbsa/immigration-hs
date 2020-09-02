@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--via https://github.com/UKHomeOffice/design-system/issues/84-->
+      <form class="form" action="/v5/non-nhs-path-add2" method="post">
+          
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-heading-l">
+                        <span class="govuk-caption-l">Application</span>
+                        What are the applicant's job setting?
+                    </h1>
+                  </legend>
+                  <div id="how-contacted-conditional-hint" class="govuk-hint">
+                    Select one option. This is a hint text explaining why we need this information and how we'll use it
+                  </div>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-hospital" name="how-contacted" type="Hospital" value="GP-Practice" data-aria-controls="conditional-how-contacted-conditional">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-hospital">
+                          Hospital
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-gp" name="how-contacted" type="radio" value="GP-Practice" data-aria-controls="conditional-how-contacted-conditional">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-gp">
+                          GP Practice
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-ch" name="how-contacted" type="radio" value="Care-Home" data-aria-controls="conditional-how-contacted-conditional">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-ch">
+                          Care Home
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-chs" name="how-contacted" type="radio" value="Community-Healthcare-Setting" data-aria-controls="conditional-how-contacted-conditional-2">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-chs">
+                          Community Healthcare Setting
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                        Other
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-by-text">
+                          Other job setting
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+                      </div>
+              
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
