@@ -16,24 +16,30 @@
 
       <form class="form" action="/v5/check-your-answers-nhs-path" method="post">
 
-        <div class="govuk-form-group">
-
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+          <div class="govuk-form-group">
             <h1 class="govuk-heading-l">
-                <span class="govuk-caption-l">Application</span>
-                Would you like to give any extra information about the applicant's employment or attachments? (optional)
+              <span class="govuk-caption-l">Application</span>
+              Would you like to give any extra information about the applicant's employment or attachments? (optional)
             </h1>
-            <div id="more-detail-hint" class="govuk-hint">
-                <p>Explain any gaps in the applicant's employment or working arrangements. </p>
-                <p>This could include:</p>
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>maternity or paternity leave</li>
-                  <li>coronavirus (COVID-19) issues</li>
-                  <li>sickness, including self-isolation</li>
-                </ul>
-                <p>If the months of employment are not in order, you may also want to share more information to help us more easily understand.</p>
+            <div id="with-hint-hint" class="govuk-hint">
+              Explain any gaps in the applicant's employment or working arrangements.
+              This could include:
+              <ul class="govuk-list govuk-list--bullet govuk-hint">
+                <li>maternity or paternity leave</li>
+                <li>coronavirus (COVID-19) issues</li>
+                <li>sickness, including self-isolation</li>
+              </ul>
+              If the months of employment are not in order, you may also want to share more information to help us more easily understand.
             </div>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
           </div>
+        
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 200 characters
+          </div>
+        
+        </div>
           
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<style>
+.guide .part-navigation-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b1b4b6;
+}
+.gem-c-contents-list {
+    position: relative;
+    margin: 0 0 20px 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 20px 15px -10px #fff;
+}
+.gem-c-contents-list__title {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+</style>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Pay for UK healthcare as part of your immigration application
+      </h1>
+
+      <aside class="part-navigation-container" role="complementary">
+        <nav class="gem-c-contents-list " aria-label="Pages in this guide" role="navigation" data-module="track-click">
+        <h2 class="gem-c-contents-list__title">Contents</h2>
+
+        <ol class="gem-c-contents-list__list">
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 1" data-track-label="/healthcare-immigration-application" data-track-options="{&quot;dimension29&quot;:&quot;Overview&quot;}" href="/healthcare-immigration-application">Overview</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 2" data-track-label="/healthcare-immigration-application/who-needs-pay" data-track-options="{&quot;dimension29&quot;:&quot;Who needs to pay&quot;}" href="/healthcare-immigration-application/who-needs-pay">Who needs to pay</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 3" data-track-label="/healthcare-immigration-application/how-much-pay" data-track-options="{&quot;dimension29&quot;:&quot;How much you have to pay&quot;}" href="/healthcare-immigration-application/how-much-pay">How much you have to pay</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 4" data-track-label="/healthcare-immigration-application/pay" data-track-options="{&quot;dimension29&quot;:&quot;Pay the healthcare surcharge&quot;}" href="/healthcare-immigration-application/pay">Pay the healthcare surcharge</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 4" data-track-label="/healthcare-immigration-application/pay" data-track-options="{&quot;dimension29&quot;:&quot;Pay the healthcare surcharge&quot;}" href="/healthcare-immigration-application/pay">Refunds</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active" aria-current="true">
+                Immigration Health Surcharge reimbursement service
+            </li>
+        </ol>
+      </nav>
+    </aside>
+
+      <p>You may be able to get a reimbursement of part of your Immigration Health Surcharge (IHS) back if you’re working or have worked in the Health or Social Care sector.</p>
+      <h2 class="govuk-heading-m">Eligibility criteria</h2>
+      <p>To be eligible to apply, you must have:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>paid an IHS, or someone must have paid the IHS on your behalf</li>
+        <li>worked in the Health or Social Care sector for at least 6 months after 31 March 2020, for at least an average of 16 hours per week</li>
+      </ul>
+
+      <p>If you’re eligible and you have a partner and / or dependents who have also paid an IHS, they’ll also be eligible.</p>
+      <h2 class="govuk-heading-m">How to apply for an IHS reimbursement</h2>
+
+      <p>You can use our online service.</p>
+      <p>We’ll refer to “the applicant” throughout the online service. This will be yourself if you’re making the claim for an IHS you have paid. If you’re using this service on behalf of someone else who has paid an IHS, “the applicant” will be the person you’re using the service on behalf of.</p>
+
+      <p>You’ll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the applicant’s personal details, including full name, IHS reference number, National Insurance number and contact details</li>
+        <li>the applicant’s employment history over the last 6 months</li>
+        <li>details of any dependants who are also eligible</li>
+      </ul>
+
+      <p>You’ll also be asked to provide evidence that the applicant hasin the Health and Care Sector during the qualifying period – you’ll be able to upload payslips to support this.</p>
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also <a href="#">register by post</a>.</p>
+
+      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
+
+      <p>You can’t register for this service if you’re in the UK illegally.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href=https://www.gov.uk/apply-to-come-to-the-uk>
+                Applying for a visa to come to the UK
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
