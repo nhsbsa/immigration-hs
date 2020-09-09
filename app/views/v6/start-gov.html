@@ -44,13 +44,57 @@
     color: #0b0c0c;
     font-family: "nta",Arial,sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
     margin: 0;
 }
-
-
+.gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ol, ul, nav ol, nav ul {
+    list-style: inherit;
+}
+.gem-c-contents-list__list-item--dashed {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.gem-c-contents-list__list-item {
+    padding-top: 10px;
+    line-height: 1.3;
+    list-style-type: none;
+}
+.gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden;
+}
+@media (min-width: 40.0625em){
+  .gem-c-contents-list__title {
+      font-size: 16px;
+      line-height: 1.5;
+  }
+  .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .gem-c-contents-list__list-item {
+      padding-top: 7.5px;
+  }
+}
 </style>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -65,25 +109,25 @@
 
         <ol class="gem-c-contents-list__list">
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 1" data-track-label="/healthcare-immigration-application" data-track-options="{&quot;dimension29&quot;:&quot;Overview&quot;}" href="/healthcare-immigration-application">Overview</a>
+              <a class="gem-c-contents-list__link govuk-link" href="/healthcare-immigration-application">Overview</a>
             </li>
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 2" data-track-label="/healthcare-immigration-application/who-needs-pay" data-track-options="{&quot;dimension29&quot;:&quot;Who needs to pay&quot;}" href="/healthcare-immigration-application/who-needs-pay">Who needs to pay</a>
+              <a class="gem-c-contents-list__link govuk-link" href="/healthcare-immigration-application/who-needs-pay">Who needs to pay</a>
             </li>
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 3" data-track-label="/healthcare-immigration-application/how-much-pay" data-track-options="{&quot;dimension29&quot;:&quot;How much you have to pay&quot;}" href="/healthcare-immigration-application/how-much-pay">How much you have to pay</a>
+              <a class="gem-c-contents-list__link govuk-link" href="/healthcare-immigration-application/how-much-pay">How much you have to pay</a>
             </li>
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 4" data-track-label="/healthcare-immigration-application/pay" data-track-options="{&quot;dimension29&quot;:&quot;Pay the healthcare surcharge&quot;}" href="/healthcare-immigration-application/pay">Pay the healthcare surcharge</a>
+              <a class="gem-c-contents-list__link govuk-link" href="/healthcare-immigration-application/pay">Pay the healthcare surcharge</a>
             </li>
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 4" data-track-label="/healthcare-immigration-application/pay" data-track-options="{&quot;dimension29&quot;:&quot;Pay the healthcare surcharge&quot;}" href="/healthcare-immigration-application/pay">Refunds</a>
+              <a class="gem-c-contents-list__link govuk-link" href="/healthcare-immigration-application/pay">Refunds</a>
             </li>
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active" aria-current="true">
                 Immigration Health Surcharge reimbursement service
             </li>
-        </ol>
-      </nav>
+        </ol> 
+        </nav>
     </aside>
 
       <p>You may be able to get a reimbursement of part of your Immigration Health Surcharge (IHS) back if you’re working or have worked in the Health or Social Care sector.</p>
