@@ -894,4 +894,160 @@ router.post('/dependant-details2-v6', function(req,res){
 
 })
 
+//mvp
+
+router.post('/ihs-question-mvp', function(req,res){
+    var contacted = req.session.data['ihs-question-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/work-question')
+    }
+    else {
+        res.redirect('/mvp/not-entitled')
+    }
+
+})
+
+router.post('/work-question-mvp', function(req,res){
+    var contacted = req.session.data['work-question-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/6-months')
+    }
+    else {
+        res.redirect('/mvp/not-entitled')
+    }
+
+})
+
+router.post('/6-months-mvp', function(req,res){
+    var contacted = req.session.data['6-months-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/average-time')
+    }
+    else {
+        res.redirect('/mvp/not-entitled')
+    }
+
+})
+
+router.post('/average-time-mvp', function(req,res){
+    var contacted = req.session.data['average-time-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/name')
+    }
+    else {
+        res.redirect('/mvp/not-entitled')
+    }
+
+})
+
+router.post('/another-job-mvp', function(req,res){
+    var contacted = req.session.data['another-job-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/another-job')
+    }
+    else {
+        res.redirect('/mvp/telephone-number')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-mvp', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/mvp/attachments')
+    }
+
+})
+
+router.post('/add-employer-mvp', function(req,res){
+    var contacted = req.session.data['add-employer-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/mvp/attachments')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-mvp', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/mvp/attachments')
+    }
+
+})
+
+router.post('/attachment-decision-mvp', function(req,res){
+    var contacted = req.session.data['attachment-decision-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/attachments-add')
+    }
+    else {
+        res.redirect('/mvp/attachments')
+    }
+
+})
+
+router.post('/attachments-add-mvp', function(req,res){
+    var contacted = req.session.data['attachments-add-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/attachments2')
+    }
+    else {
+        res.redirect('/mvp/comments')
+    }
+
+})
+
+router.post('/attachments-add-delete-mvp', function(req,res){
+    var contacted = req.session.data['attachments-add-delete-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/attachments2')
+    }
+    else {
+        res.redirect('/mvp/comments')
+    }
+
+})
+
+router.post('/dependant-question-mvp', function(req,res){
+    var contacted = req.session.data['dependant-question-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/dependant-details')
+    }
+    else {
+        res.redirect('/mvp/claim-dates')
+    }
+
+})
+
+router.post('/dependant-details-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/dependant-details2')
+    }
+    else {
+        res.redirect('/mvp/claim-dates')
+    }
+
+})
+
+router.post('/dependant-details2-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details2-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/dependant-details2')
+    }
+    else {
+        res.redirect('/mvp/claim-dates')
+    }
+
+})
+
 module.exports = router;

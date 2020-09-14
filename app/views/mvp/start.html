@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+        Get a reimbursement for your immigration health surcharge 
+    </h1>
+    <h2 class="govuk-heading-l">What you'll get</h2>
+    <p>This service is designed for applicants who hold visas in the UK, to be able to make a claim to get a reimbursement for any immigration health surcharges they have paid whilst on their current visa.</p>
+    <p>Reimbursements are processed in 6-month instalments, in arrears, covering the period from 31 March 2020. The applicant will need to reapply after every 6 months to continue getting reimbursed.</p>
+    <p>You cannot claim a reimbursement for any period before 31 March 2020.</p>
+
+    <h2 class="govuk-heading-l">Who can apply</h2>
+    <p>To be eligible for using this service, the applicant must be working or have previously worked in a health and social care sector job:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>for 6 months or more</li>
+      <li>for an average of 16 hours per week</li>
+      <li>on or after 31 March 2020</li>
+    </ul>
+
+    <p>Applicants can only claim a reimbursement if they have paid a surcharge whilst on their current visa.</p>
+    
+    <div class="govuk-inset-text">
+        A person who is eligible to use this service will be the applicant. The applicant’s dependants will also be automatically eligible. A main applicant will be able to add dependants using this service, but dependants cannot add a main applicant. 
+    </div>
+
+   <p style="background: pink">If the applicant is in the UK on a General Work Visa (Tier 2) or a Health and Care Visa, they should <a href="#">contact the Home Office to claim a refund</a> for any time remaining on their visa after 31 March 2020, instead of using this service.</p>
+
+    <h2 class="govuk-heading-l">How to apply</h2>
+
+    <p>To use this service, the applicant must apply. If you are using the service on behalf of an applicant, use their details. Claims made will be for a period of 6 months. </p>
+
+    <p>You’ll need:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>to give us your full name as it appears on your passport</li>
+      <li>your immigration health surcharge number</li>
+      <li>payslips for the last 6 months, these can be attached as copies</li>
+      <li>the payment method that the immigration health surcharge was paid from and access to the account</li>
+      <li>details of any dependants you would like to add - you'll need their name and immigration health surcharge number</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">How we’ll reimburse you</h2>
+    <p>The applicant will be paid in arrears of 6-months, the maximum amount to be reimbursed is £200 per person.</p>
+    <p>The applicant will get their reimbursement paid into the same bank account which was used to pay the IHS. If this bank account no longer exists, contact the Home Office before applying for a reimbursement.</p>
+
+      
+    <p>Check that you're eligible, then you can use the service which will take around [5] minutes.</p>
+
+    <a href="/mvp/ihs-question" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+      Start now
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+{% endblock %}
