@@ -1050,4 +1050,16 @@ router.post('/dependant-details2-mvp', function(req,res){
 
 })
 
+router.post('/subscription-question-mvp', function(req,res){
+    var contacted = req.session.data['subscription-question-mvp']
+    if (contacted == "yes"){
+        res.redirect('/mvp/dependant-question')
+    }
+    else {
+        res.redirect('/mvp/dependant-question')
+    }
+
+})
+
+
 module.exports = router;
