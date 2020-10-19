@@ -582,5 +582,26 @@ router.post('/dependant-details2-v4', function(req,res){
 
 })
 
+router.post('/attachments-add-reapply', function(req,res){
+    var contacted = req.session.data['attachments-add-reapply']
+    if (contacted == "yes"){
+        res.redirect('/reapply/attachments2-130')
+    }
+    else {
+        res.redirect('/reapply/check-your-answers-130')
+    }
+
+})
+
+router.post('/ihs-tier2-question-reapply', function(req,res){
+    var contacted = req.session.data['ihs-tier2-question-reapply']
+    if (contacted == "yes"){
+        res.redirect('/reapply/ihs-tier2-healthcare')
+    }
+    else {
+        res.redirect('/reapply/ihs-number-130')
+    }
+
+})
 
 module.exports = router;

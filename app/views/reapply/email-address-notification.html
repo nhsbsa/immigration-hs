@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+<script>
+    function printEmail() {
+      $('#email').keyup(function(event) {
+        newText = event.target.value;
+        $('#email-show').text(newText);
+      });
+    } 
+    window.onload=printEmail;
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Subscribe to reminder notifcations</h1>
+
+      <form class="form" action="/reapply/confirmation-of-email" method="post">
+
+      <p>Enter your email address to:      </p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>subscribe to reminders for when you are due to apply for Immigration Health Surcharge reimbursment</li>
+          <li>manage your existing reminder notifications</li>
+      </ul>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Email address
+          </label>
+          <span id="email-hint" class="govuk-hint">
+            We’ll only use this to notify you that you will be eligible for reimbursement.
+          </span>
+          <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+        </div>
+        <div class="govuk-inset-text" style="overflow:hidden;" id="validEmail">
+          <span class="govuk-hint govuk-!-margin-bottom-0">
+              An email will be sent to: &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
+          </span>
+      </div>
+        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
