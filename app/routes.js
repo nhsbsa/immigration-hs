@@ -582,6 +582,16 @@ router.post('/dependant-details2-v4', function(req,res){
 
 })
 
+router.post('/attachments-add-reapply', function(req,res){
+    var contacted = req.session.data['attachments-add-reapply']
+    if (contacted == "yes"){
+        res.redirect('/reapply/attachments2-130')
+    }
+    else {
+        res.redirect('/reapply/check-your-answers-130')
+    }
+})
+
 //v5
 
 router.post('/ihs-question-v5', function(req,res){
@@ -1206,6 +1216,17 @@ router.post('/dependant-details-v7', function(req,res){
     }
 
 })
+//reapply
+
+router.post('/ihs-tier2-question-reapply', function(req,res){
+    var contacted = req.session.data['ihs-tier2-question-reapply']
+    if (contacted == "yes"){
+        res.redirect('/reapply/ihs-tier2-healthcare')
+    }
+    else {
+        res.redirect('/reapply/ihs-number-130')
+    }
+})
 
 router.post('/dependant-details2-v7', function(req,res){
     var contacted = req.session.data['dependant-details2-v7']
@@ -1215,7 +1236,6 @@ router.post('/dependant-details2-v7', function(req,res){
     else {
         res.redirect('/v7/claim-dates')
     }
-
 })
 
 module.exports = router;
