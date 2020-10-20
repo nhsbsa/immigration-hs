@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v5/ihs-payment-date">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+      <form class="form" action="/work-question-v5" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="work-question-conditional-hint">
+            
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!--<h1 class="govuk-fieldset__heading">
+                  Has the applicant had a job in health and social care?
+              </h1>-->
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Eligibility check</span>
+                  Has the applicant had a job in health and social care?
+              </h1>
+            </legend>  
+            <span id="work-question-conditional-hint" class="govuk-hint">
+                For example, worked in a care home or worked for the NHS. This doesn't have to be in frontline care. It could be working as a receptionist in an NHS or care setting.
+            </span>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="work-question-conditional" name="work-question-v5" type="radio" value="yes" data-aria-controls="conditional-work-question-conditional">
+                  <label class="govuk-label govuk-radios__label" for="work-question-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="work-question-conditional-2" name="work-question-v5" type="radio" value="no" data-aria-controls="conditional-work-question-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="work-question-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
