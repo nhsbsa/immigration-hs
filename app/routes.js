@@ -1228,6 +1228,29 @@ router.post('/ihs-tier2-question-reapply', function(req,res){
     }
 })
 
+router.post('/ihs-tier2-question-v7', function(req,res){
+    var contacted = req.session.data['ihs-tier2-question-v7']
+    if (contacted == "yes"){
+        res.redirect('/v7/ihs-tier2-healthcare')
+    }
+    else {
+        res.redirect('/v7/not-entitled')
+    }
+})
+
+//ko
+router.post('/ihs-tier2-hc-v7', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v7']
+    if (contacted == "yes"){
+        res.redirect('/v7/ihs-number')
+    }
+    else {
+        res.redirect('/v7/not-entitled')
+    }
+})
+
+//ko
+
 router.post('/dependant-details2-v7', function(req,res){
     var contacted = req.session.data['dependant-details2-v7']
     if (contacted == "yes"){
