@@ -1091,7 +1091,7 @@ router.post('/work-question-v7', function(req,res){
         res.redirect('/v7/6-months')
     }
     else {
-        res.redirect('/v7/not-entitled-rr')
+        res.redirect('/v7/not-entitled-rr1')
     }
 
 })
