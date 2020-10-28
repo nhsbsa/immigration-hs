@@ -1077,10 +1077,10 @@ router.post('/subscription-question-mvp', function(req,res){
 router.post('/ihs-question-v7', function(req,res){
     var contacted = req.session.data['ihs-question-v7']
     if (contacted == "yes"){
-        res.redirect('/v7/work-question')
+        res.redirect('/v7/ihs-tier2-question')
     }
     else {
-        res.redirect('/v7/not-entitled')
+        res.redirect('/v7/not-entitled-rr')
     }
 
 })
@@ -1091,7 +1091,7 @@ router.post('/work-question-v7', function(req,res){
         res.redirect('/v7/6-months')
     }
     else {
-        res.redirect('/v7/not-entitled')
+        res.redirect('/v7/not-entitled-rr')
     }
 
 })
@@ -1110,10 +1110,10 @@ router.post('/6-months-v7', function(req,res){
 router.post('/average-time-v7', function(req,res){
     var contacted = req.session.data['average-time-v7']
     if (contacted == "yes"){
-        res.redirect('/v7/name')
+        res.redirect('/v7/tier2-declaration')
     }
     else {
-        res.redirect('/v7/not-entitled')
+        res.redirect('/v7/not-entitled-rr')
     }
 
 })
@@ -1234,7 +1234,7 @@ router.post('/ihs-tier2-question-v7', function(req,res){
         res.redirect('/v7/ihs-tier2-healthcare')
     }
     else {
-        res.redirect('/v7/not-entitled')
+        res.redirect('/v7/work-question')
     }
 })
 
@@ -1242,10 +1242,10 @@ router.post('/ihs-tier2-question-v7', function(req,res){
 router.post('/ihs-tier2-hc-v7', function(req,res){
     var contacted = req.session.data['ihs-tier2-hc-v7']
     if (contacted == "yes"){
-        res.redirect('/v7/ihs-number')
+        res.redirect('/v7/ihs-tier2-ukvi')
     }
     else {
-        res.redirect('/v7/not-entitled')
+        res.redirect('/v7/work-question')
     }
 })
 

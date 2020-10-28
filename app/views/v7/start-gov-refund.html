@@ -1,0 +1,256 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<style>
+.guide .part-navigation-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b1b4b6;
+}
+.gem-c-contents-list {
+    position: relative;
+    margin: 0 0 20px 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 20px 15px -10px #fff;
+}
+.gem-c-contents-list__title {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+.gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ol, ul, nav ol, nav ul {
+    list-style: inherit;
+}
+.gem-c-contents-list__list-item--dashed {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.gem-c-contents-list__list-item {
+    padding-top: 10px;
+    line-height: 1.3;
+    list-style-type: none;
+}
+.gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden;
+}
+@media (min-width: 40.0625em){
+  .gem-c-contents-list__title {
+      font-size: 16px;
+      line-height: 1.5;
+  }
+  .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .gem-c-contents-list__list-item {
+      padding-top: 7.5px;
+  }
+}
+.gem-c-govspeak .contact {
+    position: relative;
+}
+.gem-c-govspeak .address, .gem-c-govspeak .contact {
+    border-left: 1px solid #b1b4b6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Pay for UK healthcare as part of your immigration application
+      </h1>
+
+      <aside class="part-navigation-container" role="complementary" style="border-bottom: 1px solid #b1b4b6; margin-top: 30px; margin-bottom: 30px; padding-bottom: 15px;">
+        <nav class="gem-c-contents-list " aria-label="Pages in this guide" role="navigation" data-module="track-click">
+        <h2 class="gem-c-contents-list__title">Contents</h2>
+
+        <ol class="gem-c-contents-list__list">
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application">Overview</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/who-needs-pay">Who needs to pay</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/how-much-pay">How much you have to pay</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/pay">Pay the healthcare surcharge</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/refunds">Refunds</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="start-gov-reimbursement">Reimbursements for health and social care workers</a>
+            </li>
+        </ol> 
+        </nav>
+    </aside>
+
+ 
+    <h2 class="govuk-heading-m">Refunds</h2>
+    <p>You'll get a full immigration health surcharge (IHS) refund if:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you paid twice</li>
+      <li>your visa application is refused</li>
+      <li>you withdrew your visa application</li>
+    </ul>
+
+<p>You'll get a partial IHS refund if your visa application's successful but:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you get less time on your visa than you asked for</li>
+      <li>any dependants on your visa application are refused</li>
+    </ul>
+
+<p>If you are due a full or partial refund for these reasons, you do not have to do anything yet to get it. It will be automatically paid to the account or card you paid with.</p>
+<p>You will not get a refund if:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your visa application is successful but you do not come to the UK</li>
+      <li>you leave the UK before your visa ends, for example to make a new application</li>
+      <li>you're told to leave the UK before your visa expires</li>
+      <li>you're applying for indefinite leave to remain</li>
+    </ul>
+
+<p>If you're changing to the Tier 2 Health and Care vise, you will get a full refund of your IHS from 31 March 2020. You will not get a refund if you're changing to any other visa.</p>
+
+<h2 style="background:lightyellow" class="govuk-heading-m">If you work in health and care</h2>
+
+    <p style="background:lightyellow">Health and care workers can apply for a refund of any IHS they paid to cover the period from 31 March 2020.
+    <p style="background:lightyellow">You must have worked in an <a href="https://odsportal.hscic.gov.uk/Organisation/Search">eligible health or care role</a> for at least 6 months since 31 March 2020, working for an average of at least 16 hours a week.</p>
+    <p style="background:lightyellow">If you meet these conditions, your dependants are also entitiled to a refund.</p>
+   
+
+<h3 style="background:lightyellow" class="govuk-heading-s">What you'll get</h3>
+<p style="background:lightyellow">Each time you apply, you will get 6 months' worth of the IHS you have paid, up to a maximum of £200. You will need to apply every 6 months.</p>
+<p style="background:lightyellow">You can only get a refund of the IHS you've paid to cover your healthcare from 31 March 2020 onwards.</p>
+      
+<h3 class="govuk-heading-s">If you're eligible for the Tier 2 Health and Care visa</h3>
+<p>You and your dependants do not normally need to pay the IHS if you either</p>
+
+<ul class="govuk-list govuk-list--bullet">
+      <li>have a <a href=''> Tier 2 Health and Care visa</a></li>
+      <li>would have been eligible for a Tier 2 Health and Care visa on or after 4 August 2020</li>
+    </ul>
+
+<p>If you paid the IHS on or after 31 March 2020, you should automatically get full refund.</p>
+<p>If you're eligible for a Tier 2 Health and Care visa and have not yet received a refund, email the IHS refunds team. In your mail include:</p>      
+
+<ul class="govuk-list govuk-list--bullet">
+      <li>name</li>
+      <li>sponsor's name</li>
+      <li>Certificate of Sponsorship (CoS) number</li>
+      <li>IHS number</li>
+    </ul>
+
+  <p>Do not send your bank details. All refunds will be paid to the account or card you paid with.</p>
+
+<h3 class="govuk-heading-s">Health and care workers immigration health surcharge refunds</h3> <a href="">IHSrefunds@homeoffice.gov.uk</a>
+<br>
+<br>
+<br>
+    <h2 class="govuk-heading-m">How long it takes</h2>
+    
+    <p>You usually get your refund within 6 weeks of getting a decision on your visa application. It can take longer if you 
+    <a href="">appeal</a> or ask for an <a href="">administative review<a/> after your visa application is refused.</p>
+    
+  <h3 class="govuk-heading-s">If you appeal or ask for an administative review</h3> 
+    
+    <p>If you applied from:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>inside the UK - you'll get your refund up to 6 weeeks after your appeal or administrtive review is dismissed</li>
+      <li>outside the UK - you'll get your refund your to 6 weeks after your visa application is refused</li>
+    </ul>
+
+<p>You'll have to repay the IHS if your appeal or administative review is successful and you've already got your IHS refund.</p>
+
+<p>You might have to repay a different amount if:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the lenght of your stay changes</li>
+      <li>you get less time on yopur visa than you asked for</li>
+    </ul>
+
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">
+        <p><a class="govuk-link" href="">Contact UK Visas and Immigration</a> (UKVI) if your refund is not paid within 6 weeks</p>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href=https://www.gov.uk/apply-to-come-to-the-uk>
+              Applying for a visa to come to the UK
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    </div>
+  </div>
+{% endblock %}
