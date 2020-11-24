@@ -1091,7 +1091,7 @@ router.post('/work-question-v7', function(req,res){
         res.redirect('/v7/6-months')
     }
     else {
-        res.redirect('/v7/not-entitled-rr1')
+        res.redirect('/v7/not-entitled')
     }
 
 })
@@ -1260,5 +1260,28 @@ router.post('/dependant-details2-v7', function(req,res){
         res.redirect('/v7/claim-dates')
     }
 })
+
+// Upload Missing Evidence - V7
+
+router.post('/ihs-tier2-question-V7', function(req,res){
+    var contacted = req.session.data['ihs-tier2-question-V7']
+    if (contacted == "yes"){
+        res.redirect('/v7/ihs-tier2-healthcare')
+    }
+    else {
+        res.redirect('/v7/ihs-number-130')
+    }
+})
+
+router.post('/attachments-addu-v7', function(req,res){
+    var contacted = req.session.data['attachments-addu-v7']
+    if (contacted == "yes"){
+        res.redirect('/v7/attachments2-130')
+    }
+    else {
+        res.redirect('/v7/check-your-answers-130')
+    }
+})
+
 
 module.exports = router;
