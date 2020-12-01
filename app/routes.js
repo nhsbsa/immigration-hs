@@ -1273,8 +1273,8 @@ router.post('/ihs-tier2-question-V7', function(req,res){
     }
 })
 
-router.post('/attachments-addu-v7', function(req,res){
-    var contacted = req.session.data['attachments-addu-v7']
+router.post('/doug', function(req,res){
+    var contacted = req.session.data['doug']
     if (contacted == "yes"){
         res.redirect('/v7/attachments2-130')
     }
@@ -1282,6 +1282,5 @@ router.post('/attachments-addu-v7', function(req,res){
         res.redirect('/v7/check-your-answers-130')
     }
 })
-
 
 module.exports = router;
