@@ -1283,4 +1283,156 @@ router.post('/doug', function(req,res){
     }
 })
 
+// V8
+
+router.post('/doug-ihs-question-v8', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/ihs-tier2-question')
+    }
+    else {
+        res.redirect('/v8/not-entitled-rr')
+    }
+})
+  
+router.post('/doug-ihs-tier2-question-v8', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/ihs-tier2-healthcare')
+    }
+    else {
+        res.redirect('/v8/work-question')
+    }
+})
+
+router.post('/ihs-tier2-hc-v8', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/v8/work-question')
+    }
+})
+
+router.post('/work-question-v8', function(req,res){
+    var contacted = req.session.data['work-question-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/6-months')
+    }
+    else {
+        res.redirect('/v8/not-entitled')
+    }
+})
+
+router.post('/6-months-v8', function(req,res){
+    var contacted = req.session.data['6-months-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/average-time')
+    }
+    else {
+        res.redirect('/v8/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v8', function(req,res){
+    var contacted = req.session.data['average-time-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/tier2-declaration')
+    }
+    else {
+        res.redirect('/v8/not-entitled-rr')
+    }
+
+})
+
+router.post('/dependant-details-v8', function(req,res){
+    var contacted = req.session.data['dependant-details-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/dependant-details2')
+    }
+    else {
+        res.redirect('/v8/subscription-question')
+    }
+
+})
+
+router.post('/subscription-question-v8', function(req,res){
+    var contacted = req.session.data['subscription-question-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/non-nhs-path')
+    }
+    else {
+        res.redirect('/v8/non-nhs-path')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v8', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v8/attachments')
+    }
+
+})
+
+    router.post('/non-nhs-path-another-job2-v8', function(req,res){
+        var contacted = req.session.data['non-nhs-path-another-job2-v8']
+        if (contacted == "yes"){
+            res.redirect('/v8/non-nhs-path-another-job')
+        }
+        else {
+            res.redirect('/v8/attachments')
+        }
+    
+})
+
+router.post('/attachments-add-v8', function(req,res){
+    var contacted = req.session.data['attachments-add-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/attachments2')
+    }
+    else {
+        res.redirect('/v8/comments')
+    }
+
+})
+
+router.post('/attachments-add-v8', function(req,res){
+    var contacted = req.session.data['attachments-add-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/attachments2')
+    }
+    else {
+        res.redirect('/v8/comments')
+    }
+
+})
+
+router.post('/attachments-add-delete-v8', function(req,res){
+    var contacted = req.session.data['attachments-add-delete-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/attachments2')
+    }
+    else {
+        res.redirect('/v8/comments')
+    }
+
+})
+
+router.post('/dependant-question-v8', function(req,res){
+    var contacted = req.session.data['dependant-question-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/dependant-details')
+    }
+    else {
+        res.redirect('/v8/subscription-question')
+    }
+
+})
+
 module.exports = router;

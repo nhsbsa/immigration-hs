@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/dependant-details-v8" method="post">
+      
+        <!--<h1 class="govuk-heading-l">Dependant details</h1>-->
+        <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Application</span>
+            Check dependant details
+        </h1>
+      
+        <!--via https://github.com/alphagov/govuk-design-system-backlog/issues/210 -->
+        <h2 class="govuk-heading-m" style="display: inline">Dependant 1</h2>
+        <span style="float:middle; margin-left: 45px;     font-size: 1.1875rem;">
+          <a href="/v8/dependant-details-delete">Delete dependant
+            <span class="govuk-visually-hidden"> dependant 1</span>
+          </a>
+        </span>
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <!--<h3 class="govuk-heading-s" style="line-height: 1.25;color: #0b0c0c;font-weight: bold; display: inline">Dependant 1</h3>   <span style="float:right"><a href="#">Delete <span class="govuk-visually-hidden"> dependant 1</span></span></a>-->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Michelle Philips
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/v8/dependant-details">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15 January 2000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/v8/dependant-details">
+                Change
+                <span class="govuk-visually-hidden"> contact information</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Immigration health surcharge number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              IHS123456789
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/v8/ihs-number">
+                Change
+                <span class="govuk-visually-hidden"> contact information</span>
+              </a>
+            </dd>
+          </div>
+        </dl> 
+            
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="dependant-details-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                  Does the applicant have another dependant?
+              </h2>
+            </legend>  
+            <!-- <span id="dependant-details-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dependant-details-conditional" name="dependant-details-v8" type="radio" value="yes" data-aria-controls="conditional-dependant-details-conditional">
+                  <label class="govuk-label govuk-radios__label" for="dependant-details-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dependant-details-conditional-2" name="dependant-details-v8" type="radio" value="no" data-aria-controls="conditional-dependant-details-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="dependant-details-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
