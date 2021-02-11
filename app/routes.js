@@ -1347,17 +1347,6 @@ router.post('/average-time-v8', function(req,res){
 
 })
 
-router.post('/dependant-details-v8', function(req,res){
-    var contacted = req.session.data['dependant-details-v8']
-    if (contacted == "yes"){
-        res.redirect('/v8/dependant-details2')
-    }
-    else {
-        res.redirect('/v8/subscription-question')
-    }
-
-})
-
 router.post('/subscription-question-v8', function(req,res){
     var contacted = req.session.data['subscription-question-v8']
     if (contacted == "yes"){
@@ -1402,10 +1391,54 @@ router.post('/attachments-add-v8', function(req,res){
 
 })
 
-router.post('/attachments-add-v8', function(req,res){
-    var contacted = req.session.data['attachments-add-v8']
+router.post('/attachments-add2-v8', function(req,res){
+    var contacted = req.session.data['attachments-add2-v8']
     if (contacted == "yes"){
-        res.redirect('/v8/attachments2')
+        res.redirect('/v8/attachments3')
+    }
+    else {
+        res.redirect('/v8/comments')
+    }
+
+})
+
+router.post('/attachments-add3-v8', function(req,res){
+    var contacted = req.session.data['attachments-add3-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/attachments4')
+    }
+    else {
+        res.redirect('/v8/comments')
+    }
+
+})
+
+router.post('/attachments-add4-v8', function(req,res){
+    var contacted = req.session.data['attachments-add4-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/attachments5')
+    }
+    else {
+        res.redirect('/v8/comments')
+    }
+
+})
+
+router.post('/attachments-add5-v8', function(req,res){
+    var contacted = req.session.data['attachments-add5-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/attachments6')
+    }
+    else {
+        res.redirect('/v8/comments')
+    }
+
+})
+
+router.post('/attachments-add6-v8', function(req,res){
+    var contacted = req.session.data['attachments-add6-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/comments')
     }
     else {
         res.redirect('/v8/comments')
@@ -1428,6 +1461,16 @@ router.post('/dependant-question-v8', function(req,res){
     var contacted = req.session.data['dependant-question-v8']
     if (contacted == "yes"){
         res.redirect('/v8/dependant-details')
+    }
+    else {
+        res.redirect('/v8/subscription-question')
+    }
+
+})
+router.post('/dependant-details-v8', function(req,res){
+    var contacted = req.session.data['dependant-details-v8']
+    if (contacted == "yes"){
+        res.redirect('/v8/dependant-details2')
     }
     else {
         res.redirect('/v8/subscription-question')
