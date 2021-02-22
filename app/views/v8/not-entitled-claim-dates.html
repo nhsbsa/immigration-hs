@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">The applicant is not eligible for an immigration health surcharge reimbursement at the moment</h1>
+
+      <form class="form" action="/v8/start" method="post">
+
+        <p class="govuk-body">Based on your answers, the applicant is not eligible to use this service right now.</p>
+
+        <p class="govuk-body">The applicant can use this service if they:</p>
+        <ul class="govuk-list govuk-list--bullet">
+              <li>have already made a claim and the original 6-month claim period has passed</li>
+              <li>have paid an immigration health surcharge for their current visa</li>
+              <li>are working or have worked in health and social care for 6 months or more</li>
+              <li>worked for an average of 16 hours or more a week in health and social care</li>
+      
+        </ul>
+
+        <p class="govuk-body">If you have any questions, <a href="/footer/contact-us">contact us</a>.</p>
+        
+        <button class="govuk-button" data-module="govuk-button">
+          Start again
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

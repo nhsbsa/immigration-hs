@@ -13,8 +13,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#name">Enter a date for a new 6-month claim period that does not overlap the period covered by the previous claim of 01 October 2020 to 31 March 2021</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
       <!--<h1 class="govuk-heading-l">What's the starting date of the 6-month period the applicant is claiming for?</h1>-->
-      <h1 class="govuk-heading-l">
+    <div class="govuk-form-group govuk-form-group--error">
+        
+        <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
           What's the starting date of the 6-month period the applicant is claiming for?
       </h1>
@@ -32,6 +52,15 @@
             <span id="passport-issued-hint" class="govuk-hint">
               For example, 15 8 2020
             </span>
+
+
+<span id="national-insurance-number-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter a date for a new 6-month claim period that does not overlap the period covered by the previous claim of 01 October 2020 to 31 March 2021
+          </span>
+
+
+
+
             <div class="govuk-date-input" id="passport-issued">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
@@ -60,15 +89,12 @@
             </div>
           </fieldset>
         </div>
-
-        <div class="govuk-inset-text">
-                    The applicant may be eligible to apply again after: 
-        </div>
+    </div>
         
         <p>There'll be an option to use a reminder service that will notify the applicant that they may need to reapply.</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
-      </form>
+    
     </div>
   </div>
 

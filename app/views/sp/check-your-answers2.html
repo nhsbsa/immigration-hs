@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v8/check-your-answers-nhs-path">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Submit application</span>
+          Declaration
+      </h1>
+    
+
+      <p>By continuing, you declare and agree that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li> the information you’ve given on this form, including any supporting documents, is complete and accurate</li>
+          <li> if you provide false or misleading information, you may not receive your payment and you could be liable to criminal prosecution and / or civil proceedings</li>
+          <li>you’re aware that <a href="/footer/privacy">information you give may be shared with other departments</a> for the purposes of fraud prevention, detection and investigations</li>
+          <li>you’re aware that information you give may be shared as part of the Cabinet Office National Fraud Initiative (NFI) exercise to prevent and detect fraud</li>
+          <li>you’re aware that the NHSBSA provides data to the NHS Counter Fraud Authority when referrals of alleged fraud, bribery and corruption are received</li>
+      </ul>
+
+      <!-- <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+           Giving false or misleading information, payment may be refused and you may be prosecuted
+            <p>If you deliberately give false or misleading information you may get less compensation or be prosecuted by XXXX for a penalty of up to YYYY.</p>
+          </strong>
+        
+        </div>-->
+
+      <form action="/v8/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

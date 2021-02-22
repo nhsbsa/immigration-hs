@@ -19,7 +19,7 @@
           What's the starting date of the 6-month period the applicant is claiming for?
       </h1>
 
-      <form class="form" action="/v8/ihs-number" method="post">
+      <form class="form" action="/v8/not-entitled-claim-dates" method="post">
         <div id="changed-name-hint" class="govuk-hint">
             The applicant can only claim a reimbursement for a 6 month period.
           </div>
@@ -61,10 +61,14 @@
           </fieldset>
         </div>
 
-        <div class="govuk-inset-text">
-                    The applicant may be eligible to apply again after: 
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+                    The previous claim was for the period 31 May 2020 to 30 November 2020
+        </strong>
         </div>
-        
+
         <p>There'll be an option to use a reminder service that will notify the applicant that they may need to reapply.</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
