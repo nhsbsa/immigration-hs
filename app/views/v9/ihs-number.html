@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/v8/dob">Back</a>
+  <a class="govuk-back-link" href="/v9/nino">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,23 +13,27 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!--<h1 class="govuk-heading-l">What's the applicant's National Insurance number?</h1>-->
+      <!--<h1 class="govuk-heading-l">What's your immigration health surcharge number?</h1>
+      <h1 class="govuk-heading-l">What's the applicant's immigration health surcharge number?</h1>-->
+     
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          What's the applicant's National Insurance number?
+          What's the applicant's immigration health surcharge number?
       </h1>
 
-      <form class="form" action="/v8/claim-dates-new-claim" method="post">
+      <form class="form" action="/v9/email-address" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="national-insurance-number">
-            National Insurance number
+            Immigration health surcharge number
           </label>
           <span id="national-insurance-number-hint" class="govuk-hint">
-            It’s on your National Insurance card, payslip, P60 or biometric residence permit (BRP). For example, ‘QQ 12 34 56 C’.
+              When the immigration health surcharge was paid, an email would have been sent which contains this number. 
+              For example, 'IHS123456789'.
           </span>
           <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
         </div>
+        
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
