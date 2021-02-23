@@ -1598,5 +1598,48 @@ router.post('/non-nhs-path-another-job2-v9', function(req,res){
 
 })
 
+router.post('/non-nhs-path-another-job2-v9', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v9']
+    if (contacted == "yes"){
+        res.redirect('/v9/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v9/attachments')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v9', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v9']
+    if (contacted == "yes"){
+        res.redirect('/v9/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v9/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v9', function(req,res){
+    var contacted = req.session.data['attachments-add-v9']
+    if (contacted == "yes"){
+        res.redirect('/v9/attachments2')
+    }
+    else {
+        res.redirect('/v9/comments')
+    }
+
+})
+
+router.post('/attachments-add2-v9', function(req,res){
+    var contacted = req.session.data['attachments-add2-v9']
+    if (contacted == "yes"){
+        res.redirect('/v9/comments')
+    }
+    else {
+        res.redirect('/v9/comments')
+    }
+
+})
 
 module.exports = router;
