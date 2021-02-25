@@ -1641,4 +1641,68 @@ router.post('/attachments-add2-v9', function(req,res){
 
 })
 
+// V10
+
+router.post('/doug-ihs-question-v10', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/ihs-tier2-question')
+    }
+    else {
+        res.redirect('/v10/not-entitled-rr')
+    }
+})
+
+router.post('/doug-ihs-tier2-question-v10', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/ihs-tier2-healthcare')
+    }
+    else {
+        res.redirect('/v10/work-question')
+    }
+})
+
+router.post('/ihs-tier2-hc-v10', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/v10/work-question')
+    }
+})
+
+router.post('/work-question-v10', function(req,res){
+    var contacted = req.session.data['work-question-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/6-months')
+    }
+    else {
+        res.redirect('/v10/not-entitled')
+    }
+})
+
+router.post('/6-months-v10', function(req,res){
+    var contacted = req.session.data['6-months-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/average-time')
+    }
+    else {
+        res.redirect('/v10/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v10', function(req,res){
+    var contacted = req.session.data['average-time-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/tier2-declaration')
+    }
+    else {
+        res.redirect('/v10/not-entitled-rr')
+    }
+
+})
+
 module.exports = router;
