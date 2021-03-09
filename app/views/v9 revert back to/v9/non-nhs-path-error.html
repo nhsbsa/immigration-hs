@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/v9/subscription-question">Back</a>
+  <a class="govuk-back-link" href="/v7/non-nhs-path-pre-error">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,24 +13,35 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#name">Applicants employer details 'NHSBSA' have already been entered</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!--<h1 class="govuk-heading-l">What are the applicant's employment details?</h1>-->
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
           What are the applicant's employment details?
       </h1>
-<!--
-      <div id="changed-name-hint" class="govuk-hint">
-        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
-      </div>
--->
-      <div id="changed-name-hint" class="govuk-hint">
-        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
-      </div>
 
-      <form class="form" action="/v9/job-title" method="post">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="autocomplete-default">Employer name</label>
-          <div id="tt-default" class="autocomplete-wrapper"></div>
+ <div class="govuk-form-group govuk-form-group--error">
+        
+          <span id="national-insurance-number-hint" class="govuk-hint">
+            This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
+          </span>
+          <span id="national-insurance-number-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Employer name
+          </span>
+          <input class="govuk-input govuk-input--error" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint national-insurance-number-error">
         </div>
 
         <details class="govuk-details" data-module="govuk-details">

@@ -5,34 +5,73 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/v9/subscription-question">Back</a>
+  <a class="govuk-back-link" href="/v9/non-nhs-path-add">Back</a>
 {% endblock %}
 
 {% block content %}
+  <style>
+      .govuk-banner--success {
+          border-color: #00703c;
+          color: #00703c;
+      }
+      .govuk-banner {
+          border: 5px solid #1d70b8;
+          font-size: 0;
+          margin-bottom: 30px;
+          padding: 10px;
+      }
+      .govuk-banner__message {
+      font-family: "GDS Transport", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.25;
+      color: #0b0c0c;
+      display: block;
+      overflow: hidden;
+      display: inline-block;
+      margin-left: 10px;
+      }
+      .govuk-banner__assistive {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      clip-path: inset(50%) !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+      }
+  </style>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-banner govuk-banner--success">
+
+          <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" style="display: inline-block">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+          
+          <div class="govuk-banner__message">
+          <span class="govuk-banner__assistive">Success</span>Employer 1 	NHS Business Services Authority has been deleted</div>
+          
+      </div>
 
       <!--<h1 class="govuk-heading-l">What are the applicant's employment details?</h1>-->
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
           What are the applicant's employment details?
       </h1>
-<!--
-      <div id="changed-name-hint" class="govuk-hint">
-        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
-      </div>
--->
-      <div id="changed-name-hint" class="govuk-hint">
-        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
-      </div>
 
-      <form class="form" action="/v9/job-title" method="post">
+      <div id="changed-name-hint" class="govuk-hint">
+        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
+      </div>
+      <form class="form" action="/v9/non-nhs-path-add" method="post">
         <div class="govuk-form-group">
           <label class="govuk-label" for="autocomplete-default">Employer name</label>
           <div id="tt-default" class="autocomplete-wrapper"></div>
         </div>
-
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -43,8 +82,6 @@
             We’ll ask for more information which will include the applicant’s job title and job type. This will help us to progress the claim.
           </div>
         </details>
-        
-        <!--<p><a href="/v7/employer-not-found1">I can't find the employer in the list</a></p> -->
         <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
     </div>

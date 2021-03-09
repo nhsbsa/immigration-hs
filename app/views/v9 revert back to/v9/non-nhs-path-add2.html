@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/v9/subscription-question">Back</a>
+
 {% endblock %}
 
 {% block content %}
@@ -16,37 +16,124 @@
       <!--<h1 class="govuk-heading-l">What are the applicant's employment details?</h1>-->
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          What are the applicant's employment details?
+          Check employment details
       </h1>
-<!--
-      <div id="changed-name-hint" class="govuk-hint">
-        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
-      </div>
--->
-      <div id="changed-name-hint" class="govuk-hint">
-        This is the name of the organisation your work for. You should include any employers that the applicant has had for the 6 month period of your claim.
-      </div>
+     
+      <form class="form" action="/non-nhs-path-another-job2-v9" method="post">
+          <!--via https://github.com/alphagov/govuk-design-system-backlog/issues/210 -->
 
-      <form class="form" action="/v9/job-title" method="post">
+          <h2 class="govuk-heading-m" style="display: inline">Employer 1</h2>
+          <span style="float:middle; margin-left: 39px;     font-size: 1.1875rem;">
+            <a href="/v9/employment-delete">Delete employer
+              <span class="govuk-visually-hidden"> employer 1</span>
+            </a>
+          </span>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Employer name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Boots
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a href="#">
+                    Change
+                    <span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                      Job title
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Senior pharmacist 
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="#">
+                      Change
+                      <span class="govuk-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                      Job type
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      Hospital
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a href="#">
+                      Change
+                      <span class="govuk-visually-hidden"> contact information</span>
+                    </a>
+                  </dd>
+              </div>
+          </dl>  
+          
+          <h2 class="govuk-heading-m" style="display: inline">Employer 2</h2>
+          <span style="float:middle; margin-left: 45px;     font-size: 1.1875rem;">
+            <a href="/v9/employment-delete">Delete employer
+              <span class="govuk-visually-hidden"> employer 1</span>
+            </a>
+          </span>
+          
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <!--<h3 class="govuk-heading-s" style="line-height: 1.25;color: #0b0c0c;font-weight: bold; display: inline">Dependant 1</h3>   <span style="float:right"><a href="#">Delete <span class="govuk-visually-hidden"> dependant 1</span></span></a>-->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Employer name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                NHS Business Services Authority
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="#">
+                  Change
+                  <span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
         <div class="govuk-form-group">
-          <label class="govuk-label" for="autocomplete-default">Employer name</label>
-          <div id="tt-default" class="autocomplete-wrapper"></div>
+          <fieldset class="govuk-fieldset" aria-describedby="non-nhs-path-another-job-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h2 class="govuk-heading-m">
+                  Does the applicant have another job within NHS and health and social care?
+              </h2>
+            </legend>            
+            <!-- <span id="non-nhs-path-another-job-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="non-nhs-path-another-job-conditional" name="non-nhs-path-another-job2-v9" type="radio" value="yes" data-aria-controls="non-nhs-path-another-job-conditional">
+                <label class="govuk-label govuk-radios__label" for="non-nhs-path-another-job-conditional">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="non-nhs-path-another-job-conditional-2" name="non-nhs-path-another-job2-v9" type="radio" value="no" data-aria-controls="non-nhs-path-another-job-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="non-nhs-path-another-job-conditional-2">
+                  No
+                </label>
+              </div>
+              </div>
+            </div>
+          </fieldset>
         </div>
 
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              If the applicant’s employer cannot be found automatically
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We’ll ask for more information which will include the applicant’s job title and job type. This will help us to progress the claim.
-          </div>
-        </details>
-        
-        <!--<p><a href="/v7/employer-not-found1">I can't find the employer in the list</a></p> -->
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
+
       </form>
+
     </div>
   </div>
 
