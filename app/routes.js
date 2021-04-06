@@ -1705,4 +1705,81 @@ router.post('/average-time-v10', function(req,res){
 
 })
 
+router.post('/dependant-question-v10', function(req,res){
+    var contacted = req.session.data['dependant-question-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/dependant-details')
+    }
+    else {
+        res.redirect('/v10/claim-dates-new')
+    }
+
+})
+
+router.post('/dependant-details-v10', function(req,res){
+    var contacted = req.session.data['dependant-details-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/dependant-details2')
+    }
+    else {
+        res.redirect('/v10/claim-dates-new')
+    }
+
+})
+
+router.post('/subscription-question-v10', function(req,res){
+    var contacted = req.session.data['subscription-question-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/non-nhs-path')
+    }
+    else {
+        res.redirect('/v10/non-nhs-path')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v10', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v10/attachments')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v10', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v10/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v10', function(req,res){
+    var contacted = req.session.data['attachments-add-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/attachments2')
+    }
+    else {
+        res.redirect('/v10/comments')
+    }
+
+})
+
+router.post('/attachments-add2-v10', function(req,res){
+    var contacted = req.session.data['attachments-add2-v10']
+    if (contacted == "yes"){
+        res.redirect('/v10/comments')
+    }
+    else {
+        res.redirect('/v10/comments')
+    }
+
+})
+
 module.exports = router;
