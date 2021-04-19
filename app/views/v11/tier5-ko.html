@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+<style>
+.float--right {
+    float: right !important;
+}
+</style>
+
+{% block content %}
+<div id="content">
+
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/v10/ihs-number" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v10">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!--<h1 class="govuk-fieldset__heading">
+                  Has the applicant paid an immigration health surcharge for their current visa?
+              </h1>-->
+
+              <h1 class="govuk-heading-l">
+
+                  The applicant is a Tier 5 Medical Training Initiative visa holder
+              </h1>
+            </legend> 
+            
+           <span id="ihs-question-conditional-hint" class="govuk-hint">
+              The applicant does not need to apply for a refund of their IHS. The refund will be processed automatically followed by notification of this from the Academy of Royal Medical Colleges.
+
+
+            </span>
+
+            <p class="govuk-body">If you have any questions, <a href="/footer/contact-us">contact us</a>. 
+            <p class="govuk-body">Find out <a href="https://www.gov.uk/healthcare-immigration-application">more about immigration health surcharge.</a></p> 
+          </fieldset>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
