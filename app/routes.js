@@ -1982,4 +1982,26 @@ router.post('/upload-of-evidence-add2-v11', function(req,res){
         }
 })
 
+router.post('/contracts-add-v11', function(req,res){
+    var contacted = req.session.data['contracts-add-v11']
+    if (contacted == "yes"){
+        res.redirect('/v11/upload-of-contract2')
+    }
+    else {
+        res.redirect('/v11/comments')
+    }
+
+})
+
+router.post('/contracts-add2-v11', function(req,res){
+    var contacted = req.session.data['contracts-add2-v11']
+    if (contacted == "yes"){
+        res.redirect('/v11/comments')
+    }
+    else {
+        res.redirect('/v11/comments')
+    }
+
+})
+
 module.exports = router;
