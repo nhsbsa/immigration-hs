@@ -1787,7 +1787,7 @@ router.post('/attachments-add2-v10', function(req,res){
 router.post('/doug-ihs-question-v11', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v11']
     if (contacted == "yes"){
-        res.redirect('/v11/ihs-tier2-question-new')
+        res.redirect('/v11/applicant-visa-type')
     }
     else {
         res.redirect('/v11/not-entitled-rr')
