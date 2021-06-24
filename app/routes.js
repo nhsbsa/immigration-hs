@@ -4,6 +4,8 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 // Branching
 
+
+// V1 ////////////////////////////////////////////////////////////////////////////////////////////////
 router.post('/ihs-question', function(req,res){
     var contacted = req.session.data['ihs-question']
     if (contacted == "yes"){
@@ -147,7 +149,7 @@ router.post('/main-or-dependant', function(req,res){
 
 })
 
-//v2
+//v2 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/ihs-question-v2', function(req,res){
     var contacted = req.session.data['ihs-question-v2']
@@ -292,7 +294,7 @@ router.post('/main-or-dependant-v2', function(req,res){
 
 })
 
-//v3
+//v3 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/ihs-question-v3', function(req,res){
     var contacted = req.session.data['ihs-question-v3']
@@ -437,7 +439,7 @@ router.post('/main-or-dependant-v3', function(req,res){
 
 })
 
-//v4
+//v4 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/ihs-question-v4', function(req,res){
     var contacted = req.session.data['ihs-question-v4']
@@ -592,7 +594,7 @@ router.post('/attachments-add-reapply', function(req,res){
     }
 })
 
-//v5
+//v5 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/ihs-question-v5', function(req,res){
     var contacted = req.session.data['ihs-question-v5']
@@ -748,7 +750,7 @@ router.post('/dependant-details2-v5', function(req,res){
 
 })
 
-//v6
+//v6 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/ihs-question-v6', function(req,res){
     var contacted = req.session.data['ihs-question-v6']
@@ -1071,8 +1073,7 @@ router.post('/subscription-question-mvp', function(req,res){
 
 })
 
-
-//v7
+//v7 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/ihs-question-v7', function(req,res){
     var contacted = req.session.data['ihs-question-v7']
@@ -1283,7 +1284,7 @@ router.post('/doug', function(req,res){
     }
 })
 
-// V8
+// V8 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/doug-ihs-question-v8', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v8']
@@ -1478,7 +1479,7 @@ router.post('/dependant-details-v8', function(req,res){
 
 })
 
-// V9
+// V9 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/doug-ihs-question-v9', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v9']
@@ -1641,7 +1642,7 @@ router.post('/attachments-add2-v9', function(req,res){
 
 })
 
-// V10
+// V10 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/doug-ihs-question-v10', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v10']
@@ -1782,7 +1783,7 @@ router.post('/attachments-add2-v10', function(req,res){
 
 })
 
-// V11
+// V11 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/doug-ihs-question-v11', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v11']
@@ -1793,16 +1794,6 @@ router.post('/doug-ihs-question-v11', function(req,res){
         res.redirect('/v11/not-entitled-rr')
     }
 })
-
-// router.post('/doug-ihs-tier2-question-v11', function(req,res){
-//    var contacted = req.session.data['doug-ihs-tier2-question-v11']
-//    if (contacted == "yes"){
-//       res.redirect('/v11/ihs-tier2-healthcare')
-//    }
-//    else {
-//        res.redirect('/v11/work-question')
-//    }
-//})
 
 router.post('/ihs-tier2-hc-v11', function(req,res){
     var contacted = req.session.data['ihs-tier2-hc-v11']
@@ -1889,17 +1880,6 @@ router.post('/subscription-question-v11', function(req,res){
     }
 
 })
-
-// router.post('/non-nhs-path-another-job-v11', function(req,res){
-// var contacted = req.session.data['non-nhs-path-another-job-v11']
-//    if (contacted == "yes"){
-//        res.redirect('/v11/non-nhs-path-another-job')
-//    }
-//   else {
-//       res.redirect('/v11/attachments')
-//    }
-//
-//})
 
 router.post('/non-nhs-path-another-job2-v11', function(req,res){
     var contacted = req.session.data['non-nhs-path-another-job2-v11']
@@ -2004,7 +1984,7 @@ router.post('/contracts-add2-v11', function(req,res){
 
 })
 
-// V12
+// V12 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/doug-ihs-question-v12', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v12']
@@ -2015,16 +1995,6 @@ router.post('/doug-ihs-question-v12', function(req,res){
         res.redirect('/v12/not-entitled-rr')
     }
 })
-
-// router.post('/doug-ihs-tier2-question-v12', function(req,res){
-//    var contacted = req.session.data['doug-ihs-tier2-question-v12']
-//    if (contacted == "yes"){
-//       res.redirect('/v12/ihs-tier2-healthcare')
-//    }
-//    else {
-//        res.redirect('/v12/work-question')
-//    }
-//})
 
 router.post('/ihs-tier2-hc-v12', function(req,res){
     var contacted = req.session.data['ihs-tier2-hc-v12']
@@ -2111,17 +2081,6 @@ router.post('/subscription-question-v12', function(req,res){
     }
 
 })
-
-// router.post('/non-nhs-path-another-job-v12', function(req,res){
-// var contacted = req.session.data['non-nhs-path-another-job-v12']
-//    if (contacted == "yes"){
-//        res.redirect('/v12/non-nhs-path-another-job')
-//    }
-//   else {
-//       res.redirect('/v12/attachments')
-//    }
-//
-//})
 
 router.post('/non-nhs-path-another-job2-v12', function(req,res){
     var contacted = req.session.data['non-nhs-path-another-job2-v12']

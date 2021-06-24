@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload Evidence
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v12/non-nhs-path-add">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/payslips-or-contract" method="post">
+
+        <div class="govuk-form-group">
+        <!--  <label class="govuk-label govuk-label--l" for="file-upload-1">
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Application</span>
+                  Upload evidence
+              </h1>
+          </label>
+
+          <span id="file-upload-1-hint" class="govuk-hint">
+              <p>The applicant must provide payslips or a contract of employment as evidence.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Select an option
+            </h1>
+          </legend>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in" name="payslips-or-contract" type="radio" value="payslips" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in">
+                Payslips
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in-2" name="payslips-or-contract" type="radio" value="contract" aria-describedby="sign-in-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                Contract of employment
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in" name="payslips-or-contract" type="radio" value="payslips" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in">
+                Other option 1 (TBC)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sign-in" name="payslips-or-contract" type="radio" value="payslips" aria-describedby="sign-in-item-hint">
+              <label class="govuk-label govuk-radios__label" for="sign-in">
+                Other option 2 (TBC)
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+
+      </div>-->
+
+      <!-- checkboxes -->
+
+      <div class="govuk-form-group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              <span class="govuk-caption-l">Application</span>
+              Select documents to upload
+            </h1>
+          </legend>
+          <div id="evidence-hint" class="govuk-hint">
+            Select all that apply. You can upload a single file, multiple files or a folder <span style="color:red">(TBC)</span>.
+          </div>
+          <ul>
+            <li>bulk upload - new design pattern, requires testing with QA and FED</li>
+            <li>delete uploaded docs - OK</li>
+            <li>use checkboxes instead?</li>
+            <li>HMRC API - if used, no need for upload screens</li>
+            <li>IHS - if used, no need for visa selection screen</li>
+            <li>content design</li>
+            <li>reflect the changes on the review page</li>
+          </ul>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="upload-hint">
+
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          Contract of employment and the latest payslip
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-upload-1">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Upload files
+          </button>
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+          Payslips for the claim period
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-upload-1">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Upload files
+          </button>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+</div>
+      </form>
+      <br>
+       <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </div>
+  </div>
+{% endblock %}
