@@ -17,48 +17,61 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--l" for="file-upload-1">
-              <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
               <h1 class="govuk-heading-l">
                   <span class="govuk-caption-l">Application</span>
                   Upload evidence
               </h1>
           </label>
-          
-          <span id="file-upload-1-hint" class="govuk-hint">
-              <p>The applicant must provide payslips or a contract of employment as evidence.</p>
-          
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        Select an option
-      </h1>
-    </legend>
-    
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="sign-in" name="payslips-or-contract" type="radio" value="payslips" aria-describedby="sign-in-item-hint">
-        <label class="govuk-label govuk-radios__label" for="sign-in">
-          Payslips
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="sign-in-2" name="payslips-or-contract" type="radio" value="contract" aria-describedby="sign-in-2-item-hint">
-        <label class="govuk-label govuk-radios__label" for="sign-in-2">
-          Contract of employment
-        </label>
-      </div>
-    </div>
+          <span id="file-upload-1-hint" class="govuk-hint">The applicant must provide payslips or a contract of employment as evidence.</span>
 
-  </fieldset>
-         <br>
-       
-</div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
 
+              <div id="upload-hint" class="govuk-hint">
+                Select one option.
+              </div>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contract" name="contract" type="radio" value="contract" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Contract
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="upload-contract">
+                      Select file(s)
+                    </label>
+                    <input class="govuk-file-upload" id="upload-contract" name="upload-contract" type="file" aria-describedby="upload-contract">
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Upload</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="payslips" name="payslips" type="radio" value="payslips" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="payslips">
+                    Payslips
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-payslips">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="upload-payslips">
+                      Select file(s)
+                    </label>
+                    <input class="govuk-file-upload" id="upload-payslips" name="upload-payslips" type="file" aria-describedby="upload-payslips">
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Upload</button>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
       </form>
-       <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
     </div>
   </div>
-
 {% endblock %}
