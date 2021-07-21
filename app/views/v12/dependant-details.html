@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/v11/dependant-question">Back</a>
+  <a class="govuk-back-link" href="/v12/dependant-question">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,7 @@
           What are the applicant's dependant details?
       </h1>
 
-      <form class="form" action="/v11/dependant-add" method="post">
+      <form class="form" action="/v12/dependant-add" method="post">
         <div class="govuk-form-group">
           <label class="govuk-label" for="full-name">
             Given names
@@ -67,7 +67,7 @@
                   <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" pattern="[0-9]*" inputmode="numeric"></div>
               </div>
             </div>
-        
+
           </fieldset>
         </div>
 
@@ -76,7 +76,7 @@
             Immigration health surcharge number
           </label>
           <span id="national-insurance-number-hint" class="govuk-hint">
-              When the immigration health surcharge was paid, an email would have been sent which contains this number. 
+              When the immigration health surcharge was paid, an email would have been sent which contains this number.
               For example, 'IHS123456789'.
           </span>
           <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
