@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Claim date
+  DOB
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v12/dependant-question">Back</a>
+  <a class="govuk-back-link" href="/v11/name">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -23,38 +23,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!--<h1 class="govuk-heading-l">What's the starting date of the 6-month period the applicant is claiming for?</h1>-->
+      <!--<h1 class="govuk-heading-l">What's the applicant's date of birth?</h1>-->
+
       <h1 class="govuk-heading-l">
-          <span class="govuk-caption-l">Application</span>
-          What's the starting date of the 6-month period the applicant is claiming for?
+          <span class="govuk-caption-l">Eligibility</span>
+          Course dates
       </h1>
+      <form class="form" action="/v12/name" method="post">
 
-      <form class="form" action="/v12/subscription-question" method="post">
-        <div id="changed-name-hint" class="govuk-hint">
-            The applicant can only claim reimbursement for a 6-month period.
-        </div>
-          <div id="changed-name-hint" class="govuk-hint">
-            The applicant's previous claim period was 1 April 2020 to 30 September 2020.
-           </div>
-
-        <div class="govuk-inset-text">
-           The earliest date a new claim period can start is 1 October 2020.
-        </div>
-
-<!--
-         <div id="changed-name-hint" class="govuk-hint">
-                       have checked the records and the earliest date the applicant can submit a new claim is 01 October 2021.
-        </div>
--->
-
-        <div id="passport-issued-hint" class="govuk-hint">
-                For example, 18 8 2021
-            </div>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </span>
             <div class="govuk-date-input" id="passport-issued">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
+                  <h2 class="govuk-heading-m">From</h2>
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
@@ -78,19 +63,44 @@
                 </div>
               </div>
             </div>
+
+            <br>
+
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <h2 class="govuk-heading-m">To</h2>
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+
           </fieldset>
         </div>
 
-<!--
-        <div class="govuk-inset-text">
-                    The applicant may be eligible to apply again after:
-        </div>
-
-        <p>There'll be an option to use a reminder service that will notify the applicant that they may need to reapply.</p>
- -->
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
+
     </div>
   </div>
 
