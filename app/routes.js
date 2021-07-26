@@ -281,4 +281,49 @@ router.post('/v12/work-question', function (req, res) {
     };
 });
 
+router.post('/v12/dependant-question', function (req, res) {
+    var addDependant = req.session.data['add-dependant'];
+    switch (addDependant) {
+        case undefined:
+            res.redirect('/v12/dependant-details');
+            break;
+            case "yes":
+            res.redirect('/v12/dependant-details');
+            break;
+            case "no":
+            res.redirect('/v12/claim-dates-new');
+            break;
+    };
+});
+
+router.post('/v12/dependant-details', function (req, res) {
+    var addNewDependant = req.session.data['add-new-dependant'];
+    switch (addNewDependant) {
+        case undefined:
+            res.redirect('/v12/dependant-add');
+            break;
+            case "yes":
+            res.redirect('/v12/dependant-add');
+            break;
+            case "no":
+            res.redirect('/v12/claim-dates-new');
+            break;
+    };
+});
+
+router.post('/v12/dependant-add', function (req, res) {
+    var addSecondDependant = req.session.data['add-second-dependant'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/v12/dependant-add');
+            break;
+            case "yes":
+            res.redirect('/v12/dependant-details2');
+            break;
+            case "no":
+            res.redirect('/v12/claim-dates-new');
+            break;
+    };
+});
+
 module.exports = router;
