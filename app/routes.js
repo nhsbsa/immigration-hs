@@ -206,9 +206,10 @@ router.post('/contracts-add2-v11', function(req,res){
 })
 
 // V12 ////////////////////////////////////////////////////////////////////////////////////////////////
+
 router.post('/v12/eu-question', function (req, res) {
-    var eu = req.session.data['eu'];
-    switch (eu) {
+    var nationality = req.session.data['nationality'];
+    switch (nationality) {
         case undefined:
             res.redirect('/v12/ihs-paid');
             break;
