@@ -1985,6 +1985,21 @@ router.post('/contracts-add2-v11', function(req,res){
 
 // V12 ////////////////////////////////////////////////////////////////////////////////////////////////
 
+router.post('/v12/attachment-add', function (req, res) {
+    var nationality = req.session.data['nationality'];
+    switch (nationality) {
+        case undefined:
+            res.redirect('/v12/ihs-paid');
+            break;
+            case "yes":
+            res.redirect('/v12/ihs-paid');
+            break;
+            case "no":
+            res.redirect('/v12/kick-out-student');
+            break;
+    };
+});
+
 router.post('/v12/eu-question', function (req, res) {
     var nationality = req.session.data['nationality'];
     switch (nationality) {
@@ -2104,5 +2119,50 @@ router.post('/v12/dependant-add', function (req, res) {
             break;
     };
 });
+
+router.post('/v12/ehic-evidence-upload', function(req,res){
+    var upload = req.session.data['upload']
+    if (upload == "ehic"){
+        res.redirect('/v12/upload-of-ehic')
+    }
+    else {
+        res.redirect('/v12/upload-of-course-letter')
+    }
+
+})
+
+
+router.post('/v12/attachments-add', function(req,res){
+    var contacted = req.session.data['attachments-add-v12']
+    if (contacted == "yes"){
+        res.redirect('/v12/attachments2')
+    }
+    else {
+        res.redirect('/v12/check-details')
+    }
+
+})
+
+router.post('/v12/attachments-add-v12', function(req,res){
+    var contacted = req.session.data['attachments-add-v12']
+    if (contacted == "yes"){
+        res.redirect('/v12/attachments-add2')
+    }
+    else {
+        res.redirect('/v12/check-details')
+    }
+
+})
+
+router.post('/attachments-add2-v12', function(req,res){
+    var contacted = req.session.data['attachments-add2-v12']
+    if (contacted == "yes"){
+        res.redirect('/v12/check-details')
+    }
+    else {
+        res.redirect('/v12/check-details')
+    }
+
+})
 
 module.exports = router;
