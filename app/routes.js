@@ -2037,7 +2037,7 @@ router.post('/v12/swiss-national', function (req, res) {
             res.redirect('/v12/name');
             break;
             case "yes":
-            res.redirect('/v12/name');
+            res.redirect('/v12/swiss-path');
             break;
             case "no":
             res.redirect('/v12/name');
@@ -2055,22 +2055,7 @@ router.post('/v12/dependant-question', function (req, res) {
             res.redirect('/v12/dependant-details');
             break;
             case "no":
-            res.redirect('/v12/ehic-evidence-upload');
-            break;
-    };
-});
-
-router.post('/v12/dependant-details', function (req, res) {
-    var addNewDependant = req.session.data['add-new-dependant'];
-    switch (addNewDependant) {
-        case undefined:
-            res.redirect('/v12/dependant-add');
-            break;
-            case "yes":
-            res.redirect('/v12/dependant-add');
-            break;
-            case "no":
-            res.redirect('/v12/ehic-evidence-upload');
+            res.redirect('/v12/upload-of-ehic');
             break;
     };
 });
@@ -2085,7 +2070,7 @@ router.post('/v12/dependant-add', function (req, res) {
             res.redirect('/v12/dependant-details2');
             break;
             case "no":
-            res.redirect('/v12/ehic-evidence-upload');
+            res.redirect('/v12/upload-of-ehic');
             break;
     };
 });
@@ -2100,7 +2085,7 @@ router.post('/v12/dependant-add2', function (req, res) {
             res.redirect('/v12/dependant-details2');
             break;
             case "no":
-            res.redirect('/v12/ehic-evidence-upload');
+            res.redirect('/v12/upload-of-ehic');
             break;
     };
 });

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Swiss path{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v12/swiss-question">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="dependant-question-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!--<h1 class="govuk-fieldset__heading">
+                Do you want to add any dependants who have paid an immigration health surcharge?
+              </h1>-->
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Eligibility</span>
+Swiss path              </h1>
+            </legend>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
