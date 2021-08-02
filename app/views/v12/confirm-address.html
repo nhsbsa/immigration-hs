@@ -22,17 +22,14 @@ Confirm address
 
     <h1 class="govuk-heading-xl">Confirm the applicant’s current address</h1>
 
-    <form method="post" action="/v12/dependant-question">
+    <form method="post" action="/v12/dependant-question" class="form">
 
       <p>2 Hayward <br />
       100 Alfred Road<br />
       Southampton<br />
       SO11 2AB<br />
       United Kingdom</p>
-
-      {{ govukButton({
-        text: "Confirm and continue"
-      }) }}
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>
 

@@ -22,7 +22,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+What is your address?      </h1>
       <form method="post" action="select-address">
         <p class="govuk-!-font-weight-bold">Postcode search</p>
         {{ govukInput({
@@ -34,6 +36,7 @@
         {{ govukButton({
           text: "Find address"
         }) }}
+        <p><a href="enter-uk-address">I live outside the UK</a> &nbsp;</p>
 
       </form>
 
