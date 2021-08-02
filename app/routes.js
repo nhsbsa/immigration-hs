@@ -1985,54 +1985,9 @@ router.post('/contracts-add2-v11', function(req,res){
 
 // V12 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-router.post('/v12/attachment-add', function (req, res) {
-    var nationality = req.session.data['nationality'];
-    switch (nationality) {
-        case undefined:
-            res.redirect('/v12/ihs-paid');
-            break;
-            case "yes":
-            res.redirect('/v12/ihs-paid');
-            break;
-            case "no":
-            res.redirect('/v12/kick-out-student');
-            break;
-    };
-});
-
-router.post('/v12/eu-question', function (req, res) {
-    var nationality = req.session.data['nationality'];
-    switch (nationality) {
-        case undefined:
-            res.redirect('/v12/ihs-paid');
-            break;
-            case "yes":
-            res.redirect('/v12/ihs-paid');
-            break;
-            case "no":
-            res.redirect('/v12/kick-out-student');
-            break;
-    };
-});
-
 router.post('/v12/ihs-paid', function (req, res) {
     var paid = req.session.data['paid'];
     switch (paid) {
-        case undefined:
-            res.redirect('/v12/full-time-education');
-            break;
-            case "yes":
-            res.redirect('/v12/full-time-education');
-            break;
-            case "no":
-            res.redirect('/v12/kick-out-student');
-            break;
-    };
-});
-
-router.post('/v12/full-time-education', function (req, res) {
-    var student = req.session.data['student'];
-    switch (student) {
         case undefined:
             res.redirect('/v12/ehic-card');
             break;
@@ -2049,10 +2004,10 @@ router.post('/v12/ehic-card', function (req, res) {
     var ehic = req.session.data['ehic'];
     switch (ehic) {
         case undefined:
-            res.redirect('/v12/work-question');
+            res.redirect('/v12/full-time-education');
             break;
             case "yes":
-            res.redirect('/v12/work-question');
+            res.redirect('/v12/full-time-education');
             break;
             case "no":
             res.redirect('/v12/kick-out-student');
@@ -2060,17 +2015,32 @@ router.post('/v12/ehic-card', function (req, res) {
     };
 });
 
-router.post('/v12/work-question', function (req, res) {
-    var work = req.session.data['work'];
-    switch (work) {
+router.post('/v12/full-time-education', function (req, res) {
+    var student = req.session.data['student'];
+    switch (student) {
         case undefined:
-            res.redirect('/v12/education-provider');
+            res.redirect('/v12/swiss-national');
             break;
             case "yes":
-            res.redirect('/v12/education-provider');
+            res.redirect('/v12/swiss-national');
             break;
             case "no":
             res.redirect('/v12/kick-out-student');
+            break;
+    };
+});
+
+router.post('/v12/swiss-national', function (req, res) {
+    var swiss = req.session.data['swiss'];
+    switch (swiss) {
+        case undefined:
+            res.redirect('/v12/name');
+            break;
+            case "yes":
+            res.redirect('/v12/name');
+            break;
+            case "no":
+            res.redirect('/v12/name');
             break;
     };
 });
@@ -2085,7 +2055,7 @@ router.post('/v12/dependant-question', function (req, res) {
             res.redirect('/v12/dependant-details');
             break;
             case "no":
-            res.redirect('/v12/claim-dates-new');
+            res.redirect('/v12/ehic-evidence-upload');
             break;
     };
 });
@@ -2100,7 +2070,7 @@ router.post('/v12/dependant-details', function (req, res) {
             res.redirect('/v12/dependant-add');
             break;
             case "no":
-            res.redirect('/v12/claim-dates-new');
+            res.redirect('/v12/ehic-evidence-upload');
             break;
     };
 });
@@ -2115,7 +2085,22 @@ router.post('/v12/dependant-add', function (req, res) {
             res.redirect('/v12/dependant-details2');
             break;
             case "no":
-            res.redirect('/v12/claim-dates-new');
+            res.redirect('/v12/ehic-evidence-upload');
+            break;
+    };
+});
+
+router.post('/v12/dependant-add2', function (req, res) {
+    var addSecondDependant = req.session.data['add-second-dependant'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/v12/dependant-add');
+            break;
+            case "yes":
+            res.redirect('/v12/dependant-details2');
+            break;
+            case "no":
+            res.redirect('/v12/ehic-evidence-upload');
             break;
     };
 });
@@ -2130,7 +2115,6 @@ router.post('/v12/ehic-evidence-upload', function(req,res){
     }
 
 })
-
 
 router.post('/v12/attachments-add', function(req,res){
     var contacted = req.session.data['attachments-add-v12']

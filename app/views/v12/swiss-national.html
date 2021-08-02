@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Has the applicant paid an immigration health surcharge for their visa?
+  Are you a Swiss national?
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +25,7 @@
 
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Eligibility</span>
-          Has the applicant paid an immigration health surcharge for their visa?
+          Are you a Swiss national?
       </h1>
 
       <form class="form" method="post">
@@ -34,21 +34,20 @@
           <fieldset class="govuk-fieldset" aria-describedby="eu">
             <div class="govuk-radios govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="paid">
+                <input class="govuk-radios__input" id="paid" name="swiss" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="swiss">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="paid">
+                <input class="govuk-radios__input" id="paid" name="swiss" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="swiss">
                   No
                 </label>
               </div>
             </div>
           </fieldset>
         </div>
-
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  NINO
+  IHS number
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v11/dob">Back</a>
+  <a class="govuk-back-link" href="/v12/dob">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -25,17 +25,17 @@
 
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          IHS number
+          What is the applicant's IHS number?
       </h1>
 
       <div class="govuk-inset-text">
         You can find your IHS number on the visa letter
       </div>
 
-      <form class="form" action="/v12/visa-route" method="post">
+      <form class="form" action="/v12/email-address" method="post">
 
         <div class="govuk-form-group">
-          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="education-provider" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
+          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="ihs-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
