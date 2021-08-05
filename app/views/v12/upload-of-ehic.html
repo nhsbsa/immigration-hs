@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Upoad of Payslips
+  Upoad of EHIC
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,16 +31,12 @@
               <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
               <h1 class="govuk-heading-l">
                   <span class="govuk-caption-l">Application</span>
-                  Upload a copy of EHIC card
+                  Upload a copy of European Health Insurance Card (EHIC)
               </h1>
           </label>
 
           <span id="file-upload-1-hint" class="govuk-hint">
               <p>Copies can be uploaded as scanned copies or digital photographs.</p>
-
- <!--
-              <p>Attach evidence for the period between 31 March 2020 to 30 September 2020.</p>
--->
 
       <details class="govuk-details" data-module="govuk-details">
 
@@ -50,32 +46,14 @@
               </span>
             </summary>
 
-
+ <p>You must make sure:</p>
                 <ul class="govuk-list govuk-list--bullet">
-                <li>your payslip attachments must be: jpg, jpeg, bmp, png or pdf and no larger than 2MB in size</li>
-                <li>you upload the correct amount of payslips to cover the claim period</li>
-                <li>you upload payslips that correspond to the claim period entered</li>
-                <li>the payslips are not password-protected</li>
-                <!--
-                <li>the upload filenames do not include brackets, full stops or numbers</li>
-                -->
+                <li>file attachments must be jpg, jpeg, bmp,   png or pdf and no larger than 2MB in size</li>
+                <li>you uploaded files correspond to the claim period entered</li>
+                <li>the files are not password-protected</li>
               </ul>
 
       </details>
-      <!--
-          <br>
-              <p>Uploaded attachments must be:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Uploaded attachments must be: jpg, jpeg, bmp, png or pdf and no larger than 2MB in size</li>
-                <li>no larger than 2MB in size</li>
-                <li>you upload the correct amount of payslips to cover the claim period</li>
-                <li>you upload payslips that correspond to the claim period entered</li>
-                <li>there’s no duplicate payslips</li>
-                <li>the payslips are not password protected</li>
-                <li>the upload filenames do not include brackets, full stops or numbers</li>
-              </ul>
-            </span>
-      -->
           <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
           </div>
 
