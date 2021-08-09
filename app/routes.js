@@ -1984,10 +1984,9 @@ router.post('/contracts-add2-v11', function(req,res){
 })
 
 // V12 ////////////////////////////////////////////////////////////////////////////////////////////////
-
-router.post('/v12/ihs-paid', function (req, res) {
-    var paid = req.session.data['paid'];
-    switch (paid) {
+router.post('/v12/visa-date', function (req, res) {
+    var visaDate = req.session.data['visa-date'];
+    switch (visaDate) {
         case undefined:
             res.redirect('/v12/ehic-card');
             break;
@@ -2019,13 +2018,43 @@ router.post('/v12/full-time-education', function (req, res) {
     var student = req.session.data['student'];
     switch (student) {
         case undefined:
-            res.redirect('/v12/swiss-national');
+            res.redirect('/v12/work-question');
             break;
             case "yes":
+            res.redirect('/v12/work-question');
+            break;
+            case "no":
+            res.redirect('/v12/kick-out-student');
+            break;
+    };
+});
+
+router.post('/v12/work-question', function (req, res) {
+    var work = req.session.data['work'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v12/residency');
+            break;
+            case "yes":
+            res.redirect('/v12/kick-out-student');
+            break;
+            case "no":
+            res.redirect('/v12/residency');
+            break;
+    };
+});
+
+router.post('/v12/residency', function (req, res) {
+    var residency = req.session.data['residency'];
+    switch (residency) {
+        case undefined:
             res.redirect('/v12/swiss-national');
             break;
             case "no":
             res.redirect('/v12/kick-out-student');
+            break;
+            case "yes":
+            res.redirect('/v12/swiss-national');
             break;
     };
 });

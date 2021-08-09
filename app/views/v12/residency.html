@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Has the applicant paid an immigration health surcharge for their visa?
+  Question page
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,27 +25,23 @@
 
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Eligibility check</span>
-          Has the applicant paid an immigration health surcharge for their visa?
+          Has the applicant been residing in the UK for the last 6 months?
       </h1>
 
-      <div class="govuk-inset-text">
-        An immigration health surcharge is paid as part of the immigration application process.
-      </div>
-
-      <form class="form" method="get" action="/v12/visa-date">
+      <form class="form" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="eu">
             <div class="govuk-radios govuk-radios--inline">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="paid">
+                <input class="govuk-radios__input" id="residency" name="residency" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="residency">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="paid">
+                <input class="govuk-radios__input" id="residency" name="residency" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="residency">
                   No
                 </label>
               </div>
