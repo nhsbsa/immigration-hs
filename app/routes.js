@@ -2063,13 +2063,13 @@ router.post('/v12/swiss-national', function (req, res) {
     var swiss = req.session.data['swiss'];
     switch (swiss) {
         case undefined:
-            res.redirect('/v12/name');
+            res.redirect('/v12/check-eligibility-details');
             break;
             case "yes":
             res.redirect('/v12/swiss-path');
             break;
             case "no":
-            res.redirect('/v12/name');
+            res.redirect('/v12/check-eligibility-details');
             break;
     };
 });
