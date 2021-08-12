@@ -2048,13 +2048,13 @@ router.post('/v12/residency', function (req, res) {
     var residency = req.session.data['residency'];
     switch (residency) {
         case undefined:
-            res.redirect('/v12/swiss-national');
+            res.redirect('/v12/check-eligibility-details');
             break;
             case "no":
             res.redirect('/v12/kick-out-student');
             break;
             case "yes":
-            res.redirect('/v12/swiss-national');
+            res.redirect('/v12/check-eligibility-details');
             break;
     };
 });
