@@ -27,25 +27,23 @@
           <span class="govuk-caption-l">Eligibility check</span>
           Has the applicant paid an immigration health surcharge for their visa?
       </h1>
-
-      <div class="govuk-inset-text">
-        An immigration health surcharge is paid as part of the immigration application process.
-      </div>
-
-      <form class="form" method="get" action="/v12/visa-date">
+      <span id="passport-issued-hint" class="govuk-hint">
+          An immigration health surcharge is paid as part of the immigration application process.
+      </span>
+      <form class="form" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="eu">
             <div class="govuk-radios govuk-radios--inline">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="paid">
+                <input class="govuk-radios__input" id="ihs-paid" name="ihs-paid" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="ihs-paid">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="paid">
+                <input class="govuk-radios__input" id="ihs-paid" name="ihs-paid" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ihs-paid">
                   No
                 </label>
               </div>

@@ -24,21 +24,22 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          What's the applicant's UK address?
+          What is the applicant's UK address?
       </h1>
-      <form method="post" action="select-address">
-        <p class="govuk-!-font-weight-bold">Postcode search</p>
+  
+      <form class="form" action="/v12/select-address" method="post">
+        <p class="govuk-!-font-weight-bold">Postcode</p>
         {{ govukInput({
           id: "auth--official-2-postcode",
           classes: "govuk-!-width-one-half",
           name: "auth--official-2-postcode"
         }) }}
 
-        {{ govukButton({
-          text: "Find address"
-        }) }}
-        <p><a href="/v12/enter-uk-address">I live outside the UK</a> &nbsp;</p>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
+      </form>
+      <!--  <p><a href="/v12/enter-uk-address">I live outside the UK</a> &nbsp;</p>
+      -->
       </form>
 
     </div>
