@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Upoad of EHIC
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v12/ihs-claim-ref-130">Back</a>
+  <a class="govuk-back-link" href="/v11/upload-of-evidence">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -23,16 +23,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-      <form class="form" action="/v12/attachments-add-letter" method="post">
+      <form class="form" action="/v12/dependant/attachments-add-ehic" method="get">
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--l" for="file-upload-1">
-          <h1 class="govuk-heading-l">Upload evidence of studying full time in higher education</h1>
+              <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Application</span>
+                  Upload a copy of the dependant's European Health Insurance Card (EHIC)
+              </h1>
           </label>
-          
+
           <span id="file-upload-1-hint" class="govuk-hint">
-            <p>Evidence should be a copy of CAS (Confirmation of Acceptance for Studies) statement, or equivalent (e.g. acceptance letter). We need the letter so we can match you with the eligbility criteria.</p>
+            <p>Evidence should be the front of the card which carries full name, date of birth, personal identificaiton number, identificaiton number of the card and the expiry date.  </p>
 
             <p>You can upload your evidence as a scanned copy or photo of the original. </p>
          
@@ -45,7 +48,7 @@
           
           <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
         </div>
-          
+
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
