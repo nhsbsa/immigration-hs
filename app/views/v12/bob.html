@@ -23,32 +23,33 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-          <span class="govuk-caption-l">Eligibility</span>
-          Has the applicant paid an immigration health surcharge for their visa?
-      </h1>
-
-      <form class="form" method="post">
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="eu">
-            <div class="govuk-radios govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="paid">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="paid" name="paid" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="paid">
-                  No
-                </label>
-              </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              what yuo had for breakfast?
+            </h1>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Wsdfkjhsfsf
+              </label>
             </div>
-          </fieldset>
-        </div>
-
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Waste from mines or quarries
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

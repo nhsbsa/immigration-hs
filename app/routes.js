@@ -2044,6 +2044,51 @@ router.post('/v12/work-question', function (req, res) {
     };
 });
 
+router.post('/v12/dependant/work-question-dependant', function (req, res) {
+    var work = req.session.data['work-dependant'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v12/dependant/residency-dependant');
+            break;
+            case "yes":
+            res.redirect('/v12/kick-out-student');
+            break;
+            case "no":
+            res.redirect('/v12/dependant/residency-dependant');
+            break;
+    };
+});
+
+router.post('/v12/dependant/residency-dependant', function (req, res) {
+    var work = req.session.data['residency-dependant'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v12/dependant/name');
+            break;
+            case "yes":
+            res.redirect('/v12/dependant/name');
+            break;
+            case "no":
+            res.redirect('/v12/kick-out-student');
+            break;
+    };
+});
+
+router.post('/v12/dependant/same-address', function (req, res) {
+    var work = req.session.data['same-address'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v12/dependant/postcode');
+            break;
+            case "yes":
+            res.redirect('/v12/dependant/upload-of-ehic');
+            break;
+            case "no":
+            res.redirect('/v12/dependant/postcode');
+            break;
+    };
+});
+
 router.post('/v12/residency', function (req, res) {
     var residency = req.session.data['residency'];
     switch (residency) {
@@ -2078,13 +2123,28 @@ router.post('/v12/dependant-question', function (req, res) {
     var addDependant = req.session.data['add-dependant'];
     switch (addDependant) {
         case undefined:
-            res.redirect('/v12/dependant-details');
+            res.redirect('/v12/dependant/work-question-dependant');
             break;
             case "yes":
-            res.redirect('/v12/dependant-details');
+            res.redirect('/v12/dependant/work-question-dependant');
             break;
             case "no":
-            res.redirect('/v12/upload-of-ehic');
+            res.redirect('/v12/declaration');
+            break;
+    };
+});
+
+router.post('/v12/dependant/dependant-question', function (req, res) {
+    var addDependant = req.session.data['add-dependant'];
+    switch (addDependant) {
+        case undefined:
+            res.redirect('/v12/dependant/work-question-dependant');
+            break;
+            case "yes":
+            res.redirect('/v12/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/v12/declaration');
             break;
     };
 });
