@@ -11,26 +11,26 @@ Select and confirm address
   html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
-<a class="govuk-back-link" href="/v12/postcode">Back</a>
+<a class="govuk-back-link" href="#">Back</a>
 {% endblock %}
 
 {% block content %}
 <style>
-.govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
-    border-bottom: none;
-}
-</style>
-
+    .govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+        border-bottom: none;
+    }
+    </style>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
 
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Application</span>
-      What is the applicant's UK address?</h1>
+        Select the dependants's UK address
+    </h1>
 
 
-     <form class="form" action="/v12/email-address" method="post">
+    <form class="form" action="/v12/dependant-question" method="get">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-m">Postcode</h2>
@@ -43,7 +43,7 @@ Select and confirm address
               </dt>
 
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/9/attachments-delete">
+                <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> file 1</span>
                 </a>
               </dd>
@@ -51,7 +51,8 @@ Select and confirm address
           </dl>
         </div>
       </div>
-    <div class="govuk-form-group">
+
+      <div class="govuk-form-group">
         <label class="govuk-label" for="sort">
             <h2 class="govuk-heading-m"> Select an address</h2>
         </label>
@@ -75,7 +76,7 @@ Select and confirm address
       <p><a href="/v12/manual-address">I can't find my address on the list</a> &nbsp;</p>
       
       <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
+  </form>
 
   </div>
 </div>
