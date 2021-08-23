@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  IHS number
+  Dependant Share Code
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v12/ihs-number">Back</a>
+  <a class="govuk-back-link" href="/v12/dependant/ihs-number">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -25,19 +25,19 @@
 
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          What's the applicant's immigration health surcharge (IHS) number?
+          What's the dependant's share code?
       </h1>
 
       <div class="govuk-hint">
-        When the immigration health surcharge was paid, an email would have been sent which contains this number. For example, 'IHS123456789'.
+        <span id="access-code-hint" class="form-hint">For example, A12 345 67G</span>
       </div>
 
-      <form class="form" action="/v12/share-code" method="post">
+      <form class="form" action="/v12/dependant/same-address" method="post">
 
         <div class="govuk-form-group">
           <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="ihs-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
         </div>
-
+<p>If you do not have a share code, you will need to request one via the <a href="https://www.gov.uk/view-prove-immigration-status">prove your right to work</a> service</p>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
