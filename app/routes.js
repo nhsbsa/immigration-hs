@@ -2239,4 +2239,15 @@ router.post('/v12/ihs-paid', function (req, res) {
     };
 });
 
+router.post('/v12/kick-out-dependant', function(req,res){
+    var upload = req.session.data['kick-out-dependant']
+    if (upload == "ehic"){
+        res.redirect('/v12/dependant-question')
+    }
+    else {
+        res.redirect('/v12/dependant-question')
+    }
+
+})
+
 module.exports = router;
