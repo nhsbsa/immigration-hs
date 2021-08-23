@@ -2051,7 +2051,7 @@ router.post('/v12/dependant/work-question-dependant', function (req, res) {
             res.redirect('/v12/dependant/residency-dependant');
             break;
             case "yes":
-            res.redirect('/v12/kick-out-student');
+            res.redirect('/v12/kick-out-dependant');
             break;
             case "no":
             res.redirect('/v12/dependant/residency-dependant');
@@ -2069,7 +2069,7 @@ router.post('/v12/dependant/residency-dependant', function (req, res) {
             res.redirect('/v12/dependant/name');
             break;
             case "no":
-            res.redirect('/v12/kick-out-student');
+            res.redirect('/v12/kick-out-dependant');
             break;
     };
 });
@@ -2222,6 +2222,7 @@ router.post('/attachments-add2-v12', function(req,res){
     }
 
 })
+
 
 router.post('/v12/ihs-paid', function (req, res) {
     var addSecondDependant = req.session.data['ihs-paid'];
