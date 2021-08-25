@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Charity’s official address - Charity Information - Register your charity’s details with HMRC - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: { text: "beta" },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">What is [full name]’s full previous home address?</h1>
+
+    <form method="post" action="confirm-address">
+
+      {{ govukInput({
+        label: {text: "Address line 1"},
+        id: "auth--official-2-address-line-1",
+        classes: "govuk-!-width-one-half",
+        name: "auth--official-2-address-line-1",
+        value: data["auth--official-2-address-line-1"]
+      }) }}
+
+      {{ govukInput({
+        label: {text: "Address line 2 (optional)"},
+        id: "auth--official-2-address-line-2",
+        classes: "govuk-!-width-one-half",
+        name: "auth--official-2-address-line-2",
+        value: data["auth--official-2-address-line-2"]
+      }) }}
+
+      {{ govukInput({
+        label: {text: "Address line 3 (optional)"},
+        id: "auth--official-2-address-line-3",
+        classes: "govuk-!-width-one-half",
+        name: "auth--official-2-address-line-3",
+        value: data["auth--official-2-address-line-3"]
+      }) }}
+
+      {{ govukInput({
+        label: {text: "Town or city"},
+        id: "auth--official-2-address-line-5",
+        classes: "govuk-!-width-one-half",
+        name: "auth--official-2-address-line-5",
+        value: data["auth--official-2-address-line-5"]
+      }) }}
+
+      {{ govukInput({
+        label: {text: "Postcode or Zipcode (optional)"},
+        id: "auth--official-2-address-line-6",
+        classes: "govuk-!-width-one-half",
+        name: "auth--official-2-address-line-6",
+        value: data["auth--official-2-address-line-6"]
+      }) }}
+
+      {{ govukInput({
+        label: {text: "Country"},
+        id: "auth--official-2-address-line-country",
+        name: "auth--official-2-address-line-country",
+        classes: "govuk-!-width-one-half",
+        value: data["auth--official-2-address-country"]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    <!-- Link to Help -->
+    {% include "includes/anything-wrong.html" %}
+
+  </div>
+</div>
+
+{% endblock %}
