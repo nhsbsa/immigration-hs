@@ -2420,13 +2420,13 @@ router.post('/v13/dependant-add', function (req, res) {
     var addSecondDependant = req.session.data['add-second-dependant'];
     switch (addSecondDependant) {
         case undefined:
-            res.redirect('/v13/dependant-add');
+            res.redirect('/v13/check-details');
             break;
             case "yes":
-            res.redirect('/v13/dependant-details2');
+            res.redirect('/v13/dependant/work-question-dependant');
             break;
             case "no":
-            res.redirect('/v13/upload-of-ehic');
+            res.redirect('/v13/check-details');
             break;
     };
 });
@@ -2516,5 +2516,20 @@ router.post('/v13/kick-out-dependant', function(req,res){
     }
 
 })
+
+router.post('/v13/dependant-details-delete', function (req, res) {
+    var addSecondDependant = req.session.data['dependant-details-delete'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/v13/dependant/work-question-dependant');
+            break;
+            case "yes":
+            res.redirect('/v13/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/v13/check-details');
+            break;
+    };
+});
 
 module.exports = router;

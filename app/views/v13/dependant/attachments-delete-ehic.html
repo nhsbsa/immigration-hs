@@ -66,23 +66,30 @@
           <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
           
           <div class="govuk-banner__message">
-          <span class="govuk-banner__assistive">Success</span>File named letter-from-university-of-sunderland.jpg has been deleted</div>
+          <span class="govuk-banner__assistive">Success</span>File named 	EHIC-card.jpg has been deleted</div>
           
       </div>
 
-      <form class="form" action="/v13/attachments-add-letter" method="post">
+      <form class="form" action="/v13/dependant/attachments-add-ehic" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--l" for="file-upload-1">
-            <span class="govuk-caption-l">Application</span>
-          <h1 class="govuk-heading-l">Upload evidence of studying full-time in higher education</h1>
+              <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Application</span>
+                  Upload a copy of the dependant's European Health Insurance Card (EHIC)
+              </h1>
           </label>
-          
-          <span id="file-upload-1-hint" class="govuk-hint">
-            <p>Evidence should be a scanned copy or photo of the the applicant's Confirmation of Acceptance for Studies (CAS) statement, or equivalent, such as an accceptance letter.</p>
 
-            <p>We need this so we can match the applicant with the eligibility criteria.</p>
-         
+          <span id="file-upload-1-hint" class="govuk-hint">
+            <p>Evidence should be a scanned copy or photo of the card which includes the applicant's: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>full name</li>
+              <li>date of birth</li>
+              <li>personal identification number</li>
+              <li>identification number of the card</li>
+              <li>card expiry date</li>
+            </ul>
             <p>Your uploaded file must be:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>a jpg, jpeg, bmp, png or pdf</li>
