@@ -1782,7 +1782,7 @@ router.post('/attachments-add2-v10', function(req,res){
 
 })
 
-// V11 ////////////////////////////////////////////////////////////////////////////////////////////////
+// V11 - H&SC ////////////////////////////////////////////////////////////////////////////////////////////////
 
 router.post('/doug-ihs-question-v11', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v11']
@@ -2250,7 +2250,7 @@ router.post('/v12/kick-out-dependant', function(req,res){
 
 })
 
-// V12 ////////////////////////////////////////////////////////////////////////////////////////////////
+// V12 - Students ////////////////////////////////////////////////////////////////////////////////////////////////
 router.post('/v13/visa-date', function (req, res) {
     var visaDate = req.session.data['visa-date'];
     switch (visaDate) {
@@ -2531,5 +2531,206 @@ router.post('/v13/dependant-details-delete', function (req, res) {
             break;
     };
 });
+
+// v14 - H&SC////////////////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/doug-ihs-question-v14', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/applicant-visa-type')
+    }
+    else {
+        res.redirect('/v14/not-entitled-rr')
+    }
+})
+
+router.post('/ihs-tier2-hc-v14', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/v14/work-question')
+    }
+})
+
+router.post('/work-question-v14', function(req,res){
+    var contacted = req.session.data['work-question-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/6-months')
+    }
+    else {
+        res.redirect('/v14/not-entitled')
+    }
+})
+
+router.post('/6-months-v14', function(req,res){
+    var contacted = req.session.data['6-months-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/average-time')
+    }
+    else {
+        res.redirect('/v14/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v14', function(req,res){
+    var contacted = req.session.data['average-time-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/tier2-declaration')
+    }
+    else {
+        res.redirect('/v14/not-entitled-rr')
+    }
+
+})
+
+router.post('/dependant-question-v14', function(req,res){
+    var contacted = req.session.data['dependant-question-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/dependant-details')
+    }
+    else {
+        res.redirect('/v14/claim-dates-new')
+    }
+
+})
+
+router.post('/dependant-details-v14', function(req,res){
+    var contacted = req.session.data['dependant-details-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/dependant-details2')
+    }
+    else {
+        res.redirect('/v14/claim-dates-new')
+    }
+
+})
+
+router.post('/dependant-details-v14', function(req,res){
+    var contacted = req.session.data['dependant-details-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/dependant-details2')
+    }
+    else {
+        res.redirect('/v14/claim-dates-new')
+    }
+
+})
+
+router.post('/subscription-question-v14', function(req,res){
+    var contacted = req.session.data['subscription-question-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/non-nhs-path')
+    }
+    else {
+        res.redirect('/v14/non-nhs-path')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v14', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v14/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v14', function(req,res){
+    var contacted = req.session.data['attachments-add-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/upload-of-evidence')
+    }
+    else {
+        res.redirect('/v14/comments')
+    }
+
+})
+
+router.post('/attachments-add2-v14', function(req,res){
+    var contacted = req.session.data['attachments-add2-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/comments')
+    }
+    else {
+        res.redirect('/v14/comments')
+    }
+
+})
+
+router.post('/v14/payslips-or-contract', function(req,res){
+    var contacted = req.session.data['payslips-or-contract']
+    if (contacted == "payslips"){
+        res.redirect('/v14/upload-of-payslips')
+    }
+    else {
+        res.redirect('/v14/upload-of-contract')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v14', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v14/upload-of-evidence')
+    }
+
+})
+
+router.post('/upload-of-evidence-add2-v14', function(req,res){
+    var contacted = req.session.data['upload-of-evidence-add2-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v14/upload-of-evidence')
+    }
+
+})
+
+ router.post('/doug-ihs-tier2-question-v14', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v14']
+    if (contacted == "tier2"){
+       res.redirect('/v14/ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('/v14/tier5-ko')
+        }
+        else
+        {
+            res.redirect('/v14/work-question')
+        }
+})
+
+router.post('/contracts-add-v14', function(req,res){
+    var contacted = req.session.data['contracts-add-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/upload-of-evidence')
+    }
+    else {
+        res.redirect('/v14/comments')
+    }
+
+})
+
+router.post('/contracts-add2-v14', function(req,res){
+    var contacted = req.session.data['contracts-add2-v14']
+    if (contacted == "yes"){
+        res.redirect('/v14/comments')
+    }
+    else {
+        res.redirect('/v14/comments')
+    }
+
+})
 
 module.exports = router;
