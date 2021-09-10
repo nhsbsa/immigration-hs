@@ -20,143 +20,80 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/v14/attachments-add" method="post">
 
-        <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--l" for="file-upload-1">
-              <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
-              <h1 class="govuk-heading-l">
-                  <span class="govuk-caption-l">Application</span>
-                  Upload payslips
-              </h1>
-          </label>
-          
-          <span id="file-upload-1-hint" class="govuk-hint">
-              <p>The applicant must provide payslips as evidence, from all of the applicant's health and social care employers, for each month of the 6-month period the claim is being made for. We need these payslips so we can match the applicant with the eligibility criteria.</p>
-              <p>Payslips can be uploaded as scanned copies, digital photographs or digital payslips.</p>
 
-        <div class="govuk-inset-text" style="overflow:hidden;" id="validEmail">
-            <span class="govuk-hint govuk-!-margin-bottom-0">
-                Attach payslips for the period between 31 March 2020 to 30 September 2020. &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
-            </span>
-        </div>
 
- <!--
-              <p>Attach evidence for the period between 31 March 2020 to 30 September 2020.</p>
--->
-
-      <details class="govuk-details" data-module="govuk-details">
-  
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Things to remember when uploading payslips
-              </span>
-            </summary>
-
-          
-                <ul class="govuk-list govuk-list--bullet">
-                <li>your payslip attachments must be: jpg, jpeg, bmp, png or pdf and no larger than 2MB in size</li>
-                <li>you upload the correct amount of payslips to cover the claim period</li>
-                <li>you upload payslips that correspond to the claim period entered</li>
-                <li>the payslips are not password-protected</li>
-                <!--
-                <li>the upload filenames do not include brackets, full stops or numbers</li>
-                -->
-              </ul>
-      
-      </details>
-      <!--
-          <br>
-              <p>Uploaded attachments must be:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Uploaded attachments must be: jpg, jpeg, bmp, png or pdf and no larger than 2MB in size</li>
-                <li>no larger than 2MB in size</li>
-                <li>you upload the correct amount of payslips to cover the claim period</li>
-                <li>you upload payslips that correspond to the claim period entered</li>
-                <li>there’s no duplicate payslips</li>
-                <li>the payslips are not password protected</li>
-                <li>the upload filenames do not include brackets, full stops or numbers</li>
-              </ul>
-            </span>
-      -->  
-
-      <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
-      <style>
-        .moj-multi-file-upload__dropzone {
-            outline: 3px dashed #0b0c0c;
-            display: flex;
-            text-align: center;
-            padding: 60px 15px;
-            transition: outline-offset .1s ease-in-out, background-color .1s linear;
-        }
-        .moj-multi-file-upload {
-          margin-bottom: 40px;
-        }
-        .moj-multi-file-upload__dropzone {
-            outline: 3px dashed #0b0c0c;
-            display: flex;
-            text-align: center;
-            padding: 60px 15px;
-            transition: outline-offset .1s ease-in-out, background-color .1s linear;
-        }
-        .moj-multi-file-upload__dropzone [type=file] {
-          position: absolute;
-          left: -9999em;
-        }
-        .moj-multi-file-upload--enhanced .moj-multi-file-upload__button {
-            display: none;
-        }
-      
-      
-        .moj-multi-file-upload__dropzone p {
-            margin-bottom: 0;
-            margin-right: 10px;
-            padding-top: 7px;
-        }
-      
-        .moj-multi-file-upload__dropzone label {
-          margin-bottom: 0;
-          display: inline-block;
-          width: auto;
-      }
-        </style>  
-      
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
       
-          <!--<h1 class="govuk-heading-xl">Upload files</h1>-->
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+            <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
+            <h1 class="govuk-heading-l">
+                <span class="govuk-caption-l">Application</span>
+                Upload payslips
+            </h1>
+        </label>
+
+          <span id="file-upload-1-hint" class="govuk-hint">
+            <p>The applicant must provide payslips as evidence, from all of the applicant's health and social care employers, for each month of the 6-month period the claim is being made for. We need these payslips so we can match the applicant with the eligibility criteria.</p>
+            <p>Payslips can be uploaded as scanned copies, digital photographs or digital payslips.</p>
+
+      <div class="govuk-inset-text" style="overflow:hidden;" id="validEmail">
+          <span class="govuk-hint govuk-!-margin-bottom-0">
+              Attach payslips for the period between 31 March 2020 to 30 September 2020. &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
+          </span>
+      </div>
+
+    <details class="govuk-details" data-module="govuk-details">
+
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Things to remember when uploading payslips
+            </span>
+          </summary>
+
+        
+              <ul class="govuk-list govuk-list--bullet">
+              <li>your payslip attachments must be: jpg, jpeg, bmp, png or pdf and no larger than 2MB in size</li>
+              <li>you upload the correct amount of payslips to cover the claim period</li>
+              <li>you upload payslips that correspond to the claim period entered</li>
+              <li>the payslips are not password-protected</li>
+              <!--
+              <li>the upload filenames do not include brackets, full stops or numbers</li>
+              -->
+            </ul>
+    
+    </details>
       
           <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
       
             <div class="moj-multi-file-upload">
               <div class="moj-multi-file__uploaded-files ">
-                <!--<h2 class="govuk-heading-m">Files added</h2>-->
+                <h2 class="govuk-heading-m">Files added</h2>
                 <div class="govuk-summary-list moj-multi-file-upload__list">
+      
                 </div>
               </div>
       
               <div class="moj-multi-file-upload__upload">
+      
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-label--m" for="documents">
-                    Upload file(s)
+                    Upload a file
                   </label>
-                   
-                  <div class="moj-multi-file-upload__dropzone"><input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="" spellcheck="false"><p class="govuk-body">Drag and drop files here or</p><label for="documents" class="govuk-button govuk-button--secondary">Choose files</label><div aria-live="polite" role="status" class="govuk-visually-hidden"></div></div>
+      
+                  <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
                 </div>
-                
-                <!--<button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+      
+                <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
                   Upload file
-                </button>-->
-                                        
+                </button>
+      
               </div>
             </div>
-
-            <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
-
+      
             <button class="govuk-button" data-module="govuk-button">
               Continue
             </button>
@@ -164,16 +101,13 @@
           </form>
         </div>
       </div>
-
           
-          
-          </div>
+        
           
         <!--<button class="govuk-button" data-module="govuk-button">Continue</button>-->
 
-      </form>
+   
 
-    </div>
-  </div>
+  
 
 {% endblock %}
