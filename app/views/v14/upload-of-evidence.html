@@ -24,49 +24,44 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="/v14/payslips-or-contract" method="post">
-
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-label--l" for="file-upload-1">
-              <h1 class="govuk-heading-l">
-                  <span class="govuk-caption-l">Application</span>
-                  Upload evidence
-              </h1>
-          </label>
-          
-          <span id="file-upload-1-hint" class="govuk-hint">
-              <p>The applicant must provide payslips or a contract of employment as evidence.</p>
-          
+          <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--l" for="file-upload-1">
+                    <h1 class="govuk-heading-l">
+                        <span class="govuk-caption-l">Application</span>
+                        What type of evidence can the applicant provide?
+                    </h1>
+                </label>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              The applicant must provide payslips or a contract of employment as evidence.
+            </div>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option.
+            </div>
+            
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="payslips-or-contract" type="radio" value="payslips" aria-describedby="sign-in-item-hint">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Payslips
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in-2" name="payslips-or-contract" type="radio" value="contract" aria-describedby="sign-in-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                  Contract of employment
+                </label>
+              </div>
+            </div>
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-        Select an option
-      </h1>
-    </legend>
-    
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="sign-in" name="payslips-or-contract" type="radio" value="payslips" aria-describedby="sign-in-item-hint">
-        <label class="govuk-label govuk-radios__label" for="sign-in">
-          Payslips
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="sign-in-2" name="payslips-or-contract" type="radio" value="contract" aria-describedby="sign-in-2-item-hint">
-        <label class="govuk-label govuk-radios__label" for="sign-in-2">
-          Contract of employment
-        </label>
-      </div>
-    </div>
-
-  </fieldset>
-         <br>
-       
-</div>
-
+          </fieldset>    
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
-       <button class="govuk-button" data-module="govuk-button">Continue</button>
+
     </div>
   </div>
 
