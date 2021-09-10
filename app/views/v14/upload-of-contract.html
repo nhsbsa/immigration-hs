@@ -81,9 +81,80 @@
               </ul>
             </span>
       -->    
-          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
-          </div>
           
+          </div>
+                <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
+      <style>
+        .moj-multi-file-upload__dropzone {
+            outline: 3px dashed #0b0c0c;
+            display: flex;
+            text-align: center;
+            padding: 60px 15px;
+            transition: outline-offset .1s ease-in-out, background-color .1s linear;
+        }
+        .moj-multi-file-upload {
+          margin-bottom: 40px;
+        }
+        .moj-multi-file-upload__dropzone {
+            outline: 3px dashed #0b0c0c;
+            display: flex;
+            text-align: center;
+            padding: 60px 15px;
+            transition: outline-offset .1s ease-in-out, background-color .1s linear;
+        }
+        .moj-multi-file-upload__dropzone [type=file] {
+          position: absolute;
+          left: -9999em;
+        }
+        .moj-multi-file-upload--enhanced .moj-multi-file-upload__button {
+            display: none;
+        }
+      
+      
+        .moj-multi-file-upload__dropzone p {
+            margin-bottom: 0;
+            margin-right: 10px;
+            padding-top: 7px;
+        }
+      
+        .moj-multi-file-upload__dropzone label {
+          margin-bottom: 0;
+          display: inline-block;
+          width: auto;
+      }
+        </style>  
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+      
+          <!--<h1 class="govuk-heading-xl">Upload files</h1>-->
+      
+          <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
+      
+            <div class="moj-multi-file-upload">
+              <div class="moj-multi-file__uploaded-files ">
+                <!--<h2 class="govuk-heading-m">Files added</h2>-->
+                <div class="govuk-summary-list moj-multi-file-upload__list">
+                </div>
+              </div>
+      
+              <div class="moj-multi-file-upload__upload">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--m" for="documents">
+                    Upload file(s)
+                  </label>
+                   
+                  <div class="moj-multi-file-upload__dropzone"><input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="" spellcheck="false"><p class="govuk-body">Drag and drop files here or</p><label for="documents" class="govuk-button govuk-button--secondary">Choose files</label><div aria-live="polite" role="status" class="govuk-visually-hidden"></div></div>
+                </div>
+                
+                <!--<button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                  Upload file
+                </button>-->
+                                        
+              </div>
+            </div>
+
+            <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
