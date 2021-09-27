@@ -5,7 +5,7 @@ If you do research with real user data, you must clear a user's data before each
 - closing all browser windows and [opening a new incognito window](https://support.google.com/chrome/answer/95464)
 - selecting the **Clear data** link at the bottom of the prototype
 
-Check you’ve cleared the data by returning to a previously-loaded page and making sure the data is gone.
+Check you've cleared the data by returning to a previously-loaded page and making sure the data is gone.
 
 ## Showing data
 
@@ -44,7 +44,7 @@ Go to http://localhost:3000/start and answer the questions to check the answer t
 
 ### Delete the remaining example answers
 
-There are example answers on the ‘Check your answers’ template page that you do not need. You can delete these example answers from the `check-your-answers.html` file.
+There are example answers on the ‘Check your answers' template page that you do not need. You can delete these example answers from the `check-your-answers.html` file.
 
 1. Find and delete the section that starts with `<div class="govuk-summary-list__row">` and contains `Contact information`.
 

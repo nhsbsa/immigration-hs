@@ -1,6 +1,6 @@
 # Publishing on the web (Heroku)
 
-We recommend using [Heroku](http://www.heroku.com) to get your prototype online. It’s simple and fast to deploy new versions as you work.
+We recommend using [Heroku](http://www.heroku.com) to get your prototype online. It's simple and fast to deploy new versions as you work.
 
 Once your prototype is on Heroku, other people will be able to access and try your prototype from their own computers or mobile devices.
 
@@ -16,7 +16,7 @@ You need to [set up Git](setting-up-git) on your prototype before you can use He
 
 ## 2) Sign up to Heroku
 
-If you’re new to Heroku, [sign up for a free account](https://signup.heroku.com/). When asked what language you use, select `node.js`.
+If you're new to Heroku, [sign up for a free account](https://signup.heroku.com/). When asked what language you use, select `node.js`.
 
 ## 3) Install the Heroku toolbelt
 
@@ -70,4 +70,4 @@ This will push your work to Heroku. Deploying may take a minute or so.
 After your work is deployed, you will be able to view it on the web by visiting `[name].herokuapp.com`.
 You can run `heroku open` to open your prototype in a browser.
 
-> Heroku puts apps to sleep that haven’t been accessed in a while - so if you’ve not visited your prototype for a while it may take a few seconds to open.
+> Heroku puts apps to sleep that haven't been accessed in a while - so if you've not visited your prototype for a while it may take a few seconds to open.

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Charity’s official UK address - Charity Information - Register your charity’s details with HMRC - GOV.UK
+Charity's official UK address - Charity Information - Register your charity's details with HMRC - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,7 +21,7 @@ Charity’s official UK address - Charity Information - Register your charity’
   <div class="govuk-grid-column-two-thirds">
 
 
-    <h1 class="govuk-heading-xl">What is [full name]’s previous home address?</h1>
+    <h1 class="govuk-heading-xl">What is [full name]'s previous home address?</h1>
 
     <form method="post" action="select-address">
       <p class="govuk-!-font-weight-bold">Postcode search</p>
@@ -31,7 +31,7 @@ Charity’s official UK address - Charity Information - Register your charity’
         name: "auth--official-2-postcode"
       }) }}
 
-      <p><a href="enter-address">Authorised official’s previous home address does not have a UK postcode</a> &nbsp;</p>
+      <p><a href="enter-address">Authorised official's previous home address does not have a UK postcode</a> &nbsp;</p>
       <div class="govuk-!-padding-bottom-5"></div>
       {{ govukInput({
         label: {text: "Property name or number (optional)"},

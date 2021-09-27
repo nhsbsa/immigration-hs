@@ -1,6 +1,6 @@
 # Requirements
 
-The kit runs on Mac, Windows and Linux. At a minimum you’ll need `node.js` (install instructions below) and a web browser.
+The kit runs on Mac, Windows and Linux. At a minimum you'll need `node.js` (install instructions below) and a web browser.
 
 This guide recommends additional software which will be used in later guides.
 
@@ -20,11 +20,11 @@ You'll need:
 
 ## Terminal
 
-You'll need a terminal application to install, start and stop the kit. Using a terminal is sometimes called ‘using the command line’.
+You'll need a terminal application to install, start and stop the kit. Using a terminal is sometimes called ‘using the command line'.
 
 ### Mac users
 
-Macs come with `Terminal.app`. It’s located in the `Utilities` folder in the `Applications` folder. You can also find it using spotlight (magnifying glass icon in the top right) and typing 'terminal'.
+Macs come with `Terminal.app`. It's located in the `Utilities` folder in the `Applications` folder. You can also find it using spotlight (magnifying glass icon in the top right) and typing 'terminal'.
 
 ### Windows users
 
@@ -44,7 +44,7 @@ Commands to be entered in to the terminal will be inset like this:
 ```
 command to be typed in to terminal
 ```
-Once you’ve typed the command, press enter to send it.
+Once you've typed the command, press enter to send it.
 
 
 ## Node.js version 12 LTS
@@ -57,7 +57,7 @@ In terminal (git bash in Windows):
 ```
 node --version
 ```
-If it says `command not found` or `Error 0x2 starting node.exe --version` you don’t have node and will need to download and install it.
+If it says `command not found` or `Error 0x2 starting node.exe --version` you don't have node and will need to download and install it.
 
 If the version number starts with 12 you have the correct version installed.
 
@@ -78,17 +78,17 @@ Follow the instructions on the [Node.js](https://nodejs.org/en/download/package-
 
 ### Once Node is installed
 
-You’ll need to quit and restart the terminal to be able to use Node for the first time.
+You'll need to quit and restart the terminal to be able to use Node for the first time.
 
 To check it is installed correctly you can again run:
 ```
 node --version
 ```
 
-If it’s installed correctly it should show a number starting with 12.
+If it's installed correctly it should show a number starting with 12.
 
 ## Atom (text editor)
 
-You’ll need a text editor to edit and make changes to your prototype. We recommend [Atom](https://atom.io/) - which is free and has lots of useful features.
+You'll need a text editor to edit and make changes to your prototype. We recommend [Atom](https://atom.io/) - which is free and has lots of useful features.
 
 <a href="install-the-kit.md" class="button">Next (install the kit)</a>

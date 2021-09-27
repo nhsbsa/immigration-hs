@@ -29,6 +29,6 @@ Go to [http://localhost:3000/juggling-balls](http://localhost:3000/juggling-ball
 
 Go to [http://localhost:3000/juggling-trick](http://localhost:3000/juggling-trick) and select **Continue** to check the link works.
 
-The 'Check your answers' page links to the ‘Confirmation’ page by default. So you do not need to change the ‘Check your answers’ page.
+The 'Check your answers' page links to the ‘Confirmation' page by default. So you do not need to change the ‘Check your answers' page.
 
 [Next (add questions to your question pages)](add-questions)

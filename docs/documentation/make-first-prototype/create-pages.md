@@ -49,9 +49,9 @@ Go to the following URLs to check your pages:
 - http://localhost:3000/juggling-balls
 - http://localhost:3000/juggling-trick
 
-In the ‘juggling-balls.html’ file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`.
+In the ‘juggling-balls.html' file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`.
 
-In the ‘juggling-trick.html’ file, change the text inside the `h1` tag to `What is your most impressive juggling trick?`.
+In the ‘juggling-trick.html' file, change the text inside the `h1` tag to `What is your most impressive juggling trick?`.
 
 ### 'Check your answers' page
 

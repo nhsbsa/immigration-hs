@@ -2,7 +2,7 @@
 
 ## Download the kit as a zip
 
-The simplest way to get the kit is to <a href="/docs/download" data-link="download">download it as a zip</a>. You'll use a new copy of the kit for each new prototype you make. That way your prototypes don’t interfere with each other.
+The simplest way to get the kit is to <a href="/docs/download" data-link="download">download it as a zip</a>. You'll use a new copy of the kit for each new prototype you make. That way your prototypes don't interfere with each other.
 
 ### Decide where you want to keep your prototypes
 
@@ -22,7 +22,7 @@ Create a folder called `projects` in your `Documents` folder.
 
 Unzip the kit you downloaded - you should end up with a folder called `govuk-prototype-kit` followed by the version number.
 
-Rename the folder to something descriptive for your prototype. For this guide, we’ll use `juggling-licence-prototype`.
+Rename the folder to something descriptive for your prototype. For this guide, we'll use `juggling-licence-prototype`.
 
 Move the folder into your `projects` folder.
 
