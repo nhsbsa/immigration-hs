@@ -35,13 +35,13 @@
     
               <li>
     
-                <a href="#documents">Contract.doc must be a jpg, jpeg, bmp, png or pdf</a>
+                <a href="#documents">Contract 3.doc must be a jpg, bmp, png or pdf</a>
     
               </li>
     
               <li>
     
-                <a href="#documents">Employment-letter.pdf must be no larger than 2MB in size</a>
+                <a href="#documents">Contract 4.pdf must be less than 2MB in size</a>
     
               </li>
     
@@ -60,9 +60,12 @@
           <span id="file-upload-1-hint" class="govuk-hint">
             <p>Evidence should be a scanned copy or photo of the original documents.</p>
             <p>Attach evidence for the period: <strong>30 April 2020</strong> to <strong>29 October 2020</strong></p>
-            <p>Uploaded attachments must be:</p>
+            <p class="govuk-body">Uploaded attachements must be:</p>
+            <ul class="govuk-list govuk-list--bullet">
             <li>jpg, jpeg, bmp, png or pdf</li>
             <li>no larger than 2MB in size</li>
+          </ul>
+          
             
           </div>
                           <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
@@ -77,13 +80,19 @@
                           
                                         <div class="moj-multi-file-upload__upload">
 
-                                          <div class="govuk-form-group govuk-form-group--error">
-                                            <label class="govuk-label govuk-label--m" for="documents">
+                                          
+                                            <h2 class="govuk-heading-m">Files added</h2>
+                                            <div class="govuk-summary-list moj-multi-file-upload__list">
+      
+                                              
+                                              <div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__filename">Contract 1.pdf</span><span class="moj-multi-file-upload__progress"> 100%</span>  </dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"></dd></div><div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__filename">Contract 2.pdf</span><span class="moj-multi-file-upload__progress"> 100%</span>  </dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"></dd></div></div>
+                                              <div class="govuk-form-group govuk-form-group--error">
+                                              <label class="govuk-label govuk-label--m" for="documents">
                                               Upload a file
                                             </label>
                                 
                                             <span id="documents-error" class="govuk-error-message">
-                                              <span class="govuk-visually-hidden">Error:</span> Contract.doc must be a jpg, jpeg, bmp, png or pdf<br>Employment-letter.pdf must be no larger than 2MB in size
+                                              <span class="govuk-visually-hidden">Error:</span> Contract 3.doc must be a jpg, bmp, png or pdf<br>Contract 4.pdf must be less than 2MB in size
                                             </span>
                                 
                                             <input class="govuk-file-upload moj-multi-file-upload__input govuk-file-upload--error" id="documents" name="documents" type="file" aria-describedby="documents-error" multiple="">
@@ -94,7 +103,7 @@
                                           </button>
                                 
                                         </div>
-                          
+                                      </div>
                                     </div>
                                   </div>
                           
