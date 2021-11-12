@@ -2250,7 +2250,7 @@ router.post('/v12/kick-out-dependant', function(req,res){
 
 })
 
-// V12 - Students ////////////////////////////////////////////////////////////////////////////////////////////////
+// V13 - Students ////////////////////////////////////////////////////////////////////////////////////////////////
 router.post('/v13/visa-date', function (req, res) {
     var visaDate = req.session.data['visa-date'];
     switch (visaDate) {
@@ -2351,7 +2351,7 @@ router.post('/v13/dependant/same-address', function (req, res) {
             res.redirect('/v13/dependant/upload-of-ehic');
             break;
             case "no":
-            res.redirect('/v13/dependant/postcode');
+            res.redirect('/v13/dependant/manual-address');
             break;
     };
 });
