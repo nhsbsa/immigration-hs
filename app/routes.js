@@ -2345,7 +2345,7 @@ router.post('/v13/dependant/same-address', function (req, res) {
     var work = req.session.data['same-address'];
     switch (work) {
         case undefined:
-            res.redirect('/v13/dependant/postcode');
+            res.redirect('/v13/dependant/manual-address');
             break;
             case "yes":
             res.redirect('/v13/dependant/upload-of-ehic');
@@ -2390,13 +2390,13 @@ router.post('/v13/dependant-question', function (req, res) {
     var addDependant = req.session.data['add-dependant'];
     switch (addDependant) {
         case undefined:
-            res.redirect('/v13/dependant/work-question-dependant');
+            res.redirect('/v13/comments');
             break;
             case "yes":
             res.redirect('/v13/dependant/work-question-dependant');
             break;
             case "no":
-            res.redirect('/v13/check-details');
+            res.redirect('/v13/comments');
             break;
     };
 });
@@ -2513,6 +2513,39 @@ router.post('/v13/kick-out-dependant', function(req,res){
     }
     else {
         res.redirect('/v13/dependant-question')
+    }
+
+})
+
+router.post('/ehic-add-v13', function(req,res){
+    var contacted = req.session.data['ehic-add-v13']
+    if (contacted == "yes"){
+        res.redirect('/v13/upload-of-ehic')
+    }
+    else {
+        res.redirect('/v13/attachments-letter')
+    }
+
+})
+
+router.post('/letter-add-v13', function(req,res){
+    var contacted = req.session.data['letter-add-v13']
+    if (contacted == "yes"){
+        res.redirect('/v13/attachments-letter')
+    }
+    else {
+        res.redirect('/v13/dependant-question')
+    }
+
+})
+
+router.post('/dependant-ehic-add-v13', function(req,res){
+    var contacted = req.session.data['dependant-ehic-add-v13']
+    if (contacted == "yes"){
+        res.redirect('/v13/dependant/upload-of-ehic')
+    }
+    else {
+        res.redirect('/v13/dependant-add')
     }
 
 })
