@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Payslip upload
+{% endblock %}
+
+{% block beforeContent %}
+  <!--<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>-->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/ehic-add-v15" method="post">
+
+        <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Application</span>
+            European Health Insurance Card (EHIC) uploaded
+        </h1>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Files uploaded</h2>
+
+            <dl class="govuk-summary-list">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  EHIC Card
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->EHIC-card.jpg<!--</a>, 2MB-->
+                </dd>
+
+                <!--<dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="/v15/attachments-delete-ehic">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+
+                </dd>-->
+
+              </div>
+
+            </dl>
+          </div>
+        </div>
+
+       <!--<div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="ehic-add-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+                Do you want to upload more evidence?
+
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="ehic-add-conditional" name="ehic-add-v15" type="radio" value="yes" data-aria-controls="conditional-ehic-add-conditional">
+                  <label class="govuk-label govuk-radios__label" for="ehic-add-conditional">
+                    Yes
+                  </label>
+                </div>
+  
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="ehic-add-conditional-2" name="ehic-add-v15" type="radio" value="no" data-aria-controls="conditional-ehic-add-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="ehic-add-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+        </fieldset>
+      </div>-->
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
