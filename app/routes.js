@@ -2390,13 +2390,13 @@ router.post('/v13/dependant-question', function (req, res) {
     var addDependant = req.session.data['add-dependant'];
     switch (addDependant) {
         case undefined:
-            res.redirect('/v13/comments');
+            res.redirect('/v13/check-details');
             break;
             case "yes":
             res.redirect('/v13/dependant/work-question-dependant');
             break;
             case "no":
-            res.redirect('/v13/comments');
+            res.redirect('/v13/check-details');
             break;
     };
 });
