@@ -33,7 +33,7 @@
     
               <li>
     
-                <a href="#documents">Add no more than 10 files</a>
+                <a href="#documents">Add no more than 10 files. If you want to upload this file, you must delete one of the existing files already uploaded</a>
     
               </li>
     
@@ -46,8 +46,11 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="national-insurance-number">
             <h2 class="govuk-heading-m">Files uploaded</h2>
-            
+            <span id="national-insurance-number-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Add no more than 10 files. If you want to upload this file, you must delete one of the existing files already uploaded
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -228,6 +231,7 @@
             
               </div>
           </div>
+        </div>
         </div>
 
         <div class="govuk-form-group">
