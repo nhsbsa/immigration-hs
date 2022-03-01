@@ -2861,13 +2861,13 @@ router.post('/v15/dependant/same-address', function (req, res) {
     var work = req.session.data['same-address'];
     switch (work) {
         case undefined:
-            res.redirect('/v15/dependant/manual-address');
+            res.redirect('/v15/dependant/postcode');
             break;
             case "yes":
             res.redirect('/v15/dependant/upload-of-ehic');
             break;
             case "no":
-            res.redirect('/v15/dependant/manual-address');
+            res.redirect('/v15/dependant/postcode');
             break;
     };
 });
