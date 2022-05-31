@@ -20,9 +20,56 @@
 
 {% block content %}
 
+<style>
+  .govuk-banner--success {
+      border-color: #00703c;
+      color: #00703c;
+  }
+  .govuk-banner {
+      border: 5px solid #1d70b8;
+      font-size: 0;
+      margin-bottom: 30px;
+      padding: 10px;
+  }
+  .govuk-banner__message {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  display: block;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 10px;
+  }
+  .govuk-banner__assistive {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+  }
+
+</style>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-banner govuk-banner--success">
+
+        <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" style="display: inline-block">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+        
+        <div class="govuk-banner__message">
+        <span class="govuk-banner__assistive">Success</span>File named Payslip February.pdf has been deleted</div>
+        
+    </div>
 
       <form class="form" action="/v14/contract-add" method="post">
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
@@ -125,13 +172,8 @@
 
             <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
 
-            <button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">
-              Continue
-            </button> Disable button with errors
-<br>
             
-
-        <button class="govuk-button" data-module="govuk-button">Continue</button> Enable if no errors
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
 
