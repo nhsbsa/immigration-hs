@@ -61,7 +61,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-banner govuk-banner--success">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">File named Payslip June.doc has been deleted</p>
+        </div>
+      </div>
+
+
+      <!--<div class="govuk-banner govuk-banner--success">
 
         <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" style="display: inline-block">
         <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
@@ -69,7 +81,7 @@
         <div class="govuk-banner__message">
         <span class="govuk-banner__assistive">Success</span>File named Payslip June.doc has been deleted</div>
         
-    </div>
+    </div>-->
 
       <form class="form" action="/v14/comments" method="post">
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
