@@ -2951,13 +2951,13 @@ router.post('/v15/dependant-add2', function (req, res) {
     var addSecondDependant = req.session.data['add-second-dependant'];
     switch (addSecondDependant) {
         case undefined:
-            res.redirect('/v15/dependant-add');
+            res.redirect('/v15/check-details');
             break;
             case "yes":
-            res.redirect('/v15/dependant-details2');
+            res.redirect('/v15/dependant/work-question-dependant');
             break;
             case "no":
-            res.redirect('/v15/upload-of-ehic');
+            res.redirect('/v15/check-details');
             break;
     };
 });
