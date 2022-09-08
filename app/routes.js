@@ -2713,7 +2713,7 @@ router.post('/non-nhs-path-another-job-v14', function(req,res){
         res.redirect('/v14/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v14/upload-of-evidence')
+        res.redirect('/v14/upload-of-contract')
     }
 
 })
@@ -2724,7 +2724,7 @@ router.post('/upload-of-evidence-add2-v14', function(req,res){
         res.redirect('/v14/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v14/upload-of-evidence')
+        res.redirect('/v14/upload-of-contract')
     }
 
 })
