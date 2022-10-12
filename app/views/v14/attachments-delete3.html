@@ -22,6 +22,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">File named payslip-aug.jpg has been deleted</p>
+        </div>
+      </div>
 
       <form class="form" action="/attachments-add-v14" method="post">
         <h1 class="govuk-heading-l">
@@ -34,64 +44,10 @@
             <h2 class="govuk-heading-m">Files uploaded</h2>
             
             <dl class="govuk-summary-list">
-            
+
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   File 1
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <a download href="/">payslip-jun.jpg</a>
-                </dd>
-            
-                <dd class="govuk-summary-list__actions">
-            
-                  <a class="govuk-link" href="/v14/attachments-delete1">
-                    Delete<span class="govuk-visually-hidden"> file 1</span>
-                  </a>
-            
-                </dd>
-            
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  File 2
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <a download href="/">payslip-jul.jpg</a>
-                </dd>
-            
-                <dd class="govuk-summary-list__actions">
-            
-                  <a class="govuk-link" href="/v14/attachments-delete1">
-                    Delete<span class="govuk-visually-hidden"> file 1</span>
-                  </a>
-            
-                </dd>
-            
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  File 3
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <a download href="/">payslip-aug.jpg</a>
-                </dd>
-            
-                <dd class="govuk-summary-list__actions">
-            
-                  <a class="govuk-link" href="/v14/attachments-delete1">
-                    Delete<span class="govuk-visually-hidden"> file 1</span>
-                  </a>
-            
-                </dd>
-            
-              </div>
-
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  File 4
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <a download href="/">payslip-sep.jpg</a>
@@ -99,7 +55,7 @@
             
                 <dd class="govuk-summary-list__actions">
             
-                  <a class="govuk-link" href="/v14/attachments-delete1">
+                  <a class="govuk-link" href="/v14/attachments-delete">
                     Delete<span class="govuk-visually-hidden"> file 1</span>
                   </a>
             
@@ -146,7 +102,7 @@
       </form>
       <br>
       <br>
-      <p style="font-size: 10px"><a href="/v14/attachments-add-delete-error">Activate delete error</a></p>
+      <p style="font-size: 10px"><a href="/v14/attachments-add-error">Activate error</a></p>
     </div>
   </div>
 

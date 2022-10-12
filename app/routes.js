@@ -2677,7 +2677,7 @@ router.post('/non-nhs-path-another-job2-v14', function(req,res){
 router.post('/attachments-add-v14', function(req,res){
     var contacted = req.session.data['attachments-add-v14']
     if (contacted == "yes"){
-        res.redirect('/v14/upload-of-evidence')
+        res.redirect('/v14/upload-of-payslips')
     }
     else {
         res.redirect('/v14/comments')
