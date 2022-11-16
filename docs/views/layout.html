@@ -31,7 +31,6 @@
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     serviceName: serviceName,
@@ -46,9 +45,9 @@
       },
       {
         href: "/docs/tutorials-and-examples",
-        text: "Tutorials and examples",
+        text: "Tutorials and templates",
         attributes: {
-          "data-tutorials": "Tutorials and examples"
+          "data-tutorials": "Tutorials and templates"
         }
       },
       {
@@ -68,26 +67,22 @@
   {{ govukFooter({
     meta: {
       items: [
-      {
-        href: "https://www.gov.uk/help",
-        text: "Help"
-      },  
-      {
-        href: "https://www.gov.uk/help/cookies",
-        text: "Cookies"
-      },
-      {
-        href: "https://www.gov.uk/contact",
-        text: "Contact"
-      },
-      {
-        href: "/footer/terms",
-        text: "Terms and Conditions"
-      },
-      {
-        href: "/footer/privacy",
-        text: "Privacy"
-      }
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "/docs/accessibility",
+          text: "Accessibility"
+        },
+        {
+          href: "/docs/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/docs/privacy-policy",
+          text: "Privacy policy"
+        }
       ]
     }
   }) }}
