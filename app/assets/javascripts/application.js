@@ -12,11 +12,11 @@ $(document).ready(function () {
 $(document).ready(function () {
   window.MOJFrontend.initAll()
 
-  if (typeof MOJFrontend.MultiFileUpload !== "undefined") {
+  if(typeof MOJFrontend.MultiFileUpload !== 'undefined') {
     new MOJFrontend.MultiFileUpload({
-      container: $(".moj-multi-file-upload"),
-      uploadUrl: "/ajax-upload",
-      deleteUrl: "/ajax-delete",
+      container: $('.moj-multi-file-upload'),
+      uploadUrl: '/ajax-upload-url',
+      deleteUrl: '/ajax-delete-url'
     });
   }
-});
+    });
