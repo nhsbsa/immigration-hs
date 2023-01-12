@@ -1,10 +1,16 @@
 {% extends "layout.html" %}
 
+
+
 {% block pageTitle %}
   Upload contract
 {% endblock %}
 
+
 {% block beforeContent %}
+
+
+
   <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -19,7 +25,6 @@
 {% endblock %}
 
 {% block content %}
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -49,38 +54,31 @@
         </span>
           
           </div>
-                <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
-                <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-two-thirds">
-                
-                    <h1 class="govuk-heading-xl">Upload files</h1>
-                
-                    <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
-                
-                      <div class="moj-multi-file-upload">
-                        <div class="moj-multi-file__uploaded-files ">
-                          <h2 class="govuk-heading-m">Files added</h2>
-                          <div class="govuk-summary-list moj-multi-file-upload__list">
-                
-                          </div>
-                        </div>
-                
-                        <div class="moj-multi-file-upload__upload">
-                
-                          <div class="govuk-form-group">
-                            <label class="govuk-label govuk-label--m" for="documents">
-                              Upload a file
-                            </label>
-                
-                            <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-                          </div>
-                
-                          <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-                            Upload file
-                          </button>
-                
-                        </div>
-                      </div>
+                 <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
+      <div class="govuk-grid-row">
+        <!--<div class="govuk-grid-column-two-thirds">-->
+            <div class="moj-multi-file-upload">
+              <div class="moj-multi-file__uploaded-files ">
+              
+                <div class="govuk-summary-list moj-multi-file-upload__list">
+      
+                </div>
+              </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-label--m" for="documents">
+                    Upload a file
+                  </label>
+      
+                  <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+                </div>
+      
+                <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                  Upload file
+                </button>
+      
+              
+            
             <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
@@ -95,5 +93,7 @@
       <p style="font-size: 10px"><a href="/v14/upload-of-contract-list-failure">Activate uploaded files not listing correctly</a></p>
     </div>
   </div>
+
+
 
 {% endblock %}
