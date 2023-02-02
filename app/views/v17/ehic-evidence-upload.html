@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload Evidence
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v17/non-nhs-path-add">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+              <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Application</span>
+                  Upload a copy of European Health Insurance Card (EHIC)
+              </h1>
+          </label>
+
+          <span id="file-upload-1-hint" class="govuk-hint">
+              <p>The applicant must provide a copy of the EHIC card or a course confirmation letter.</p>
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Select an option
+      </h1>
+    </legend>
+
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in" name="upload" type="radio" value="ehic" aria-describedby="sign-in-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in">
+          EHIC card
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="upload" type="radio" value="course-letter" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          Course confirmation letter
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+         <br>
+
+</div>
+
+      </form>
+       <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </div>
+  </div>
+
+{% endblock %}

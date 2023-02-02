@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upoad of EHIC
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/interview/fe3f73f3-2547-4376-8d15-79bccfd65406?preview=true">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v17/dependant/select-address">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v17/dependant/attachments-add-ehic" method="get">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+              <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Application</span>
+                  Upload a copy of the dependant's European Health Insurance Card (EHIC)
+              </h1>
+          </label>
+
+          <span id="file-upload-1-hint" class="govuk-hint">
+            <p>Evidence should be a scanned copy or photo of the side of the physical card that shows: </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>full name</li>
+              <li>date of birth</li>
+              <li>personal identification number</li>
+              <li>identification number of the card</li>
+              <li>card expiry date</li>
+            </ul>
+
+            <p>If the applicant has a digital card, it should be a screenshot showing this information.</p>
+
+            <p>Find out more <a href="https://ec.europa.eu/social/main.jsp?catId=559" class="govuk-link" target="_blank">information about EHIC on the European Commission website.</a></p>
+           
+            <p>Your uploaded file must be:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>clear and readable </li>
+              <li>a jpg, jpeg, bmp, png or pdf</li>
+              <li>a file size no larger than 2MB</li>
+            </ul>
+          </span>
+          
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
