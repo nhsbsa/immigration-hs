@@ -3081,4 +3081,205 @@ router.post('/v15/dependant-details-delete', function (req, res) {
     };
 });
 
+// v16 - H&SC////////////////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/doug-ihs-question-v16', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/applicant-visa-type')
+    }
+    else {
+        res.redirect('/v16/not-entitled-rr')
+    }
+})
+
+router.post('/ihs-tier2-hc-v16', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/v16/work-question')
+    }
+})
+
+router.post('/work-question-v16', function(req,res){
+    var contacted = req.session.data['work-question-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/6-months')
+    }
+    else {
+        res.redirect('/v16/not-entitled')
+    }
+})
+
+router.post('/6-months-v16', function(req,res){
+    var contacted = req.session.data['6-months-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/average-time')
+    }
+    else {
+        res.redirect('/v16/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v16', function(req,res){
+    var contacted = req.session.data['average-time-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/tier2-declaration')
+    }
+    else {
+        res.redirect('/v16/not-entitled-rr')
+    }
+
+})
+
+router.post('/dependant-question-v16', function(req,res){
+    var contacted = req.session.data['dependant-question-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/dependant-details')
+    }
+    else {
+        res.redirect('/v16/claim-dates-new')
+    }
+
+})
+
+router.post('/dependant-details-v16', function(req,res){
+    var contacted = req.session.data['dependant-details-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/dependant-details2')
+    }
+    else {
+        res.redirect('/v16/claim-dates-new')
+    }
+
+})
+
+router.post('/dependant-details-v16', function(req,res){
+    var contacted = req.session.data['dependant-details-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/dependant-details2')
+    }
+    else {
+        res.redirect('/v16/claim-dates-new')
+    }
+
+})
+
+router.post('/subscription-question-v16', function(req,res){
+    var contacted = req.session.data['subscription-question-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/non-nhs-path')
+    }
+    else {
+        res.redirect('/v16/non-nhs-path')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v16', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v16/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v16', function(req,res){
+    var contacted = req.session.data['attachments-add-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/upload-of-payslips')
+    }
+    else {
+        res.redirect('/v16/comments')
+    }
+
+})
+
+router.post('/attachments-add2-v16', function(req,res){
+    var contacted = req.session.data['attachments-add2-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/comments')
+    }
+    else {
+        res.redirect('/v16/comments')
+    }
+
+})
+
+router.post('/v16/payslips-or-contract', function(req,res){
+    var contacted = req.session.data['payslips-or-contract']
+    if (contacted == "payslips"){
+        res.redirect('/v16/upload-of-payslips')
+    }
+    else {
+        res.redirect('/v16/upload-of-contract')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v16', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v16/upload-of-contract')
+    }
+
+})
+
+router.post('/upload-of-evidence-add2-v16', function(req,res){
+    var contacted = req.session.data['upload-of-evidence-add2-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v16/upload-of-contract')
+    }
+
+})
+
+ router.post('/doug-ihs-tier2-question-v16', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v16']
+    if (contacted == "tier2"){
+       res.redirect('/v16/ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('/v16/tier5-ko')
+        }
+        else
+        {
+            res.redirect('/v16/work-question')
+        }
+})
+
+router.post('/contracts-add-v16', function(req,res){
+    var contacted = req.session.data['contracts-add-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/upload-of-evidence')
+    }
+    else {
+        res.redirect('/v16/comments')
+    }
+
+})
+
+router.post('/contracts-add2-v16', function(req,res){
+    var contacted = req.session.data['contracts-add2-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/comments')
+    }
+    else {
+        res.redirect('/v16/comments')
+    }
+
+})
+
 module.exports = router;
