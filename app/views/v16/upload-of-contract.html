@@ -42,9 +42,29 @@
           </label>
           
           <span id="file-upload-1-hint" class="govuk-hint">
-            <p>Evidence should be payslips, from all the applicant's health and social care employers, for every day of the 6-month period the claim is being made for. More than 6 months' worth of payslips may be necessary to cover this period.</p>
-            <p>Evidence should be a scanned copy or photo of the original documents.</p>
+            <p>Evidence should be payslips, from all the applicant's health and social care employers, for every day of the 6-month period the claim is being made for.</p>
             <p>Attach evidence for the period: <strong>30 April 2020</strong> to <strong>29 October 2020</strong></p>
+            <p>More than 6 months' worth of payslips may be necessary to cover this period.</p>
+            <p>Evidence should be a scanned copy or photo of the original documents and must include the applicant’s:</p>
+            <ul class=“govuk-list govuk-list--bullet”>
+              <li>employee name</li>
+              <li>employer name</li>
+              <li>National Insurance number</li>
+              <li>pay date or period covered</li>
+              <li>contracted hours</li>
+            </ul>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If the applicant's evidence does not show all of this information
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                The applicant should upload supporting evidence, such as an employment contract.
+              </div>
+            </details>
+
             <p>Uploaded attachments must be:</p>
             <ul class=“govuk-list govuk-list--bullet”>
               <li>clear and readable</li>
@@ -67,7 +87,7 @@
 
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-label--m" for="documents">
-                    Upload a file
+                    Upload files
                   </label>
       
                   <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
