@@ -3282,6 +3282,17 @@ router.post('/contracts-add2-v16', function(req,res){
 
 })
 
+router.post('/contracts-add-3-v16', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v16']
+    if (contacted == "yes"){
+        res.redirect('/v16/comments')
+    }
+    else {
+        res.redirect('/v16/check-your-answers-nhs-path')
+    }
+
+})
+
 // v17 - Students ////////////////////////////////////////////////////////////////////////////////////////////////
 router.post('/v17/visa-date', function (req, res) {
     var visaDate = req.session.data['visa-date'];

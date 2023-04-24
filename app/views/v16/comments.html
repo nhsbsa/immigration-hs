@@ -24,23 +24,24 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/v16/check-your-answers-nhs-path" method="post">
+      <form class="form" action="/v16/contract-add-3" method="post">
 
         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
           <div class="govuk-form-group">
             <h1 class="govuk-heading-l">
               <span class="govuk-caption-l">Application</span>
-              Would you like to give any extra information about the applicant's employment or attachments? (optional)
+              Would you like to give any extra information about the applicant's employment or evidence? (optional)
             </h1>
             <div id="with-hint-hint" class="govuk-hint">
               Explain any gaps in the applicant's employment or working arrangements.
               This could include:
+            </br>
+          </br>
               <ul class="govuk-list govuk-list--bullet govuk-hint">
                 <li>maternity or paternity leave</li>
                 <li>arrangements due to coronavirus (COVID-19), such as being furloughed</li>
                 <li>sickness, including self-isolation</li>
               </ul>
-              If the months of employment are not in order, you may also want to share more information to help us more easily understand.
             </div>
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -57,7 +58,25 @@
             You can enter up to 2000 characters
           </div>
         
+        </br>
+            
+            <span id="file-upload-1-hint" class="govuk-hint">
+                <p>If possible, the applicant should provide evidence to support their explanation, such as a contract of employment or a letter from their employer. </p>
+                <p>Uploaded attachments must be:</p>
+                <ul class=“govuk-list govuk-list--bullet”>
+                  <li>clear and readable</li>
+                  <li>jpg, jpeg, bmp, png or pdf</li>
+                  <li>no larger than 2MB in size</li>
+                </ul>
+            </span>
+  
+        
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+  
+
         </div>
+
+        
           
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
