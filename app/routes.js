@@ -3608,4 +3608,531 @@ router.post('/v17/dependant-details-delete', function (req, res) {
     };
 });
 
+// v18 - H&SC////////////////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/doug-ihs-question-v18', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/applicant-visa-type')
+    }
+    else {
+        res.redirect('/v18/not-entitled-rr')
+    }
+})
+
+router.post('/ihs-tier2-hc-v18', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/v18/work-question')
+    }
+})
+
+router.post('/work-question-v18', function(req,res){
+    var contacted = req.session.data['work-question-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/6-months')
+    }
+    else {
+        res.redirect('/v18/not-entitled')
+    }
+})
+
+router.post('/6-months-v18', function(req,res){
+    var contacted = req.session.data['6-months-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/average-time')
+    }
+    else {
+        res.redirect('/v18/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v18', function(req,res){
+    var contacted = req.session.data['average-time-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/tier2-declaration')
+    }
+    else {
+        res.redirect('/v18/not-entitled-rr')
+    }
+
+})
+
+router.post('/dependant-question-v18', function(req,res){
+    var contacted = req.session.data['dependant-question-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/dependant-details')
+    }
+    else {
+        res.redirect('/v18/claim-dates-new')
+    }
+
+})
+
+router.post('/dependant-details-v18', function(req,res){
+    var contacted = req.session.data['dependant-details-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/dependant-details2')
+    }
+    else {
+        res.redirect('/v18/claim-dates-new')
+    }
+
+})
+
+router.post('/dependant-details-v18', function(req,res){
+    var contacted = req.session.data['dependant-details-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/dependant-details2')
+    }
+    else {
+        res.redirect('/v18/claim-dates-new')
+    }
+
+})
+
+router.post('/subscription-question-v18', function(req,res){
+    var contacted = req.session.data['subscription-question-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/non-nhs-path')
+    }
+    else {
+        res.redirect('/v18/non-nhs-path')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v18', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v18/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v18', function(req,res){
+    var contacted = req.session.data['attachments-add-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/upload-of-payslips')
+    }
+    else {
+        res.redirect('/v18/comments')
+    }
+
+})
+
+router.post('/attachments-add2-v18', function(req,res){
+    var contacted = req.session.data['attachments-add2-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/comments')
+    }
+    else {
+        res.redirect('/v18/comments')
+    }
+
+})
+
+router.post('/v18/payslips-or-contract', function(req,res){
+    var contacted = req.session.data['payslips-or-contract']
+    if (contacted == "payslips"){
+        res.redirect('/v18/upload-of-payslips')
+    }
+    else {
+        res.redirect('/v18/upload-of-contract')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v18', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v18/upload-of-contract')
+    }
+
+})
+
+router.post('/upload-of-evidence-add2-v18', function(req,res){
+    var contacted = req.session.data['upload-of-evidence-add2-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v18/upload-of-contract')
+    }
+
+})
+
+ router.post('/doug-ihs-tier2-question-v18', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v18']
+    if (contacted == "tier2"){
+       res.redirect('/v18/ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('/v18/tier5-ko')
+        }
+        else
+        {
+            res.redirect('/v18/work-question')
+        }
+})
+
+router.post('/contracts-add-v18', function(req,res){
+    var contacted = req.session.data['contracts-add-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/upload-of-evidence')
+    }
+    else {
+        res.redirect('/v18/comments')
+    }
+
+})
+
+router.post('/contracts-add2-v18', function(req,res){
+    var contacted = req.session.data['contracts-add2-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/comments')
+    }
+    else {
+        res.redirect('/v18/comments')
+    }
+
+})
+
+router.post('/contracts-add-3-v18', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v18']
+    if (contacted == "yes"){
+        res.redirect('/v18/comments')
+    }
+    else {
+        res.redirect('/v18/check-your-answers-nhs-path')
+    }
+
+})
+
+// v19 - Students ////////////////////////////////////////////////////////////////////////////////////////////////
+router.post('/v19/visa-date', function (req, res) {
+    var visaDate = req.session.data['visa-date'];
+    switch (visaDate) {
+        case undefined:
+            res.redirect('/v19/ehic-card');
+            break;
+            case "yes":
+            res.redirect('/v19/ehic-card');
+            break;
+            case "no":
+            res.redirect('/v19/kick-out-student');
+            break;
+    };
+});
+
+router.post('/v19/ehic-card', function (req, res) {
+    var ehic = req.session.data['ehic'];
+    switch (ehic) {
+        case undefined:
+            res.redirect('/v19/full-time-education');
+            break;
+            case "yes":
+            res.redirect('/v19/full-time-education');
+            break;
+            case "no":
+            res.redirect('/v19/kick-out-student');
+            break;
+    };
+});
+
+router.post('/v19/full-time-education', function (req, res) {
+    var student = req.session.data['student'];
+    switch (student) {
+        case undefined:
+            res.redirect('/v19/work-question');
+            break;
+            case "yes":
+            res.redirect('/v19/work-question');
+            break;
+            case "no":
+            res.redirect('/v19/kick-out-student');
+            break;
+    };
+});
+
+router.post('/v19/work-question', function (req, res) {
+    var work = req.session.data['work'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v19/residency');
+            break;
+            case "yes":
+            res.redirect('/v19/kick-out-student');
+            break;
+            case "no":
+            res.redirect('/v19/residency');
+            break;
+    };
+});
+
+router.post('/v19/dependant/work-question-dependant', function (req, res) {
+    var work = req.session.data['work-dependant'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v19/dependant/residency-dependant');
+            break;
+            case "yes":
+            res.redirect('/v19/kick-out-dependant');
+            break;
+            case "no":
+            res.redirect('/v19/dependant/residency-dependant');
+            break;
+    };
+});
+
+router.post('/v19/dependant/residency-dependant', function (req, res) {
+    var work = req.session.data['residency-dependant'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v19/dependant/name');
+            break;
+            case "yes":
+            res.redirect('/v19/dependant/name');
+            break;
+            case "no":
+            res.redirect('/v19/kick-out-dependant');
+            break;
+    };
+});
+
+router.post('/v19/dependant/same-address', function (req, res) {
+    var work = req.session.data['same-address'];
+    switch (work) {
+        case undefined:
+            res.redirect('/v19/dependant/postcode');
+            break;
+            case "yes":
+            res.redirect('/v19/dependant/upload-of-ehic');
+            break;
+            case "no":
+            res.redirect('/v19/dependant/postcode');
+            break;
+    };
+});
+
+router.post('/v19/residency', function (req, res) {
+    var residency = req.session.data['residency'];
+    switch (residency) {
+        case undefined:
+            res.redirect('/v19/check-eligibility-details');
+            break;
+            case "no":
+            res.redirect('/v19/kick-out-student');
+            break;
+            case "yes":
+            res.redirect('/v19/check-eligibility-details');
+            break;
+    };
+});
+
+router.post('/v19/swiss-national', function (req, res) {
+    var swiss = req.session.data['swiss'];
+    switch (swiss) {
+        case undefined:
+            res.redirect('/v19/check-eligibility-details');
+            break;
+            case "yes":
+            res.redirect('/v19/swiss-path');
+            break;
+            case "no":
+            res.redirect('/v19/check-eligibility-details');
+            break;
+    };
+});
+
+router.post('/v19/dependant-question', function (req, res) {
+    var addDependant = req.session.data['add-dependant'];
+    switch (addDependant) {
+        case undefined:
+            res.redirect('/v19/check-details');
+            break;
+            case "yes":
+            res.redirect('/v19/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/v19/check-details');
+            break;
+    };
+});
+
+router.post('/v19/dependant/dependant-question', function (req, res) {
+    var addDependant = req.session.data['add-dependant'];
+    switch (addDependant) {
+        case undefined:
+            res.redirect('/v19/dependant/work-question-dependant');
+            break;
+            case "yes":
+            res.redirect('/v19/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/v19/check-details');
+            break;
+    };
+});
+
+router.post('/v19/dependant-add', function (req, res) {
+    var addSecondDependant = req.session.data['add-second-dependant'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/v19/check-details');
+            break;
+            case "yes":
+            res.redirect('/v19/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/v19/check-details');
+            break;
+    };
+});
+
+router.post('/v19/dependant-add2', function (req, res) {
+    var addSecondDependant = req.session.data['add-second-dependant'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/v19/check-details');
+            break;
+            case "yes":
+            res.redirect('/v19/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/v19/check-details');
+            break;
+    };
+});
+
+router.post('/v19/ehic-evidence-upload', function(req,res){
+    var upload = req.session.data['upload']
+    if (upload == "ehic"){
+        res.redirect('/v19/upload-of-ehic')
+    }
+    else {
+        res.redirect('/v19/upload-of-course-letter')
+    }
+
+})
+
+router.post('/v19/attachments-add', function(req,res){
+    var contacted = req.session.data['attachments-add-v12']
+    if (contacted == "yes"){
+        res.redirect('/v19/attachments2')
+    }
+    else {
+        res.redirect('/v19/check-details')
+    }
+
+})
+
+router.post('/v19/attachments-add-v12', function(req,res){
+    var contacted = req.session.data['attachments-add-v12']
+    if (contacted == "yes"){
+        res.redirect('/v19/attachments-add2')
+    }
+    else {
+        res.redirect('/v19/check-details')
+    }
+
+})
+
+router.post('/attachments-add2-v12', function(req,res){
+    var contacted = req.session.data['attachments-add2-v12']
+    if (contacted == "yes"){
+        res.redirect('/v19/check-details')
+    }
+    else {
+        res.redirect('/v19/check-details')
+    }
+
+})
+
+
+router.post('/v19/ihs-paid', function (req, res) {
+    var addSecondDependant = req.session.data['ihs-paid'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/v19/visa-date');
+            break;
+            case "yes":
+            res.redirect('/v19/visa-date');
+            break;
+            case "no":
+            res.redirect('/v19/kick-out-student');
+            break;
+    };
+});
+
+router.post('/v19/kick-out-dependant', function(req,res){
+    var upload = req.session.data['kick-out-dependant']
+    if (upload == "ehic"){
+        res.redirect('/v19/dependant-question')
+    }
+    else {
+        res.redirect('/v19/dependant-question')
+    }
+
+})
+
+router.post('/ehic-add-v19', function(req,res){
+    var contacted = req.session.data['ehic-add-v19']
+    if (contacted == "yes"){
+        res.redirect('/v19/upload-of-ehic')
+    }
+    else {
+        res.redirect('/v19/attachments-letter')
+    }
+
+})
+
+router.post('/letter-add-v19', function(req,res){
+    var contacted = req.session.data['letter-add-v19']
+    if (contacted == "yes"){
+        res.redirect('/v19/attachments-letter')
+    }
+    else {
+        res.redirect('/v19/dependant-question')
+    }
+
+})
+
+router.post('/dependant-ehic-add-v19', function(req,res){
+    var contacted = req.session.data['dependant-ehic-add-v19']
+    if (contacted == "yes"){
+        res.redirect('/v19/dependant/upload-of-ehic')
+    }
+    else {
+        res.redirect('/v19/dependant-add')
+    }
+
+})
+
+router.post('/v19/dependant-details-delete', function (req, res) {
+    var addSecondDependant = req.session.data['dependant-details-delete'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/v19/dependant/work-question-dependant');
+            break;
+            case "yes":
+            res.redirect('/v19/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/v19/check-details');
+            break;
+    };
+});
+
 module.exports = router;

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+<style>
+.float--right {
+    float: right !important;
+}
+</style>
+
+{% block content %}
+<div id="content">
+
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/v10/ihs-number" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v10">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+              <h1 class="govuk-heading-l">
+                  The applicant is a Tier 5 Medical Training Initiative (MTI) visa holder
+              </h1>
+            </legend>
+
+            <p class="govuk-body"><a target="_blank" href="https://aomrc.onlinesurveys.ac.uk/immigration-health-surcharge-refund-copy">Tier 5 MTI visa holders can apply for a refund of their immigration health surcharge (IHS)</a>
+
+            <p id="ihs-question-conditional-hint" class="govuk-body">
+              The applicant will be able to include details of any dependants in their claim.
+            </p>
+
+            <p>
+              Once the applicant used this service, the academy then checks that the applicant has an MTI visa and certificate of sponsorship.
+            </p>
+
+            <p>
+              Applicant details will then be passed to us and they (and any listed dependants) will get a full refund of their IHS, instead of getting 6 months’ worth of their refund that they would get by using the Health and Social Care route.
+            </p>
+
+            <p>
+              The NHS Business Services Authority will contact the applicant with an outcome. The applicant does not need to reapply.
+            </p>
+
+            <p class="govuk-body">Find out <a target="_blank" href="https://www.gov.uk/healthcare-immigration-application">more about immigration health surcharge</a>.
+          </fieldset>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
