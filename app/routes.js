@@ -3668,7 +3668,7 @@ router.post('/dependant-question-v18', function(req,res){
         res.redirect('/v18/dependant-details')
     }
     else {
-        res.redirect('/v18/claim-dates-new')
+        res.redirect('/v18/non-nhs-path')
     }
 
 })
