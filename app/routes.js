@@ -3756,7 +3756,7 @@ router.post('/non-nhs-path-another-job-v18', function(req,res){
         res.redirect('/v18/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v18/upload-of-contract')
+        res.redirect('/v18/claim-dates-new')
     }
 
 })
@@ -3767,7 +3767,7 @@ router.post('/upload-of-evidence-add2-v18', function(req,res){
         res.redirect('/v18/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v18/upload-of-contract')
+        res.redirect('/v18/claim-dates-new')
     }
 
 })
@@ -3815,7 +3815,7 @@ router.post('/contracts-add-3-v18', function(req,res){
         res.redirect('/v18/comments')
     }
     else {
-        res.redirect('/v18/check-your-answers-nhs-path')
+        res.redirect('/v18/subscription-question')
     }
 
 })
