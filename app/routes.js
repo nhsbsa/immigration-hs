@@ -3679,18 +3679,7 @@ router.post('/dependant-details-v18', function(req,res){
         res.redirect('/v18/dependant-details2')
     }
     else {
-        res.redirect('/v18/claim-dates-new')
-    }
-
-})
-
-router.post('/dependant-details-v18', function(req,res){
-    var contacted = req.session.data['dependant-details-v18']
-    if (contacted == "yes"){
-        res.redirect('/v18/dependant-details2')
-    }
-    else {
-        res.redirect('/v18/claim-dates-new')
+        res.redirect('/v18/non-nhs-path')
     }
 
 })
