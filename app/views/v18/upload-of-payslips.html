@@ -35,18 +35,58 @@
               </h1>
           </label>
           
-          <span id="file-upload-1-hint" class="govuk-hint">
-              <p>Evidence should be payslips, from all the applicant's health and social care employers, for every day of the 6-month period the claim is being made for. More than 6 months' worth of payslips may be necessary to cover this period.</p>
-              <p>The evidence uploaded must show the number of hours the applicant has worked. If the evidence doesn’t show this, the applicant must send additional evidence, such as a cover letter from their employer. </p>
-              <p>Evidence should be a scanned copy or photo of the original documents. More payslips or additional evidence can be uploaded at the next stage.</p>
-              <p>Attach evidence for the period: <strong>30 April 2020</strong> to <strong>29 October 2020</strong></p>
-              <p>Uploaded attachments must be:</p>
-              <ul class=“govuk-list govuk-list--bullet”>
-                <li>clear and readable</li>
-                <li>jpg, jpeg, bmp, png or pdf</li>
-                <li>no larger than 2MB in size</li>
-              </ul>
-          </span>
+ <!-- start callout box -->
+ <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+ data-module="govuk-notification-banner">
+ <div class="govuk-notification-banner__header">
+   <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Important
+   </h2>
+ </div>
+ <div class="govuk-notification-banner__content">
+   <p class="govuk-notification-banner__heading">
+   <p>Upload evidence for the period: <strong>30 April 2020</strong> to <strong>29 October
+       2020</strong>.</p>
+   <p>If the applicant does not have the correct evidence, their claim for reimbursement may be rejected or declined.</p>
+   </p>
+ </div>
+</div>
+<!-- end callout box -->
+
+<span id="file-upload-1-hint" class="govuk-hint">
+ <p>From each of the applicant's health and social care employers, we'll need both a:</p>
+ <ul class=“govuk-list govuk-list--bullet”>
+   <li>range of payslips for every day, in the 6 month period that the claim is being made</li>
+   <li>contract of employment, which shows an average of 16 hours or more per week</li>
+ </ul>
+
+ <div class="govuk-inset-text" style="overflow:hidden;">
+   <span class="govuk-hint govuk-!-margin-bottom-0">
+     To help us with the claim, the applicant should make sure to upload payslips before and after the date period they wish to make a claim for.
+   </span>
+</div>
+
+<span id="file-upload-1-hint" class="govuk-hint">
+ <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
+ <ul class=“govuk-list govuk-list--bullet”>
+   <li>employee name</li>
+   <li>employer name</li>
+   <li>National Insurance number</li>
+   <li>pay date or period covered</li>
+   <li>employment start date</li>
+   <li>contracted hours</li>
+ </ul>
+
+ <p>Uploaded evidence must be:</p>
+ <ul class=“govuk-list govuk-list--bullet”>
+   <li>clear and readable</li>
+   <li>descriptive, with a file name such as 'payslip-january2023.pdf'</li>
+   <li>JPG, JPEG, BMP, PNG or PDF</li>
+   <li>no larger than 2MB in size</li>
+ </ul>
+</span>
+
+
 
       
               <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
@@ -56,7 +96,7 @@
               Continue
             </button>
       
-
+</div>
            
           
           </div> 
