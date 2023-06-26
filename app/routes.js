@@ -4122,6 +4122,13 @@ router.post('/v19/dependant-details-delete', function (req, res) {
             res.redirect('/v19/check-details');
             break;
     };
-});
+})
+;
+
+// Start user research icludes
+// ----------------------------
+
+// Health and social care
+router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 module.exports = router;
