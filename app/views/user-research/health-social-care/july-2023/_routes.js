@@ -3,6 +3,28 @@ const router = express.Router()
 
 const axios = require('axios');
 
+
+// July 2023 - Start date
+// ----------------------------
+
+//Signpost
+// ----------------------------
+//Does the applicant have evidence for the period: 
+router.post('/evidence-check', function(req,res){
+    var signpost = req.session.data['evidence-check']
+    if (signpost == "yes"){
+        res.redirect('start-date/signpost/upload-of-contract')
+    }
+    else if (signpost == "no"){
+        res.redirect('start-date/signpost/evidence-required')
+    }
+    else {
+        res.redirect('start-date/signpost/upload-of-contract-check')
+    }
+
+})
+
+
 // July 2023 - Upload additional evidence
 // ----------------------------
 
@@ -25,7 +47,7 @@ router.post('/asis-upload', function(req,res){
 
 })
 
-//single signpost
+//Single signpost
 // ----------------------------
 //Would you like to upload additional evidence or add extra information about gaps in the applicant's employment or working arrangements?
 router.post('/single-signpost', function(req,res){
