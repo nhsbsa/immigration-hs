@@ -27,7 +27,10 @@
           <span class="govuk-caption-l">Application</span>
           What's the applicant's immigration health surcharge (IHS) number?
       </h1>
-
+      
+      <label class="govuk-label" for="event-name">
+        IHS number
+       </label>
       <div class="govuk-hint">
         When the immigration health surcharge was paid, an email would have been sent which contains this number. For example, 'IHS123456789'.
       </div>
@@ -35,6 +38,7 @@
       <form class="form" action="/v19/share-code" method="post">
 
         <div class="govuk-form-group">
+          
           <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="ihs-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
         </div>
 
