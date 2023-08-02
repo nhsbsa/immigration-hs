@@ -15,7 +15,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v18/subscription-question">Back</a>
+  <a class="govuk-back-link" href="/v18/comments">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -85,7 +85,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            UK telephone number
+            Phone number
           </dt>
           <dd class="govuk-summary-list__value">
             07700 900457
@@ -102,7 +102,7 @@
                 Email address
             </dt>
             <dd class="govuk-summary-list__value">
-              s.philips@nhs.net
+              a.vlad@nhs.net
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="#">
@@ -116,21 +116,21 @@
       <h2 class="govuk-heading-m">Dependant details</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <!--<div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                 Dependants
             </dt>
             <dd class="govuk-summary-list__value">
-              Yes
+              No
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="#">
+              <a href="/v18/check-your-answers-nhs-path">
                 Change
                 <span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
-          </div>-->
-        <div class="govuk-summary-list__row">
+          </div>
+        <!--<div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
               Dependant 1
           </dt>
@@ -140,13 +140,13 @@
             <p>IHS123456789</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/v18/check-your-answers-delete-dependant">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
-        </div>
-        <div class="govuk-summary-list__row">
+        </div>-->
+        <!--<div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
                 Dependant 2
             </dt>
@@ -156,12 +156,12 @@
                 <p>IHS123456789</p>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="/v18/check-your-answers-delete-dependant">
+              <a href="#">
                 Change
                 <span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
-          </div>
+          </div>-->
       </dl>
 
       <h2 class="govuk-heading-m">Employment details</h2>
@@ -175,12 +175,13 @@
             <p>31 March 2020</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="claim-dates-new-edit">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Reminder email
@@ -189,7 +190,7 @@
             <p>Yes</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/v18/subscription-question">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -229,14 +230,11 @@
       </dl>
 
       <h2 class="govuk-heading-m">Attachment details</h2>
-      
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-              Files uploaded
+              Files added
           </dt>
           <dd class="govuk-summary-list__value">
             <p>Payslip-jun.jpg</p>
@@ -254,7 +252,7 @@
         </div>
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Extra information
+                Comments
             </dt>
             <dd class="govuk-summary-list__value">
               -
@@ -266,26 +264,10 @@
               </a>
             </dd>
           </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Extra evidence uploaded
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p>Contract.pdf</p>
-              <p>Employer-letter.pdf</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="/v18/contract-add-3">
-                Change
-                <span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
       </dl>
 
+    
      
-
 
       <form action="/v18/check-your-answers2" method="post" novalidate>
 

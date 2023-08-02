@@ -3712,7 +3712,7 @@ router.post('/attachments-add-v18', function(req,res){
         res.redirect('/v18/upload-of-payslips')
     }
     else {
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
 
 })
@@ -3720,10 +3720,10 @@ router.post('/attachments-add-v18', function(req,res){
 router.post('/attachments-add2-v18', function(req,res){
     var contacted = req.session.data['attachments-add2-v18']
     if (contacted == "yes"){
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
     else {
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
 
 })
@@ -3782,7 +3782,7 @@ router.post('/contracts-add-v18', function(req,res){
         res.redirect('/v18/upload-of-evidence')
     }
     else {
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
 
 })
@@ -3790,10 +3790,10 @@ router.post('/contracts-add-v18', function(req,res){
 router.post('/contracts-add2-v18', function(req,res){
     var contacted = req.session.data['contracts-add2-v18']
     if (contacted == "yes"){
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
     else {
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
 
 })
@@ -3801,7 +3801,7 @@ router.post('/contracts-add2-v18', function(req,res){
 router.post('/contracts-add-3-v18', function(req,res){
     var contacted = req.session.data['contracts-add-3-v18']
     if (contacted == "yes"){
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
     else {
         res.redirect('/v18/subscription-question')
@@ -4132,7 +4132,7 @@ router.post('/v19/dependant-details-delete', function (req, res) {
 router.post('/single-signpost', function(req,res){
     var signpost = req.session.data['signpost']
     if (signpost == "yes"){
-        res.redirect('/v18/comments')
+        res.redirect('/v18/extra-information')
     }
     else if (signpost == "no"){
         res.redirect('/v18/subscription-question')

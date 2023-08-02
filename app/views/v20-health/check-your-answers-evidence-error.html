@@ -15,12 +15,27 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v18/subscription-question">Back</a>
+  <a class="govuk-back-link" href="/v18/comments">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+  
+          <ul class="govuk-list govuk-error-summary__list"> 
+            <li>
+              <a href="#documents">You must upload evidence to be able to submit your application. Use the ‘change’ link to upload evidence</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
 
       <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
@@ -85,7 +100,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            UK telephone number
+            Phone number
           </dt>
           <dd class="govuk-summary-list__value">
             07700 900457
@@ -102,7 +117,7 @@
                 Email address
             </dt>
             <dd class="govuk-summary-list__value">
-              s.philips@nhs.net
+              a.vlad@nhs.net
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="#">
@@ -175,12 +190,13 @@
             <p>31 March 2020</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="claim-dates-new-edit">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Reminder email
@@ -189,7 +205,7 @@
             <p>Yes</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/v18/subscription-question">
+            <a href="#">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -227,23 +243,22 @@
             </dd>
           </div>
       </dl>
+      <div class="govuk-form-group govuk-form-group--error">
 
       <h2 class="govuk-heading-m">Attachment details</h2>
       
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <span class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> You must upload evidence to be able to submit your application. Use the ‘change’ link to upload evidence
         
-
+      </span>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
               Files uploaded
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>Payslip-jun.jpg</p>
-            <p>Payslip-jul.jpg</p>
-            <p>Payslip-aug.jpg</p>
-            <p>Payslip-sep.jpg</p>
-            <p>Contract.pdf</p>
+            <p>-</p>
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a href="/v18/contract-add">
@@ -251,10 +266,12 @@
               <span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
+          </div>
         </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Extra information
+                Comments
             </dt>
             <dd class="govuk-summary-list__value">
               -
@@ -266,26 +283,11 @@
               </a>
             </dd>
           </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Extra evidence uploaded
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p>Contract.pdf</p>
-              <p>Employer-letter.pdf</p>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="/v18/contract-add-3">
-                Change
-                <span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
+          
       </dl>
 
+    
      
-
 
       <form action="/v18/check-your-answers2" method="post" novalidate>
 

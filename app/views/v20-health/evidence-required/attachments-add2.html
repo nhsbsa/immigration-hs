@@ -1,20 +1,11 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-  Add another contract
+  Question page
 {% endblock %}
 
 {% block beforeContent %}
-  <div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
+
 {% endblock %}
 
 {% block content %}
@@ -23,15 +14,17 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="/contracts-add-3-v18" method="post">
+      <form class="form" action="/attachments-add-v7" method="post">
+
+        <!--<h1 class="govuk-heading-l">Evidence uploaded</h1>-->
         <h1 class="govuk-heading-l">
             <span class="govuk-caption-l">Application</span>
-            Extra evidence uploaded
+            Evidence uploaded
         </h1>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <h2 class="govuk-heading-m">Files uploaded</h2>
+            <h2 class="govuk-heading-m">Files added</h2>
             
             <dl class="govuk-summary-list">
             
@@ -40,37 +33,35 @@
                   File 1
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <a download href="/">contract.pdf</a>
+                  <a download href="/">payslip-june.jpg</a>, 2MB
                 </dd>
             
                 <dd class="govuk-summary-list__actions">
             
-                  <a class="govuk-link" href="/v18/attachments-delete1">
+                  <a class="govuk-link" href="/v7/attachments-delete">
                     Delete<span class="govuk-visually-hidden"> file 1</span>
                   </a>
             
                 </dd>
             
               </div>
-
+            
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   File 2
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <a download href="/">employer-letter.pdf</a>
+                  <a download href="/">payslip-july.jpg</a>, 5MB
                 </dd>
             
                 <dd class="govuk-summary-list__actions">
             
-                  <a class="govuk-link" href="/v18/attachments-delete1">
-                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  <a class="govuk-link" href="/v7/attachments-delete">
+                    Delete<span class="govuk-visually-hidden"> file 2</span>
                   </a>
             
                 </dd>
-            
-              </div>        
-
+              </div> 
             </dl>
           </div>
         </div>
@@ -87,25 +78,24 @@
             hint text goes here.
             </span>-->
 
-          <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-radios govuk-radios--conditional" data-module="radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="attachments-add-3-conditional" name="contracts-add-3-v18" type="radio" value="yes" data-aria-controls="conditional-attachments-add-3-conditional">
-                <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional">
+                <input class="govuk-radios__input" id="attachments-add-conditional" name="attachments-add-v7" type="radio" value="yes" data-aria-controls="conditional-attachments-add-conditional">
+                <label class="govuk-label govuk-radios__label" for="attachments-add-conditional">
                   Yes
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="attachments-add-3-conditional-2" name="contracts-add-3-v18" type="radio" value="no" data-aria-controls="conditional-attachments-add-3-conditional-2">
-                <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional-2">
+                <input class="govuk-radios__input" id="attachments-add-conditional-2" name="attachments-add-v7" type="radio" value="no" data-aria-controls="conditional-attachments-add-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="attachments-add-conditional-2">
                   No
                 </label>
               </div>
+              
             </div>
-          </div>
-        </fieldset>
-      </div>
+          </fieldset>
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
