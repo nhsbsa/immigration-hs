@@ -4126,6 +4126,24 @@ router.post('/v19/dependant-details-delete', function (req, res) {
 ;
 
 
+
+//Single signpost
+// ----------------------------
+//Would you like to upload additional evidence or add extra information about gaps in the applicant's employment or working arrangements?
+router.post('/v20-signpost', function(req,res){
+    var signpost = req.session.data['signpost']
+    if (signpost == "yes"){
+        res.redirect('/v20/extra-information')
+    }
+    else if (signpost == "no"){
+        res.redirect('/v20/subscription-question')
+    }
+    else {
+        res.redirect('/v20/signpost')
+    }
+
+})
+
 //Single signpost
 // ----------------------------
 //Would you like to upload additional evidence or add extra information about gaps in the applicant's employment or working arrangements?

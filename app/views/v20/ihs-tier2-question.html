@@ -1,0 +1,70 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Tier 2 question
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v18/ihs-question">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+      <form class="form" action="/doug-ihs-tier2-question-v18" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="ihs-question-conditional-hint-v18">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                  What type of visa does the applicant hold?
+              </h1>
+            </legend> 
+      
+            <span id="work-question-conditional-hint" class="govuk-hint">
+              To check what type of visa they are on please check the entry clearance documentation, biometric residence permit or the sticker (vignette) inside their passport.
+ 
+   <br>
+              </span>
+            <br>
+           <!-- <span id="ihs-question-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+
+            <div class="govuk-radios govuk-radios--inline" data-module="radios">
+            <!-- <div class="govuk-radios govuk-radios--conditional" data-module="radios"> -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-question-conditional-v18" name="doug-ihs-tier2-question-v18" type="radio" value="yes" data-aria-controls="conditional-ihs-question-conditional-v18">
+                <label class="govuk-label govuk-radios__label" for="ihs-question-conditional-v18">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-question-conditional-2-v18" name="doug-ihs-tier2-question-v18" type="radio" value="no" data-aria-controls="conditional-ihs-question-conditional-2-v18">
+                <label class="govuk-label govuk-radios__label" for="ihs-question-conditional-2-v18">
+                  No
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

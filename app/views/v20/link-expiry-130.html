@@ -1,0 +1,65 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="index">Back</a>
+{% endblock %}
+
+{% block content %}
+<script>
+    function printEmail() {
+      $('#email').keyup(function(event) {
+        newText = event.target.value;
+        $('#email-show').text(newText);
+      });
+    } 
+    window.onload=printEmail;
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your verification link has expired</h1>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            We have not been able to verify your IHS reimbursement claim
+          </strong>
+        </div>
+
+      <h2 class="govuk-heading-m">What happens next?</h2>
+
+      <form class="form" action="/reapply/confirmation-of-notification-130" method="post">
+
+        <div class="govuk-form-group">
+          
+          <span id="email-hint" class="govuk-hint">
+            To request a new verification link, enter your email address.
+          </span>
+          <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+        </div>
+        <div class="govuk-inset-text" style="overflow:hidden;" id="validEmail">
+          <span class="govuk-hint govuk-!-margin-bottom-0">
+              An email will be sent to: &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
+          </span>
+      </div>
+        <button class="govuk-button" data-module="govuk-button">Request new link</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
