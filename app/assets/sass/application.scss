@@ -18,3 +18,28 @@ $govuk-assets-path: '/govuk/assets/';
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+.nhsuk-card--clickable {
+    border-bottom-width: 100px;
+  
+    .nhsuk-card__heading a,
+    .nhsuk-card__link {
+      &::before {
+        background-color: rgba(255, 255, 255, 0); /* [17] */
+        bottom: 0;
+        content: "";
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  
+    &:active {
+      border-color: red;
+      bottom: pink; /* [3] */
+    }
+  }
+  
