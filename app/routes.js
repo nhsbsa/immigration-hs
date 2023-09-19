@@ -1467,6 +1467,17 @@ router.post('/dependant-question-v8', function(req,res){
     }
 
 })
+
+router.post('/dependant-question-v18', function(req,res){
+    var contacted = req.session.data['dependant-question-v8']
+    if (contacted == "yes"){
+        res.redirect('/v18/dependant-details')
+    }
+    else {
+        res.redirect('/v18/claim-dates-new')
+    }
+
+})
 router.post('/dependant-details-v8', function(req,res){
     var contacted = req.session.data['dependant-details-v8']
     if (contacted == "yes"){
@@ -4160,6 +4171,7 @@ router.post('/single-signpost', function(req,res){
     }
 
 })
+
 
 // Start user research icludes
 // ----------------------------
