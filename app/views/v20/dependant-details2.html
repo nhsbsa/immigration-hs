@@ -13,7 +13,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v18/dependant-question">Back</a>
+  <a class="govuk-back-link" href="/v20/dependant-question">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -21,13 +21,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!--<h1 class="govuk-heading-l">What are the applicant's dependant details?</h1>-->
+      <!--<h1 class="govuk-fieldset__heading">What are the applicant's dependant details?</h1>-->
       <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Application</span>
         What are the applicant's dependant details?
       </h1>
 
-      <form class="form" action="/v18/dependant-add2" method="post">
+      <form class="form" action="/v20/dependant-add2" method="post">
         <div class="govuk-form-group">
           <label class="govuk-label" for="full-name">
             Given names
@@ -44,7 +44,7 @@
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
               <label class="govuk-label" for="full-name">
                 Date of birth
               </label>

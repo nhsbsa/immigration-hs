@@ -13,7 +13,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v18/dependant-add">Back</a>
+  <a class="govuk-back-link" href="/v20/dependant-add">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -78,10 +78,10 @@
             
         </div> -->
 
-        <form class="form" action="/dependant-question-v8" method="post">
+        <form class="form" action="/dependant-question-v20" method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="dependant-question-conditional-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
                 <!--<h1 class="govuk-fieldset__heading">
                   Do you want to add any dependants who have paid an immigration health surcharge?
                 </h1>-->
@@ -91,10 +91,10 @@
                 </h1>
               </legend> 
 
-              <span id="dependant-question-conditional-hint" class="govuk-hint">
+              <div id="dependant-question-conditional-hint" class="govuk-hint">
                 Dependants are people who the applicant supports financially. 
                 For example, the applicant's spouse or children.
-              </span>
+              </div>
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                   <div class="govuk-radios__item">

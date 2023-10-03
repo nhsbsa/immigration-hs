@@ -1468,8 +1468,8 @@ router.post('/dependant-question-v8', function(req,res){
 
 })
 
-router.post('/dependant-question-v18', function(req,res){
-    var contacted = req.session.data['dependant-question-v8']
+router.post('/version-18-dependant-question', function(req,res){
+    var contacted = req.session.data['dependant-question-v18']
     if (contacted == "yes"){
         res.redirect('/v18/dependant-details')
     }
@@ -3756,7 +3756,7 @@ router.post('/non-nhs-path-another-job-v18', function(req,res){
         res.redirect('/v18/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v18/claim-dates-new')
+        res.redirect('/v18/upload-of-contract')
     }
 
 })
@@ -3767,7 +3767,7 @@ router.post('/upload-of-evidence-add2-v18', function(req,res){
         res.redirect('/v18/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v18/claim-dates-new')
+        res.redirect('/v18/upload-of-contract')
     }
 
 })
@@ -3815,7 +3815,7 @@ router.post('/contracts-add-3-v18', function(req,res){
         res.redirect('/v18/extra-information')
     }
     else {
-        res.redirect('/v18/subscription-question')
+        res.redirect('/v18/check-your-answers-nhs-path')
     }
 
 })
@@ -4141,13 +4141,13 @@ router.post('/v19/dependant-details-delete', function (req, res) {
 //Single signpost
 // ----------------------------
 //Would you like to upload additional evidence or add extra information about gaps in the applicant's employment or working arrangements?
-router.post('/v20-signpost', function(req,res){
+router.post('/v18-signpost', function(req,res){
     var signpost = req.session.data['signpost']
     if (signpost == "yes"){
-        res.redirect('/v20/extra-information')
+        res.redirect('/v18/signpost/extra-information')
     }
     else if (signpost == "no"){
-        res.redirect('/v20/subscription-question')
+        res.redirect('/v18/subscription-question')
     }
     else {
         res.redirect('/v20/signpost')
@@ -4177,6 +4177,220 @@ router.post('/single-signpost', function(req,res){
 // ----------------------------
 
 // Health and social care
+
+
+
+// v20 - H&SC////////////////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/doug-ihs-question-v20', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/applicant-visa-type')
+    }
+    else {
+        res.redirect('/v20/not-entitled-rr')
+    }
+})
+
+router.post('/ihs-tier2-hc-v20', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/v20/work-question')
+    }
+})
+
+router.post('/work-question-v20', function(req,res){
+    var contacted = req.session.data['work-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/6-months')
+    }
+    else {
+        res.redirect('/v20/not-entitled')
+    }
+})
+
+router.post('/6-months-v20', function(req,res){
+    var contacted = req.session.data['6-months-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/average-time')
+    }
+    else {
+        res.redirect('/v20/not-entitled')
+    }
+
+})
+
+router.post('/average-time-v20', function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/tier2-declaration')
+    }
+    else {
+        res.redirect('/v20/not-entitled-rr')
+    }
+
+})
+
+router.post('/dependant-question-v20', function(req,res){
+    var contacted = req.session.data['dependant-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-details')
+    }
+    else {
+        res.redirect('/v20/non-nhs-path')
+    }
+
+})
+
+router.post('/dependant-details-v20', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-details2')
+    }
+    else {
+        res.redirect('/v20/non-nhs-path')
+    }
+
+})
+
+router.post('/subscription-question-v20', function(req,res){
+    var contacted = req.session.data['subscription-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/non-nhs-path')
+    }
+    else {
+        res.redirect('/v20/non-nhs-path')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v20', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v20/attachments')
+    }
+
+})
+
+router.post('/attachments-add-v20', function(req,res){
+    var contacted = req.session.data['attachments-add-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/upload-of-payslips')
+    }
+    else {
+        res.redirect('/v20/extra-information')
+    }
+
+})
+
+router.post('/attachments-add2-v20', function(req,res){
+    var contacted = req.session.data['attachments-add2-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/extra-information')
+    }
+    else {
+        res.redirect('/v20/extra-information')
+    }
+
+})
+
+router.post('/v20/payslips-or-contract', function(req,res){
+    var contacted = req.session.data['payslips-or-contract']
+    if (contacted == "payslips"){
+        res.redirect('/v20/upload-of-payslips')
+    }
+    else {
+        res.redirect('/v20/upload-of-contract')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v20', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v20/claim-dates-new')
+    }
+
+})
+
+router.post('/upload-of-evidence-add2-v20', function(req,res){
+    var contacted = req.session.data['upload-of-evidence-add2-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v20/claim-dates-new')
+    }
+
+})
+
+ router.post('/doug-ihs-tier2-question-v20', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v20']
+    if (contacted == "tier2"){
+       res.redirect('/v20/ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('/v20/tier5-ko')
+        }
+        else
+        {
+            res.redirect('/v20/work-question')
+        }
+})
+
+router.post('/contracts-add-v20', function(req,res){
+    var contacted = req.session.data['contracts-add-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/upload-of-evidence')
+    }
+    else {
+        res.redirect('/v20/extra-information')
+    }
+
+})
+
+router.post('/contracts-add2-v20', function(req,res){
+    var contacted = req.session.data['contracts-add2-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/extra-information')
+    }
+    else {
+        res.redirect('/v20/extra-information')
+    }
+
+})
+
+router.post('/contracts-add-3-v20', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/extra-information')
+    }
+    else {
+        res.redirect('/v20/subscription-question')
+    }
+
+})
+
+router.post('/version-20-dependant-question', function(req,res){
+    var contacted = req.session.data['dependant-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-details')
+    }
+    else {
+        res.redirect('/v20/non-nhs-path')
+    }
+
+})
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 module.exports = router;

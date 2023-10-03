@@ -1,0 +1,87 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v8/nino">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-heading-l">What's the starting date of the 6-month period the applicant is claiming for?</h1>-->
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the starting date of the 6-month period the applicant is claiming for?
+      </h1>
+
+      <form class="form" action="/v8/not-entitled-claim-dates" method="post">
+        <div id="changed-name-hint" class="govuk-hint">
+            The applicant can only claim a reimbursement for a 6 month period.
+          </div>
+        <div id="changed-name-hint" class="govuk-hint">
+            Due to legal changes, this date must be on or after 31 March 2020. 
+            Once a claim start date is entered, we'll automatically work out the end date of the 6-month period the applicant is claiming for.
+          </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 15 8 2020
+            </span>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+                    The previous claim was for the period 31 May 2020 to 30 November 2020
+        </strong>
+        </div>
+
+        <p>There'll be an option to use a reminder service that will notify the applicant that they may need to reapply.</p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

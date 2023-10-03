@@ -13,7 +13,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v18/subscription-question">Back</a>
+  <a class="govuk-back-link" href="/v20/subscription-question">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -83,7 +83,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            UK telephone number
+            UK telephone <br>number
           </dt>
           <dd class="govuk-summary-list__value">
             07700 900457
@@ -101,6 +101,20 @@
             </dt>
             <dd class="govuk-summary-list__value">
               s.philips@nhs.net
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Email reminder
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Yes
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="#">
@@ -138,7 +152,7 @@
             <p>IHS123456789</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/v18/check-your-answers-delete-dependant">
+            <a href="/v20/check-your-answers-delete-dependant">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -154,7 +168,7 @@
                 <p>IHS123456789</p>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="/v18/check-your-answers-delete-dependant">
+              <a href="/v20/check-your-answers-delete-dependant">
                 Change
                 <span class="govuk-visually-hidden"> name</span>
               </a>
@@ -187,7 +201,7 @@
             <p>Yes</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/v18/subscription-question">
+            <a href="/v20/subscription-question">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -244,7 +258,7 @@
             <p>Contract.pdf</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="/v18/contract-add">
+            <a href="/v20/contract-add">
               Change
               <span class="govuk-visually-hidden"> name</span>
             </a>
@@ -258,7 +272,7 @@
               -
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="/v18/extra-information">
+              <a href="/v20/extra-information">
                 Change
                 <span class="govuk-visually-hidden"> name</span>
               </a>
@@ -274,7 +288,7 @@
               <p>Employer-letter.pdf</p>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="/v18/contract-add-3">
+              <a href="/v20/contract-add-3">
                 Change
                 <span class="govuk-visually-hidden"> name</span>
               </a>
@@ -285,7 +299,7 @@
      
 
 
-      <form action="/v18/check-your-answers2" method="post" novalidate>
+      <form action="/v20/check-your-answers2" method="post" novalidate>
 
         <input type="hidden" name="answers-checked" value="true">
 
