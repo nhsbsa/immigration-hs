@@ -6,11 +6,12 @@ Select and confirm address
 
 {% block beforeContent %}
 
- <div class="govuk-phase-banner">
+<div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    
+
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
@@ -20,9 +21,11 @@ Select and confirm address
 
 {% block content %}
 <style>
-.govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+  .govuk-summary-list__key,
+  .govuk-summary-list__value,
+  .govuk-summary-list__actions {
     border-bottom: none;
-}
+  }
 </style>
 
 <div class="govuk-grid-row">
@@ -31,44 +34,74 @@ Select and confirm address
 
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Application</span>
-      Select the applicant's UK address</h1>
+      Select the applicant's UK address
+    </h1>
 
 
-     <form class="form" action="/v19/email-address" method="post">
+    <form class="form" action="/v19/email-address" method="post">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-m">Postcode</h2>
 
           <div>
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">SO11 2AB</span> <a class="govuk-link" href="/v19/postcode" style="margin-left:10px">Change<span class="govuk-visually-hidden"> file 1</span></a></p>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">WR1 1NL</span> <a class="govuk-link"
+                href="/v19/postcode" style="margin-left:10px">Change<span class="govuk-visually-hidden"> file
+                  1</span></a></p>
           </div>
 
         </div>
       </div>
-    <div class="govuk-form-group">
+      <div class="govuk-form-group">
         <label class="govuk-label" for="sort">
-            <h2 class="govuk-heading-m"> Select an address</h2>
+          <h2 class="govuk-heading-m"> Select an address</h2>
         </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="published">1 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="updated">3 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="views">5 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">7 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">9 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">7 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">11 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">13 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">15 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">17 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments">19 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
-          <option value="comments" selected style="display:none">11 address found</option>
-        </select>
-        </select>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="1 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address">
+                  1 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-2" name="select-an-address" type="radio" value="10 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-2">
+                  2 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-3" name="select-an-address" type="radio" value="11 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-3">
+                  3 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-4" name="select-an-address" type="radio" value="101 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-4">
+                  4 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-5" name="select-an-address" type="radio" value="110 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-5">
+                  5 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-6" name="select-an-address" type="radio" value="111 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-6">
+                  6 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
       </div>
 
-      <p><a href="/v19/manual-address">The applicant's UK address is not in the list</a> &nbsp;</p>
+
+
+      </div>
+
       
+      <p><a href="/v19/manual-address">Enter the applicant's UK address manually</a> &nbsp;</p>
       <button class="govuk-button" data-module="govuk-button">Continue</button>
+      
     </form>
 
   </div>

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Postccode search
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v19/share-code">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What's the applicant's UK address?
+    </h1>
+
+    <form class="form" action="/v19/select-address-alternative" method="post">
+      <div class="govuk-width-container">
+
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="searchString">
+            Building number or name
+          </label>
+          <div id="searchString-hint" class="govuk-hint">
+            For example, 15 or Prospect Cottage.
+          </div><input class="govuk-input govuk-!-width-two-thirds" id="searchString" name="searchString" type="text"
+            aria-describedby="searchString-hint">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="postcode">
+            Postcode
+          </label>
+          <div id="postcode-hint" class="govuk-hint">
+            For example, AA3 1AB.
+          </div><input class="govuk-input govuk-!-width-two-thirds" id="postcode" name="postcode" type="text"
+            aria-describedby="postcode-hint">
+        </div>
+        
+        <p><a href="#" class="govuk-link">Enter the applicant's UK address manually</a></p>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Find address
+        </button>
+        
+      </div>
+    </form>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
