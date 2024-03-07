@@ -3690,7 +3690,7 @@ router.post('/dependant-details-v18', function(req,res){
         res.redirect('/v18/dependant-details2')
     }
     else {
-        res.redirect('/v18/non-nhs-path')
+        res.redirect('/v18/claim-dates-new')
     }
 
 })
