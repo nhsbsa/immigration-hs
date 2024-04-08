@@ -1,0 +1,113 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Healthcare question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v18/applicant-visa-type">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/ihs-tier2-hc-v18" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Eligibility check</span>
+        <fieldset class="govuk-fieldset" aria-describedby="work-question-conditional-hint">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Is the applicant a qualified health professional? </h1>
+          </legend>
+
+
+
+          <span id="work-question-conditional-hint" class="govuk-hint">
+            <p class="govuk-hint">The applicant must work for, or have a job offer from, either:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-hint">
+              <li>the NHS</li>
+              <li>an organisation providing clinical services</li>
+              <li>an organisation providing adult social care</li>
+            </ul>
+            The applicant must be qualified, for example, a doctor or nurse.
+            <br>
+
+            <!--              View the <a href="https://www.gov.uk/government/publications/immigration-health-surcharge-applying-for-a-refund/immigration-health-surcharge-guidance-for-reimbursement-2020#annex">list of eligible professionals</a>.
+              </span>
+
+ -->
+
+
+
+            <br>
+            <div class="govuk-radios govuk-radios--inline" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="work-question-conditional" name="ihs-tier2-hc-v18" type="radio"
+                  value="yes" data-aria-controls="conditional-work-question-conditional">
+                <label class="govuk-label govuk-radios__label" for="work-question-conditional">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="work-question-conditional-2" name="ihs-tier2-hc-v18" type="radio"
+                  value="no" data-aria-controls="conditional-work-question-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="work-question-conditional-2">
+                  No
+                </label>
+              </div>
+
+            </div>
+        </fieldset>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            View the list of eligible professionals
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>List of eligible professionals:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>nurses</li>
+            <li>midwives</li>
+            <li>social workers</li>
+            <li>paramedics</li>
+            <li>doctor</li>
+            <li>psychologists</li>
+            <li>pharmacists</li>
+            <li>ophthalmic opticians</li>
+            <li>dental practitioners</li>
+            <li>medical radiographers</li>
+            <li>podiatrists</li>
+            <li>health professionals not elsewhere classified</li>
+            <li>physiotherapists</li>
+            <li>occupational therapists</li>
+            <li>speech and language therapists</li>
+            <li>therapy professionals not elsewhere classified</li>
+            <li>biological scientists and biochemists</li>
+            <li>physical scientists</li>
+          </ul>
+
+        </div>
+      </details>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

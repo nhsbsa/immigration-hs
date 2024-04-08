@@ -27,7 +27,7 @@ Upload evidence
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form class="form" action="/v18/extra-information" method="post">
+    <form class="form" action="/v18/signpost/signpost" method="post">
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--l" for="file-upload-1">
@@ -56,25 +56,23 @@ Upload evidence
         </div>
         <!-- end callout box -->
 
-       
-
         <span id="file-upload-1-hint" class="govuk-hint">
           <p>From each of the applicant's health and social care employers, we'll need both a:</p>
-          <ul class="govuk-list govuk-list--bullet">
+          <ul class=“govuk-list govuk-list--bullet”>
             <li>range of payslips for every day, in the 6 month period that the claim is being made</li>
             <li>contract of employment, which shows an average of 16 hours or more per week</li>
           </ul>
 
-        
-
-          <div class="govuk-inset-text">
-            To help us with the claim, the applicant should make sure to upload payslips before and after the date
-            period they wish to make a claim for.
+          <div class="govuk-inset-text" style="overflow:hidden;">
+            <span class="govuk-hint govuk-!-margin-bottom-0">
+              To help us with the claim, the applicant should make sure to upload payslips before and after the date
+              period they wish to make a claim for.
+            </span>
           </div>
 
-          <span id="file-upload-1-hint" class="">
+          <span id="file-upload-1-hint" class="govuk-hint">
             <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
-            <ul class="govuk-list govuk-list--bullet">
+            <ul class=“govuk-list govuk-list--bullet”>
               <li>employee name</li>
               <li>employer name</li>
               <li>National Insurance number</li>
@@ -83,42 +81,40 @@ Upload evidence
               <li>contracted hours</li>
             </ul>
 
-           
-
-            <p class=>The evidence you upload must be:</p>
-            <ul class="govuk-list govuk-list--bullet ">
+            <p>Uploaded evidence must be:</p>
+            <ul class=“govuk-list govuk-list--bullet”>
               <li>clear and readable</li>
               <li>descriptive, with the file name containing the period that the evidence covers such as
                 'payslip-090123-150123.pdf'</li>
               <li>JPG, JPEG, BMP, PNG or PDF</li>
-              <li>smaller than 2MB in size for single files</li>
+              <li>no larger than 2MB in size for single files</li>
             </ul>
           </span>
 
       </div>
       <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
-      <label class="govuk-label govuk-label--m" for="documents">
-        Upload files
-      </label>
-      <!--<div class="govuk-grid-column-two-thirds">-->
-      <div class="moj-multi-file-upload">
-
-
-        <div class="govuk-form-group">
+     
+        <!--<div class="govuk-grid-column-two-thirds">-->
+        <div class="moj-multi-file-upload">
           
 
-          <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file"
-            multiple="">
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="documents">
+              Upload files
+            </label>
 
-        <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-          Upload file
-        </button>
+            <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file"
+              multiple="">
+          </div>
+
+          <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+            Upload file
+          </button>
 
 
 
-        <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+          <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>
 

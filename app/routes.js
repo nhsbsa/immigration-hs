@@ -4391,6 +4391,29 @@ router.post('/version-20-dependant-question', function(req,res){
     }
 
 })
+
+//VISA CHANGES ROUTES
+
+// router.get(/country-question/, function (req, res) {
+//     if (req.query.location === "england")  {
+//      res.redirect('dob');
+//    } else {
+//      res.redirect('do-you-want-to-continue');
+//   }
+//   });
+
+  router.post('/country-question-v20', function(req,res){
+    var country = req.session.data['whereDoYouLive']
+    if (country == "england"){
+        res.redirect('/v20-visa-changes/england/applicant-visa-type')
+    }
+    else {
+        res.redirect('/v18/applicant-visa-type')
+    }
+})
+
+
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 module.exports = router;
