@@ -4,7 +4,7 @@ caption: Installation guide for new users
 ---
 # How to run the kit
 
-You’ll use the terminal to start and stop the kit.
+You'll use the terminal to start and stop the kit.
 
 ## Open the prototype folder in terminal
 
@@ -45,7 +45,7 @@ In your web browser, <a href="http://localhost:3000" target="_blank">open http:/
 
 ## Quitting the kit
 
-It’s fine to leave the kit running for days or while your computer is asleep.
+It's fine to leave the kit running for days or while your computer is asleep.
 
 To quit the kit, in the terminal press the `ctrl` and `c` keys together.
 

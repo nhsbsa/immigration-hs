@@ -1,8 +1,8 @@
 ---
-title: Show the user’s answers
+title: Show the user's answers
 caption: Build a basic prototype
 ---
-# Show the user’s answers on the ‘Check answers’ page
+# Show the user's answers on the ‘Check answers' page
 
 The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers for users to check.
 
@@ -24,7 +24,7 @@ to
 <span class="govuk-visually-hidden"> number of balls you can juggle</span>
 ```
 
-Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear “Change” and not know what it’s for.
+Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear “Change” and not know what it's for.
 
 ## Show the answer to question 2
 
@@ -44,7 +44,7 @@ to
 
 ## Delete the remaining example answers
 
-On the ‘Check answers’ template page, there are example answers that you do not need.
+On the ‘Check answers' template page, there are example answers that you do not need.
 
 1. Find and delete the whole `<div>` that starts with `<div class="govuk-summary-list__row">` and contains 'Contact information'.
 

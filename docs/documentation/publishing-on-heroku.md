@@ -17,13 +17,13 @@ You'll need to have [put your code on GitHub](/docs/github-desktop) to use this 
 
 3. Enter a name for your prototype app. App names in Heroku have to be unique across all the users of Heroku. It can be helpful to add your name or organisation to the start of the name to make it unique. For example joelanman-juggling-prototype.
 
-4. Select Europe for the region - it’s not important but makes your prototype a bit faster.
+4. Select Europe for the region - it's not important but makes your prototype a bit faster.
 
 5. Click **Create app**.
 
 ## Deploy your prototype
 
-1. For **Deployment method** choose **GitHub**. ‘Deploy’ means publish.
+1. For **Deployment method** choose **GitHub**. ‘Deploy' means publish.
 
 ![Screenshot of a section on the Heroku page that has the heading 'Deployment method'. It lists 3 links, left to right: 1. Heroku Git. 2. GitHub. 3. Container Registry.](/public/images/docs/heroku-deploy.png)
 

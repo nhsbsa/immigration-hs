@@ -7,7 +7,7 @@ The Prototype Kit comes with standard GOV.UK Frontend styles and components for 
 
 The Prototype Kit processes all the files in the `/app/assets` folder, and puts the processed files in `/public`.
 
-Do not change files in the `/public` folder because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not change files in the `/public` folder because it's deleted and rebuilt every time you make a change to your prototype.
 
 ## Add CSS
 
@@ -19,7 +19,7 @@ To add styles, use:
 /app/assets/sass/application.scss
 ```
 
-Do not edit the file `/public/styles/application.css` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not edit the file `/public/styles/application.css` because it's deleted and rebuilt every time you make a change to your prototype.
 
 The [Prototype Kit uses Sass](https://sass-lang.com/guide), which adds extra features to CSS.
 
@@ -49,7 +49,7 @@ To add your own JavaScript, use:
 /app/assets/javascripts/application.js
 ```
 
-Do not edit the file `/public/javascript/application.js` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not edit the file `/public/javascript/application.js` because it's deleted and rebuilt every time you make a change to your prototype.
 
 ### Add existing JavaScript files
 
@@ -85,9 +85,9 @@ Use it in your page like this:
 <img src="/public/images/user.png" alt="User icon">
 ```
 
-Use ‘alt’ text to describe the image for screen readers.
+Use ‘alt' text to describe the image for screen readers.
 
-Do not put files directly in `/public` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not put files directly in `/public` because it's deleted and rebuilt every time you make a change to your prototype.
 
 ## Add other files
 
@@ -104,4 +104,4 @@ Link to it like this:
 ```
 <a href="/public/downloads/report.pdf">Download the report</a>
 ```
-Do not put files directly in `/public` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not put files directly in `/public` because it's deleted and rebuilt every time you make a change to your prototype.
