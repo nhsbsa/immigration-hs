@@ -20,10 +20,10 @@ Your prototype sends this key every time it asks Notify to do something.
 
 To get a key:
 - sign into GOV.UK Notify
-- go to the ‘API integration' page
-- click ‘API keys'
-- click the ‘Create an API' button
-- choose the ‘Team and guest list' option
+- go to the 'API integration' page
+- click 'API keys'
+- click the 'Create an API' button
+- choose the 'Team and guest list' option
 - copy the key to your clipboard
 
 ### Saving your key on your computer
@@ -47,7 +47,7 @@ This will let your prototype talk to Notify while it's running on
 Heroku.
 
 To save the key on Heroku, go to the settings page of your app, click
-‘Reveal config vars' and fill in the two textboxes like this (where
+'Reveal config vars' and fill in the two textboxes like this (where
 xxxxxxx is the key you've copied from Notify):
 ```
 KEY          | VALUE
@@ -140,7 +140,7 @@ you've sent on the GOV.UK Notify dashboard.
 
 Because your account is in trial mode you'll only be able to send emails
 to yourself. If you're doing user research you can add the participants
-email addresses to the ‘guest list' in GOV.UK Notify. This will let you
+email addresses to the 'guest list' in GOV.UK Notify. This will let you
 send them emails too. You'll need to collect their email addresses and
 get consent to use them before doing your research.
 

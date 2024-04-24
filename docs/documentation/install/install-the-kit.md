@@ -30,9 +30,9 @@ Move the folder into your `prototypes` folder.
 
 The terminal on MacOS and Linux (and Git Bash on Windows, which is part of Git for Windows) lets you type in commands and run programs on your computer. 
 
-The important thing to remember about the terminal is that you‘re working in one directory (folder) at any one time.
+The important thing to remember about the terminal is that you're working in one directory (folder) at any one time.
 
-There are a few commands you‘ll have to run in the terminal to use the Prototype Kit.
+There are a few commands you'll have to run in the terminal to use the Prototype Kit.
 
 ### Commands
 

@@ -60,11 +60,11 @@ As this is a new Git repo, all files in the kit will be listed as having changes
 
 ## 4. Doing your first commit
 
-There are two stages to committing your changes. The first is to select the specific files with changes you want to commit, called **‘staging'**. The second is to commit all the changes in ‘staging'.
+There are two stages to committing your changes. The first is to select the specific files with changes you want to commit, called **'staging'**. The second is to commit all the changes in 'staging'.
 
 ### Select files you want to commit
 
-As this is our first commit, we want to add **all** files to ‘staging'
+As this is our first commit, we want to add **all** files to 'staging'
 
 #### Adding all files that have changes
 
@@ -79,7 +79,7 @@ git add .
 
 Run `git status` to check the files you've got in the stage. You will see a list of all the files just added under the heading `Changes to be committed`.
 
-### Commit the files in ‘staging'
+### Commit the files in 'staging'
 
 Run:
 ```

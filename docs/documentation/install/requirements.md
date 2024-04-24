@@ -23,7 +23,7 @@ You'll need:
 
 ## Terminal
 
-You'll need a terminal application to install, start and stop the kit. Using a terminal is sometimes called ‘using the command line'.
+You'll need a terminal application to install, start and stop the kit. Using a terminal is sometimes called 'using the command line'.
 
 ### Mac users
 

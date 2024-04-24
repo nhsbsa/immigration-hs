@@ -39,4 +39,4 @@ Your page should now look like this:
 <figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
 </figure>
 
-[Next (Show the user's answers on your ‘Check answers' page)](show-users-answers)
+[Next (Show the user's answers on your 'Check answers' page)](show-users-answers)

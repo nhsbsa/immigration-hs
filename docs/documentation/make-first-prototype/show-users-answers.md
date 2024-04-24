@@ -2,7 +2,7 @@
 title: Show the user's answers
 caption: Build a basic prototype
 ---
-# Show the user's answers on the ‘Check answers' page
+# Show the user's answers on the 'Check answers' page
 
 The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers for users to check.
 
@@ -44,7 +44,7 @@ to
 
 ## Delete the remaining example answers
 
-On the ‘Check answers' template page, there are example answers that you do not need.
+On the 'Check answers' template page, there are example answers that you do not need.
 
 1. Find and delete the whole `<div>` that starts with `<div class="govuk-summary-list__row">` and contains 'Contact information'.
 

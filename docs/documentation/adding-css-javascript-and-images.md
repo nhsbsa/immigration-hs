@@ -85,7 +85,7 @@ Use it in your page like this:
 <img src="/public/images/user.png" alt="User icon">
 ```
 
-Use ‘alt' text to describe the image for screen readers.
+Use 'alt' text to describe the image for screen readers.
 
 Do not put files directly in `/public` because it's deleted and rebuilt every time you make a change to your prototype.
 

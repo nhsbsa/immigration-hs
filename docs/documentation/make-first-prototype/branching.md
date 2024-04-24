@@ -4,7 +4,7 @@ caption: Build a basic prototype
 ---
 # Show different pages depending on user input (branching)
 
-Our first question asks the user how many balls they can juggle. We're going to send them to an ‘ineligible' page if they can only juggle 2 balls or less. Sending users to different pages based on their input is called branching.
+Our first question asks the user how many balls they can juggle. We're going to send them to an 'ineligible' page if they can only juggle 2 balls or less. Sending users to different pages based on their input is called branching.
 
 To do this, we're going to need an `ineligible.html` page, and some logic to decide when to send users there.
 
@@ -51,7 +51,7 @@ router.post('/juggling-balls-answer', function (req, res) {
 })
 ```
 
-4. Check it works. Selecting ‘3 or more' should send you to the next question. Any other answer should send you to the ineligible page.
+4. Check it works. Selecting '3 or more' should send you to the next question. Any other answer should send you to the ineligible page.
 
 ## If it does not work
 

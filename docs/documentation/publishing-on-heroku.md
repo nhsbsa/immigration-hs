@@ -23,7 +23,7 @@ You'll need to have [put your code on GitHub](/docs/github-desktop) to use this 
 
 ## Deploy your prototype
 
-1. For **Deployment method** choose **GitHub**. ‘Deploy' means publish.
+1. For **Deployment method** choose **GitHub**. 'Deploy' means publish.
 
 ![Screenshot of a section on the Heroku page that has the heading 'Deployment method'. It lists 3 links, left to right: 1. Heroku Git. 2. GitHub. 3. Container Registry.](/public/images/docs/heroku-deploy.png)
 
