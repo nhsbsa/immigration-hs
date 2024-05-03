@@ -1,7 +1,7 @@
-{% extends "layout-health.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-Details about cookies for Apply for your immigration health surcharge reimbursement
+  Question page
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,13 +13,29 @@ Details about cookies for Apply for your immigration health surcharge reimbursem
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Details about cookies for Apply for your immigration health surcharge reimbursement</h1>
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            You've set your cookie preferences.
+          </p>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-xl">Details about cookies for Apply for your immigration health surcharge reimbursement as a student</h1>
+      
+      
+      
       <p class="govuk-body">Apply for your immigration health surcharge reimbursement puts small files (known as 'cookies') onto your computer to collect information about how you browse the site. Find out more about the cookies we use, what they're for and when they expire.</p>
 
-      <h2 class="govuk-heading-l" id="strictly-necessary-cookies">Cookies that measure website use</h2>
-      <p class="govuk-body">We use Google Analytics software (Universal Analytics) to collect anonymised information about how you use GOV.UK. We do this to help make sure the site is meeting the needs of its users and to help us make improvements to the site and to government digital services.
+      
 
-</p>
+      <h2 class="govuk-heading-l" id="strictly-necessary-cookies">Cookies that measure website use</h2>
+      <p class="govuk-body">We use Google Analytics software (Universal Analytics) to collect anonymised information about how you use GOV.UK. We do this to help make sure the site is meeting the needs of its users and to help us make improvements to the site and to government digital services.</p>
       <p class="govuk-body">We do not allow Google to use or share the data about how you use this site.</p>
 
       <p class="govuk-body">Google Analytics stores information about:</p>
@@ -89,11 +105,22 @@ Details about cookies for Apply for your immigration health surcharge reimbursem
         </fieldset>
  
         </div>
-
         
-        <a href="cookies-confirm" name="cookies-setting-button" class="govuk-button button" data-module="govuk-button" id="cookies-setting-button">
+            
+        
+        
+        
+                
+          
+        
+        
+          
+            
+          
+        
+        <button name="cookies-setting-button" class="govuk-button button" data-module="govuk-button" id="cookies-setting-button">
           Save cookie settings
-        </a>
+        </button>
         
         
             
@@ -118,17 +145,24 @@ Details about cookies for Apply for your immigration health surcharge reimbursem
             <td class="govuk-table__cell">Stores a session ID and temporarily stores data you enter to enable you to make an application</td>
             <td class="govuk-table__cell">When you close your browser</td>
           </tr>
+        </tbody>
+
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">hof-wizard-sc</th>
             <td class="govuk-table__cell">Tells us when your session starts so we can tell you if it expires</td>
             <td class="govuk-table__cell">When you close your browser</td>
           </tr>
+        </tbody>
+
+        <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">hof-cookie-check</th>
             <td class="govuk-table__cell">Tells us you have already allowed cookies so we don't need to ask you again</td>
             <td class="govuk-table__cell">When you close your browser</td>
           </tr>
         </tbody>
+
       </table>
 
       <h3 class="govuk-heading-m" id="cookies-message">Cookies message</h3>
