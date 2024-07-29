@@ -4312,15 +4312,17 @@ router.post('/v20/payslips-or-contract', function(req,res){
 })
 
 router.post('/non-nhs-path-another-job-v20', function(req,res){
-    var contacted = req.session.data['non-nhs-path-another-job-v20']
+    var contacted = req.session.data['non-nhs-path-another-job-v18']
     if (contacted == "yes"){
         res.redirect('/v20/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v20/claim-dates-new')
+        res.redirect('/v20/contract-upload')
     }
 
 })
+
+
 
 router.post('/upload-of-evidence-add2-v20', function(req,res){
     var contacted = req.session.data['upload-of-evidence-add2-v20']
@@ -4382,12 +4384,12 @@ router.post('/contracts-add-3-v20', function(req,res){
 })
 
 router.post('/version-20-dependant-question', function(req,res){
-    var contacted = req.session.data['dependant-question-v20']
+    var contacted = req.session.data['dependant-question-v18']
     if (contacted == "yes"){
         res.redirect('/v20/dependant-details')
     }
     else {
-        res.redirect('/v20/non-nhs-path')
+        res.redirect('/v20/claim-dates-new')
     }
 
 })
@@ -4409,6 +4411,38 @@ router.post('/version-20-dependant-question', function(req,res){
     }
     else {
         res.redirect('/v18/applicant-visa-type')
+    }
+})
+
+router.post('/pay-v20', function(req,res){
+    var pay = req.session.data['whereDoYouLive']
+    if (pay == "monthly"){
+        res.redirect('/v20/monthly')
+    }
+    else if (pay == "weekly"){
+        res.redirect('/v20/weekly')
+    }
+    else if (pay == "daily"){
+        res.redirect('/v20/daily')
+    }
+    else if (pay == "other"){
+        res.redirect('/v20/other')
+    }
+})
+
+router.post('/v20-pay', function(req,res){
+    var pay = req.session.data['pay-frequency']
+    if (pay == "monthly"){
+        res.redirect('/v20/monthly')
+    }
+    else if (pay == "weekly"){
+        res.redirect('/v20/weekly')
+    }
+    else if (pay == "daily"){
+        res.redirect('/v20/daily')
+    }
+    else if (pay == "both"){
+        res.redirect('/v20/both')
     }
 })
 
