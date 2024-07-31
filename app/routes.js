@@ -4430,6 +4430,37 @@ router.post('/pay-v20', function(req,res){
     }
 })
 
+
+// router.post('/pay-checkbox', function(req, res) {
+//     var noPayslip = req.body['waste'];
+
+//     if (noPayslip === 'on') { // Checkbox is checked
+//         res.redirect('/v20/no-payslip');
+//     } else { // Checkbox is unchecked
+//         res.redirect('/v20/has-payslip');
+//     }
+// });
+
+router.post('/pay-checkbox', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20/ideation/no-payslip")
+    } else {
+        response.redirect("/v20/ideation/yes-payslip")
+    }
+})
+
+router.post('/pay-checkbox-october', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20/ideation/no-payslip-october")
+    } else {
+        response.redirect("/v20/ideation/yes-payslip-october")
+    }
+})
+
 router.post('/v20-pay', function(req,res){
     var pay = req.session.data['pay-frequency']
     if (pay == "monthly"){
@@ -4445,6 +4476,30 @@ router.post('/v20-pay', function(req,res){
         res.redirect('/v20/both')
     }
 })
+
+router.post('/yes-payslip-add', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/april-add')
+    }
+    else {
+        res.redirect('/v20/ideation/task-list-2')
+    }
+
+})
+
+router.post('/yes-payslip-add-october', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/october-add')
+    }
+    else {
+        res.redirect('/v20/ideation/task-list-3')
+    }
+
+})
+
+
 
 
 
