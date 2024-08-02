@@ -4461,6 +4461,17 @@ router.post('/pay-checkbox-october', function(request, response) {
     }
 })
 
+
+router.post('/pay-checkbox-october-no-start', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20/ideation/no-payslip-october-no-april")
+    } else {
+        response.redirect("/v20/ideation/yes-payslip-october-no-april")
+    }
+})
+
 router.post('/v20-pay', function(req,res){
     var pay = req.session.data['pay-frequency']
     if (pay == "monthly"){
@@ -4495,6 +4506,17 @@ router.post('/yes-payslip-add-october', function(req,res){
     }
     else {
         res.redirect('/v20/ideation/task-list-3')
+    }
+
+})
+
+router.post('/yes-payslip-add-october-no-april', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('')
+    }
+    else {
+        res.redirect('/v20/ideation/task-list-3-no-april')
     }
 
 })

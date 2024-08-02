@@ -42,7 +42,7 @@ IHS question
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/yes-payslip-add" method="post">
+    <form class="form" action="/yes-payslip-add-october-no-april" method="post">
       <div class="govuk-form-group">
         <span class="govuk-caption-l">Application</span>
         <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
@@ -51,7 +51,7 @@ IHS question
             <h1 class="govuk-fieldset__heading">Uploaded payslips</h1>
         </legend>
 
-        <p>Check the payslips you have provided cover the claim start date you have given us: <strong>10 April 2020</strong>.</p>
+        <p>Check the payslips you have provided cover up until <strong>10 October 2020</strong></p>
         <div class="govuk-form-group">
 
 
@@ -65,11 +65,11 @@ IHS question
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <!-- <a download href="/">contract.pdf</a> -->
-                  <a href="/public/images/dummyslip.jpg" target="_blank" >April-2020.jpg</a>
+                  <a href="/public/images/dummyslip.jpg" target="_blank" >October-2020.jpg</a>
                 </dd>
                 <dd class="govuk-summary-list__value">
                   <!-- <a download href="/">contract.pdf</a> -->
-                  <a href="april-delete" >Delete</a>
+                  <a href="/public/images/dummyslip.jpg" target="_blank" >Delete</a>
                 </dd>
             
                 
@@ -81,46 +81,7 @@ IHS question
             </dl>
 
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-heading-m">
-               What is the pay date of this payslip?
-              </h2>
-            </legend>
 
-            <p>If your payslip for this month does not cover the start date, you will need to evidence you were working at this time with by uploading a contract.  </p>
-            
-            <div id="passport-issued-hint" class="govuk-hint">
-              For example, 31 7 2020
-            </div>
-            <div class="govuk-date-input" id="passport-issued">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                    Day
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-                </div>
-              </div>
-            </div>
-
-
-            <br>
 
           <!-- <img src="/public/images/dummyslip.jpg" style="height: 300px;" alt="Three illustrations of taking a passport photo. Two incorrect ways show someone taking their own photo with a phone camera or webcam. The correct way shows someone else helping to take a photo that includes the person's head and shoulders."> -->
        
@@ -128,14 +89,12 @@ IHS question
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-                Do you want to upload more payslips for April 2020?
+                Do you want to upload more payslips for October 2020?
 
             </legend>            
            <!-- <span id="attachments-add-conditional-hint" class="govuk-hint">
             hint text goes here.
             </span>-->
-
-            
 
           <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-radios govuk-radios--conditional" data-module="radios">
