@@ -1,0 +1,130 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20/non-nhs-path-add">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/v20/extra-information" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--l" for="file-upload-1">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Upload payslips
+          </h1>
+        </label>
+
+        <!-- start callout box -->
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+            <p>Upload evidence for the period: <strong>30 April 2020</strong> to <strong>29 October
+                2020</strong>.</p>
+            <p>If the applicant does not have the correct evidence, their claim for reimbursement may be rejected or
+              declined.</p>
+            </p>
+          </div>
+        </div>
+        <!-- end callout box -->
+
+       
+
+        <span id="file-upload-1-hint" class="govuk-hint">
+          <p>From each of the applicant's health and social care employers, we'll need a           range of payslips for every day, in the 6 month period that the claim is being made</p>
+         
+            
+          
+
+        
+
+          <div class="govuk-inset-text">
+            To help us with the claim, the applicant should make sure to upload payslips before and after the date
+            period they wish to make a claim for.
+          </div>
+
+          <span id="file-upload-1-hint" class="">
+            <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>employee name</li>
+              <li>employer name</li>
+              <li>National Insurance number</li>
+              <li>pay date or period covered</li>
+              <li>employment start date</li>
+              <li>contracted hours</li>
+            </ul>
+
+           
+
+            <p>Uploaded evidence must be:</p>
+            <ul class="govuk-list govuk-list--bullet ">
+              <li>clear and readable</li>
+              <li>descriptive, with the file name containing the period that the evidence covers such as
+                'payslip-090123-150123.pdf'</li>
+              <li>JPG, JPEG, BMP, PNG or PDF</li>
+              <li>smaller than 2MB in size for single files</li>
+            </ul>
+          </span>
+
+      </div>
+      <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
+      <label class="govuk-label govuk-label--m" for="documents">
+        Upload files
+      </label>
+      <!--<div class="govuk-grid-column-two-thirds">-->
+      <div class="moj-multi-file-upload">
+
+
+        <div class="govuk-form-group">
+          
+
+          <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file"
+            multiple="">
+        </div>
+
+        <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+          Upload file
+        </button>
+
+        
+
+
+        <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
+        <a href="payslip-upload-start-2" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -4556,6 +4556,17 @@ router.post('/contracts-add-3-v20-warning', function(req,res){
 
 })
 
+router.post('/contracts-add-3-v20-dates', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/payslip-upload-start-2')
+    }
+    else {
+        res.redirect('/v20/ideation/check-payslip-dates')
+    }
+
+})
+
 
 
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));

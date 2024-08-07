@@ -1,0 +1,90 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+ Payslip pay dates
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/contracts-add-3-v20-ideation" method="post">
+    <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Application</span>
+            Payslip pay dates
+        </h1>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m"></h2>
+            
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">Files uploaded</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">File name</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">Pay date</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">First payslip</th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">April-2020.jpg</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">30 April 2020</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="check-payslip-dates">Change</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Last payslip</th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">October-2020.jpg</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">16 October 2020</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="check-payslip-dates-end">Change</a></td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          
+          
+      </div>
+      <div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            
+           
+           
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                  I confirm these pay dates are correct
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
