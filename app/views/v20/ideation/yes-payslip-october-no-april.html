@@ -51,7 +51,7 @@ IHS question
             <h1 class="govuk-fieldset__heading">Uploaded payslips</h1>
         </legend>
 
-        <p>Check the payslips you have provided cover up until <strong>10 October 2020</strong></p>
+        
         <div class="govuk-form-group">
 
 
@@ -79,6 +79,62 @@ IHS question
                    
 
             </dl>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-m">
+               What is the pay date of this payslip?
+              </h2>
+            </legend>
+
+            <p>Check the payslips you have provided was paid on or after the claim end date: <strong>09 October 2020</strong>.</p>
+
+            <p>If your payslip for this month does not cover up until this date, your application will not be accepted.  </p>
+            
+            <div id="passport-issued-hint" class="govuk-hint">
+              For example, 31 10 2020
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+
+            
+
+
+            <br>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  I have uploaded multiple payslips
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Enter the pay date of the latest payslip you have provided.
+              </div>
+            </details>
 
 
 

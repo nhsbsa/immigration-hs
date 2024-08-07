@@ -4499,6 +4499,17 @@ router.post('/yes-payslip-add', function(req,res){
 
 })
 
+router.post('/yes-payslip-check', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/april-add')
+    }
+    else {
+        res.redirect('/v20/check-your-answers-nhs-path')
+    }
+
+})
+
 router.post('/yes-payslip-add-october', function(req,res){
     var contacted = req.session.data['contracts-add-3-v20']
     if (contacted == "yes"){
@@ -4522,6 +4533,28 @@ router.post('/yes-payslip-add-october-no-april', function(req,res){
 })
 
 
+
+router.post('/contracts-add-3-v20-ideation', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/extra-information-gaps')
+    }
+    else {
+        res.redirect('/v20/check-your-answers-nhs-path')
+    }
+
+})
+
+router.post('/contracts-add-3-v20-warning', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/extra-information-gaps')
+    }
+    else {
+        res.redirect('/v20/check-payslip-warning')
+    }
+
+})
 
 
 

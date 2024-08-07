@@ -36,18 +36,6 @@ IHS question
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/pay-checkbox" method="post">
         <div class="govuk-form-group">
-
-
-          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-            <div class="govuk-notification-banner__header">
-              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                Success
-              </h2>
-            </div>
-            <div class="govuk-notification-banner__content">
-              <p>File named April-2020.jpg has been deleted</p>
-            </div>
-          </div>
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
             <h1 class="govuk-fieldset__heading">Upload the applicant's payslip for April 2020</h1>
@@ -72,6 +60,30 @@ IHS question
             <li>JPG, JPEG, BMP, PNG or PDF</li>
             <li>smaller than 2MB in size for single files</li>
           </ul>
+
+
+
+          <h2 class="govuk-heading-m">Files added</h2>
+          <div class="moj-multi-file__uploaded-files">
+    
+            <div class="govuk-summary-list moj-multi-file-upload__list">
+    
+              
+    
+    
+    
+              <div class="govuk-summary-list__row moj-multi-file-upload__row">
+                <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+                  <span class="moj-multi-file-upload__success"> 
+                    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                    <div class="moj-file-message_span">April-2020.jpg successfully uploaded</div>
+                </span>
+                <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a href="april-delete">Delete</a></dd>
+              </div>
+              </div>
+              </div>
+
+
           <!-- Div to be hidden -->
           <div id="content-to-hide">
             <label class="govuk-label govuk-label--m" for="documents">
@@ -108,12 +120,12 @@ IHS question
           </div>
 
           <!-- Checkbox -->
-          <div class="govuk-checkboxes__item">
+          <!-- <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
               onClick="toggleContent()" value="checked">
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have a payslip for this
               month</label>
-          </div>
+          </div> -->
         </div>
 
         <script>
@@ -136,7 +148,7 @@ IHS question
             toggleContent();
           });
         </script>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="yes-payslip-check" class="govuk-button" data-module="govuk-button">Continue</a>
 
       </form>
     </div>

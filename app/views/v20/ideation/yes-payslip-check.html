@@ -42,7 +42,7 @@ IHS question
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/yes-payslip-add-october" method="post">
+    <form class="form" action="/yes-payslip-check" method="post">
       <div class="govuk-form-group">
         <span class="govuk-caption-l">Application</span>
         <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
@@ -64,7 +64,23 @@ IHS question
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <!-- <a download href="/">contract.pdf</a> -->
-                  <a href="/public/images/dummyslip.jpg" target="_blank" >October-2020.jpg</a>
+                  <a href="/public/images/dummyslip.jpg" target="_blank" >April-2020.jpg</a>
+                </dd>
+                <dd class="govuk-summary-list__value">
+                  <!-- <a download href="/">contract.pdf</a> -->
+                  <a href="/public/images/dummyslip.jpg" target="_blank" >Delete</a>
+                </dd>
+            
+                
+            
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!-- <a download href="/">contract.pdf</a> -->
+                  <a href="/public/images/dummyslip.jpg" target="_blank" >April-15th-2020.jpg</a>
                 </dd>
                 <dd class="govuk-summary-list__value">
                   <!-- <a download href="/">contract.pdf</a> -->
@@ -85,12 +101,12 @@ IHS question
               </h2>
             </legend>
 
-            <p>Check the payslips you have provided was paid on or after the claim end date: <strong>09 October 2020</strong>.</p>
+            <p>Check the payslips you have provided cover the claim start date you have given us: <strong>10 April 2020</strong>.</p>
 
-            <p>If your payslip for this month does not cover up until this date, your application will not be accepted.  </p>
+            <p>If your payslip for this month does not cover the start date, you will need to evidence you were working at this time by uploading a contract.  </p>
             
             <div id="passport-issued-hint" class="govuk-hint">
-              For example, 31 10 2020
+              For example, 31 7 2020
             </div>
             <div class="govuk-date-input" id="passport-issued">
               <div class="govuk-date-input__item">
@@ -131,9 +147,11 @@ IHS question
                 </span>
               </summary>
               <div class="govuk-details__text">
-                Enter the pay date of the latest payslip you have provided.
+                Enter the pay date of the earliest payslip you have provided.
               </div>
             </details>
+
+
 
 
           <!-- <img src="/public/images/dummyslip.jpg" style="height: 300px;" alt="Three illustrations of taking a passport photo. Two incorrect ways show someone taking their own photo with a phone camera or webcam. The correct way shows someone else helping to take a photo that includes the person's head and shoulders."> -->
@@ -142,7 +160,7 @@ IHS question
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-                Do you want to upload more payslips for October 2020?
+                Do you want to upload more payslips for April 2020?
 
             </legend>            
            <!-- <span id="attachments-add-conditional-hint" class="govuk-hint">
