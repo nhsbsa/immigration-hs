@@ -42,13 +42,13 @@ IHS question
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/pay-v20" method="post">
+    <form class="form" action="/month-check" method="post">
       <div class="govuk-form-group">
         <span class="govuk-caption-l">Application</span>
         <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">What is the pay date of this payslip?</h1>
+            <h1 class="govuk-fieldset__heading">What is the period end date for payslip April-2020.jpg?</h1>
         </legend>
 
         <!-- <div id="immigration-health-surcharge-paid-hint" class="govuk-hint">This is to ensure there are no gaps or overlaps with the payslips provided</div> -->
@@ -56,21 +56,28 @@ IHS question
 
 
           <!-- <h2 class="govuk-heading-m">Files uploaded</h2> -->
+
+          <p>The earliest payslip uploaded must cover the claim start date of 20 April 2020.</p>
+
             
             <dl class="govuk-summary-list">
+
+              
             
               <div class="govuk-summary-list__row">
+                
                 <dt class="govuk-summary-list__key">
-                  Payslip
+                  First monthly payslip
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <!-- <a download href="/">contract.pdf</a> -->
-                  <a href="/public/images/dummyslip.jpg" target="_blank" >April-2020.jpg (click to preview)</a>
+                  <a href="/public/images/dummyslip.jpg" target="_blank" >View April-2020.jpg</a>
                 </dd>
             
                 
             
               </div>
+             
 
                    
 
@@ -84,9 +91,9 @@ IHS question
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
               
-              
+              <h2 class="govuk-heading-m">Period end date</h2>
               <div id="passport-issued-hint" class="govuk-hint">
-                For example, 27 4 2020
+                This is <strong>not</strong> the pay date. The period end date is the last day the payslip covers.
               </div>
               <div class="govuk-date-input" id="passport-issued">
                 <div class="govuk-date-input__item">
@@ -116,7 +123,9 @@ IHS question
               </div>
               
             </fieldset>
-            <br>
+       
+
+            
             <!-- <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-heading-m">
@@ -157,13 +166,17 @@ IHS question
           
           
           
+          
         </div>
         </fieldset>
+
+  
+          
       </div>
 
         
 
-      <a href="check-payslip-dates-end" class="govuk-button" data-module="govuk-button">Continue</a>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>
   </div>

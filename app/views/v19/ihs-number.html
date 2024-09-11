@@ -26,21 +26,28 @@
           What's the applicant's immigration health surcharge (IHS) number?
       </h1>
       
-      <label class="govuk-label" for="event-name">
-        IHS number
-       </label>
-      <div class="govuk-hint">
-        When the immigration health surcharge was paid, an email would have been sent which contains this number. For example, 'IHS123456789'.
-      </div>
+     
+      <p>
+        This number will be in the email the applicant got when they paid the IHS.
+      </p>
+
+      <P>If the applicant has lost this number, <a href="https://www.gov.uk/contact-ukvi-inside-outside-uk"> UK Visas and Immigration to contact us (opens in new tab)</a>.</P>
 
       <form class="form" action="/v19/share-code" method="post">
 
         <div class="govuk-form-group">
+
+          <label class="govuk-label" for="event-name">
+            IHS number
+           </label>
+          <div id="account-number-hint" class="govuk-hint">
+            For example, 'IHS123456789' or 'IHSC123456789'.
+          </div>
           
           <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="ihs-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
         </div>
 
-        <details class="govuk-details" data-module="govuk-details">
+        <!-- <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text"> If the applicant has lost
               this number </span>
@@ -48,7 +55,7 @@
           <div class="govuk-details__text">
             To contact us, <a class="govuk-link" href="https://www.gov.uk/contact-ukvi-inside-outside-uk" target="_blank">visit UK Visas and Immigration on GOV.UK (opens in new tab)</a>.
           </div>
-        </details>
+        </details> -->
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
