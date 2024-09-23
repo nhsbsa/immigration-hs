@@ -4317,7 +4317,7 @@ router.post('/non-nhs-path-another-job-v20', function(req,res){
         res.redirect('/v20/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v20/contract-upload')
+        res.redirect('/v20/ideation/contract-upload-task')
     }
 
 })
@@ -4557,6 +4557,16 @@ router.post('/yes-payslip-add-october-no-april', function(req,res){
 router.post('/contracts-add-3-v20-ideation', function(req,res){
     var contacted = req.session.data['contracts-add-3-v20']
     if (contacted == "yes"){
+        res.redirect('/v20/ideation/extra-information')
+    }
+    else {
+        res.redirect('/v20/check-your-answers-nhs-path')
+    }
+
+})
+router.post('/contracts-add-3-v20-ideation-gaps', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
         res.redirect('/v20/ideation/extra-information-gaps')
     }
     else {
@@ -4670,7 +4680,7 @@ router.post('/pay-v20-task', function(req,res){
     }
    
     else if (pay == "other"){
-        res.redirect('/v20/ideation/april-cya')
+        res.redirect('/v20/ideation/task-list-2')
     }
 })
 
@@ -4707,7 +4717,7 @@ router.post('/pay-v20-task-end', function(req,res){
     }
    
     else if (pay == "other"){
-        res.redirect('/v20/ideation/')
+        res.redirect('/v20/ideation/task-list-3')
     }
 })
 
@@ -4721,7 +4731,7 @@ router.post('/pay-v20-task-end-no-start', function(req,res){
     }
    
     else if (pay == "other"){
-        res.redirect('/v20/ideation/')
+        res.redirect('/v20/ideation/task-list-3-no-april')
     }
 })
 
