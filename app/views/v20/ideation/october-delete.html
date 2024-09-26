@@ -52,7 +52,7 @@ IHS question
             <h1 class="govuk-fieldset__heading">Upload payslips for October 2020</h1>
           </legend>
 
-          <P>Payslips must cover a period ending on or after <strong>119 October 2020</strong>.</P>
+          <P>Payslips must cover a period ending on or after <strong>19 October 2020</strong>.</P>
           <h2 class="govuk-heading-m">Payslips</h2>
 
         <p>Payslips must include the applicant's:</p>
@@ -81,22 +81,25 @@ IHS question
        
           <!-- Div to be hidden -->
           <div id="content-to-hide">
-            <label class="govuk-label govuk-label--m" for="documents">
-              Upload files
-            </label>
-            <!--<div class="govuk-grid-column-two-thirds">-->
             <div class="moj-multi-file-upload">
-
+              
 
               <div class="govuk-form-group">
-
-
-                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents"
-                  type="file" multiple="">
+                <label class="govuk-label govuk-label--m" for="documents">
+                  Upload files
+                </label>
+                <div class="moj-multi-file__uploaded-files ">
+            
+                  <div class="govuk-summary-list moj-multi-file-upload__list">
+                    
+        
+                  </div>
+                </div>
+    
+                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
               </div>
-
-              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button"
-                data-module="govuk-button">
+    
+              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
                 Upload file
               </button>
             </div>

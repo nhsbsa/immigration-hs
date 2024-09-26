@@ -1,0 +1,241 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20/non-nhs-path-add">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/v20/extra-information" method="post">
+
+      
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--l" for="file-upload-1">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Upload evidence - payslips
+          </h1>
+        </label>
+
+        <!-- start callout box -->
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Upload payslips from 20 April 2020 to 19 October 2020
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+          <p>Upload evidence for the period: <strong>20 April 2020</strong> to <strong>19 October
+              2020</strong>.</p>
+          <p>If the applicant does not have the correct evidence, their claim for reimbursement may be rejected or
+            declined.</p>
+          </p>
+        </div>
+      </div>
+        <!-- end callout box -->
+
+
+
+
+        <!-- <h2 class="govuk-heading-m">Payslips</h2>
+
+        <p>Payslips must include the applicant's:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>name</li>
+          <li>employer's name</li>
+          <li> National Insurance number</li>
+          <li>pay date or period covered by the payslip</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Files</h2>
+
+        <p>You must send scanned copies or photos of the applicant's original documents.</p>
+
+        <p>Files must:</p>
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>be clear and readable</li>
+          <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+          <li> be smaller than 2MB each</li>
+         
+        </ul> -->
+
+
+        <h2 class="govuk-heading-m">Upload payslips covering every day in this claim period</h2>
+
+        <p>Select each month to upload payslips for that month or to tell us you do not have payslips for that time. You can explain any gaps in the payslips later.</p>
+
+          <p>If the applicant has payslips that cover multiple months, you can add a copy in each relevant month.</p>
+          
+          <p>You can upload more than one payslip for each month.</p>
+
+
+
+
+        
+
+
+
+
+
+        
+
+        <!-- <span id="file-upload-1-hint" class="">
+            <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>employee name</li>
+              <li>employer name</li>
+              <li>National Insurance number</li>
+              <li>pay date or period covered</li>
+              <li>employment start date</li>
+              <li>contracted hours</li>
+            </ul>
+
+           
+
+            <p>Uploaded evidence must be:</p>
+            <ul class="govuk-list govuk-list--bullet ">
+              <li>clear and readable</li>
+              <li>descriptive, with the file name containing the period that the evidence covers such as
+                'payslip-090123-150123.pdf'</li>
+              <li>JPG, JPEG, BMP, PNG or PDF</li>
+              <li>smaller than 2MB in size for single files</li>
+            </ul>
+          </span> -->
+
+      </div>
+
+      <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="april-cya" aria-describedby="application-details-1-status">
+              April 2020
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-2-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="may" aria-describedby="application-details-2-status">
+              May 2020
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-2-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="june" aria-describedby="application-details-3-status">
+              June 2020
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-3-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
+              July 2020
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-4-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
+              August 2020
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-4-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
+              September 2020
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-4-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="october" aria-describedby="application-details-4-status">
+              October 2020
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-4-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+      <br>
+
+
+
+      <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+
+<style>
+
+
+</style>
+
+
+{% endblock %}

@@ -18,85 +18,45 @@ IHS question
 {% endblock %}
 
 {% block content %}
-<div id="content">
+<html lang="en">
 
-  <!-- <div class="float--right">
-      <nav aria-label="language-switcher.nav" class="language-switcher">
-        <ul>
-          <li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Content Toggle</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
 
-         <span>English</span>
-         <span aria-hidden="true"> | </span>
-         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
-           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
-           <span aria-hidden="true">Cymraeg</span>
-         </a>
-
-          </li>
-        </ul>
-      </nav>
-    </div>-->
-
-    
-
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/yes-payslip-october-no-april" method="post">
-      <div class="govuk-form-group">
-        <span class="govuk-caption-l">Application</span>
-        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">What is the period end date of this payslip?</h1>
-        </legend>
-
-        
+<body>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/yes-payslip-october-no-april" method="post">
         <div class="govuk-form-group">
+          <span class="govuk-caption-l">Application</span>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">What is the last day the payslip for October 2020 covers?</h1>
+          </legend>
 
+          <p>This might be included in the payslip as the period end date. This is <strong>not</strong> the same as
+            the pay date.</p>
 
-          <!-- <h2 class="govuk-heading-m">Files uploaded</h2>
-            
-            <dl class="govuk-summary-list">
-            
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  File 1
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 <a download href="/">contract.pdf</a> 
-                  <a href="/public/images/dummyslip.jpg" target="_blank" >April-2020.jpg</a>
-                </dd>
-                <dd class="govuk-summary-list__value">
-                  <a download href="/">contract.pdf</a> 
-                  <a href="april-delete" >Delete</a>
-                </dd>
-            
-                
-            
-              </div>
+          <p>This information can help us assess this claim, but you can continue the application without it.</p>
 
-                   
-
-            </dl> -->
-
-
-            
-
-            <p>The payslip you have provided must cover on or after the claim end date: <strong>119 October 2020</strong>.</p>
-            <p>If your payslip does not have a period end date, enter the date your payslip covers until.</p>
-            <!-- <p>If your payslip for this month does not cover the start date, you will need to evidence you were working at this time by uploading a contract.  </p> -->
-            
-            <div id="passport-issued-hint" class="govuk-hint">
-              For example, 31 4 2020
-            </div>
+          
+          <!-- Div to be hidden -->
+          <div id="content-to-hide">
             <div class="govuk-date-input" id="passport-issued">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                    name="passport-issued-day" type="text" inputmode="numeric">
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -104,7 +64,8 @@ IHS question
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                    name="passport-issued-month" type="text" inputmode="numeric" >
                 </div>
               </div>
               <div class="govuk-date-input__item">
@@ -112,71 +73,63 @@ IHS question
                   <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                    name="passport-issued-year" type="text" inputmode="numeric">
                 </div>
               </div>
             </div>
-
-            
-
-
-      
-
-            
-
-          <!-- <img src="/public/images/dummyslip.jpg" style="height: 300px;" alt="Three illustrations of taking a passport photo. Two incorrect ways show someone taking their own photo with a phone camera or webcam. The correct way shows someone else helping to take a photo that includes the person's head and shoulders."> -->
-       
-         
-            </fieldset>
-          
-            <!-- <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-heading-m">
-                 What is the end date of this payslip
-                </h2>
-              </legend>
-              <div id="passport-issued-hint" class="govuk-hint">
-                For example, 27 3 2007
-              </div>
-              <div class="govuk-date-input" id="passport-issued">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset> -->
           </div>
+          <br><br>
+
+          <!-- Div to be revealed -->
+         
+
+          <!-- Checkbox -->
+          
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
+              onClick="toggleContent()" value="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have this information</label>
+              
+          </div>
+
+         
+          
           
         </div>
-        </fieldset>
-      </div>
+
+        <script>
+          function toggleContent() {
+            var checkbox = document.getElementById('toggle-checkbox');
+            var contentToHide = document.getElementById('content-to-hide');
+            var contentToShow = document.getElementById('content-to-show');
+
+            if (checkbox.checked) {
+              contentToHide.classList.add('hidden');
+              contentToShow.classList.remove('hidden');
+            } else {
+              contentToHide.classList.remove('hidden');
+              contentToShow.classList.add('hidden');
+            }
+          }
+
+          // Initialize the state on page load based on the checkbox state
+          document.addEventListener('DOMContentLoaded', function () {
+            toggleContent();
+          });
+        </script>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
 
         
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-
+      </form>
     </form>
+    </div>
+
   </div>
-</div>
+
+</body>
+
+</html>
 
 {% endblock %}

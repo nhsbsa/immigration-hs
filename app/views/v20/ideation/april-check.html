@@ -76,7 +76,7 @@ IHS question
                 <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
                   <span class="moj-multi-file-upload__success"> 
                     <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
-                    <div class="moj-file-message_span">April-2020.jpg successfully uploaded</div>
+                    <div class="moj-file-message_span">april-2020.png successfully uploaded</div>
                 </span>
                 <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a href="april-delete">Delete</a></dd>
               </div>
@@ -86,25 +86,27 @@ IHS question
 
           <!-- Div to be hidden -->
           <div id="content-to-hide">
-            <label class="govuk-label govuk-label--m" for="documents">
-              Upload files
-            </label>
-            <!--<div class="govuk-grid-column-two-thirds">-->
             <div class="moj-multi-file-upload">
-
+              
 
               <div class="govuk-form-group">
-
-
-                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents"
-                  type="file" multiple="">
+                <label class="govuk-label govuk-label--m" for="documents">
+                  Upload files
+                </label>
+                <div class="moj-multi-file__uploaded-files ">
+            
+                  <div class="govuk-summary-list moj-multi-file-upload__list">
+                    
+        
+                  </div>
+                </div>
+    
+                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
               </div>
-
-              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button"
-                data-module="govuk-button">
+    
+              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
                 Upload file
               </button>
-            </div>
           </div>
 
           <!-- Div to be revealed -->

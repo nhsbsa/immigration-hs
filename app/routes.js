@@ -4382,9 +4382,8 @@ router.post('/contracts-add-3-v20', function(req,res){
     }
 
 })
-
 router.post('/version-20-dependant-question', function(req,res){
-    var contacted = req.session.data['dependant-question-v18']
+    var contacted = req.session.data['dependant-question-v20']
     if (contacted == "yes"){
         res.redirect('/v20/dependant-details')
     }
@@ -4467,6 +4466,16 @@ router.post('/pay-checkbox-october-no-start', function(request, response) {
         response.redirect("/v20/ideation/no-payslip-october-no-april")
     } else {
         response.redirect("/v20/ideation/pay-frequency-task-end-no-start")
+    }
+})
+
+router.post('/pay-checkbox-october-no-start-2', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20/ideation/no-payslip-october-no-april")
+    } else {
+        response.redirect("/v20/ideation/october-cya-ur")
     }
 })
 
@@ -4735,6 +4744,20 @@ router.post('/pay-v20-task-end-no-start', function(req,res){
     }
 })
 
+
+router.post('/pay-v20-task-end-no-start-2', function(req,res){
+    var pay = req.session.data['whereDoYouLive']
+    if (pay == "monthly"){
+        res.redirect('/v20/ideation/monthly-payslip-ur')
+    }
+    else if (pay == "weekly"){
+        res.redirect('/v20/ideation/weekly-payslip-ur')
+    }
+   
+    else if (pay == "other"){
+        res.redirect('/v20/ideation/task-list-3-no-april')
+    }
+})
 router.post('/month-check-task', function(req,res){
     var month = req.session.data['passport-issued-month']
     if (month > 4){
@@ -4779,9 +4802,10 @@ router.post('/last-month-check-task', function(req,res){
 
 router.post('/last-week-check-task', function(req,res){
     var day = req.session.data['passport-issued-day']
+    var month = req.session.data['passport-issued-month']
     
 
-    if (day > 0 && day < 19){
+    if (day > 0 && day < 19 || month < 10){
         res.redirect('/v20/ideation/last-payslip-not-covered-task')
     }
     else if (day == 0){
@@ -4793,6 +4817,24 @@ router.post('/last-week-check-task', function(req,res){
 
 })
 
+
+router.post('/last-week-check-task-ur', function(req,res){
+    var day = req.session.data['passport-issued-day']
+    var month = req.session.data['passport-issued-month']
+    
+
+    if (day > 0 && day < 19 || month < 10){
+        res.redirect('/v20/ideation/weekly-warning-ur')
+    }
+    else if (day == 0){
+        res.redirect('/v20/ideation/task-list-3-no-april')
+    }
+    else {
+        res.redirect('/v20/ideation/task-list-3-no-april')
+    }
+
+})
+
 router.post('/yes-payslip-october-no-april', function(req,res){
     var month = req.session.data['passport-issued-month']
     if (month < 10){
@@ -4800,6 +4842,17 @@ router.post('/yes-payslip-october-no-april', function(req,res){
     }
     else {
         res.redirect('/v20/ideation/october-cya-no-april')
+    }
+
+})
+
+router.post('/last-payslip-ur', function(req,res){
+    var month = req.session.data['passport-issued-month']
+    if (month < 10){
+        res.redirect('/v20/ideation/warning-no-april')
+    }
+    else {
+        res.redirect('/v20/ideation/task-list-3-no-april')
     }
 
 })
