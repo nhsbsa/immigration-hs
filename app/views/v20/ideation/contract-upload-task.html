@@ -102,23 +102,28 @@ Upload evidence
 
       </div>
       <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
-      <label class="govuk-label govuk-label--m" for="documents">
-        Upload files
-      </label>
-      <!--<div class="govuk-grid-column-two-thirds">-->
       <div class="moj-multi-file-upload">
-
+              
 
         <div class="govuk-form-group">
-          
+          <label class="govuk-label govuk-label--m" for="documents">
+            Upload files
+          </label>
+          <div class="moj-multi-file__uploaded-files ">
+      
+            <div class="govuk-summary-list moj-multi-file-upload__list">
+              
+  
+            </div>
+          </div>
 
-          <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file"
-            multiple="">
+          <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
         </div>
 
         <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
           Upload file
         </button>
+      </div>
 
 
 
