@@ -7,16 +7,11 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+  
 })
 
-$(document).ready(function () {
-  window.MOJFrontend.initAll()
-
-  if(typeof MOJFrontend.MultiFileUpload !== 'undefined') {
-    new MOJFrontend.MultiFileUpload({
-      container: $('.moj-multi-file-upload'),
-      uploadUrl: '/ajax-upload-url',
-      deleteUrl: '/ajax-delete-url'
-    });
-  }
-    });
+new MOJFrontend.MultiFileUpload({
+  container: document.querySelector(".moj-multi-file-upload"),
+  uploadUrl: "/ajax-upload",
+  deleteUrl: "/ajax-delete",
+});
