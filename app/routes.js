@@ -4567,7 +4567,7 @@ router.post('/yes-payslip-add-october-no-april', function(req,res){
         res.redirect('/v20/ideation/october-add')
     }
     else {
-        res.redirect('/v20/ideation/task-list-3-no-april')
+        res.redirect('/v20/ideation/pay-frequency-ur')
     }
 
 })
@@ -4590,7 +4590,7 @@ router.post('/contracts-add-3-v20-ideation-gaps', function(req,res){
         res.redirect('/v20/ideation/extra-information-gaps')
     }
     else {
-        res.redirect('/v20/check-your-answers-nhs-path')
+        res.redirect('/v20/check-your-answers-gaps')
     }
 
 })

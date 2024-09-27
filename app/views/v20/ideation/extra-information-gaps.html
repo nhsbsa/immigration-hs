@@ -14,7 +14,7 @@ Extra information
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -124,21 +124,26 @@ Extra information
           <li>be smaller than 2MB each</li>
         </ul>
         <!--<div class="govuk-grid-column-two-thirds">-->
-        <div class="moj-multi-file-upload">
+          <div class="moj-multi-file-upload">
+              
 
-
-          <div class="govuk-form-group">
-
-
-            <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file"
-              multiple="">
+            <div class="govuk-form-group">
+              
+              <div class="moj-multi-file__uploaded-files ">
+          
+                <div class="govuk-summary-list moj-multi-file-upload__list">
+                  
+      
+                </div>
+              </div>
+  
+              <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+            </div>
+  
+            <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+              Upload file
+            </button>
           </div>
-
-          <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-            Upload file
-          </button>
-
-        </div>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
   </div>

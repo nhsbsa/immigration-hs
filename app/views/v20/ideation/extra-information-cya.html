@@ -14,7 +14,7 @@ Extra information
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<a class="govuk-back-link" href="">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -78,7 +78,7 @@ Extra information
            Extra information
           </label> -->
           <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5"
-            aria-describedby="with-hint-info with-hint-hint"></textarea>
+            aria-describedby="with-hint-info with-hint-hint">  {{ data['with-hint']}}</textarea>
         </div>
         <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
           You can enter up to 2000 characters
@@ -117,7 +117,7 @@ Extra information
             Upload file
           </button>
         </div>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="/v20/check-your-answers-nhs-path" class="govuk-button" data-module="govuk-button">Continue</a>
     </form>
   </div>
 </div>
