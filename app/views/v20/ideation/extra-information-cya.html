@@ -14,13 +14,13 @@ Extra information
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/v20/ideation/check-extra-info" method="post">
+    <form class="form" action="/v20/check-your-answers-nhs-path" method="post">
       <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
         <div class="govuk-form-group">
           <h1 class="govuk-heading-l">
@@ -117,7 +117,7 @@ Extra information
             Upload file
           </button>
         </div>
-        <a href="/v20/check-your-answers-nhs-path" class="govuk-button" data-module="govuk-button">Continue</a>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
   </div>
 </div>

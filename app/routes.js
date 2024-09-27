@@ -4506,10 +4506,21 @@ router.post('/yes-payslip-add', function(req,res){
 
 })
 
+router.post('/yes-payslip-add-cya', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/april-add-cya')
+    }
+    else {
+        res.redirect('/v20/check-your-answers-nhs-path')
+    }
+
+})
+
 router.post('/yes-contract-add', function(req,res){
     var contacted = req.session.data['contracts-add-3-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/ideation/contract-upload-task')
+        res.redirect('/v20/ideation/contract-upload-task-add')
     }
     else {
         res.redirect('/v20/ideation/task-list')
@@ -4564,10 +4575,21 @@ router.post('/yes-payslip-add-october-2', function(req,res){
 router.post('/yes-payslip-add-october-no-april', function(req,res){
     var contacted = req.session.data['contracts-add-3-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/ideation/october-add')
+        res.redirect('/v20/ideation/october-add-cya-ur')
     }
     else {
         res.redirect('/v20/ideation/pay-frequency-ur')
+    }
+
+})
+
+router.post('/yes-payslip-add-october-no-april-ur', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/october-add-cya-ur-2')
+    }
+    else {
+        res.redirect('/v20/ideation/task-list-3-no-april')
     }
 
 })

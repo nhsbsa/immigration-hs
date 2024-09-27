@@ -14,7 +14,6 @@ IHS question
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 
 {% endblock %}
 
@@ -42,7 +41,7 @@ IHS question
             <h1 class="govuk-fieldset__heading">Upload payslips for October 2020</h1>
           </legend>
 
-          <P>Payslips must cover a period ending on or after <strong>19 October 2020</strong>.</P>
+          <P>Payslips must cover a period ending on or after <strong>119 October 2020</strong>.</P>
           <h2 class="govuk-heading-m">Payslips</h2>
 
         <p>Payslips must include the applicant's:</p>
@@ -65,8 +64,28 @@ IHS question
           <li>be clear and readable</li>
           <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
           <li> be smaller than 2MB each</li>
-          <li><strong>not</strong> be password protected</li>
+         
         </ul>
+
+        <h2 class="govuk-heading-m">Files added</h2>
+          <div class="moj-multi-file__uploaded-files">
+    
+            <div class="govuk-summary-list moj-multi-file-upload__list">
+    
+              
+    
+    
+    
+              <div class="govuk-summary-list__row moj-multi-file-upload__row">
+                <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+                  <span class="moj-multi-file-upload__success"> 
+                    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                    <div class="moj-file-message_span">October-2020.jpg successfully uploaded</div>
+                </span>
+                <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a href="october-delete">Delete</a></dd>
+              </div>
+              </div>
+              </div>
           <!-- Div to be hidden -->
           <div id="content-to-hide">
             <div class="moj-multi-file-upload">
@@ -99,12 +118,14 @@ IHS question
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-visually-hidden">Warning</span>
-If you cannot upload payslips covering this whole claim period, you will need to give us more information and evidence to explain any gaps later.              </strong>
+                If you do not have a payslip for this month, you will be required to provide extra information to
+                explain the gap. You can do this by providing a contract or headed letter from your employer.
+              </strong>
             </div>
           </div>
 
           <!-- Checkbox -->
-          <div class="govuk-checkboxes__item">
+          <!-- <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
               onClick="toggleContent()" value="checked">
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have payslips for this
@@ -112,7 +133,7 @@ If you cannot upload payslips covering this whole claim period, you will need to
               <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 You can explain why and add alternative evidence later
               </div>
-          </div>
+          </div> -->
         </div>
         <br>
 
@@ -136,7 +157,7 @@ If you cannot upload payslips covering this whole claim period, you will need to
             toggleContent();
           });
         </script>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="october-check-2" class="govuk-button" data-module="govuk-button">Continue</a>
 
       </form>
     </div>

@@ -14,7 +14,6 @@ IHS question
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 
 {% endblock %}
 
@@ -37,6 +36,17 @@ IHS question
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/pay-checkbox-october" method="post">
         <div class="govuk-form-group">
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Success
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p>File named October-2020.jpg has been deleted</p>
+            </div>
+          </div>
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
             <h1 class="govuk-fieldset__heading">Upload payslips for October 2020</h1>
@@ -65,8 +75,10 @@ IHS question
           <li>be clear and readable</li>
           <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
           <li> be smaller than 2MB each</li>
-          <li><strong>not</strong> be password protected</li>
+         
         </ul>
+
+       
           <!-- Div to be hidden -->
           <div id="content-to-hide">
             <div class="moj-multi-file-upload">
@@ -104,7 +116,7 @@ If you cannot upload payslips covering this whole claim period, you will need to
           </div>
 
           <!-- Checkbox -->
-          <div class="govuk-checkboxes__item">
+         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
               onClick="toggleContent()" value="checked">
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have payslips for this
@@ -114,7 +126,6 @@ If you cannot upload payslips covering this whole claim period, you will need to
               </div>
           </div>
         </div>
-        <br>
 
         <script>
           function toggleContent() {
@@ -136,7 +147,7 @@ If you cannot upload payslips covering this whole claim period, you will need to
             toggleContent();
           });
         </script>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="october-cya-ur" class="govuk-button" data-module="govuk-button">Continue</a>
 
       </form>
     </div>
