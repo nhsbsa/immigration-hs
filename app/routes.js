@@ -4836,14 +4836,16 @@ router.post('/last-month-check-task', function(req,res){
 router.post('/last-week-check-task', function(req,res){
     var day = req.session.data['passport-issued-day']
     var month = req.session.data['passport-issued-month']
-    
 
-    if (day > 0 && day < 19 || month < 10){
-        res.redirect('/v20/ideation/last-payslip-not-covered-task')
-    }
-    else if (day == 0){
+    var year = req.session.data['passport-issued-year']
+    
+    if (day == "" ){
         res.redirect('/v20/ideation/task-list-3')
     }
+    else if (day > 0 && day < 19 || month < 10){
+        res.redirect('/v20/ideation/last-payslip-not-covered-task')
+    }
+    
     else {
         res.redirect('/v20/ideation/task-list-3')
     }
@@ -4854,17 +4856,20 @@ router.post('/last-week-check-task', function(req,res){
 router.post('/last-week-check-task-ur', function(req,res){
     var day = req.session.data['passport-issued-day']
     var month = req.session.data['passport-issued-month']
-    
 
-    if (day > 0 && day < 19 || month < 10){
-        res.redirect('/v20/ideation/weekly-warning-ur')
-    }
-    else if (day == 0){
+    if (day == "" ){
         res.redirect('/v20/ideation/task-list-3-no-april')
     }
+    else if (day > 0 && day < 19 || month < 10){
+        res.redirect('/v20/ideation/weekly-warning-ur')
+    }
+    
     else {
         res.redirect('/v20/ideation/task-list-3-no-april')
     }
+    
+
+    
 
 })
 
