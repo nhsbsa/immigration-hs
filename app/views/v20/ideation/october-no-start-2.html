@@ -14,6 +14,7 @@ IHS question
     </span>
   </p>
 </div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 
 {% endblock %}
 
@@ -41,7 +42,7 @@ IHS question
             <h1 class="govuk-fieldset__heading">Upload payslips for October 2020</h1>
           </legend>
 
-          <P>Payslips must cover a period ending on or after <strong>119 October 2020</strong>.</P>
+          <P>Payslips must cover a period ending on or after <strong>19 October 2020</strong>.</P>
           <h2 class="govuk-heading-m">Payslips</h2>
 
         <p>Payslips must include the applicant's:</p>
@@ -75,6 +76,8 @@ IHS question
                 <label class="govuk-label govuk-label--m" for="documents">
                   Upload files
                 </label>
+
+                
                 <div class="moj-multi-file__uploaded-files ">
             
                   <div class="govuk-summary-list moj-multi-file-upload__list">
@@ -82,6 +85,9 @@ IHS question
         
                   </div>
                 </div>
+
+                <div class="govuk-inset-text" style="margin-top: -20px;">
+                  If the last month for this claim is October 2020 and the applicant has not been paid for this month yet, you should wait to apply until they have a payslip for October 2020.                </div>
     
                 <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
               </div>
@@ -89,7 +95,7 @@ IHS question
               <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
                 Upload file
               </button>
-              </div>
+            </div>
           </div>
 
           <!-- Div to be revealed -->
@@ -98,7 +104,8 @@ IHS question
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-visually-hidden">Warning</span>
-If you cannot upload payslips covering this whole claim period, you will need to give us more information and evidence to explain any gaps later.              </strong>
+                You'll need to give more information and evidence to explain this gap later.
+              </strong>
             </div>
           </div>
 
@@ -113,7 +120,8 @@ If you cannot upload payslips covering this whole claim period, you will need to
               </div>
           </div>
         </div>
-<br>
+        <br>
+
         <script>
           function toggleContent() {
             var checkbox = document.getElementById('toggle-checkbox');

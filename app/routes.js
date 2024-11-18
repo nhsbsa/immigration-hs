@@ -4884,16 +4884,31 @@ router.post('/yes-payslip-october-no-april', function(req,res){
 
 })
 
-router.post('/last-payslip-ur', function(req,res){
-    var month = req.session.data['passport-issued-month']
-    if (month < 10){
-        res.redirect('/v20/ideation/warning-no-april')
-    }
-    else {
-        res.redirect('/v20/ideation/task-list-3-no-april')
+router.post('/last-payslip-ur', function(req, res) {
+    const day = req.session.data['passport-issued-day'];
+    const month = req.session.data['passport-issued-month'];
+    const year = req.session.data['passport-issued-year'];
+
+    // Reference date: 19 October 2020
+    const referenceDate = new Date(2020, 9, 19); // Month is zero-based (October is 9)
+
+    // Check if all fields are blank
+    if (!day && !month && !year) {
+        return res.redirect('/v20/ideation/task-list-3-no-april');
     }
 
-})
+    // Parse user input into a date
+    const userDate = new Date(year, month - 1, day);
+
+    // Validate and compare dates
+    if (isNaN(userDate.getTime()) || userDate < referenceDate) {
+        // Redirect to warning page if date is invalid or before 19 October 2020
+        return res.redirect('/v20/ideation/warning-no-april');
+    } else {
+        // Redirect to task list page if date is on or after 19 October 2020
+        return res.redirect('/v20/ideation/task-list-3-no-april');
+    }
+});
 
 
 
