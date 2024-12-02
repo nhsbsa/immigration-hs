@@ -44,52 +44,54 @@ IHS question
 
 
           <p>Or select 'I do not have payslips for this month' if the applicant does not have payslips for May 2020.</p>
-          
+
           <h2 class="govuk-heading-m">Payslips</h2>
 
-        <p>Payslips must include the applicant's:</p>
+          <p>Payslips must include the applicant's:</p>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>name</li>
-          <li>employer's name</li>
-          <li> National Insurance number</li>
-          <li>pay date or period covered by the payslip</li>
-        </ul>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>name</li>
+            <li>employer's name</li>
+            <li> National Insurance number</li>
+            <li>pay date or period covered by the payslip</li>
+          </ul>
 
-        <h2 class="govuk-heading-m">Files</h2>
+          <h2 class="govuk-heading-m">Files</h2>
 
-        <p>You must upload scanned copies or photos of the applicant's original documents.</p>
+          <p>You must upload scanned copies or photos of the applicant's original documents.</p>
 
-        <p>Files must:</p>
+          <p>Files must:</p>
 
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>be clear and readable</li>
-          <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
-          <li> be smaller than 2MB each</li>
-          <li><strong>not</strong> be password protected</li>
-        </ul>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>be clear and readable</li>
+            <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+            <li> be smaller than 2MB each</li>
+            <li><strong>not</strong> be password protected</li>
+          </ul>
           <!-- Div to be hidden -->
           <div id="content-to-hide">
             <div class="moj-multi-file-upload">
-              
+
 
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--m" for="documents">
                   Upload files
                 </label>
                 <div class="moj-multi-file__uploaded-files ">
-            
+
                   <div class="govuk-summary-list moj-multi-file-upload__list">
-                    
-        
+
+
                   </div>
                 </div>
-    
-                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+
+                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents"
+                  type="file" multiple="">
               </div>
-    
-              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+
+              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button"
+                data-module="govuk-button">
                 Upload file
               </button>
             </div>
@@ -112,9 +114,9 @@ IHS question
               onClick="toggleContent()" value="checked">
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have payslips for this
               month</label>
-              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                You can explain why and add alternative evidence later
-              </div>
+            <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              You can explain why and add alternative evidence later
+            </div>
           </div>
         </div>
         <br>
@@ -139,8 +141,11 @@ IHS question
             toggleContent();
           });
         </script>
-        <a href="may-check" class="govuk-button" data-module="govuk-button">Continue</a>
 
+    
+
+          <a href="may-upload" class="govuk-button" data-module="govuk-button">Continue</a>
+     
       </form>
     </div>
 

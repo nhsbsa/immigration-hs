@@ -4444,7 +4444,7 @@ router.post('/pay-checkbox', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip")
     } else {
-        response.redirect("/v20/ideation/april-cya")
+        response.redirect("/v20/ideation/april-upload")
     }
 })
 
@@ -4454,7 +4454,7 @@ router.post('/pay-checkbox-october', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip-october")
     } else {
-        response.redirect("/v20/ideation/october-cya")
+        response.redirect("/v20/ideation/october-upload")
     }
 })
 
@@ -4475,7 +4475,7 @@ router.post('/pay-checkbox-october-no-start-2', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip-october-no-april")
     } else {
-        response.redirect("/v20/ideation/october-cya-ur")
+        response.redirect("/v20/ideation/october-upload-2")
     }
 })
 

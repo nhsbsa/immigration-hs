@@ -81,9 +81,13 @@ IHS question
 
           <div id="content-to-hide">
             <div class="moj-multi-file-upload">
+              
+
               <label class="govuk-label govuk-label--m" for="documents">
-                Files added
+                Files uploaded
               </label>
+
+              <p>Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.</p>
               <div class="moj-multi-file__uploaded-files ">
 
                 <div class="govuk-summary-list moj-multi-file-upload__list">
@@ -100,7 +104,7 @@ IHS question
                               <a class="govuk-link" href="/public/images/april-2020.png" target="_blank" style="font-size: 16px;">Preview<span class="govuk-visually-hidden"> contact details</span></a>
                             </li>
                             <li class="govuk-summary-list__actions-list-item">
-                              <a class="govuk-link" href="#"  style="font-size: 16px;">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                              <a class="govuk-link" href="april-delete"  style="font-size: 16px;">Delete<span class="govuk-visually-hidden"> contact details</span></a>
                             </li>
                           </ul>
                         </dd>
@@ -109,8 +113,6 @@ IHS question
 
                 </div>
               </div>
-
-
 
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--m" for="documents">
@@ -128,6 +130,8 @@ IHS question
                   If you cannot upload payslips for this month, for example because the applicant was paid in arrears,
                   select 'I do not have payslips for this month'. You can explain this gap later. </strong>
                 </div>
+
+                
 
 
 
@@ -185,7 +189,7 @@ IHS question
             toggleContent();
           });
         </script>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="pay-frequency-task" class="govuk-button" data-module="govuk-button">Continue</a>
 
       </form>
     </div>

@@ -18,7 +18,7 @@ Upload evidence
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="/v20/non-nhs-path-add">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -27,13 +27,15 @@ Upload evidence
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form class="form" action="/v20/extra-information" method="post">
+    <form class="form" action="" method="post">
+
+      
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--l" for="file-upload-1">
           <h1 class="govuk-fieldset__heading">
             <span class="govuk-caption-l">Application</span>
-            Upload evidence
+            Upload payslips
           </h1>
         </label>
 
@@ -57,17 +59,52 @@ Upload evidence
 
 
 
-        
+        <!-- <h2 class="govuk-heading-m">Payslips</h2>
+
+        <p>Payslips must include the applicant's:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>name</li>
+          <li>employer's name</li>
+          <li> National Insurance number</li>
+          <li>pay date or period covered by the payslip</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Files</h2>
+
+        <p>You must send scanned copies or photos of the applicant's original documents.</p>
+
+        <p>Files must:</p>
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>be clear and readable</li>
+          <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+          <li> be smaller than 2MB each</li>
+         
+        </ul> -->
+
 
         <h2 class="govuk-heading-m">Upload payslips covering every day in this claim period</h2>
 
-        <p>Select each month to upload payslips for that month <strong>or</strong> to tell us you do not have payslips for that time. You can explain any gaps in the payslips later.</p>
+        <p>Select each month to upload payslips for that month or to tell us you do not have payslips for that time. You can explain any gaps in the payslips later.</p>
 
           <p>If the applicant has payslips that cover multiple months, you can add a copy in each relevant month.</p>
           
           <p>You can upload more than one payslip for each month.</p>
 
-          <!-- <span id="file-upload-1-hint" class="">
+
+
+
+        
+
+
+
+
+
+        
+
+        <!-- <span id="file-upload-1-hint" class="">
             <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>employee name</li>
@@ -96,11 +133,11 @@ Upload evidence
       <ul class="govuk-task-list">
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="april-no-slip" aria-describedby="application-details-1-status">
+            <a class="govuk-link govuk-task-list__link" href="april" aria-describedby="application-details-1-status">
               April 2020
             </a>
           </div>
-          <div class="govuk-task-list__status" id="application-details-1-status">
+          <div class="govuk-task-list__status" id="application-details-2-status">
             <strong class="govuk-tag govuk-tag--red">
               Gap in evidence
             </strong>
@@ -108,7 +145,7 @@ Upload evidence
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-2-status">
+            <a class="govuk-link govuk-task-list__link" href="may-upload-2" aria-describedby="application-details-2-status">
               May 2020
             </a>
           </div>
@@ -120,7 +157,7 @@ Upload evidence
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-3-status">
+            <a class="govuk-link govuk-task-list__link" href="june-upload-2" aria-describedby="application-details-3-status">
               June 2020
             </a>
           </div>
@@ -132,7 +169,7 @@ Upload evidence
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
+            <a class="govuk-link govuk-task-list__link" href="july-upload-2" aria-describedby="application-details-4-status">
               July 2020
             </a>
           </div>
@@ -144,7 +181,7 @@ Upload evidence
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
+            <a class="govuk-link govuk-task-list__link" href="august-upload-2" aria-describedby="application-details-4-status">
               August 2020
             </a>
           </div>
@@ -156,7 +193,7 @@ Upload evidence
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
+            <a class="govuk-link govuk-task-list__link" href="september-upload-2" aria-describedby="application-details-4-status">
               September 2020
             </a>
           </div>
@@ -185,7 +222,7 @@ Upload evidence
 
 
       <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
-      <a href="extra-information-gaps" class="govuk-button" data-module="govuk-button">Continue</a>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>
 

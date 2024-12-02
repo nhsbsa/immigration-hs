@@ -14,6 +14,7 @@ IHS question
     </span>
   </p>
 </div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 
 {% endblock %}
 
@@ -34,14 +35,16 @@ IHS question
 <body>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox-october" method="post">
+      <form class="form" action="/pay-checkbox" method="post">
         <div class="govuk-form-group">
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">Upload payslips for October 2020</h1>
+            <h1 class="govuk-fieldset__heading">Upload payslips for May 2020</h1>
           </legend>
 
-          <P>Payslips must cover a period ending on or after <strong>119 October 2020</strong>.</P>
+
+          <p>Or select 'I do not have payslips for this month' if the applicant does not have payslips for May 2020.</p>
+          
           <h2 class="govuk-heading-m">Payslips</h2>
 
         <p>Payslips must include the applicant's:</p>
@@ -64,34 +67,45 @@ IHS question
           <li>be clear and readable</li>
           <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
           <li> be smaller than 2MB each</li>
-         
+          <li><strong>not</strong> be password protected</li>
         </ul>
-
-        <h2 class="govuk-heading-m">Files uploaded</h2>
-          <div class="moj-multi-file__uploaded-files">
-    
-            <div class="govuk-summary-list moj-multi-file-upload__list">
-    
-              
-    
-    
-    
-              <div class="govuk-summary-list__row moj-multi-file-upload__row">
-                <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
-                  <span class="moj-multi-file-upload__success"> 
-                    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
-                    <div class="moj-file-message_span">October-2020.jpg successfully uploaded</div>
-                </span>
-                <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a href="october-delete">Delete</a></dd>
-              </div>
-              </div>
-              </div>
           <!-- Div to be hidden -->
           <div id="content-to-hide">
             <div class="moj-multi-file-upload">
               
 
               <div class="govuk-form-group">
+
+                <label class="govuk-label govuk-label--m" for="documents">
+                  Files uploaded
+                </label>
+
+                <p>Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.</p>
+                <div class="moj-multi-file__uploaded-files ">
+  
+                  <div class="govuk-summary-list moj-multi-file-upload__list">
+                    <div class="govuk-summary-list__row moj-multi-file-upload__row">
+                      <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+                          class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor"
+                            role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+                            height="25" width="25">
+                            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
+                          </svg> Payslip may-2020.png successfully uploaded</span> </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <ul class="govuk-summary-list__actions-list">
+                              <li class="govuk-summary-list__actions-list-item">
+                                <a class="govuk-link" href="/public/images/may-2020.png" target="_blank" style="font-size: 16px;">Preview<span class="govuk-visually-hidden"> contact details</span></a>
+                              </li>
+                              <li class="govuk-summary-list__actions-list-item">
+                                <a class="govuk-link" href=""  style="font-size: 16px;">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                              </li>
+                            </ul>
+                          </dd>
+                    </div>
+  
+  
+                  </div>
+                </div>
                 <label class="govuk-label govuk-label--m" for="documents">
                   Upload files
                 </label>
@@ -102,9 +116,13 @@ IHS question
         
                   </div>
                 </div>
+
+                
     
                 <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
               </div>
+
+              
     
               <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
                 Upload file
@@ -118,14 +136,15 @@ IHS question
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-visually-hidden">Warning</span>
-                If you do not have a payslip for this month, you will be required to provide extra information to
-                explain the gap. You can do this by providing a contract or headed letter from your employer.
+                You'll need to give more information and evidence to explain this gap later.
               </strong>
             </div>
           </div>
 
+          
+
           <!-- Checkbox -->
-          <!-- <div class="govuk-checkboxes__item">
+          <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
               onClick="toggleContent()" value="checked">
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have payslips for this
@@ -133,7 +152,7 @@ IHS question
               <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
                 You can explain why and add alternative evidence later
               </div>
-          </div> -->
+          </div>
         </div>
         <br>
 
@@ -157,7 +176,7 @@ IHS question
             toggleContent();
           });
         </script>
-        <a href="october-check-2" class="govuk-button" data-module="govuk-button">Continue</a>
+        <a href="task-list-4-no-april" class="govuk-button" data-module="govuk-button">Continue</a>
 
       </form>
     </div>
