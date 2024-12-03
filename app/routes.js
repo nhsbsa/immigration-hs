@@ -4444,7 +4444,7 @@ router.post('/pay-checkbox', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip")
     } else {
-        response.redirect("/v20/ideation/april-upload")
+        response.redirect("/v20/ideation/pay-frequency-task")
     }
 })
 
