@@ -33,7 +33,7 @@ Upload evidence
         <label class="govuk-label govuk-label--l" for="file-upload-1">
           <h1 class="govuk-fieldset__heading">
             <span class="govuk-caption-l">Application</span>
-            Upload evidence - job contract
+            Upload job contract
           </h1>
         </label>
 
@@ -97,34 +97,41 @@ Upload evidence
               <li>be clear and readable</li>
               <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
               <li>be smaller than 2MB each</li>
+              <li><strong>not</strong> be password protected</li>
             </ul>
           </span>
 
       </div>
-      <h2 class="govuk-heading-m">Files uploaded</h2>
-          <div class="moj-multi-file__uploaded-files">
+      <label class="govuk-label govuk-label--m" for="documents">
+        Files uploaded
+      </label>
 
-            <div class="govuk-summary-list moj-multi-file-upload__list">
+      <p>Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.</p>
+      <div class="moj-multi-file__uploaded-files ">
 
-
-
-
-
-              <div class="govuk-summary-list__row moj-multi-file-upload__row">
-                <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span <span
-                    class="moj-multi-file-upload__success">
-                    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-                      <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
-                    </svg>
-                    <div class="moj-file-message_span">contract.pdf successfully uploaded</div>
-                  </span>
-                <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a href="">Delete</a>
+        <div class="govuk-summary-list moj-multi-file-upload__list">
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+                class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor"
+                  role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+                  height="25" width="25">
+                  <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
+                </svg>contract.pdf successfully uploaded</span> </dd>
+                <dd class="govuk-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="/public/images/august-2020.png" target="_blank" style="font-size: 16px;">Preview<span class="govuk-visually-hidden"> contact details</span></a>
+                    </li>
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href=""  style="font-size: 16px;">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                    </li>
+                  </ul>
                 </dd>
-              </div>
-            </div>
           </div>
 
+
+        </div>
+      </div>
 
       <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
       <div class="moj-multi-file-upload">
