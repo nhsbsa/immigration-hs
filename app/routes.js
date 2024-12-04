@@ -4454,7 +4454,7 @@ router.post('/pay-checkbox-october', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip-october")
     } else {
-        response.redirect("/v20/ideation/october-upload")
+        response.redirect("/v20/ideation/pay-frequency-task-end")
     }
 })
 
@@ -4475,7 +4475,7 @@ router.post('/pay-checkbox-october-no-start-2', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip-october-no-april")
     } else {
-        response.redirect("/v20/ideation/october-upload-2")
+        response.redirect("/v20/ideation/pay-frequency-ur")
     }
 })
 
@@ -4820,15 +4820,31 @@ router.post('/weekly-check-task', function(req,res){
 })
 
 router.post('/last-month-check-task', function(req,res){
-    var month = req.session.data['passport-issued-month']
-    if (month > 1 && month < 10){
-        res.redirect('/v20/ideation/last-payslip-not-covered-task')
+    
+
+
+    const day = req.session.data['passport-issued-day'];
+    const month = req.session.data['passport-issued-month'];
+    const year = req.session.data['passport-issued-year'];
+
+    // Reference date: 19 October 2020
+    const referenceDate = new Date(2020, 9, 19); // Month is zero-based (October is 9)
+
+    // Check if all fields are blank
+    if (!day && !month && !year) {
+        return res.redirect('/v20/ideation/task-list-3');
     }
-    else if (month == 0){
-        res.redirect('/v20/ideation/task-list-3')
-    }
-    else if (month > 9) {
-        res.redirect('/v20/ideation/task-list-3')
+
+    // Parse user input into a date
+    const userDate = new Date(year, month - 1, day);
+
+    // Validate and compare dates
+    if (isNaN(userDate.getTime()) || userDate < referenceDate) {
+        // Redirect to warning page if date is invalid or before 19 October 2020
+        return res.redirect('/v20/ideation/last-payslip-not-covered-task');
+    } else {
+        // Redirect to task list page if date is on or after 19 October 2020
+        return res.redirect('/v20/ideation/task-list-3');
     }
 
 })
