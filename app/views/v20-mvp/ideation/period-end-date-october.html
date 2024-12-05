@@ -1,0 +1,94 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+  <!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+    
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/period-end-date-october" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Do you know the period end date of this payslip?</h1>
+        </legend>
+
+        <p>The period end date is the last day the payslip covers. If you have uploaded a monthly payslip for april that covers the entire month, this would be 31 April 2020. </p>
+
+        <!-- <div  class="govuk-hint">
+          Choose
+        </div> -->
+
+        <div id="immigration-health-surcharge-paid-hint" class="govuk-hint"></div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            
+            <div id="changedName-hint" class="govuk-hint">
+              We will ask you the period end date of your payslip to check you have covered the 6 month claim period.
+            </div>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        </fieldset>
+      </div>
+
+        
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

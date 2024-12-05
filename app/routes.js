@@ -4928,6 +4928,21 @@ router.post('/last-payslip-ur', function(req, res) {
 
 
 
+//V20 MVP NEW ROUTES
+
+//ROUTE TO SKIP VALIDATION
+
+router.post('/pay-checkbox-mvp', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp/ideation/no-payslip")
+    } else {
+        response.redirect("/v20-mvp/ideation/task-list-2")
+    }
+})
+
+
 
 
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));

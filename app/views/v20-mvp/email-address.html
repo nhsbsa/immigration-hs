@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-health.html" %}
 
 {% block pageTitle %}
   Email address
@@ -13,7 +13,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v19/manual-address">Back</a>
+  <a class="govuk-back-link" href="/v20/ihs-number">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -23,20 +23,20 @@
         newText = event.target.value;
         $('#email-show').text(newText);
       });
-    }
+    } 
     window.onload=printEmail;
 </script>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!--<h1 class="govuk-heading-l">What's the applicant's email address?</h1>-->
+      <!--<h1 class="govuk-fieldset__heading">What's the applicant's email address?</h1>-->
 
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
           What's the applicant's email address?
       </h1>
 
-      <form class="form" action="/v19/upload-of-ehic" method="post">
+      <form class="form" action="/v20/telephone-number" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="email">
@@ -45,11 +45,13 @@
           <span id="email-hint" class="govuk-hint">
             We'll only use this to contact the applicant about the reimbursement.
           </span>
+        </br>
+      </br>
           <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
         </div>
         <div class="govuk-inset-text" style="overflow:hidden;" id="validEmail">
           <span class="govuk-hint govuk-!-margin-bottom-0">
-              An email will be sent to: &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
+              Email confirmation: &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
           </span>
       </div>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
