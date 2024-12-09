@@ -20,42 +20,26 @@ Extra information
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="check-extra-info-gaps" method="post">
+    <form class="form" action="check-extra-info" method="post">
       <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
         <div class="govuk-form-group">
-          <h1 class="govuk-heading-l">
-            <span class="govuk-caption-l">Application</span>
-            Add more information for this application
-          </h1>
 
-          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-            data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
             <div class="govuk-notification-banner__header">
               <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                Gaps in payslips
+                Success
               </h2>
             </div>
             <div class="govuk-notification-banner__content">
-              <p>You have not uploaded payslips covering every day of this claim. You need to upload alternative
-                evidence to explain the gaps.</p>
-              <p>
-              <dl class="govuk-summary-list" style="margin-top: -15px; margin-bottom: -10px;">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    April 2020
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    <a href="april-add-ur">Upload payslips for April 2020</a>
-                  </dd>
-                </div>
-
-              </dl>
-
-
-
-              </p>
+              <p class="govuk-body">File named employer-letter.pdf has been deleted</p>
             </div>
           </div>
+          <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Application</span>
+            Add more information for this application (optional)
+          </h1>
+
+          
 
           <p>Add extra information to explain any gaps in the applicant's employment or evidence.</p>
 

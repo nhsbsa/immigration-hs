@@ -32,14 +32,14 @@ IHS question
 <body>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox" method="post">
+      <form class="form" action="/pay-checkbox-mvp" method="post">
         <div class="govuk-form-group">
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">Upload payslips for September 2020</h1>
+            <h1 class="govuk-fieldset__heading">Upload payslips for April 2020</h1>
           </legend>
 
-          <p>Or select 'I do not have payslips for this month' if the applicant does not have payslips for September 2020.</p>
+          <p>Payslips must cover a period starting on or before <strong>20 April 2020</strong>.</p>
           <h2 class="govuk-heading-m">Payslips</h2>
 
           <p>Payslips must include the applicant's:</p>
@@ -69,14 +69,16 @@ IHS question
             <label class="govuk-label govuk-label--m" for="documents">
               Files uploaded
             </label>
-          
+           
             <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
           </div>
 
           <!-- File upload input -->
           <div id="file-upload-container" class="moj-multi-file-upload">
             <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
-           
+            <div class="govuk-inset-text">
+              If you cannot upload payslips for this month, for example because the applicant was paid in arrears, select 'I do not have payslips for this month'. You can explain this gap later.                  
+            </div>
             
             <input
               class="govuk-file-upload moj-multi-file-upload__input"
@@ -109,6 +111,7 @@ IHS question
               type="checkbox"
               onClick="toggleContent()"
               value="checked"
+              checked
             />
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">
               I do not have payslips for this month
@@ -119,7 +122,7 @@ IHS question
           </div>
           <br>
 
-          <a href="task-list-8-no-april" class="govuk-button" data-module="govuk-button">Continue</a>
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
         </div>
       </form>
     </div>
@@ -187,7 +190,7 @@ IHS question
               <ul class="govuk-summary-list__actions-list">
                 
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="">Delete</a>
+                  <a class="govuk-link" href="april-delete">Delete</a>
                 </li>
               </ul>
             </dd>

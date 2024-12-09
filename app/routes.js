@@ -4942,6 +4942,58 @@ router.post('/pay-checkbox-mvp', function(request, response) {
     }
 })
 
+router.post('/pay-checkbox-october-mvp', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp/ideation/no-payslip-october")
+    } else {
+        response.redirect("/v20-mvp/ideation/task-list-3")
+    }
+})
+
+
+router.post('/contracts-add-mvp', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/ideation/extra-information')
+    }
+    else {
+        res.redirect('/v20-mvp/check-your-answers-nhs-path')
+    }
+
+})
+router.post('/contracts-add-gaps-mvp', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/ideation/extra-information-gaps')
+    }
+    else {
+        res.redirect('/v20-mvp/check-your-answers-gaps')
+    }
+
+})
+
+router.post('/yes-contract-add-mvp', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/ideation/contract-upload-task')
+    }
+    else {
+        res.redirect('/v20-mvp/ideation/task-list')
+    }
+
+})
+
+router.post('/pay-checkbox-october-no-start-mvp', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp/ideation/no-payslip-october-no-april")
+    } else {
+        response.redirect("/v20-mvp/ideation/task-list-3-no-april")
+    }
+})
 
 
 

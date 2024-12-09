@@ -32,7 +32,7 @@ IHS question
 <body>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox-october-no-start-2" method="post">
+      <form class="form" action="/pay-checkbox-october-no-start-mvp" method="post">
         <div class="govuk-form-group">
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
@@ -69,9 +69,7 @@ IHS question
             <label class="govuk-label govuk-label--m" for="documents">
               Files uploaded
             </label>
-            <p>
-              Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.
-            </p>
+            
             <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
           </div>
 
@@ -186,13 +184,11 @@ IHS question
 
           // Actions (Preview and Delete)
           const actions = `
-            <dd class="govuk-summary-list__actions">
+           <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
+                
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="/public/images/april-2020.png" target="_blank" style="font-size: 16px;">Preview</a>
-                </li>
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="april-delete"  style="font-size: 16px;">Delete</a>
+                  <a class="govuk-link" href="">Delete</a>
                 </li>
               </ul>
             </dd>
