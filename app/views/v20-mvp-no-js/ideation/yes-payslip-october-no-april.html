@@ -1,0 +1,125 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Content Toggle</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/yes-payslip-october-no-april" method="post">
+        <div class="govuk-form-group">
+          <span class="govuk-caption-l">Application</span>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">What is the last day the payslip for October 2020 covers? (Optional)</h1>
+          </legend>
+
+          <p>This might be included in the payslip as the period end date. This is <strong>not</strong> the same as
+            the pay date.</p>
+
+          <p>This information can help us assess this claim, but you can continue the application without it.</p>
+
+          <div id="passport-issued-hint" class="govuk-hint">
+            For example, 31 10 2024
+          </div>
+          <!-- Div to be hidden -->
+          <div id="content-to-hide">
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                    name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                    name="passport-issued-month" type="text" inputmode="numeric" >
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                    name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+         
+          
+          
+        </div>
+
+        <script>
+          function toggleContent() {
+            var checkbox = document.getElementById('toggle-checkbox');
+            var contentToHide = document.getElementById('content-to-hide');
+            var contentToShow = document.getElementById('content-to-show');
+
+            if (checkbox.checked) {
+              contentToHide.classList.add('hidden');
+              contentToShow.classList.remove('hidden');
+            } else {
+              contentToHide.classList.remove('hidden');
+              contentToShow.classList.add('hidden');
+            }
+          }
+
+          // Initialize the state on page load based on the checkbox state
+          document.addEventListener('DOMContentLoaded', function () {
+            toggleContent();
+          });
+        </script>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        
+
+      </form>
+    </form>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+{% endblock %}

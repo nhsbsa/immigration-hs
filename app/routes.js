@@ -4202,6 +4202,16 @@ router.post('/ihs-tier2-hc-v20', function(req,res){
     }
 })
 
+router.post('/ihs-tier2-hc-v20-mvp', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/v20-mvp/work-question')
+    }
+})
+
 router.post('/work-question-v20', function(req,res){
     var contacted = req.session.data['work-question-v20']
     if (contacted == "yes"){
@@ -4212,6 +4222,16 @@ router.post('/work-question-v20', function(req,res){
     }
 })
 
+router.post('/work-question-v20-mvp', function(req,res){
+    var contacted = req.session.data['work-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/6-months')
+    }
+    else {
+        res.redirect('/v20-mvp/not-entitled')
+    }
+})
+
 router.post('/6-months-v20', function(req,res){
     var contacted = req.session.data['6-months-v20']
     if (contacted == "yes"){
@@ -4219,6 +4239,17 @@ router.post('/6-months-v20', function(req,res){
     }
     else {
         res.redirect('/v20/not-entitled')
+    }
+
+})
+
+router.post('/6-months-v20-mvp', function(req,res){
+    var contacted = req.session.data['6-months-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/average-time')
+    }
+    else {
+        res.redirect('/v20-mvp/not-entitled')
     }
 
 })
@@ -4234,6 +4265,17 @@ router.post('/average-time-v20', function(req,res){
 
 })
 
+router.post('/average-time-v20-mvp', function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/tier2-declaration')
+    }
+    else {
+        res.redirect('/v20-mvp/not-entitled-rr')
+    }
+
+})
+
 router.post('/dependant-question-v20', function(req,res){
     var contacted = req.session.data['dependant-question-v20']
     if (contacted == "yes"){
@@ -4241,6 +4283,17 @@ router.post('/dependant-question-v20', function(req,res){
     }
     else {
         res.redirect('/v20/non-nhs-path')
+    }
+
+})
+
+router.post('/dependant-question-v20-mvp', function(req,res){
+    var contacted = req.session.data['dependant-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/dependant-details')
+    }
+    else {
+        res.redirect('/v20-mvp/non-nhs-path')
     }
 
 })
@@ -4256,6 +4309,17 @@ router.post('/dependant-details-v20', function(req,res){
 
 })
 
+router.post('/dependant-details-v20-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/dependant-details2')
+    }
+    else {
+        res.redirect('/v20-mvp/non-nhs-path')
+    }
+
+})
+
 router.post('/subscription-question-v20', function(req,res){
     var contacted = req.session.data['subscription-question-v20']
     if (contacted == "yes"){
@@ -4267,6 +4331,16 @@ router.post('/subscription-question-v20', function(req,res){
 
 })
 
+router.post('/subscription-question-v20-mvp', function(req,res){
+    var contacted = req.session.data['subscription-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/non-nhs-path')
+    }
+    else {
+        res.redirect('/v20-mvp/non-nhs-path')
+    }
+
+})
 router.post('/non-nhs-path-another-job2-v20', function(req,res){
     var contacted = req.session.data['non-nhs-path-another-job2-v20']
     if (contacted == "yes"){
@@ -4274,6 +4348,17 @@ router.post('/non-nhs-path-another-job2-v20', function(req,res){
     }
     else {
         res.redirect('/v20/attachments')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-v20-mvp', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v20-mvp/attachments')
     }
 
 })
@@ -4312,12 +4397,23 @@ router.post('/v20/payslips-or-contract', function(req,res){
 })
 
 router.post('/non-nhs-path-another-job-v20', function(req,res){
-    var contacted = req.session.data['non-nhs-path-another-job-v18']
+    var contacted = req.session.data['non-nhs-path-another-job-v20']
     if (contacted == "yes"){
         res.redirect('/v20/non-nhs-path-another-job')
     }
     else {
         res.redirect('/v20/ideation/contract-upload-task')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-v20-mvp', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v20-mvp/ideation/contract-upload-task')
     }
 
 })
@@ -4347,6 +4443,21 @@ router.post('/upload-of-evidence-add2-v20', function(req,res){
         else
         {
             res.redirect('/v20/work-question')
+        }
+})
+
+router.post('/doug-ihs-tier2-question-v20-mvp', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v20']
+    if (contacted == "tier2"){
+       res.redirect('/v20-mvp/ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('/v20-mvp/tier5-ko')
+        }
+        else
+        {
+            res.redirect('/v20-mvp/work-question')
         }
 })
 
@@ -4389,6 +4500,17 @@ router.post('/version-20-dependant-question', function(req,res){
     }
     else {
         res.redirect('/v20/claim-dates-new')
+    }
+
+})
+
+router.post('/version-20-dependant-question-mvp', function(req,res){
+    var contacted = req.session.data['dependant-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/dependant-details')
+    }
+    else {
+        res.redirect('/v20-mvp/claim-dates-new')
     }
 
 })
@@ -4985,6 +5107,17 @@ router.post('/yes-contract-add-mvp', function(req,res){
 
 })
 
+router.post('/yes-contract-add-mvp-no-js', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp-no-js/ideation/contract-upload-task')
+    }
+    else {
+        res.redirect('/v20-mvp-no-js/ideation/task-list')
+    }
+
+})
+
 router.post('/pay-checkbox-october-no-start-mvp', function(request, response) {
 
     var checked = request.session.data['waste']
@@ -4993,6 +5126,39 @@ router.post('/pay-checkbox-october-no-start-mvp', function(request, response) {
     } else {
         response.redirect("/v20-mvp/ideation/task-list-3-no-april")
     }
+})
+
+router.post('/pay-checkbox-mvp-no-js', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp-no-js/ideation/no-payslip")
+    } else {
+        response.redirect("/v20-mvp-no-js/ideation/april-cya")
+    }
+})
+
+router.post('/v20-mvp-ihs', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/applicant-visa-type')
+    }
+    else {
+        res.redirect('/v20-mvp/not-entitled-rr')
+    }
+})
+
+
+
+router.post('/yes-payslip-add-mvp-no-js', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp-no-js/ideation/april-add')
+    }
+    else {
+        res.redirect('/v20-mvp-no-js/ideation/task-list-2')
+    }
+
 })
 
 
