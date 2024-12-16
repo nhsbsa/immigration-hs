@@ -1,0 +1,69 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  6 months
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/live/work-question">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/6-months-live" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="6-months-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+              <!--<h1 class="govuk-fieldset__heading">
+                  Did the applicant work in the health and social care job for 6 months or more?
+              </h1>-->
+              <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-l">Eligibility check</span>
+                  Did the applicant work in the health and social care job for 6 months or more?
+              </h1>
+            </legend>
+
+            <span id="6-months-conditional-hint" class="govuk-hint">
+                This period of work should be from 31 March 2020. A claim for this period can be made from 1 October 2020.
+            </span>
+
+          </br>
+        </br>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="6-months-conditional" name="6-months-live" type="radio" value="yes" data-aria-controls="conditional-6-months-conditional">
+                  <label class="govuk-label govuk-radios__label" for="6-months-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="6-months-conditional-2" name="6-months-live" type="radio" value="no" data-aria-controls="conditional-6-months-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="6-months-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

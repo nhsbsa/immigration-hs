@@ -1,0 +1,242 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Gov Start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Visa and immigration</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">What you need to do</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<style>
+.guide .part-navigation-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b1b4b6;
+}
+.gem-c-contents-list {
+    position: relative;
+    margin: 0 0 20px 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 20px 15px -10px #fff;
+}
+.gem-c-contents-list__title {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+.gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ol, ul, nav ol, nav ul {
+    list-style: inherit;
+}
+.gem-c-contents-list__list-item--dashed {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.gem-c-contents-list__list-item {
+    padding-top: 10px;
+    line-height: 1.3;
+    list-style-type: none;
+}
+.gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden;
+}
+@media (min-width: 40.0625em){
+  .gem-c-contents-list__title {
+      font-size: 16px;
+      line-height: 1.5;
+  }
+  .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .gem-c-contents-list__list-item {
+      padding-top: 7.5px;
+  }
+}
+.gem-c-govspeak .contact {
+    position: relative;
+}
+.gem-c-govspeak .address, .gem-c-govspeak .contact {
+    border-left: 1px solid #b1b4b6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-fieldset__heading">
+        Claiming back your immigration health surcharge
+      </h1>
+
+      <aside class="part-navigation-container" role="complementary" style="border-bottom: 1px solid #b1b4b6; margin-top: 30px; margin-bottom: 30px; padding-bottom: 15px;">
+        <nav class="gem-c-contents-list " aria-label="Pages in this guide" role="navigation" data-module="track-click">
+        <h2 class="gem-c-contents-list__title">Contents</h2>
+
+        <ol class="gem-c-contents-list__list">
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application">Overview</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/who-needs-pay">Who needs to pay</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/how-much-pay">How much you have to pay</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/pay">Pay the healthcare surcharge</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="">Claiming back your immigration health surcharge</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="https://www.gov.uk/healthcare-immigration-application/refunds">Refunds</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a class="gem-c-contents-list__link govuk-link" href="/live/start">Reimbursements</a>
+            </li>
+  <!--
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active" aria-current="true">
+              Reimbursements
+            </li>
+  -->
+        </ol> 
+        </nav>
+    </aside>
+    
+
+  <!--
+     <h1 class="govuk-fieldset__heading">
+        Claiming back your immigration health surcharge
+      </h1>
+  --> 
+    <p>The applicant may be able to get money back if they paid the immigration health surcharge (IHS) and they work in health and social care.</a></p>
+    
+    <p>There are 2 different ways to get money back, depending on the applicant's visa and job.</p>
+
+    <p>The applicant can apply for a <a href="">refund</a> if they, either:</p>
+    
+    <ul class="govuk-list govuk-list--bullet">
+      <li>work in health and care and have a Skilled Worker visa, in an eligible role</li>
+      <li>are the dependant of someone who works in health and care, who has a Skilled Worker visa, in an eligible role</li>
+    </ul>
+
+    <p>Skilled Worker is the new name for the Tier 2 (General) visa.</p>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View the list of eligible roles
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  List of roles:
+  <ul>
+    <li>nurses</li>
+    <li>midwives</li>
+    <li>social workers</li>
+    <li>paramedics</li>
+    <li>doctor</li>
+    <li>psychologists</li>
+    <li>pharmacists</li>
+    <li>ophthalmic opticians</li>
+    <li>dental practitioners</li>
+    <li>medical radiographers</li>
+    <li>podiatrists</li>
+    <li>health professionals not elsewhere classified</li>
+    <li>physiotherapists</li>
+    <li>occupational therapists</li>
+    <li>speech and language therapists</li>
+    <li>therapy professionals not elsewhere classified</li>
+    <li>biological scientists and biochemists</li>
+    <li>physical scientists</li>
+  </ul>
+
+  </div>
+</details>
+
+
+<!--
+    <p style="background:lightyellow"> If you are a Tier 5...</p>
+-->
+
+  <p> If you're a Tier 5 Government Authorised Exchange Medical Training Initiative (GAE MTI) visa holder, you do not need to apply for a refund of your IHS. The Tier 5 GAE MTI was previously known as a Tier 5 Medical Training Initiative (MTI).</p>
+  <p>Your refund will be processed automatically followed by notification of this from the Academy of Medical Royal 
+    Colleges.</p>
+
+    <p>Applicants on all other visa types can <a href="/live/start"> apply for a reimbursement</a> if they've paid the Immigration Health Surcharge, are on a visa that allows them to work, and they work in Health and Social Care.</p>
+
+<!--
+    <div class="govuk-inset-text">
+        Do not send your bank details. All refunds will be paid to the account or card you paid with when you made your IHS payment.
+    </div>
+-->
+    
+    
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href=https://www.gov.uk/apply-to-come-to-the-uk>
+              Applying for a visa to come to the UK
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    </div>
+  </div>
+{% endblock %}
