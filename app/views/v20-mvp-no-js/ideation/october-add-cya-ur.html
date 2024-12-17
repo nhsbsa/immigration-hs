@@ -7,14 +7,12 @@ IHS question
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
-        new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
-
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -23,7 +21,7 @@ IHS question
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkbox Content Toggle</title>
+  <title>IHS Upload Payslips</title>
   <style>
     .hidden {
       display: none;
@@ -34,138 +32,192 @@ IHS question
 <body>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox-october" method="post">
+      <form class="form" action="/pay-checkbox-october-no-start-mvp-no-js" method="post">
         <div class="govuk-form-group">
+
+          
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
             <h1 class="govuk-fieldset__heading">Upload payslips for October 2020</h1>
           </legend>
 
-          <P>Payslips must cover a period ending on or after <strong>119 October 2020</strong>.</P>
+          <p>Payslips must cover a period ending on or after <strong>19 October 2020</strong>.</p>
           <h2 class="govuk-heading-m">Payslips</h2>
 
-        <p>Payslips must include the applicant's:</p>
+          <p>Payslips must include the applicant's:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>name</li>
+            <li>employer's name</li>
+            <li>National Insurance number</li>
+            <li>pay date or period covered by the payslip</li>
+          </ul>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>name</li>
-          <li>employer's name</li>
-          <li> National Insurance number</li>
-          <li>pay date or period covered by the payslip</li>
-        </ul>
+          <h2 class="govuk-heading-m">Files</h2>
+          <p>You must upload scanned copies or photos of the applicant's original documents.</p>
+          <p>Files must:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>be clear and readable</li>
+            <li>be in JPG, JPEG, BMP, PNG, or PDF format</li>
+            <li>be smaller than 2MB each</li>
+            <li><strong>not</strong> be password protected</li>
+          </ul>
+  
+          
 
-        <h2 class="govuk-heading-m">Files</h2>
-
-        <p>You must upload scanned copies or photos of the applicant's original documents.</p>
-
-        <p>Files must:</p>
+          <!-- Section for uploaded files -->
 
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>be clear and readable</li>
-          <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
-          <li> be smaller than 2MB each</li>
-         
-        </ul>
+          <div id="uploaded-files-container" class="hidden">
+            <label class="govuk-label govuk-label--m" for="documents">
+              Files uploaded
+            </label>
+           
+            <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
+          </div>
 
-        <h2 class="govuk-heading-m">Files uploaded</h2>
-          <div class="moj-multi-file__uploaded-files">
-    
-            <div class="govuk-summary-list moj-multi-file-upload__list">
-    
-              
-    
-    
-    
-              <div class="govuk-summary-list__row moj-multi-file-upload__row">
-                <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
-                  <span class="moj-multi-file-upload__success"> 
-                    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
-                    <div class="moj-file-message_span">October-2020.jpg successfully uploaded</div>
-                </span>
-                <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a href="october-delete">Delete</a></dd>
-              </div>
-              </div>
-              </div>
-          <!-- Div to be hidden -->
-          <div id="content-to-hide">
-            <div class="moj-multi-file-upload">
-              
-
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--m" for="documents">
-                  Upload files
-                </label>
-                <div class="moj-multi-file__uploaded-files ">
+          <!-- File upload input -->
+          <div id="file-upload-container" class="moj-multi-file-upload">
+            <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
+            <div class="govuk-inset-text">
+              If the last month for this claim is October 2020 and the applicant has not been paid for this month yet, you should wait to apply until they have a payslip for October 2020.            </div>
             
-                  <div class="govuk-summary-list moj-multi-file-upload__list">
-                    
-        
-                  </div>
-                </div>
-    
-                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-              </div>
-    
-              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-                Upload file
-              </button>
+           <div class="govuk-form-group">
+            
+              <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
             </div>
           </div>
 
-          <!-- Div to be revealed -->
+        </div>
+
+          <!-- Warning text for missing payslips -->
           <div id="content-to-show" class="hidden">
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
                 <span class="govuk-visually-hidden">Warning</span>
-                If you do not have a payslip for this month, you will be required to provide extra information to
-                explain the gap. You can do this by providing a contract or headed letter from your employer.
+                You'll need to give more information and evidence to explain this gap later.
               </strong>
             </div>
           </div>
 
           <!-- Checkbox -->
-          <!-- <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
-              onClick="toggleContent()" value="checked">
-            <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have payslips for this
-              month</label>
-              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                You can explain why and add alternative evidence later
-              </div>
-          </div> -->
+          <div class="govuk-checkboxes__item">
+            <input
+              class="govuk-checkboxes__input"
+              id="toggle-checkbox"
+              name="waste"
+              type="checkbox"
+              onClick="toggleContent()"
+              value="checked"
+            />
+            <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">
+              I do not have payslips for this month
+            </label>
+            <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              You can explain why and add alternative evidence later.
+            </div>
+          </div>
+          <br>
+
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
         </div>
-        <br>
-
-        <script>
-          function toggleContent() {
-            var checkbox = document.getElementById('toggle-checkbox');
-            var contentToHide = document.getElementById('content-to-hide');
-            var contentToShow = document.getElementById('content-to-show');
-
-            if (checkbox.checked) {
-              contentToHide.classList.add('hidden');
-              contentToShow.classList.remove('hidden');
-            } else {
-              contentToHide.classList.remove('hidden');
-              contentToShow.classList.add('hidden');
-            }
-          }
-
-          // Initialize the state on page load based on the checkbox state
-          document.addEventListener('DOMContentLoaded', function () {
-            toggleContent();
-          });
-        </script>
-        <a href="october-cya-no-april" class="govuk-button" data-module="govuk-button">Continue</a>
-
       </form>
     </div>
-
   </div>
+  
+  <script>
+    function toggleContent() {
+      var checkbox = document.getElementById('toggle-checkbox');
+      var contentToHide = document.getElementById('content-to-hide');
+      var contentToShow = document.getElementById('content-to-show');
 
+      if (checkbox.checked) {
+        contentToHide.classList.add('hidden');
+        contentToShow.classList.remove('hidden');
+      } else {
+        contentToHide.classList.remove('hidden');
+        contentToShow.classList.add('hidden');
+      }
+    }
+
+    // Initialize the state on page load based on the checkbox state
+    document.addEventListener('DOMContentLoaded', function () {
+      toggleContent();
+    });
+  </script>
+  <script>
+    // Toggles content visibility when checkbox is clicked
+    
+
+    // Handles file upload functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const fileInput = document.getElementById('documents');
+      const uploadedFilesContainer = document.getElementById('uploaded-files-container');
+      const fileListContainer = document.getElementById('uploaded-files');
+
+      fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+          uploadedFilesContainer.classList.remove('hidden'); // Show the uploaded files section
+        } else {
+          uploadedFilesContainer.classList.add('hidden'); // Hide if no files
+        }
+
+        fileListContainer.innerHTML = ''; // Clear the list
+
+        // Iterate through the selected files
+        Array.from(fileInput.files).forEach((file, index) => {
+          const fileRow = document.createElement('div');
+          fileRow.className = 'govuk-summary-list__row moj-multi-file-upload__row';
+
+          // File details
+          const fileDetails = `
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message">
+              <span class="moj-multi-file-upload__success">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                  <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
+                </svg>Payslip ${file.name} successfully uploaded
+              </span>
+            </dd>
+          `;
+
+          // Actions (Preview and Delete)
+          const actions = `
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+               
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="april-delete" >Delete</a>
+                </li>
+              </ul>
+            </dd>
+          `;
+
+          fileRow.innerHTML = fileDetails + actions;
+          fileListContainer.appendChild(fileRow);
+
+          // Add event listener for delete functionality
+          fileRow.querySelector('[data-index]').addEventListener('click', function () {
+            removeFile(index);
+          });
+        });
+      });
+
+      // Remove file from input and update the display
+      function removeFile(index) {
+        const dataTransfer = new DataTransfer();
+        Array.from(fileInput.files).forEach((file, i) => {
+          if (i !== index) {
+            dataTransfer.items.add(file);
+          }
+        });
+
+        fileInput.files = dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change')); // Trigger the change event to update the UI
+      }
+    });
+  </script>
 </body>
 
 </html>
-
 {% endblock %}

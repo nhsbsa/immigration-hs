@@ -32,8 +32,10 @@ IHS question
 <body>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox-october-no-start-mvp" method="post">
+      <form class="form" action="/pay-checkbox-october-no-start-mvp-no-js" method="post">
         <div class="govuk-form-group">
+
+          
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
             <h1 class="govuk-fieldset__heading">Upload payslips for October 2020</h1>
@@ -64,12 +66,12 @@ IHS question
 
           <!-- Section for uploaded files -->
 
-          <div id="content-to-hide">
+
           <div id="uploaded-files-container" class="hidden">
             <label class="govuk-label govuk-label--m" for="documents">
               Files uploaded
             </label>
-            
+           
             <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
           </div>
 
@@ -181,11 +183,11 @@ IHS question
 
           // Actions (Preview and Delete)
           const actions = `
-           <dd class="govuk-summary-list__actions">
+            <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
-                
+               
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="">Delete</a>
+                  <a class="govuk-link" href="april-delete" >Delete</a>
                 </li>
               </ul>
             </dd>

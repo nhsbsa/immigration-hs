@@ -14,161 +14,188 @@ IHS question
     </span>
   </p>
 </div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 
 {% endblock %}
 
 {% block content %}
-<html lang="en">
+<div id="content">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkbox Content Toggle</title>
-  <style>
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
+  <!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
 
-<body>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox" method="post">
-        <div class="govuk-form-group">
-          <span class="govuk-caption-l">Application</span>
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+    
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/yes-payslip-add-mvp-no-js" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">Upload payslips for April 2020</h1>
-          </legend>
+            <h1 class="govuk-fieldset__heading">Payslips uploaded for April 2020</h1>
+        </legend>
 
-          <P>Payslips must cover a period starting on or before <strong>20 April 2020</strong>.</P>
-          <h2 class="govuk-heading-m">Payslips</h2>
-
-          <p>Payslips must include the applicant's:</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>name</li>
-            <li>employer's name</li>
-            <li> National Insurance number</li>
-            <li>pay date or period covered by the payslip</li>
-          </ul>
-
-          <h2 class="govuk-heading-m">Files</h2>
-
-          <p>You must upload scanned copies or photos of the applicant's original documents.</p>
-
-          <p>Files must:</p>
+        
+        <div class="govuk-form-group">
 
 
-          <ul class="govuk-list govuk-list--bullet">
-            <li>be clear and readable</li>
-            <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
-            <li> be smaller than 2MB each</li>
-
-          </ul>
-
-
-
-          <h2 class="govuk-heading-m">Files uploaded</h2>
-          <div class="moj-multi-file__uploaded-files">
-
-            <div class="govuk-summary-list moj-multi-file-upload__list">
-
-
-
-
-
-              <div class="govuk-summary-list__row moj-multi-file-upload__row">
-                <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span <span
-                    class="moj-multi-file-upload__success">
-                    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false"
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-                      <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
-                    </svg>
-                    <div class="moj-file-message_span">april-2020.png successfully uploaded</div>
-                  </span>
-                <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a href="april-delete">Delete</a>
+        
+            
+            <dl class="govuk-summary-list">
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!-- <a download href="/">contract.pdf</a> -->
+                  april-2020.png
                 </dd>
+                <dd class="govuk-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="april-delete">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                    </li>
+                  </ul>
+                </dd>
+            
+                
+            
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 2
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!-- <a download href="/">contract.pdf</a> -->
+                  Missing-april-2020.png
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="april-delete">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                    </li>
+                  </ul>
+                </dd>
+            
+                
+            
+              </div>
+
+                   
+
+            </dl>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+                  Do you want to upload more payslips for April 2020?
+  
+              </legend>            
+             <!-- <span id="attachments-add-conditional-hint" class="govuk-hint">
+              hint text goes here.
+              </span>-->
+  
+              
+  
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="attachments-add-3-conditional" name="contracts-add-3-v20" type="radio" value="yes" data-aria-controls="conditional-attachments-add-3-conditional">
+                  <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional">
+                    Yes
+                  </label>
+                </div>
+  
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="attachments-add-3-conditional-2" name="contracts-add-3-v20" type="radio" value="no" data-aria-controls="conditional-attachments-add-3-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional-2">
+                    No
+                  </label>
+                </div>
               </div>
             </div>
-          </div>
-
-
-          <!-- Div to be hidden -->
-          <div id="content-to-hide">
-            <div class="moj-multi-file-upload">
-              
-
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--m" for="documents">
-                  Upload files
-                </label>
-                <div class="moj-multi-file__uploaded-files ">
             
-                  <div class="govuk-summary-list moj-multi-file-upload__list">
-                    
-        
+
+
+      
+
+            
+
+          <!-- <img src="/public/images/april-2020.png" style="height: 300px;" alt="Three illustrations of taking a passport photo. Two incorrect ways show someone taking their own photo with a phone camera or webcam. The correct way shows someone else helping to take a photo that includes the person's head and shoulders."> -->
+       
+         
+            </fieldset>
+          
+            <!-- <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-heading-m">
+                 What is the end date of this payslip
+                </h2>
+              </legend>
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
                   </div>
                 </div>
-    
-                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
               </div>
-    
-              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-                Upload file
-              </button>
-            </div>
+            </fieldset> -->
           </div>
-
-          <!-- Div to be revealed -->
-          <div id="content-to-show" class="hidden">
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-visually-hidden">Warning</span>
-                If you cannot upload payslips covering this whole claim period, you will need to give us more
-                information and evidence to explain any gaps later. </strong>
-            </div>
-          </div>
-
-          <!-- Checkbox -->
-          <!-- <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
-              onClick="toggleContent()" value="checked">
-            <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have a payslip for this
-              month</label>
-          </div> -->
+          
         </div>
+        </fieldset>
+      </div>
 
-        <script>
-          function toggleContent() {
-            var checkbox = document.getElementById('toggle-checkbox');
-            var contentToHide = document.getElementById('content-to-hide');
-            var contentToShow = document.getElementById('content-to-show');
+        
 
-            if (checkbox.checked) {
-              contentToHide.classList.add('hidden');
-              contentToShow.classList.remove('hidden');
-            } else {
-              contentToHide.classList.remove('hidden');
-              contentToShow.classList.add('hidden');
-            }
-          }
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
-          // Initialize the state on page load based on the checkbox state
-          document.addEventListener('DOMContentLoaded', function () {
-            toggleContent();
-          });
-        </script>
-        <a href="/v20/check-your-answers-nhs-path" class="govuk-button" data-module="govuk-button">Continue</a>
-
-      </form>
-    </div>
-
+    </form>
   </div>
-
-</body>
-
-</html>
+</div>
 
 {% endblock %}

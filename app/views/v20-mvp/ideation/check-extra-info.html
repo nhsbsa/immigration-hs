@@ -111,7 +111,7 @@ Add another contract
               </div>
             </dl> -->
 
-      
+
 
 
       <dl class="govuk-summary-list">
@@ -121,9 +121,11 @@ Add another contract
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['with-hint']}}
+
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="extra-information#with-hint">Change<span class="govuk-visually-hidden"> name</span></a>
+            <a class="govuk-link" href="extra-information#with-hint">Change<span class="govuk-visually-hidden">
+                name</span></a>
           </dd>
         </div>
 
@@ -146,9 +148,10 @@ Add another contract
           <dd class="govuk-summary-list__actions">
 
             <ul class="govuk-summary-list__actions-list">
-              
+
               <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="extra-information-delete">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                <a class="govuk-link" href="extra-information-delete">Delete<span class="govuk-visually-hidden"> contact
+                    details</span></a>
               </li>
             </ul>
 
@@ -203,5 +206,21 @@ Add another contract
 </form>
 </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const extraInfoContainer = document.querySelector('.govuk-summary-list__value');
+    const extraInfo = localStorage.getItem('extraInfo');
+    
+    if (extraInfo) {
+      // Safely insert the retrieved text into the container
+      extraInfoContainer.textContent = extraInfo;
+    } else {
+      // Provide a fallback in case there's no stored value
+      extraInfoContainer.textContent = 'No extra information provided.';
+    }
+  });
+</script>
+
 
 {% endblock %}

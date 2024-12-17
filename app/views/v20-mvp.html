@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-health.html" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -12,8 +12,284 @@ GOV.UK Prototype Kit
       IHS - Health & Social Care
     </h1>{{releaseVersion | log }}
 
-    <h2 class="govuk-heading-m">Evidence upload design changes - December 2024</h2>
+    <h2 class="govuk-heading-m">Evidence upload design changes MVP - December 2024</h2>
+  <p>Below is a list of links and prototypes for the MVP release of the evidence upload changes.</p>
+
+
+   <hr>
+
+   <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+           MVP - Full Journey Prototypes
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Prototype</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+    
+              <th scope="col" class="govuk-table__header">Link</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">MVP - From the start page</th>
+              <td class="govuk-table__cell">This prototype is the MVP journey from the start page version which has minor tweaks and changes.</td>
+              <td class="govuk-table__cell"><a href="/v20-mvp/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+           Prototype
+                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                </svg>
+              </a></td>
+    
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">MVP - From the new IHS owned start page</th>
+              <td class="govuk-table__cell">This prototype is the MVP journey from the potential new start page version which would be managed and owned by the IHS team</td>
+              <td class="govuk-table__cell"><a href="/v20-mvp/gov-start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                Prototype
+                     <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                     </svg>
+                   </a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+            MVP - Evidence Upload Journey Prototypes
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+        <table class="govuk-table">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Prototype</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+    
+              <th scope="col" class="govuk-table__header">Link</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">MVP evidence upload journey</th>
+              <td class="govuk-table__cell">This prototype is the MVP evidence upload section of the application.</td>
+              <td class="govuk-table__cell"><a href="/v20-mvp/ideation/contract-upload-task" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                Prototype
+                     <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                     </svg>
+                   </a></td>
+            </tr>
+            
+          </tbody>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">MVP evidence upload journey - Javascript off version</th>
+              <td class="govuk-table__cell">This prototype is the MVP evidence upload section of the application with javascript disabled, which removes multi file upload across all pages.</td>
+              <td class="govuk-table__cell"><a href="/v20-mvp-no-js/ideation/contract-upload-task" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                Prototype
+                     <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                     </svg>
+                   </a></td>
+            </tr>
+            
+          </tbody>
+        </table>      </div>
+    </div>
+    
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+            Error messages
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+        <p class="govuk-body"></p>
+      </div>
+    </div>
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+            ADHOC Pages
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+        <p class="govuk-body"></p>
+      </div>
+    </div> 
   </div>
+
+    
+
+
+    
+
+   
+
+
+
+
+
+  
+
+
+  <!-- <h2 class="govuk-heading-m">Evidence upload design changes Post MVP/Version 2.0</h2>
+  
+
+
+   <hr>
+
+   <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+           MVP - Full Journey Prototypes
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Prototype</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+    
+              <th scope="col" class="govuk-table__header">Link</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">From the start page</th>
+              <td class="govuk-table__cell">This prototype is the 2.0 journey from the start page version which has minor tweaks and changes.</td>
+              <td class="govuk-table__cell"><a href="/v20/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+           Prototype
+                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                </svg>
+              </a></td>
+    
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">From the new IHS owned start page</th>
+              <td class="govuk-table__cell">This prototype is the 2.0 journey from the potential new start page version which would be managed and owned by the IHS team</td>
+              <td class="govuk-table__cell"><a href="/v20/gov-start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                Prototype
+                     <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                     </svg>
+                   </a></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+            MVP - Evidence Upload Journey Prototypes
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+        <table class="govuk-table">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Prototype</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+    
+              <th scope="col" class="govuk-table__header">Link</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">MVP evidence upload journey</th>
+              <td class="govuk-table__cell">This prototype is the MVP evidence upload section of the application.</td>
+              <td class="govuk-table__cell"><a href="/v20-mvp/ideation/contract-upload-task" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                Prototype
+                     <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                     </svg>
+                   </a></td>
+            </tr>
+            
+          </tbody>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">MVP evidence upload journey - Javascript off version</th>
+              <td class="govuk-table__cell">This prototype is the MVP evidence upload section of the application with javascript disabled, which removes multi file upload across all pages.</td>
+              <td class="govuk-table__cell"><a href="/v20-mvp-no-js/ideation/contract-upload-task" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                Prototype
+                     <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                       <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                     </svg>
+                   </a></td>
+            </tr>
+            
+          </tbody>
+        </table>      </div>
+    </div>
+    
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+            Error messages
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+        <p class="govuk-body">This is the content for Know your audience.</p>
+      </div>
+    </div>
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+            ADHOC Pages
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+        <p class="govuk-body">This is the content for How people read.</p>
+      </div>
+    </div> 
+  </div> -->
+
+    
+
+
+    
+
+   
+
+
+
+
 
   
 
@@ -27,6 +303,42 @@ GOV.UK Prototype Kit
 
 
 
+    <!-- <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading govuk-heading-m" >
+          <a href="#" style="color: black;">Evidence Upload MVP</a>
+        </h2>
+        <p>This pro</p>
+
+      </div>
+    </div>
+
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Evidence Upload MVP - No Javascript</a>
+        </h2>
+        <p>Practical advice to help you feel mentally and emotionally better</p>
+
+      </div>
+    </div> -->
+
+    
+
+
+
+
+
+
+
+
+    
+  
+  
+  
+  </div>
 </div>
+
+
 
 {% endblock %}
