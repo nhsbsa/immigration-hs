@@ -27,7 +27,22 @@ Upload evidence
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form class="form" action="/v20-mvp/extra-information" method="post">
+    <form class="form" action="" method="post">
+
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                Select a month to upload payslips for that month or tell us you do not have payslips for that time              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </div>
 
       
 
@@ -146,7 +161,7 @@ Upload evidence
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-2-status">
+            <a class="govuk-link govuk-task-list__link" href="may" aria-describedby="application-details-2-status">
               May 2020
             </a>
           </div>
@@ -223,7 +238,7 @@ Upload evidence
 
 
       <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
-      <a href="/v20-mvp/error-messages/task-list-error" class="govuk-button" data-module="govuk-button">Continue</a>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>
 
