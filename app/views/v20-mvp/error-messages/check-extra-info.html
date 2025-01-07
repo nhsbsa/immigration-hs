@@ -1,0 +1,246 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Add another contract
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#attachments-add-3-conditional">Select yes if you want to upload any more evidence</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <form class="form" action="/contracts-add-mvp" method="post">
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">Application</span>
+        Check your extra information
+      </h1>
+
+
+      <!-- <h2 class="govuk-heading-m">Payslips uploaded</h2>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/public/images/april-2020.png" target="_blank" >april-2020.png</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 2
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/public/images/april-2020.png" target="_blank" >May-2020.jpg</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 3
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/public/images/april-2020.png" target="_blank" >June-2020.jpg</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 4
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/public/images/april-2020.png" target="_blank" >July-2020.jpg</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 5
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/public/images/april-2020.png" target="_blank" >August-2020.jpg</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 6
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/public/images/april-2020.png" target="_blank" >September-2020.jpg</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 7
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <a href="/public/images/april-2020.png" target="_blank" >October-2020.jpg</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+            </dl> -->
+
+
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Extra information
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['with-hint']}}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="extra-information#with-hint">Change<span class="govuk-visually-hidden">
+                name</span></a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Evidence</h2>
+
+      <dl class="govuk-summary-list">
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            employer-letter.pdf
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+            <ul class="govuk-summary-list__actions-list">
+
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="extra-information-delete">Delete<span class="govuk-visually-hidden"> contact
+                    details</span></a>
+              </li>
+            </ul>
+
+          </dd>
+
+        </div>
+
+
+
+
+      </dl>
+
+
+  </div>
+</div>
+
+<div class="govuk-form-group govuk-form-group--error">
+
+  <fieldset class="govuk-fieldset" aria-describedby="attachments-add-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+      Do you want to add any other extra information?
+
+    </legend>
+
+    <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select yes if you want to upload any more evidence
+    </p>
+    <!-- <span id="attachments-add-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="attachments-add-3-conditional" name="contracts-add-3-v20" type="radio"
+            value="yes" data-aria-controls="conditional-attachments-add-3-conditional">
+          <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="attachments-add-3-conditional-2" name="contracts-add-3-v20"
+            type="radio" value="no" data-aria-controls="conditional-attachments-add-3-conditional-2">
+          <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional-2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+</form>
+</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const extraInfoContainer = document.querySelector('.govuk-summary-list__value');
+    const extraInfo = localStorage.getItem('extraInfo');
+    
+    if (extraInfo) {
+      // Safely insert the retrieved text into the container
+      extraInfoContainer.textContent = extraInfo;
+    } else {
+      // Provide a fallback in case there's no stored value
+      extraInfoContainer.textContent = 'No extra information provided.';
+    }
+  });
+</script>
+
+
+{% endblock %}
