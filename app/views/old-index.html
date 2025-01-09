@@ -1,0 +1,394 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Apply for your immigration health surcharge reimbursement
+      </h1>{{releaseVersion | log }}
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <div class="govuk-grid-column-one-third govuk-!-margin-bottom-9">
+                <h2 class="govuk-heading-l">Version 18 - <br>H&SC</h2>
+                <p class="govuk-body">Health & Social Care Journey</p>
+                <p class="govuk-body"><a href="/v18/upload-of-evidence"> Skip to 'upload evidence' page</a></p>
+                <p class="govuk-body">Last updated: 18th May 2023</p>
+                <p class="govuk-body govuk-!-margin-bottom-0"><a href="/v18/start" class="govuk-button">Start</a></p>
+                <h3 class="govuk-heading-s">Static Links for H&SC</h3>
+                <p class="govuk-body"><a href="https://www.gov.uk/help"> Help</a></p>
+                <p class="govuk-body"><a href="/footer-HSC/cookies"> Cookies</a></p>
+                <p class="govuk-body"><a href="/footer-HSC/contact-us"> Contact</a></p>
+                <p class="govuk-body"><a href="/footer-HSC/accessibility-statement"> Accessibility Statement</a></p>
+                <p class="govuk-body"><a href="/footer-HSC/terms"> Terms and Conditions</a></p>
+                <p class="govuk-body"><a href="/footer-HSC/privacy"> Privacy</a></p>
+            </div>
+
+            <div class="govuk-grid-column-one-third govuk-!-margin-bottom-9">
+                <h2 class="govuk-heading-l">Version 19 - Students</h2>
+                <p class="govuk-body">Student Journey (Post MVP)</p>
+                <p class="govuk-body"> Last updated: 4th May 2023</p>
+                <p class="govuk-body govuk-!-margin-bottom-0"><a href="/v19/start" class="govuk-button">Start</a></p>
+                <h3 class="govuk-heading-s">Static Links for Students</h3>
+                <p class="govuk-body"><a href="/error/404"> Error 404</a></p>
+                <p class="govuk-body"><a href="/error/500"> Error 500</a></p>
+                <p class="govuk-body"><a href="/error/502"> Error 502</a></p>
+                <p class="govuk-body"><a href="/error/503"> Error 503</a></p>
+                <p class="govuk-body"><a href="/error/session-timeout"> Session Timeout</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full"></div>
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Previous iterations (Version 1 - 17)
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                <p class='govuk-body'>You can find the list of the previous iterations for this prototype and the MVP version</p>
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption">Prototype iterations</caption>
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header app-custom-class">Version no</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Last updated</th>
+                        <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Version 1</th>
+                        <td class="govuk-table__cell">Design based on MVP assumptions for UR and covering the minimum journey based on co-designing with the stakeholders. UR = 1</td>
+                        <td class="govuk-table__cell">31 July 2020</td>
+                        <td class="govuk-table__cell"><a href="/v1/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Version 2</th>
+                        <td class="govuk-table__cell">Covers initial design based on assumptions and the proto-personas workshop with UKV&I and DHSC. UR = 1</td>
+                        <td class="govuk-table__cell">3 August 2020</td>
+                        <td class="govuk-table__cell"><a href="/v2/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Version 3</th>
+                        <td class="govuk-table__cell">Contain the declaration journey, no attachments and NINO+DoB</td>
+                        <td class="govuk-table__cell">14 August 2020</td>
+                        <td class="govuk-table__cell"><a href="/v3/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Version 4</th>
+                        <td class="govuk-table__cell">Contain no initial declaration, attachments and check your answers cover a short declaration</td>
+                        <td class="govuk-table__cell">15 August 2020</td>
+                        <td class="govuk-table__cell"><a href="/v4/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Version 5</th>
+                        <td class="govuk-table__cell">Incl. employment details, feedback from BIT and declaration at the end</td>
+                        <td class="govuk-table__cell">1 September 2020</td>
+                        <td class="govuk-table__cell"><a href="/v5/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 6</th>
+                          <td class="govuk-table__cell">Improved version for post MVP, including the functionality dropped for MVP due to time limitation</td>
+                          <td class="govuk-table__cell">28 September 2020</td>
+                          <td class="govuk-table__cell"><a href="/v6/start-gov" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 7</th>
+                          <td class="govuk-table__cell">Tier 2</td>
+                          <td class="govuk-table__cell">01 December 2020</td>
+                          <td class="govuk-table__cell"><a href="/v7/start-gov" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 8</th>
+                          <td class="govuk-table__cell">Claim start date moved forward, upload of 6 payslips</td>
+                          <td class="govuk-table__cell">22 February 2020</td>
+                          <td class="govuk-table__cell"><a href="/v8/start-gov" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 9</th>
+                          <td class="govuk-table__cell">Dynamic content for Claim Start Date</td>
+                          <td class="govuk-table__cell">25 March 2020</td>
+                          <td class="govuk-table__cell"><a href="/v9/start-gov" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 10</th>
+                          <td class="govuk-table__cell">Changes TBC</td>
+                          <td class="govuk-table__cell">Date TBC</td>
+                          <td class="govuk-table__cell"><a href="/v10/start-gov" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 11 - H&SC</th>
+                          <td class="govuk-table__cell">Last known prototype version before go live</td>
+                          <td class="govuk-table__cell">09 April 2021</td>
+                          <td class="govuk-table__cell"><a href="/v11/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 12 - Students</th>
+                          <td class="govuk-table__cell">Student pathway following DHSC meeting on 24th Aug</td>
+                          <td class="govuk-table__cell">25th August 2021</td>
+                          <td class="govuk-table__cell"><a href="/v12/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 13 - Students</th>
+                          <td class="govuk-table__cell">Student journey as on live service on 01/01/2022</td>
+                          <td class="govuk-table__cell">01/01/2022</td>
+                          <td class="govuk-table__cell"><a href="/v13/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 14 - H&SC</th>
+                          <td class="govuk-table__cell">H&SC Journey Pre-Live assessment</td>
+                          <td class="govuk-table__cell">2nd Feb 2023</td>
+                          <td class="govuk-table__cell"><a href="/v14/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 15 - Students</th>
+                          <td class="govuk-table__cell">Students Journey Pre-Live assessment</td>
+                          <td class="govuk-table__cell">2nd Feb 2023</td>
+                          <td class="govuk-table__cell"><a href="/v15/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 16 - H&SC</th>
+                          <td class="govuk-table__cell">H&SC Journey Post-live assessment "continual improvement phase"</td>
+                          <td class="govuk-table__cell">4th May 2023</td>
+                          <td class="govuk-table__cell"><a href="/v16/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Version 17 - Students</th>
+                          <td class="govuk-table__cell">Students Journey Post-live assessment "continual improvement phase"</td>
+                          <td class="govuk-table__cell">4th May 2023</td>
+                          <td class="govuk-table__cell"><a href="/v17/start" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+
+
+                    </tbody>
+                  </table>
+                  <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">Warning</span>
+                      For more information on these prototypes, please see <a href="https://miro.com/app/board/uXjVO3CEsJ0=/?share_link_id=612684725498">Miro board covering the process flows and
+                      journeys</a>.<br>
+                      Miro board last updated 2nd Feb 2023.
+                    </strong>
+                  </div>
+              </div>
+            </div>
+            <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                    About MVP
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                  <p class='govuk-body'>You can find the MVP prototype details.</p>
+                  <table class="govuk-table">
+                      <caption class="govuk-table__caption">Prototype iterations</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header app-custom-class">Version no</th>
+                          <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+                          <th scope="col" class="govuk-table__header app-custom-class">Last updated</th>
+                          <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">MVP</th>
+                            <td class="govuk-table__cell">What we used for going live on the 1st of October</td>
+                            <td class="govuk-table__cell">30 Sept 2020</td>
+                            <td class="govuk-table__cell"><a href="/mvp/start-gov" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  <div class="govuk-warning-text">
+                      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                      <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        For more information on these prototypes, please see <a href="https://miro.com/app/board/uXjVO3CEsJ0=/?share_link_id=612684725498">Miro board covering the process flows and
+                          journeys</a>.<br>
+                          Miro board last updated 2nd Feb 2023.
+                      </strong>
+                    </div>
+              </div>
+            </div>
+            <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                    User journeys
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                <p class='govuk-body'>This is the content for user journeys via Miro board.</p>
+                <p class="govuk-body">For more information on these prototypes, please see <a href="https://miro.com/app/board/o9J_ki3pipc=/">Miro board covering the process flows and journeys</a>.<br></p>
+
+              </div>
+            </div>
+            <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                    Error pages
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p class='govuk-body'>You can find the MVP prototype details.</p>
+                  <table class="govuk-table">
+                      <caption class="govuk-table__caption">Prototype iterations</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+                          <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">404</th>
+                            <td class="govuk-table__cell"><a href="/error/404" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">500</th>
+                            <td class="govuk-table__cell"><a href="/error/500" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">503</th>
+                            <td class="govuk-table__cell"><a href="/error/503" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Session timeout</th>
+                            <td class="govuk-table__cell"><a href="/error/session-timeout" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+
+            <div class="govuk-accordion__section ">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                    July 2024 Design
+                  </span>
+                </h2>
+              </div>
+              <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                  <p class='govuk-body'>You can find the MVP prototype details.</p>
+                  <table class="govuk-table">
+                      <caption class="govuk-table__caption">Prototype designs</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+                          <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">date input</th>
+                            <td class="govuk-table__cell"><a href="/v20/ideation/payslip-upload" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Task list</th>
+                            <td class="govuk-table__cell"><a href="/v20/ideation/contract-upload-task" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Monthly Uploads</th>
+                            <td class="govuk-table__cell"><a href="/v20/ideation/monthly-uploads" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Pay Cycle</th>
+                            <td class="govuk-table__cell"><a href="/v20/ideation/pay-cycle" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Multifile upload - select first and last</th>
+                          <td class="govuk-table__cell"><a href="/v20/ideation/payslip-upload-start-end" class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-0">
+            <h2 class="govuk-heading-l govuk-!-font-weight-bold">Other information</h2>
+            <p class="govuk-body">
+              You can find the other page examples:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/reapply/link-expiry-130" class="govuk-link" data-hcontribute="guidelinegh">UME - expired link</a></li>
+              <li><a href="/reapply/invalid-details-130" class="govuk-link" data-hcontribute="guidelinegh">UME - invalid IHS No or Claim Ref</a></li>
+              <li><a href="/reapply/confirmation-of-notification-130" class="govuk-link" data-hcontribute="guidelinegh">UME - email confirmation</a></li>
+            </ul>
+        </div>
+
+        <div class="govuk-grid-column-full">
+          <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+        </div>
+
+
+        <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-0">
+          <h2 class="govuk-heading-l govuk-!-font-weight-bold">User research resources</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="user-research/health-social-care/index.html" class="govuk-link" data-hcontribute="guidelinegh">Health & Social Care - Evidence upload and extra information - July 2023 </a></li>
+            <li><a href="2024-ur" class="govuk-link" data-hcontribute="guidelinegh">Health & Social Care - Evidence upload (Task list) - September 2024</a></li>
+
+          </ul>
+      </div>
+
+
+
+        <div class="govuk-grid-column-full">
+          <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          <h2 id="support" class="govuk-heading-l">About this project</h2>
+          <p class="govuk-body">Useful links:</p>
+          <ul class="govuk-list govuk-list--bullet">
+              <li><a href="https://bsa2468.atlassian.net/secure/RapidBoard.jspa?projectKey=IHSRI&rapidView=652">Jira</a></li>
+              <li><a href="https://bsa2468.atlassian.net/wiki/spaces/BOA/overview">Confluence</a></li>
+              <li><a href="https://miro.com/app/board/o9J_ki3pipc=/">User journeys - Miro</a></li>
+              <li><a href="https://miro.com/app/board/o9J_ki3nXmo=/">General - Miro</a></li>
+              <li><a href="https://miro.com/app/board/o9J_ki3p98Y=/">Offline journey - Miro</a></li>
+          </ul>
+          <p class="govuk-body">
+            This prototype is maintained by the Design Team at the NHS Business Services Authority.<br>
+            Any questions, ideas or suggestions please email
+            <a href="mailto:thomas.leeds@nhs.net" class="govuk-link" data-hsupport="email">
+                thomas.leeds@nhs.net
+            </a>
+          </p>
+        </div>
+        </div>
+    </div>
+
+{% endblock %}
