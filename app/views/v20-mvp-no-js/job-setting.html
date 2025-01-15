@@ -13,7 +13,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v20/job-title">Back</a>
+  <a class="govuk-back-link" href="/live/job-title">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -22,21 +22,19 @@
     <div class="govuk-grid-column-two-thirds">
 
       <!--via https://github.com/UKHomeOffice/design-system/issues/84-->
-      <form class="form" action="/v20/non-nhs-path-add" method="post">
+      <form class="form" action="/v20-mvp-no-js/non-nhs-path-add" method="post">
           
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
                     <h1 class="govuk-fieldset__heading">
                         <span class="govuk-caption-l">Application</span>
-                        What kind of health or care setting does the applicant work in?
+                        What's the applicant's job setting?
                     </h1>
                   </legend>
-              
                   <div id="how-contacted-conditional-hint" class="govuk-hint">
-                    
-                    
-                    Select one option.
+                    We need this information so that we can make sure your job is suitable.<br>
+                    <br>Select one option.
                   </div>
                   <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
@@ -79,10 +77,7 @@
                         <label class="govuk-label" for="contact-by-text">
                           Other job setting
                         </label>
-                        <div id="how-contacted-conditional-hint" class="govuk-hint">
-                    
-                    
-                         For example, NHS Digital or in-store pharmacy.
+                        <div class="govuk-hint">For example, NHS Digital or in-store pharmacy.
                         </div>
                         <input class="govuk-input govuk-input--width-20" id="contact-by-text" name="contact-by-text" type="tel">
 

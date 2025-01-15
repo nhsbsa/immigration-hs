@@ -1,0 +1,234 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+  <!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/pay-v20-ur" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Upload the applicant's payslip for April 2020</h1>
+          </legend>
+
+
+          <div class="govuk-form-group">
+
+            <span id="file-upload-1-hint" class="">
+              <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>employee name</li>
+                <li>employer name</li>
+                <li>National Insurance number</li>
+                <li>pay date or period covered</li>
+                <li>employment start date</li>
+                <li>contracted hours</li>
+              </ul>
+
+
+
+              <p>Uploaded evidence must be:</p>
+              <ul class="govuk-list govuk-list--bullet ">
+                <li>clear and readable</li>
+                <li>descriptive, with the file name containing the period that the evidence covers such as
+                  'payslip-090123-150123.pdf'</li>
+                <li>JPG, JPEG, BMP, PNG or PDF</li>
+                <li>smaller than 2MB in size for single files</li>
+              </ul>
+            </span>
+
+            <!-- <p>This payslip must cover the start date you have given us: <strong>06 April 2020</strong></p> -->
+
+
+            
+            <div id="content-to-show" class="hidden">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+                If you do not have a payslip for this month, you will be required to provide extra information to explain the gap.
+              </strong>
+            </div>
+            </div>
+
+
+
+
+
+
+              <!-- <img src="/public/images/april-2020.png" style="height: 300px;" alt="Three illustrations of taking a passport photo. Two incorrect ways show someone taking their own photo with a phone camera or webcam. The correct way shows someone else helping to take a photo that includes the person's head and shoulders."> -->
+
+              <br>
+              <!-- <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-heading-m">
+                 What is the pay date of this payslip?
+                </h2>
+                <p>This should be on or after the start date you have given us: <strong>06 April 2020</strong></p>
+              </legend>
+              
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+              
+            </fieldset> -->
+
+              <!-- <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-heading-m">
+                 What is the end date of this payslip
+                </h2>
+              </legend>
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset> -->
+
+              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-heading-m">
+              What kind of payslip is this?
+            </h1>
+          </legend>
+          
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="changedName">
+                Monthly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                Weekly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                Other
+              </label>
+            </div>
+          </div> -->
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="no-slip" name="waste" type="checkbox" value="carcasses" checked
+                  onClick="redirect()">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                  I do not have a payslip for this month
+                </label>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+<br>
+      <script>
+
+        function redirect() {
+          if (document.getElementById("no-slip").checked == true)
+            window.location.href = 'april';
+          
+        }
+      </script>
+
+
+
+      <a href="no-payslip" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

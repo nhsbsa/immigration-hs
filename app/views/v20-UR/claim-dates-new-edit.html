@@ -1,0 +1,110 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Claim date
+{% endblock %}
+
+{% block beforeContent %}
+ <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20-ur-mvp/upload-of-contract">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!--<h1 class="govuk-fieldset__heading">What's the starting date of the 6-month period the applicant is claiming for?</h1>-->
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What's the starting date of the 6-month employment period the applicant is claiming for?
+    </h1>
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+        <p>The applicant should check that the evidence they have uploaded covers this date period.</p>
+        </p>
+      </div>
+    </div>
+
+    <form class="form" action="/v20-ur-mvp/check-your-answers-nhs-path" method="post">
+      <div id="changed-name-hint" class="govuk-hint">
+        The applicant can only claim reimbursement for a 6-month period.
+      </div>
+      <div id="changed-name-hint" class="govuk-hint">
+        The earliest date a new claim period can start is 31 March 2020. The applicant can claim from any date onwards.
+        We'll automatically work out the end date of the claim.
+      </div>
+      <div id="passport-issued-hint" class="govuk-hint">
+        For example, 15 8 2020
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" value="31">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric" value="03">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric" value="2020">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+
+
+
+
+
+
+      <!--
+        <div class="govuk-inset-text">
+                    The applicant may be eligible to apply again after: 
+        </div>
+     
+        <p>There'll be an option to use a reminder service that will notify the applicant that they may need to reapply.</p>
+ -->
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

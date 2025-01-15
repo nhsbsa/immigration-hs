@@ -13,7 +13,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/live/nino">Back</a>
+  <a class="govuk-back-link" href="/v20-mvp/nino">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -26,36 +26,29 @@
      
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          What's the applicant's immigration health surcharge (IHS) number?
+          What's the IHS reference number for the IHS payment the applicant is applying for a reimbursement for? 
       </h1>
 
-      <form class="form" action="/live/email-address" method="post">
+      <p>The applicant got an email with this number when they paid the IHS.</p>
+
+       <p> If the applicant has paid the IHS more than once, make sure you enter the number for the payment that covers this claim period.</p>
+        
+       <p> If the applicant has lost this number, they need to <a href="">contact UK Visas and Immigration for help (opens in new tab)</a>.</p>
+
+      <form class="form" action="email-address" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="national-insurance-number">
             IHS number
           </label>
-          <span id="national-insurance-number-hint" class="govuk-hint">
-              When the immigration health surcharge was paid, an email would have been sent which contains this number. 
-              For example, 'IHS123456789'.
-              <br>
-              <br>
-              If the applicant has multiple IHS numbers, use the number for the period being claimed.
-          </span>
-        </br>
-      </br>
+          <div id="account-number-hint" class="govuk-hint">
+            For example, 'IHS123456789' or 'IHSC123456789'.
+          </div>
+          
+        
           <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
         </div>
         
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text"> If the applicant has lost
-              this number </span>
-          </summary>
-          <div class="govuk-details__text">
-            To contact us, <a class="govuk-link" href="https://www.gov.uk/contact-ukvi-inside-outside-uk" target="_blank">visit UK Visas and Immigration on GOV.UK (opens in new tab)</a>.
-          </div>
-        </details>
         
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

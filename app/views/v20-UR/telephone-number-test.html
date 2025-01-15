@@ -1,0 +1,56 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Telephone number
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20-ur-mvp/email-address">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-fieldset__heading">What's the applicant's mobile phone number? (optional)</h1>-->
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the applicant's phone number? (optional)
+      </h1>
+     
+      <form class="form" action="/v20-ur-mvp/dependant-question" method="post">
+
+        <div class="govuk-form-group">
+          
+          <p>
+            We'll only use this to contact the applicant about the reimbursement.
+          </p><label class="govuk-label" for="telephone-number">
+              UK telephone number
+          </label>
+          <div id="telephone-number-hint" class="govuk-hint">
+            For example, 01632 960 001 or 07700 900 982
+          </div>
+          
+    
+          <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
+        </div>
+
+        
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

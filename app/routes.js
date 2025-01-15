@@ -5255,6 +5255,399 @@ router.post('/yes-payslip-add-october-no-april-no-js', function(req,res){
 
 })
 
+// LIVE PROTOTYPE
+
+// v18 - H&SC////////////////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/doug-ihs-question-live', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-live']
+    if (contacted == "yes"){
+        res.redirect('/live/applicant-visa-type')
+    }
+    else {
+        res.redirect('/live/not-entitled-rr')
+    }
+})
+
+router.post('/ihs-tier2-hc-live', function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-live']
+    if (contacted == "yes"){
+        res.redirect('/live/ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('/live/work-question')
+    }
+})
+
+router.post('/work-question-live', function(req,res){
+    var contacted = req.session.data['work-question-live']
+    if (contacted == "yes"){
+        res.redirect('/live/6-months')
+    }
+    else {
+        res.redirect('/live/not-entitled')
+    }
+})
+
+router.post('/6-months-live', function(req,res){
+    var contacted = req.session.data['6-months-live']
+    if (contacted == "yes"){
+        res.redirect('/live/average-time')
+    }
+    else {
+        res.redirect('/live/not-entitled')
+    }
+
+})
+
+router.post('/average-time-live', function(req,res){
+    var contacted = req.session.data['average-time-live']
+    if (contacted == "yes"){
+        res.redirect('/live/tier2-declaration')
+    }
+    else {
+        res.redirect('/live/not-entitled-rr')
+    }
+
+})
+
+router.post('/dependant-question-live', function(req,res){
+    var contacted = req.session.data['dependant-question-live']
+    if (contacted == "yes"){
+        res.redirect('/live/dependant-details')
+    }
+    else {
+        res.redirect('/live/non-nhs-path')
+    }
+
+})
+
+router.post('/dependant-details-live', function(req,res){
+    var contacted = req.session.data['dependant-details-live']
+    if (contacted == "yes"){
+        res.redirect('/live/dependant-details2')
+    }
+    else {
+        res.redirect('/live/claim-dates-new')
+    }
+
+})
+
+router.post('/subscription-question-live', function(req,res){
+    var contacted = req.session.data['subscription-question-live']
+    if (contacted == "yes"){
+        res.redirect('/live/non-nhs-path')
+    }
+    else {
+        res.redirect('/live/non-nhs-path')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job2-live', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job2-live']
+    if (contacted == "yes"){
+        res.redirect('/live/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/live/attachments')
+    }
+
+})
+
+router.post('/attachments-add-live', function(req,res){
+    var contacted = req.session.data['attachments-add-live']
+    if (contacted == "yes"){
+        res.redirect('/live/upload-of-payslips')
+    }
+    else {
+        res.redirect('/live/extra-information')
+    }
+
+})
+
+router.post('/attachments-add2-live', function(req,res){
+    var contacted = req.session.data['attachments-add2-live']
+    if (contacted == "yes"){
+        res.redirect('/live/extra-information')
+    }
+    else {
+        res.redirect('/live/extra-information')
+    }
+
+})
+
+router.post('/live/payslips-or-contract', function(req,res){
+    var contacted = req.session.data['payslips-or-contract']
+    if (contacted == "payslips"){
+        res.redirect('/live/upload-of-payslips')
+    }
+    else {
+        res.redirect('/live/upload-of-contract')
+    }
+
+})
+
+router.post('/non-nhs-path-another-job-live', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-live']
+    if (contacted == "yes"){
+        res.redirect('/live/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/live/upload-of-contract')
+    }
+
+})
+
+router.post('/upload-of-evidence-add2-live', function(req,res){
+    var contacted = req.session.data['upload-of-evidence-add2-live']
+    if (contacted == "yes"){
+        res.redirect('/live/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/live/upload-of-contract')
+    }
+
+})
+
+ router.post('/doug-ihs-tier2-question-live', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-live']
+    if (contacted == "tier2"){
+       res.redirect('/live/ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('/live/tier5-ko')
+        }
+        else
+        {
+            res.redirect('/live/work-question')
+        }
+})
+
+router.post('/contracts-add-live', function(req,res){
+    var contacted = req.session.data['contracts-add-live']
+    if (contacted == "yes"){
+        res.redirect('/live/upload-of-evidence')
+    }
+    else {
+        res.redirect('/live/extra-information')
+    }
+
+})
+
+router.post('/contracts-add2-live', function(req,res){
+    var contacted = req.session.data['contracts-add2-live']
+    if (contacted == "yes"){
+        res.redirect('/live/extra-information')
+    }
+    else {
+        res.redirect('/live/extra-information')
+    }
+
+})
+
+router.post('/contracts-add-3-live', function(req,res){
+    var contacted = req.session.data['contracts-add-3-live']
+    if (contacted == "yes"){
+        res.redirect('/live/extra-information')
+    }
+    else {
+        res.redirect('/live/check-your-answers-nhs-path')
+    }
+
+})
+
+router.post('/live-dependant-question', function(req,res){
+    var contacted = req.session.data['dependant-question-live']
+    if (contacted == "yes"){
+        res.redirect('/live/dependant-details')
+    }
+    else {
+        res.redirect('/live/claim-dates-new')
+    }
+
+
+    
+})
+
+
+//payslip checker
+
+router.post('/payslip-checker', function(req,res){
+    var pay = req.session.data['whereDoYouLive']
+    if (pay == "monthly"){
+        res.redirect('/v20/payslip-checker/yes-payslip')
+    }
+    else if (pay == "weekly"){
+        res.redirect('/v20/payslip-checker/yes-payslip-weekly')
+    }
+   
+    else if (pay == "other"){
+        res.redirect('/v20/payslip-checker/kickout')
+    }
+})
+
+
+router.post('/month-check-checker', function(req,res){
+    var month = req.session.data['passport-issued-month']
+    if (month > 4){
+        res.redirect('/v20/payslip-checker/pay-frequency-task-end-fail')
+    }
+    else if (month == 0){
+        res.redirect('/v20/payslip-checker/pay-frequency-task-end-pass')
+    }
+    else {
+        res.redirect('/v20/payslip-checker/pay-frequency-task-end-pass')
+    }
+
+})
+
+router.post('/weekly-check-task', function(req,res){
+    var day = req.session.data['passport-issued-day']
+    if (day > 27){
+        res.redirect('/v20/payslip-checker/weekly-payslip-not-covered-task')
+    }
+    else if (day == 0){
+        res.redirect('/v20/ideation/pay-frequency-task-end')
+    }
+    else {
+        res.redirect('/v20/ideation/pay-frequency-task-end')
+    }
+
+})
+
+router.post('/last-month-check-checker', function(req,res){
+    
+
+
+    const day = req.session.data['passport-issued-day'];
+    const month = req.session.data['passport-issued-month'];
+    const year = req.session.data['passport-issued-year'];
+
+    // Reference date: 19 October 2020
+    const referenceDate = new Date(2020, 9, 19); // Month is zero-based (October is 9)
+
+    // Check if all fields are blank
+    if (!day && !month && !year) {
+        return res.redirect('/v20/payslip-checker/done-pass');
+    }
+
+    // Parse user input into a date
+    const userDate = new Date(year, month - 1, day);
+
+    // Validate and compare dates
+    if (isNaN(userDate.getTime()) || userDate < referenceDate) {
+        // Redirect to warning page if date is invalid or before 19 October 2020
+        return res.redirect('/v20/payslip-checker/done-last-month-fail');
+    } else {
+        // Redirect to task list page if date is on or after 19 October 2020
+        return res.redirect('/v20/payslip-checker/done-pass');
+    }
+
+})
+
+router.post('/last-week-check-checker', function(req,res){
+    var day = req.session.data['passport-issued-day']
+    var month = req.session.data['passport-issued-month']
+
+    var year = req.session.data['passport-issued-year']
+    
+    if (day == "" ){
+        res.redirect('/v20/ideation/task-list-3')
+    }
+    else if (day > 0 && day < 19 || month < 10){
+        res.redirect('/v20/ideation/last-payslip-not-covered-task')
+    }
+    
+    else {
+        res.redirect('/v20/ideation/task-list-3')
+    }
+
+})
+
+router.post('/pay-v20-task-end-pass', function(req,res){
+    var pay = req.session.data['whereDoYouLive']
+    if (pay == "monthly"){
+        res.redirect('/v20/payslip-checker/yes-payslip-october-pass')
+    }
+    else if (pay == "weekly"){
+        res.redirect('/v20/payslip-checker/yes-payslip-weekly-october-pass')
+    }
+   
+    else if (pay == "other"){
+        res.redirect('/v20/payslip-checker/kickout')
+    }
+})
+
+router.post('/pay-v20-task-end-fail', function(req,res){
+    var pay = req.session.data['whereDoYouLive']
+    if (pay == "monthly"){
+        res.redirect('/v20/payslip-checker/yes-payslip-october-fail')
+    }
+    else if (pay == "weekly"){
+        res.redirect('/v20/payslip-checker/yes-payslip-weekly-october-fail')
+    }
+   
+    else if (pay == "other"){
+        res.redirect('/v20/payslip-checker/kickout')
+    }
+})
+
+
+router.post('/last-month-check-fail', function(req,res){
+    
+
+
+    const day = req.session.data['passport-issued-day'];
+    const month = req.session.data['passport-issued-month'];
+    const year = req.session.data['passport-issued-year'];
+
+    // Reference date: 19 October 2020
+    const referenceDate = new Date(2020, 9, 19); // Month is zero-based (October is 9)
+
+    // Check if all fields are blank
+    if (!day && !month && !year) {
+        return res.redirect('/v20/payslip-checker/done-first-month-fail');
+    }
+
+    // Parse user input into a date
+    const userDate = new Date(year, month - 1, day);
+
+    // Validate and compare dates
+    if (isNaN(userDate.getTime()) || userDate < referenceDate) {
+        // Redirect to warning page if date is invalid or before 19 October 2020
+        return res.redirect('/v20/payslip-checker/done-both-month-fail');
+    } else {
+        // Redirect to task list page if date is on or after 19 October 2020
+        return res.redirect('/v20/payslip-checker/done-first-month-fail');
+    }
+
+})
+
+
+//V20-UR ROUTES - PPOST MVP FEATURES BUT NO PERIOD END DATE
+
+router.post('/pay-checkbox-ur', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-ur/ideation/no-payslip")
+    } else {
+        response.redirect("/v20-ur/ideation/task-list-2")
+    }
+})
+
+router.post('/pay-checkbox-october-ur', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-ur/ideation/no-payslip-october")
+    } else {
+        response.redirect("/v20-ur/ideation/task-list-3")
+    }
+})
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 module.exports = router;

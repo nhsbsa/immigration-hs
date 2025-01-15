@@ -1,0 +1,126 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+  <!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+    
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/week-check" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">We need more evidence to cover the start of this claim period</h1>
+        </legend>
+        <!-- <div id="immigration-health-surcharge-paid-hint" class="govuk-hint">This is to ensure there are no gaps or overlaps with the payslips provided</div> -->
+        
+        <p>The period end date you’ve given is after the start date for this claim. This means the evidence you’ve uploaded does not cover the full claim period and this application could be rejected.</p>
+
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claim start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              20 April 2020
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payslip period end date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 May 2020
+            </dd>
+            
+          </div>
+          <!-- <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Contact information
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#" class="govuk-link">Enter contact information</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+            <dt class="govuk-summary-list__key">
+              Contact details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#" class="govuk-link">Enter contact details</a>
+            </dd>
+          </div> -->
+        </dl>
+
+        <!-- <p>You can <a href="">upload the missing payslips</a>.</p> -->
+
+      
+        </fieldset>
+
+        <p>You can either:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>upload more payslips to cover the gap</li>
+          <li>continue without adding more payslips and tell us why there is a gap later</li>
+        </ul>
+        <p>If the applicant does not have a payslip for the first month in their role, for example because they were paid in arrears, they can let us know and add evidence for this later.</p>
+
+
+          
+      </div>
+
+        
+
+      <div class="govuk-button-group">
+        <a href="payslip-upload-start-2" type="submit" class="govuk-button" data-module="govuk-button">
+          Upload missing payslip
+        </a>
+        <a href="check-payslip-dates-end" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Continue without uploading
+        </a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -20,12 +20,12 @@ Extra information
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/v20/ideation/check-extra-info-gaps" method="post">
+    <form class="form" action="check-extra-info-gaps" method="post">
       <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
         <div class="govuk-form-group">
           <h1 class="govuk-heading-l">
             <span class="govuk-caption-l">Application</span>
-            Add more information for this application
+            Add extra information for this application
           </h1>
 
           <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
@@ -56,6 +56,8 @@ Extra information
               </p>
             </div>
           </div>
+
+          
 
           <p>Add extra information to explain any gaps in the applicant's employment or evidence.</p>
 
@@ -92,7 +94,7 @@ Extra information
 
 
 
-          <h2 class="govuk-heading-m">More information</h2>
+          <h2 class="govuk-heading-m">Extra information</h2>
 
           <p>Include as much detail as possible.</p>
           <!-- <div class="govuk-warning-text" style="margin-top:30px;">
@@ -113,9 +115,8 @@ Extra information
         <br>
 
         <label class="govuk-label govuk-label--m" for="documents">
-          Upload evidence
+          Upload evidence for your extra information
         </label>
-        <p>Upload evidence to support this information.</p>
         <p>Files must:</p>
         <ul class="govuk-list govuk-list--bullet">
 
@@ -124,28 +125,46 @@ Extra information
           <li>be smaller than 2MB each</li>
         </ul>
         <!--<div class="govuk-grid-column-two-thirds">-->
-          <div class="moj-multi-file-upload">
-              
-
-            <div class="govuk-form-group">
-              
-              <div class="moj-multi-file__uploaded-files ">
-          
-                <div class="govuk-summary-list moj-multi-file-upload__list">
-                  
-      
-                </div>
-              </div>
-  
-              <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-            </div>
-  
-            <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-              Upload file
-            </button>
+          <div id="file-upload-container" class="moj-multi-file-upload">
+            <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
+           
+            
+            <input
+              class="govuk-file-upload moj-multi-file-upload__input"
+              id="documents"
+              name="documents"
+              type="file"
+              multiple
+            />
           </div>
+
+        </div>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.form');
+    const textarea = document.querySelector('#with-hint');
+    
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      const textValue = textarea.value.trim(); // Trim to check for empty input
+      
+      if (textValue === '') {
+        // Redirect to Page A alternative if the textarea is empty
+        window.location.href = '/v20-mvp/check-your-answers-gaps';
+      } else {
+        // Store text in localStorage
+        localStorage.setItem('extraInfo', textValue);
+        // Redirect to Page B
+        window.location.href = 'check-extra-info-gaps';
+      }
+    });
+  });
+</script>
+
 {% endblock %}

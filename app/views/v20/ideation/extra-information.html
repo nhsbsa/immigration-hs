@@ -20,12 +20,12 @@ Extra information
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/v20/ideation/check-extra-info" method="post">
+    <form class="form" action="check-extra-info" method="post">
       <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
         <div class="govuk-form-group">
           <h1 class="govuk-heading-l">
             <span class="govuk-caption-l">Application</span>
-            Add more information for this application (optional)
+            Add extra information for this application (optional)
           </h1>
 
           
@@ -65,9 +65,9 @@ Extra information
 
 
 
-          <h2 class="govuk-heading-m">More information</h2>
+          <h2 class="govuk-heading-m">Extra information</h2>
 
-          <p>Include as much detail as possible</p>
+          <p>Include as much detail as possible.</p>
           <!-- <div class="govuk-warning-text" style="margin-top:30px;">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
@@ -86,9 +86,8 @@ Extra information
         <br>
 
         <label class="govuk-label govuk-label--m" for="documents">
-          Upload evidence
+          Upload evidence for your extra information
         </label>
-        <p>Upload evidence to support this information.</p>
         <p>Files must:</p>
         <ul class="govuk-list govuk-list--bullet">
 
@@ -97,17 +96,46 @@ Extra information
           <li>be smaller than 2MB each</li>
         </ul>
         <!--<div class="govuk-grid-column-two-thirds">-->
-        <div class="moj-multi-file-upload">
-              
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="file-upload-1">
-              Upload a file
-            </label>
-            <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+          <div id="file-upload-container" class="moj-multi-file-upload">
+            <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
+           
+            
+            <input
+              class="govuk-file-upload moj-multi-file-upload__input"
+              id="documents"
+              name="documents"
+              type="file"
+              multiple
+            />
           </div>
+
         </div>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="/v20/check-your-answers-nhs-path" class="govuk-button" data-module="govuk-button">Continue</a>
     </form>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.form');
+    const textarea = document.querySelector('#with-hint');
+    
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      const textValue = textarea.value.trim(); // Trim to check for empty input
+      
+      if (textValue === '') {
+        // Redirect to Page A alternative if the textarea is empty
+        window.location.href = '/v20-mvp/check-your-answers-nhs-path';
+      } else {
+        // Store text in localStorage
+        localStorage.setItem('extraInfo', textValue);
+        // Redirect to Page B
+        window.location.href = 'check-extra-info';
+      }
+    });
+  });
+</script>
+
 {% endblock %}
