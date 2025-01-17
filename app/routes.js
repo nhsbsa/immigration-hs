@@ -5632,9 +5632,9 @@ router.post('/pay-checkbox-ur', function(request, response) {
 
     var checked = request.session.data['waste']
     if (checked =="checked"){
-        response.redirect("/v20-ur/ideation/no-payslip")
+        response.redirect("/v20-UR/ideation/no-payslip")
     } else {
-        response.redirect("/v20-ur/ideation/task-list-2")
+        response.redirect("/v20-UR/ideation/task-list-2")
     }
 })
 
@@ -5642,9 +5642,9 @@ router.post('/pay-checkbox-october-ur', function(request, response) {
 
     var checked = request.session.data['waste']
     if (checked =="checked"){
-        response.redirect("/v20-ur/ideation/no-payslip-october")
+        response.redirect("/v20-UR/ideation/no-payslip-october")
     } else {
-        response.redirect("/v20-ur/ideation/task-list-3")
+        response.redirect("/v20-UR/ideation/task-list-3")
     }
 })
 
