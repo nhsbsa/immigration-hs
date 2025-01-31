@@ -1,0 +1,89 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  DOB
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check your phone</h1>
+
+      
+
+      <p>We've sent a text message with a security code to <b>*******6920</b>.</p>
+
+      
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Not received a text message?
+          </span>
+        </summary>
+        
+        <div class="govuk-details__text">
+          <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="phone-number-2fa?send-again=true&amp;request-new=max">request a new one</a>.</p>
+        </div>
+        
+      </details>
+
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="sign-in-username">
+            Security code
+          </label>
+          <div class="govuk-hint" id="example-with-hint-text-hint">
+            This is a 5 digit code
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="security-code" name="security-code" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="remember-device" name="remember-device" type="checkbox" value="true">
+            <label class="govuk-label govuk-checkboxes__label" for="remember-device">
+              Remember this device and stop sending security codes
+            </label>
+          </div>
+        </div>
+      </div>
+
+    
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not have access to the telephone number
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You cannot sign into your account without entering a security code.</p>
+          <p>Try again later when you can access your phone or contact us by:</p>
+          <ul class="govuk-list">
+            <li>Telephone: 0300 330 0521</li>
+            <li>Text relay service: 18001 0300 330 0521</li>
+          </ul>
+        </div>
+      </details>
+
+      <a class="govuk-button" href="dashboard?questionnaire-completed=Completed">Continue</a><br>
+
+  </div>
+
+</div>
+{% endblock %}
