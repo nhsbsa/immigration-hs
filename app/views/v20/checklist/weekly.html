@@ -1,0 +1,123 @@
+<!-- application-complete.html -->
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">The evidence needed for your application can be found below</h1>
+      </div>
+
+      <p>Based on the dates you've given, you will need evidence and documents to prove you worked in a health and social care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
+
+      <h2 class="govuk-heading-m">Evidence and documents required</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Job contract
+          </dt>
+          <dd class="govuk-summary-list__value">
+            You will need a job contract for all of the roles you have worked in the 6 month claim period
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payslips
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Since you told us you are paid <span id="payment-frequency"></span>, you will need to provide payslips which cover the following dates:</p>
+            <ul class="govuk-list govuk-list--bullet" id="payslip-dates"></ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Extra information needed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>If you have any gaps in your employment through the 6 month claim period, you will need to provide extra information. This may be from things like illness, furlough or maternity leave.</p>
+            <p>This will need to be a signed document from your employer to confirm the gap in your employment. </p>
+          </dd>
+        </div>
+      </dl>
+      <br>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const day = localStorage.getItem("claimDay");
+      const month = localStorage.getItem("claimMonth");
+      const year = localStorage.getItem("claimYear");
+      
+      const paymentFrequency = localStorage.getItem("paymentFrequency") || "weekly";
+
+      document.getElementById("payment-frequency").textContent = paymentFrequency;
+      
+      if (day && month && year) {
+        const startDate = new Date(year, month - 1, day);
+        const endDate = new Date(startDate);
+        endDate.setMonth(endDate.getMonth() + 6);
+        endDate.setDate(endDate.getDate() - 1);
+
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+
+        document.getElementById("start-date").textContent = startDate.toLocaleDateString('en-GB', options);
+        document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
+
+        const payslipList = document.getElementById("payslip-dates");
+        let currentPayslipStart = new Date(startDate);
+
+        if (paymentFrequency === "monthly") {
+          while (currentPayslipStart < endDate) {
+            let currentPayslipEnd = new Date(currentPayslipStart);
+            currentPayslipEnd.setMonth(currentPayslipEnd.getMonth() + 1);
+            currentPayslipEnd.setDate(currentPayslipEnd.getDate() - 1);
+
+            if (currentPayslipEnd > endDate) {
+              currentPayslipEnd = new Date(endDate);
+            }
+
+            const listItem = document.createElement("li");
+            listItem.textContent = `${currentPayslipStart.toLocaleDateString('en-GB', options)} to ${currentPayslipEnd.toLocaleDateString('en-GB', options)}`;
+            payslipList.appendChild(listItem);
+
+            currentPayslipStart.setMonth(currentPayslipStart.getMonth() + 1);
+          }
+        } else if (paymentFrequency === "weekly") {
+          while (currentPayslipStart < endDate) {
+            let currentPayslipEnd = new Date(currentPayslipStart);
+            currentPayslipEnd.setDate(currentPayslipEnd.getDate() + 6);
+            
+            if (currentPayslipEnd > endDate) {
+              currentPayslipEnd = new Date(endDate);
+            }
+
+            const listItem = document.createElement("li");
+            listItem.textContent = `${currentPayslipStart.toLocaleDateString('en-GB', options)} to ${currentPayslipEnd.toLocaleDateString('en-GB', options)}`;
+            payslipList.appendChild(listItem);
+
+            currentPayslipStart.setDate(currentPayslipStart.getDate() + 7);
+          }
+        }
+      }
+    });
+  </script>
+
+{% endblock %}

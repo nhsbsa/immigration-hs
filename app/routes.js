@@ -5648,6 +5648,23 @@ router.post('/pay-checkbox-october-ur', function(request, response) {
     }
 })
 
+
+// checklist routes
+
+router.post('/checklist-checker', function(req,res){
+    var pay = req.session.data['whereDoYouLive']
+    if (pay == "monthly"){
+        res.redirect('/v20/checklist/monthly')
+    }
+    else if (pay == "weekly"){
+        res.redirect('/v20/checklist/weekly')
+    }
+   
+    else if (pay == "other"){
+        res.redirect('/v20/checklist/weekly')
+    }
+})
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 module.exports = router;

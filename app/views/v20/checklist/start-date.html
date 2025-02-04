@@ -1,0 +1,87 @@
+<!-- claim-date.html -->
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Claim date
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20/dependant-question">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the start date for this 6 month reimbursement claim?
+      </h1>
+
+      <p>You can only claim reimbursement for 6 months at a time. We'll work out the end date of this claim from the start date you enter.</p>
+      <p>The earliest day this could be is 31 March 2020.</p>
+
+      <form class="form" action="payslips" method="post" onsubmit="saveDate()">
+       
+        <div id="passport-issued-hint" class="govuk-hint">
+                For example, 15 8 2020
+            </div>
+            
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function saveDate() {
+      const day = document.getElementById("passport-issued-day").value;
+      const month = document.getElementById("passport-issued-month").value;
+      const year = document.getElementById("passport-issued-year").value;
+      localStorage.setItem("claimDay", day);
+      localStorage.setItem("claimMonth", month);
+      localStorage.setItem("claimYear", year);
+    }
+  </script>
+
+{% endblock %}
