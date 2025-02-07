@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Charity's official UK address - Charity Information - Register your charity's details with HMRC - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: { text: "beta" },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">What is [full name]'s previous home address?</h1>
+
+    <form method="post" action="select-address">
+      <p class="govuk-!-font-weight-bold">Postcode search</p>
+      {{ govukInput({
+        id: "auth--official-2-postcode",
+        classes: "govuk-!-width-one-half",
+        name: "auth--official-2-postcode"
+      }) }}
+
+      <p><a href="enter-address">Authorised official's previous home address does not have a UK postcode</a> &nbsp;</p>
+      <div class="govuk-!-padding-bottom-5"></div>
+      {{ govukInput({
+        label: {text: "Property name or number (optional)"},
+        id: "auth--official-2-address-line-1",
+        classes: "govuk-!-width-one-half",
+        name: "auth--official-2-address-line-1",
+        hint: { text: "For example, The Mill, 116 or Flat 40"}
+      }) }}
+
+      {{ govukButton({
+        text: "Find address"
+      }) }}
+
+
+      <br /><br />
+
+    </form>
+
+
+    <!-- Link to Help -->
+    {% include "includes/anything-wrong.html" %}
+
+  </div>
+</div>
+
+{% endblock %}

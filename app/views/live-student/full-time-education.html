@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you a full-time student in higher education?
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v19/ehic-card">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l" style="margin-bottom: 8px;">
+          <span class="govuk-caption-l">Eligibility check</span>
+          Is the applicant a full-time student in higher education?
+      </h1>
+      <span id="passport-issued-hint" class="govuk-hint">
+        Higher education takes place at universities and further education colleges. They normally include undergraduate and postgraduate study.
+        <br>
+        <br>
+       
+
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What classes as full-time education
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Full-time education is where an average of more than 12 hours per week is spent during term time:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>receiving tuition</li>
+            <li>engaging in practical work</li>
+            <li>receiving supervised study</li>
+            <li>taking examinations</li>
+          </ul>
+          This does not include apprenticeships.</div>
+        </details>
+      </span>
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eu">
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="paid" name="student" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="paid">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="paid" name="student" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="paid">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select and confirm address
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="/v19/postcode">Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+  .govuk-summary-list__key,
+  .govuk-summary-list__value,
+  .govuk-summary-list__actions {
+    border-bottom: none;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Select the dependant's UK address
+    </h1>
+
+
+    <form class="form" action="/v19/dependant/upload-of-ehic" method="post">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Postcode</h2>
+
+          <div>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">WR1 1NL</span> <a class="govuk-link"
+                href="/v19/postcode" style="margin-left:10px">Change<span class="govuk-visually-hidden"> file
+                  1</span></a></p>
+          </div>
+
+        </div>
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          <h2 class="govuk-heading-m"> Select an address</h2>
+        </label>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address" name="select-an-address" type="radio" value="1 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address">
+                  1 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-2" name="select-an-address" type="radio" value="10 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-2">
+                  2 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-3" name="select-an-address" type="radio" value="11 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-3">
+                  3 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-4" name="select-an-address" type="radio" value="101 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-4">
+                  4 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-5" name="select-an-address" type="radio" value="110 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-5">
+                  5 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="select-an-address-6" name="select-an-address" type="radio" value="111 Washington Street, Worcester, WR1 1NL">
+              <label class="govuk-label govuk-radios__label" for="select-an-address-6">
+                  6 Washington Street, Worcester, WR1 1NL
+              </label>
+          </div>
+      </div>
+
+
+
+      </div>
+
+      <p><a href="/v19/dependant/manual-address">The dependant's UK address is not in the list</a> &nbsp;</p>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

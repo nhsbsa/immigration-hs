@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">The dependant is not eligible for an immigration health surcharge reimbursement</h1>
+
+    <form class="form" action="/v19/kick-out-dependant" method="post">
+
+      <p class="govuk-body">Based on your answers, the dependant is not eligible to use this service right now as they
+        do not meet the eligibility criteria.</p>
+
+      <p class="govuk-body">The dependant can use this service if they:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have paid an immigration health surcharge for their visa</li>
+        <li>have a visa beginning on or after the 1st of January 2021</li>
+        <li>have a valid European Health Insurance Card (EHIC) issued from the EU, Switzerland, Norway, Iceland or
+          Liechtenstein
+        </li>
+        <li>are not undertaking paid work in the UK or intending to undertake paid work in the UK</li>
+        <li>are currently living in the UK</li>
+      </ul>
+
+      <p class="govuk-body">If you have any questions, <a href="/footer/contact-us" target="_blank">contact us (opens in
+          new tab)</a>.
+        <br>
+        <br>
+
+        <a href="/v19/start" target="_blank">Find out more information about immigration health surcharge (opens in new
+          tab)</a>.
+      </p>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+    <br>
+    <br>
+    <p style="font-size: 10px"><a href="/v19/kick-out-dependant-back-button">Show deleted dependant when user uses back
+        button to change eligibility</a></p>
+
+  </div>
+</div>
+
+
+{% endblock %}

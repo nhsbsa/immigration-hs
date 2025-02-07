@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v19/attachments-add-ehic">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/v19/attachments-add-letter" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+            <span class="govuk-caption-l">Application</span>
+          <h1 class="govuk-heading-l">Upload evidence of studying full-time in higher education</h1>
+          </label>
+          
+          <span id="file-upload-1-hint" class="govuk-hint">
+            <p>Evidence should be a scanned copy or photo of the applicant's Confirmation of Acceptance for Studies (CAS) statement, or equivalent, such as an acceptance letter or email that shows:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>letterhead </li>
+              <li>CAS number </li>
+              <li>student's name </li>
+              <li>level of course </li>
+              <li>if the course is full-time  </li>
+            </ul>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If the applicant's evidence does not show all of this information
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>The applicant should ask their education provider for a CAS statement that shows all the required information. The education provider will be able to request this through the Sponsor Management System (SMS).</p>
+                <p>Once received, the applicant should send this document instead of the original CAS statement.</p>
+              </div>
+            </details>
+         
+            <p>Your uploaded file must be:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>clear and readable </li>
+              <li>a jpg, jpeg, bmp, png or pdf</li>
+              <li>a file size no larger than 2MB</li>
+            </ul>
+          </span>
+          <label class="govuk-label govuk-label--m" for="file-upload-1">
+            Upload file
+          </label>
+          
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+        </div>
+          
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

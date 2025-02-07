@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Does the applicant have a valid European Health Insurance Card (EHIC) from an EU country or Switzerland?
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v19/visa-date">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l" style="margin-bottom: 8px;">
+          <span class="govuk-caption-l">Eligibility check</span>
+          Does the applicant have a valid European Health Insurance Card (EHIC) issued from the EU, Switzerland, Norway, Iceland or Liechtenstein?
+      </h1>
+      <span id="passport-issued-hint" class="govuk-hint">
+        A European Health Insurance Card (EHIC) entitles the holder to access medically necessary, state-provided healthcare.
+        <br>
+        <br>
+        <!--<details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Different names for a EHIC
+            </span>
+          </summary>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Example 1</li>
+            <li>Example 2</li>
+            <li>Example 3</li>
+          </ul>
+          <p>This does not include time spent on meal breaks or unsupervised study.</p>
+        </details>-->
+
+        The EHIC must be valid for the whole period of the applicant's claim. If it's not valid for the whole period, the applicant may get a partial reimbursement.
+        <br>
+        <br>
+         <a href="https://ec.europa.eu/social/main.jsp?catId=559" class="govuk-link" target="_blank"> Find out more information about EHIC on the European Commission website (opens in new tab)</a>.
+      </span>
+      <br>
+      <br>
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eu">
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ehic" name="ehic" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="ehic">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ehic" name="ehic" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ehic">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
