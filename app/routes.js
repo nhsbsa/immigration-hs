@@ -3911,6 +3911,21 @@ router.post('/v19/dependant/residency-dependant', function (req, res) {
     };
 });
 
+router.post('/live-student/dependant/residency-dependant', function (req, res) {
+    var work = req.session.data['residency-dependant'];
+    switch (work) {
+        case undefined:
+            res.redirect('/live-student/dependant/name');
+            break;
+            case "yes":
+            res.redirect('/live-student/dependant/name');
+            break;
+            case "no":
+            res.redirect('/live-student/kick-out-dependant');
+            break;
+    };
+});
+
 router.post('/v19/dependant/same-address', function (req, res) {
     var work = req.session.data['same-address'];
     switch (work) {
@@ -3925,6 +3940,8 @@ router.post('/v19/dependant/same-address', function (req, res) {
             break;
     };
 });
+
+
 
 router.post('/v19/residency', function (req, res) {
     var residency = req.session.data['residency'];
@@ -5743,9 +5760,178 @@ router.post('/live-student/dependant/work-question-dependant', function (req, re
     };
 });
 
-// Additional routes would follow the same pattern... replacing "v19" with "live-student"
+
+router.post('/live-student/ihs-paid', function (req, res) {
+    var addSecondDependant = req.session.data['ihs-paid'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/live-student/visa-date');
+            break;
+            case "yes":
+            res.redirect('/live-student/visa-date');
+            break;
+            case "no":
+            res.redirect('/live-student/kick-out-student');
+            break;
+    };
+});
+
+router.post('/live-student/residency', function (req, res) {
+    var residency = req.session.data['residency'];
+    switch (residency) {
+        case undefined:
+            res.redirect('/live-student/check-eligibility-details');
+            break;
+            case "no":
+            res.redirect('/live-student/kick-out-student');
+            break;
+            case "yes":
+            res.redirect('/live-student/check-eligibility-details');
+            break;
+    };
+});
+
+router.post('/live-student/swiss-national', function (req, res) {
+    var swiss = req.session.data['swiss'];
+    switch (swiss) {
+        case undefined:
+            res.redirect('/live-student/check-eligibility-details');
+            break;
+            case "yes":
+            res.redirect('/live-student/swiss-path');
+            break;
+            case "no":
+            res.redirect('/live-student/check-eligibility-details');
+            break;
+    };
+});
 
 
+
+router.post('/ehic-add-live-student', function(req,res){
+    var contacted = req.session.data['ehic-add-live-student']
+    if (contacted == "yes"){
+        res.redirect('/live-student/upload-of-ehic')
+    }
+    else {
+        res.redirect('/live-student/attachments-letter')
+    }
+
+})
+
+router.post('/letter-add-live-student', function(req,res){
+    var contacted = req.session.data['letter-add-live-student']
+    if (contacted == "yes"){
+        res.redirect('/live-student/attachments-letter')
+    }
+    else {
+        res.redirect('/live-student/dependant-question')
+    }
+
+})
+
+router.post('/dependant-ehic-add-live-student', function(req,res){
+    var contacted = req.session.data['dependant-ehic-add-live-student']
+    if (contacted == "yes"){
+        res.redirect('/live-student/dependant/upload-of-ehic')
+    }
+    else {
+        res.redirect('/live-student/dependant-add')
+    }
+
+})
+
+router.post('/live-student/dependant-details-delete', function (req, res) {
+    var addSecondDependant = req.session.data['dependant-details-delete'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/live-student/dependant/work-question-dependant');
+            break;
+            case "yes":
+            res.redirect('/live-student/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/live-student/check-details');
+            break;
+    };
+})
+;
+
+
+router.post('/live-student/dependant-question', function (req, res) {
+    var addDependant = req.session.data['add-dependant'];
+    switch (addDependant) {
+        case undefined:
+            res.redirect('/live-student/check-details');
+            break;
+            case "yes":
+            res.redirect('/live-student/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/live-student/check-details');
+            break;
+    };
+});
+
+router.post('/live-student/dependant/dependant-question', function (req, res) {
+    var addDependant = req.session.data['add-dependant'];
+    switch (addDependant) {
+        case undefined:
+            res.redirect('/live-student/dependant/work-question-dependant');
+            break;
+            case "yes":
+            res.redirect('/live-student/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/live-student/check-details');
+            break;
+    };
+});
+
+router.post('/live-student/dependant-add', function (req, res) {
+    var addSecondDependant = req.session.data['add-second-dependant'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/live-student/check-details');
+            break;
+            case "yes":
+            res.redirect('/live-student/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/live-student/check-details');
+            break;
+    };
+});
+
+router.post('/live-student/dependant-add2', function (req, res) {
+    var addSecondDependant = req.session.data['add-second-dependant'];
+    switch (addSecondDependant) {
+        case undefined:
+            res.redirect('/live-student/check-details');
+            break;
+            case "yes":
+            res.redirect('/live-student/dependant/work-question-dependant');
+            break;
+            case "no":
+            res.redirect('/live-student/check-details');
+            break;
+    };
+});
+
+router.post('/live-student/dependant/same-address', function (req, res) {
+    var work = req.session.data['same-address'];
+    switch (work) {
+        case undefined:
+            res.redirect('/live-student/dependant/postcode');
+            break;
+            case "yes":
+            res.redirect('/live-student/dependant/upload-of-ehic');
+            break;
+            case "no":
+            res.redirect('/live-student/dependant/postcode');
+            break;
+    };
+});
 
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
