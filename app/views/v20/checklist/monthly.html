@@ -5,108 +5,76 @@
   Application complete
 {% endblock %}
 
-{% block beforeContent %}
-   <div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
-    </span>
-  </p>
-</div>
-{% endblock %}
-
 {% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">The evidence needed for your application can be found below</h1>
-        
-      </div>
-
-      <p>Based on the dates you've given, you will need evidence and documents to prove you worked in a health and social care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
-
-      <h2 class="govuk-heading-m">Evidence and documents required</h2>
-
-
-
-
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Job contract
-          </dt>
-          <dd class="govuk-summary-list__value">
-            You will need a job contract for all of the roles you have worked in the 6 month claim period
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Monthly payslips
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>Since you told us you are paid monthly, you will need to provide monthly payslips which cover the following dates:</p>
-            <ul class="govuk-list govuk-list--bullet" id="payslip-dates"></ul>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Extra information needed
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>If you have any gaps in your employment through the 6 month claim period, you will need to provide extra information. This may be from things like illness, furlough or maternity leave.</p>
-
-            <p>This will need to be a signed document from your employer to confirm the gap in your employment. </p>
-          </dd>
-        </div>
-
-        
-      </dl>
-
-      
-
-      <br>
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Check you have all the evidence in this list</h1>
     </div>
+
+    <p>Based on the start date you gave us, you'll need to send evidence showing that you worked in a health and social care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
+
+    <h2 class="govuk-heading-m">Payslips</h2>
+    <p>You'll need to send payslips that cover:</p>
+    <ul class="govuk-list govuk-list--bullet" id="payslip-dates"></ul>
+
+    <h2 class="govuk-heading-m">Job contract</h2>
+      <p>You'll also need to send copies of your contracts for all the jobs you're sending payslips for.
+      </p>
+      <h2 class="govuk-heading-m">If you do not have all of this evidence</h2>
+
+     <p>If you do not have some of the payslips in this list, you'll need to add some extra information and evidence to your application explaining the gaps.</p>
+
+      <p>For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.</p>
+
   </div>
+</div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const day = localStorage.getItem("claimDay");
-      const month = localStorage.getItem("claimMonth");
-      const year = localStorage.getItem("claimYear");
-      if (day && month && year) {
-        const startDate = new Date(year, month - 1, day);
-        const endDate = new Date(startDate);
-        endDate.setMonth(endDate.getMonth() + 6);
-        endDate.setDate(endDate.getDate() - 1);
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const day = localStorage.getItem("claimDay");
+    const month = localStorage.getItem("claimMonth");
+    const year = localStorage.getItem("claimYear");
 
-        const options = { day: '2-digit', month: 'long', year: 'numeric' };
+    if (day && month && year) {
+      const startDate = new Date(Number(year), Number(month) - 1, Number(day));
+      const endDate = new Date(startDate);
+      endDate.setMonth(endDate.getMonth() + 6);
+      endDate.setDate(endDate.getDate() - 1);
 
-        document.getElementById("start-date").textContent = startDate.toLocaleDateString('en-GB', options);
-        document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      document.getElementById("start-date").textContent = startDate.toLocaleDateString('en-GB', options);
+      document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
 
-        const payslipList = document.getElementById("payslip-dates");
-        let currentPayslipStart = new Date(startDate);
+      const payslipList = document.getElementById("payslip-dates");
+      let currentStart = new Date(startDate);
 
-        while (currentPayslipStart < endDate) {
-          let currentPayslipEnd = new Date(currentPayslipStart);
-          currentPayslipEnd.setMonth(currentPayslipEnd.getMonth() + 1);
-          currentPayslipEnd.setDate(currentPayslipEnd.getDate() - 1);
-
-          if (currentPayslipEnd > endDate) {
-            currentPayslipEnd = new Date(endDate);
-          }
-
-          const listItem = document.createElement("li");
-          listItem.textContent = `${currentPayslipStart.toLocaleDateString('en-GB', options)} to ${currentPayslipEnd.toLocaleDateString('en-GB', options)}`;
-          payslipList.appendChild(listItem);
-
-          currentPayslipStart.setMonth(currentPayslipStart.getMonth() + 1);
+      while (currentStart <= endDate) {
+        let currentEnd = new Date(currentStart);
+        if (currentStart.getDate() !== 1) {
+          // First month - end at the last day of the same month
+          currentEnd.setMonth(currentEnd.getMonth() + 1);
+          currentEnd.setDate(0); // Last day of the previous month
+        } else {
+          // For all other months, start on the 1st and end on the last day
+          currentEnd.setMonth(currentEnd.getMonth() + 1);
+          currentEnd.setDate(0); // Last day of the previous month
         }
-      }
-    });
-  </script>
 
+        if (currentEnd > endDate) {
+          currentEnd = new Date(endDate);
+        }
+
+        const listItem = document.createElement("li");
+        listItem.textContent = `${currentStart.toLocaleDateString('en-GB', options)} to ${currentEnd.toLocaleDateString('en-GB', options)}`;
+        payslipList.appendChild(listItem);
+
+        // Move to the next month, starting on the 1st
+        currentStart = new Date(currentEnd);
+        currentStart.setDate(1);
+        currentStart.setMonth(currentStart.getMonth() + 1);
+      }
+    }
+  });
+</script>
 {% endblock %}

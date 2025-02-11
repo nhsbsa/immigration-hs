@@ -21,42 +21,27 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">The evidence needed for your application can be found below</h1>
+        <h1 class="govuk-panel__title">Check you have all the evidence in this list</h1>
       </div>
+  
+      <p>Based on the start date you gave us, you'll need to send evidence showing that you worked in a health and social care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
+  
+      <h2 class="govuk-heading-m">Payslips</h2>
+      <p>You'll need to send payslips that cover:</p>
+      <ul class="govuk-list govuk-list--bullet" id="payslip-dates"></ul>
+  
+      <h2 class="govuk-heading-m">Job contract</h2>
+        <p>You'll also need to send copies of your contracts for all the jobs you're sending payslips for.
+        </p>
+        <h2 class="govuk-heading-m">If you do not have all of this evidence</h2>
+  
+       <p>If you do not have some of the payslips in this list, you'll need to add some extra information and evidence to your application explaining the gaps.</p>
+  
+        <p>For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.</p>
+  
 
-      <p>Based on the dates you've given, you will need evidence and documents to prove you worked in a health and social care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
+      
 
-      <h2 class="govuk-heading-m">Evidence and documents required</h2>
-
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Job contract
-          </dt>
-          <dd class="govuk-summary-list__value">
-            You will need a job contract for all of the roles you have worked in the 6 month claim period
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Payslips
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>Since you told us you are paid <span id="payment-frequency"></span>, you will need to provide payslips which cover the following dates:</p>
-            <ul class="govuk-list govuk-list--bullet" id="payslip-dates"></ul>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Extra information needed
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>If you have any gaps in your employment through the 6 month claim period, you will need to provide extra information. This may be from things like illness, furlough or maternity leave.</p>
-            <p>This will need to be a signed document from your employer to confirm the gap in your employment. </p>
-          </dd>
-        </div>
-      </dl>
-      <br>
     </div>
   </div>
 
@@ -65,59 +50,63 @@
       const day = localStorage.getItem("claimDay");
       const month = localStorage.getItem("claimMonth");
       const year = localStorage.getItem("claimYear");
-      
-      const paymentFrequency = localStorage.getItem("paymentFrequency") || "weekly";
-
-      document.getElementById("payment-frequency").textContent = paymentFrequency;
-      
+      const paymentFrequency = localStorage.getItem("paymentFrequency") || "weekly"; 
+  
       if (day && month && year) {
-        const startDate = new Date(year, month - 1, day);
+        const startDate = new Date(Number(year), Number(month) - 1, Number(day));
         const endDate = new Date(startDate);
         endDate.setMonth(endDate.getMonth() + 6);
         endDate.setDate(endDate.getDate() - 1);
-
+  
         const options = { day: 'numeric', month: 'long', year: 'numeric' };
-
+  
         document.getElementById("start-date").textContent = startDate.toLocaleDateString('en-GB', options);
         document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
-
+  
         const payslipList = document.getElementById("payslip-dates");
         let currentPayslipStart = new Date(startDate);
-
+  
         if (paymentFrequency === "monthly") {
-          while (currentPayslipStart < endDate) {
+          while (currentPayslipStart <= endDate) {
             let currentPayslipEnd = new Date(currentPayslipStart);
+            
+            // Move to last day of the month
             currentPayslipEnd.setMonth(currentPayslipEnd.getMonth() + 1);
-            currentPayslipEnd.setDate(currentPayslipEnd.getDate() - 1);
-
+            currentPayslipEnd.setDate(0);
+  
             if (currentPayslipEnd > endDate) {
               currentPayslipEnd = new Date(endDate);
             }
-
+  
             const listItem = document.createElement("li");
             listItem.textContent = `${currentPayslipStart.toLocaleDateString('en-GB', options)} to ${currentPayslipEnd.toLocaleDateString('en-GB', options)}`;
             payslipList.appendChild(listItem);
-
+  
+            // Move to the first day of the next month
+            currentPayslipStart = new Date(currentPayslipEnd);
+            currentPayslipStart.setDate(1);
             currentPayslipStart.setMonth(currentPayslipStart.getMonth() + 1);
           }
         } else if (paymentFrequency === "weekly") {
-          while (currentPayslipStart < endDate) {
+          while (currentPayslipStart <= endDate) {
             let currentPayslipEnd = new Date(currentPayslipStart);
             currentPayslipEnd.setDate(currentPayslipEnd.getDate() + 6);
-            
+  
             if (currentPayslipEnd > endDate) {
               currentPayslipEnd = new Date(endDate);
             }
-
+  
             const listItem = document.createElement("li");
             listItem.textContent = `${currentPayslipStart.toLocaleDateString('en-GB', options)} to ${currentPayslipEnd.toLocaleDateString('en-GB', options)}`;
             payslipList.appendChild(listItem);
-
+  
+            // Move to next week's start date
             currentPayslipStart.setDate(currentPayslipStart.getDate() + 7);
           }
         }
       }
     });
   </script>
+  
 
 {% endblock %}

@@ -49,8 +49,9 @@ IHS question
         <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">What format are your payslips in?</h1>
+            <h1 class="govuk-fieldset__heading">What type of payslips do you have?</h1>
         </legend>
+        <p>If you have more than one type of payslip, select 'other'.</p>
 
        
 
@@ -72,10 +73,15 @@ IHS question
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="other">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                 Both
+                <input class="govuk-radios__input" id="contact-3" name="whereDoYouLive" type="radio" value="other" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                  Other
                 </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <p>We'll make a list of all the weeks your payslips need to cover.</p>
+                </div>
               </div>
             </div>
           </fieldset>
