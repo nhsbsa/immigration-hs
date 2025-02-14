@@ -2,17 +2,30 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-  Application complete
+  Check you have all the evidence you need
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="https://design-system.dwp.gov.uk/assets/dwp-frontend/dwp-frontend.min.css">
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-panel govuk-panel--confirmation">
-      <h1 class="govuk-panel__title">Check you have all the evidence in this list</h1>
-    </div>
+   
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+     Check you have all the evidence you need
+    </h1>
 
     <p>Based on the start date you gave us, you'll need to send evidence showing that you worked in a health and social care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
+
+
+
+
+    
+    
+   
+
 
     <h2 class="govuk-heading-m">Payslips</h2>
     <p>You'll need to send payslips that cover:</p>
@@ -21,22 +34,70 @@
     <h2 class="govuk-heading-m">Job contract</h2>
       <p>You'll also need to send copies of your contracts for all the jobs you're sending payslips for. You should ask your employer for a copy of your contract if you do not have one.
       </p>
-      <H2 class="govuk-heading-m"> If you cannot get all of this evidence</H2>
 
-        <p> If you cannot send some of the payslips in this list, you'll need to add some extra information and evidence to your application explaining the gaps.</p>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            If you cannot get all of this evidence
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If you cannot send some of the payslips in this list, you'll need to add some extra information and evidence to your application explaining the gaps.<br><br> For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.       </div>
+      </details>
+
         
-        <p>For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.</p>
+        <!-- <p>For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.</p>
 
 
       <h2 class="govuk-heading-m">Apply now</h2>
-      <p>If you have all the evidence you need, you can make your application online now.</p>
+      <p>If you have all the evidence you need, you can make your application online now.</p> -->
 
-      <a href="/v20/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      <!-- <a href="/v20/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
         Apply for an IHS refund
         <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
         </svg>
-      </a>
+      </a> -->
+
+    
+      <form class="form" action="/checklist-evidence" method="post">
+        
+      <fieldset class="govuk-fieldset" aria-describedby="average-time-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+         <!-- <h1 class="govuk-fieldset__heading">
+              When working in the health and social care job, was the applicant working an average of 16 hours or more per week?
+          </h1>-->
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you have all the evidence you need?
+            </h1>
+          </legend>
+        </legend>            
+       
+     
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="average-time-conditional" name="average-time-v20" type="radio" value="yes" data-aria-controls="conditional-average-time-conditional">
+              <label class="govuk-label govuk-radios__label" for="average-time-conditional">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="average-time-conditional-2" name="average-time-v20" type="radio" value="no" data-aria-controls="conditional-average-time-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="average-time-conditional-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <br>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      </form>
   </div>
 </div>
 

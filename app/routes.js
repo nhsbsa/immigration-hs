@@ -5933,6 +5933,17 @@ router.post('/live-student/dependant/same-address', function (req, res) {
     };
 });
 
+
+router.post('/checklist-evidence', function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/name')
+    }
+    else {
+        res.redirect('/v20/checklist-warning')
+    }
+
+})
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 
