@@ -27,7 +27,7 @@ Upload evidence
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form class="form" action="" method="post">
+    <form class="form" action="/v20/extra-information" method="post">
 
       
 
@@ -35,7 +35,7 @@ Upload evidence
         <label class="govuk-label govuk-label--l" for="file-upload-1">
           <h1 class="govuk-fieldset__heading">
             <span class="govuk-caption-l">Application</span>
-            Upload payslips
+            Upload evidence
           </h1>
         </label>
 
@@ -83,9 +83,29 @@ Upload evidence
         </ul> -->
 
 
-        <h2 class="govuk-heading-m">Upload payslips covering every day in this claim period</h2>
+        <h2 class="govuk-heading-m">Upload evidence covering every day in this claim period</h2>
+        <h2 class="govuk-heading-s">1. Contract</h2>
 
-        <p>Select each month to upload payslips for that month or to tell us you do not have payslips for that time. You can explain any gaps in the payslips later.</p>
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="mega-contract" aria-describedby="application-details-1-status">
+                Upload your contract
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="application-details-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                Not yet started
+              </strong>
+            </div>
+          </li>
+          
+        </ul>
+        <br>
+
+        <h2 class="govuk-heading-s">2. Payslips</h2>
+        <p>Select each month to upload payslips for that month <strong>or</strong> to tell us you do not have payslips for that time. You can explain any gaps in the payslips later.
+        </p>
 
           <p>If the applicant has payslips that cover days in multiple months, for example because they are paid weekly, you can upload the same payslip into more than one month.</p>
           
@@ -129,6 +149,7 @@ Upload evidence
 
       <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
       <ul class="govuk-task-list">
+        
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="april" aria-describedby="application-details-1-status">
@@ -136,91 +157,109 @@ Upload evidence
             </a>
           </div>
           <div class="govuk-task-list__status" id="application-details-2-status">
-            <strong class="govuk-tag govuk-tag--red">
-              Gap in evidence
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
             </strong>
           </div>
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="may-upload-2" aria-describedby="application-details-2-status">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-2-status">
               May 2020
             </a>
           </div>
           <div class="govuk-task-list__status" id="application-details-2-status">
-            <strong class="govuk-tag govuk-tag--green">
-              Completed
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
             </strong>
           </div>
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="june-upload-2" aria-describedby="application-details-3-status">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-3-status">
               June 2020
             </a>
           </div>
           <div class="govuk-task-list__status" id="application-details-3-status">
-            <strong class="govuk-tag govuk-tag--green">
-              Completed
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
             </strong>
           </div>
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="july-upload-2" aria-describedby="application-details-4-status">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
               July 2020
             </a>
           </div>
           <div class="govuk-task-list__status" id="application-details-4-status">
-            <strong class="govuk-tag govuk-tag--green">
-              Completed
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
             </strong>
           </div>
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="august-upload-2" aria-describedby="application-details-4-status">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
               August 2020
             </a>
           </div>
           <div class="govuk-task-list__status" id="application-details-4-status">
-            <strong class="govuk-tag govuk-tag--green">
-              Completed
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
             </strong>
           </div>
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="september-upload-2" aria-describedby="application-details-4-status">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
               September 2020
             </a>
           </div>
           <div class="govuk-task-list__status" id="application-details-4-status">
-            <strong class="govuk-tag govuk-tag--green">
-              Completed
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
             </strong>
           </div>
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="october-no-start-2" aria-describedby="application-details-4-status">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-4-status">
               October 2020
             </a>
           </div>
           <div class="govuk-task-list__status" id="application-details-4-status">
-            <strong class="govuk-tag govuk-tag--red">
-              Gap in evidence
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
             </strong>
           </div>
         </li>
       </ul>
+      <br>
 
+      <h2 class="govuk-heading-s">3. Extra information (optional)</h2>
+
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="mega-extra" aria-describedby="application-details-1-status">
+              Upload your contract
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
+            </strong>
+          </div>
+        </li>
+        
+      </ul>
       <br>
 
 
 
       <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
-      <a href="extra-information-gaps" class="govuk-button" data-module="govuk-button">Continue</a>
+      <a href="task-list-error" class="govuk-button" data-module="govuk-button">Continue</a>
 
     </form>
 

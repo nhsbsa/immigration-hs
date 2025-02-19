@@ -40,9 +40,14 @@
 {% block header %}
 
 
-
-
 <header class="govuk-header" data-module="govuk-header">
+  <script>
+    function clearSessionData() {
+      sessionStorage.clear(); // Clears all session storage data
+      window.location.href = "/current-search-student"; // Redirect after clearing session data
+    }
+  </script>
+  
   <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
       <a href="/index" class="govuk-header__link govuk-header__link--homepage">
@@ -60,13 +65,44 @@
         </svg>
       </a>
     </div>
-    <div class="govuk-header__content">
+
+    <!-- Flexbox container for title and signed-in section -->
+    <div class="govuk-header__content-wrapper">
       <a href="/index" class="govuk-header__link govuk-header__service-name">
-        Apply for your immigration health surcharge reimbursement
+        Manage your immigration health surcharge reimbursement
       </a>
+      
+      <div class="govuk-header__signed-in">
+        <span>
+          Signed in as <span class="govuk-!-margin-right-3">Dave Smith</span> |
+          <a class="govuk-link govuk-!-margin-left-3" id="signOut" href="#" onclick="clearSessionData()">Sign out</a>
+        </span>
+      </div>
     </div>
   </div>
 </header>
+
+
+<style>
+  .govuk-header__content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.govuk-header__service-name {
+  max-width: 60%; /* Adjust this to control how much space the title takes */
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.govuk-header__signed-in {
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+</style>
+
 
 {% endblock %}
 
