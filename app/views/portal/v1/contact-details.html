@@ -1,0 +1,58 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20/ihs-number">Back</a>
+{% endblock %}
+
+{% block content %}
+<script>
+    function printEmail() {
+      $('#email').keyup(function(event) {
+        newText = event.target.value;
+        $('#email-show').text(newText);
+      });
+    } 
+    window.onload=printEmail;
+</script>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-fieldset__heading">What's the applicant's email address?</h1>-->
+
+      <h1 class="govuk-heading-l">
+         
+          What is your email address?
+      </h1>
+
+      <form class="form" action="/v20/dependant-question" method="post">
+
+        <div class="govuk-form-group">
+         
+          <p id="email-hint" >
+            We'll use this to contact you about your IHS reimbursement applications.
+          </p>
+        </br>
+
+          <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

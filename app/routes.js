@@ -4321,7 +4321,7 @@ router.post('/dependant-details-v20', function(req,res){
         res.redirect('/v20/dependant-details2')
     }
     else {
-        res.redirect('/v20/non-nhs-path')
+        res.redirect('/v20/subscription-question')
     }
 
 })
@@ -4516,7 +4516,7 @@ router.post('/version-20-dependant-question', function(req,res){
         res.redirect('/v20/dependant-details')
     }
     else {
-        res.redirect('/v20/claim-dates-new')
+        res.redirect('/v20/subscription-question')
     }
 
 })
@@ -4583,7 +4583,7 @@ router.post('/pay-checkbox', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip")
     } else {
-        response.redirect("/v20/ideation/pay-frequency-task")
+        response.redirect("/v20/ideation/task-list-2")
     }
 })
 
@@ -4593,7 +4593,7 @@ router.post('/pay-checkbox-october', function(request, response) {
     if (checked =="checked"){
         response.redirect("/v20/ideation/no-payslip-october")
     } else {
-        response.redirect("/v20/ideation/pay-frequency-task-end")
+        response.redirect("/v20/ideation/task-list-3")
     }
 })
 

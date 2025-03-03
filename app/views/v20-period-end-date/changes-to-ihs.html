@@ -1,0 +1,192 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Reimbursement start page
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/visas-immigration">Visas and immigration</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link"href="https://www.gov.uk/browse/visas-immigration/work-visas"> Work in the UK</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<style>
+.guide .part-navigation-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b1b4b6;
+}
+.gem-c-contents-list {
+    position: relative;
+    margin: 0 0 20px 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 20px 15px -10px #fff;
+}
+.gem-c-contents-list__title {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+.gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    color: #0b0c0c;
+    font-family: "nta",Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ol, ul, nav ol, nav ul {
+    list-style: inherit;
+}
+.gem-c-contents-list__list-item--dashed {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.gem-c-contents-list__list-item {
+    padding-top: 10px;
+    line-height: 1.3;
+    list-style-type: none;
+}
+.gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden;
+}
+@media (min-width: 40.0625em){
+  .gem-c-contents-list__title {
+      font-size: 16px;
+      line-height: 1.5;
+  }
+  .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .gem-c-contents-list__list-item {
+      padding-top: 7.5px;
+  }
+}
+.gem-c-govspeak .contact {
+    position: relative;
+}
+.gem-c-govspeak .address, .gem-c-govspeak .contact {
+    border-left: 1px solid #b1b4b6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Changes to the immigration health surcharge reimbursement application
+      </h1>
+
+      <p>The changes we explain on this page were made in January 2025.</p>
+
+      
+  
+   <h2 class="govuk-heading-m">Changes to how you upload evidence </h2>
+
+   <p>We have changed how you upload evidence for an application. We now ask you to upload the evidence files separately instead of all at once. This makes it easier to check that you have uploaded all the evidence we need.</p>
+
+
+   <h3 class="govuk-heading-s">Uploading a job contract</h3>
+   <p>There is a new page in the application for you to upload a job contract separately. This helps us confirm the applicant's:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>job in health and social care</li>
+    <li>employment start date</li>
+    <li>contracted hours</li>
+    </ul>
+
+    
+    <p>If the applicant's job contract does not show these details, you can upload a signed letter from their employer confirming them instead. This letter must not be a conditional offer of employment or conditional contract.</p>
+    
+    <p>If an applicant has multiple eligible jobs, you must upload contracts for all of their jobs.</p>
+
+    <img src="/public/images/contract.png" alt="" style="height: 1000px;">
+  
+   <h3 class="govuk-heading-s">Uploading payslips</h3>
+   <p>You must now upload payslips separately for every month in the 6 month period you're claiming a reimbursement for. This helps to make sure you include all the payslips we need.</p>
+
+   <p>We've added a new task list where you select each month one at a time and upload the payslips for that month. Each month's status will change to 'completed' once you've uploaded the payslips, so you can check as you go that you have not missed anything.</p>
+    
+   <p> If you do not have payslips for every month in the claim period, you can tell us why and upload alternative evidence to cover the gaps. For example, if the applicant was on leave, you can upload a letter from their employer confirming the dates they were on leave.</p>
+
+   <h3 class="govuk-heading-s">Payslip tasklist example</h3>
+   <p>The image below displays an example of the month by month task list. You will be able to select each month and upload your payslips.</p>
+
+   
+   <div><img src="/public/images/task-list.png" alt="" style="height: 500px;">
+
+    <h3 class="govuk-heading-s">Payslip document upload example</h3>
+
+    <p>After clicking the month, you can then upload multiple files.</p>
+
+    <img src="/public/images/upload.png" alt="" style="height: 1000px;">
+  
+
+  </div>
+    
+    
+<br><br>
+
+<button class="govuk-button">Apply for an IHS reimbursement</button>
+  
+
+
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href=https://www.gov.uk/healthcare-immigration-application>
+              Pay for UK healthcare as part of your immigration application
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Comments
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="../../single-signpost" method="post">
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
+        <div class="govuk-form-group">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Would you like to add extra information or upload evidence about gaps in the applicant's employment or working arrangements?
+          </h1>
+          <div id="with-hint-hint" class="govuk-hint">
+            The gaps in the applicant's employment or working arrangements could be due to:
+            </br>
+            </br>
+            <ul class="govuk-list govuk-list--bullet govuk-hint">
+              <li>maternity or paternity leave</li>
+              <li>arrangements due to COVID-19, such as being furloughed</li>
+              <li>sickness, including self-isolation</li>
+            </ul>
+
+          </div>
+
+          <br />
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signpost_yes" name="signpost"
+                  type="radio" value="yes" data-aria-controls="signpost_yes">
+                <label class="govuk-label govuk-radios__label" for="signpost_yes">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signpost_no" name="signpost"
+                  type="radio" value="no" data-aria-controls="signpost_no">
+                <label class="govuk-label govuk-radios__label" for="signpost_no">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

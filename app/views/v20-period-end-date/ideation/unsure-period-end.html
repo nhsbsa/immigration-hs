@@ -1,0 +1,82 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+  <!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+    
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/pay-v20-task" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Period end date</h1>
+        </legend>
+
+        <p>A period end date is the last day of the month a payslip covers up until. This is commonly found in most NHS payslips.</p>
+        <p>For example, if you have a monthly payslip for October 2024 and you worked the full month, your period end date should be 31 October 2024.</p>
+
+      <h2 class="govuk-heading-m">Does your payslip include this information?</h2>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="changedName">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">
+            No
+          </label>
+        </div>
+      </div>
+      <br>
+        
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
