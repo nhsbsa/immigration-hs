@@ -121,7 +121,7 @@
       if (endDate.getMonth() === currentMonth && endDate.getFullYear() === currentYear) {
         // Create the message if the claim end month and year match the current date
         const message = document.createElement("p");
-        message.textContent = `If the last month for this claim is ${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear} and the applicant has not been paid for this month yet, you should wait to apply until they have a payslip for ${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear}.`;
+        message.textContent = `If the applicant has not been paid for ${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear} yet, you should wait to apply until they have a payslip for ${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear}.`;
 
         // Append the message to the 'additional-info' div inside the govuk-inset-text component
         const additionalInfo = document.getElementById("additional-info");
