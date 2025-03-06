@@ -5944,6 +5944,18 @@ router.post('/checklist-evidence', function(req,res){
     }
 
 })
+
+
+router.post('/change-start-date', function(req,res){
+    var contacted = req.session.data['6-months-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/ideation/task-list-changed')
+    }
+    else {
+        res.redirect('/v20-mvp/check-your-answers-nhs-path')
+    }
+
+})
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 
