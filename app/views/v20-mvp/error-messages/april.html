@@ -43,7 +43,7 @@ IHS question
               <div class="govuk-error-summary__body">
                 <ul class="govuk-list govuk-error-summary__list">
                   <li>
-                    Upload a payslip or select 'I do not have payslips for this month'                 
+                    <a href="#documents">Upload a payslip or select 'I do not have payslips for this month'    </a>             
                 </ul>
               </div>
             </div>
@@ -89,15 +89,26 @@ IHS question
 
           <!-- File upload input -->
           <div id="file-upload-container" class="moj-multi-file-upload govuk-form-group--error">
+            
             <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
             <div class="govuk-inset-text">
               If you cannot upload payslips for this month, for example because the applicant was paid in arrears, select 'I do not have payslips for this month'. You can explain this gap later.                  
             </div>
-            
             <p id="file-upload-1-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span>                    Upload a payslip or select 'I do not have payslips for this month'                 
 
             </p>
+            <div id="uploaded-files-container" class="hidden">
+              
+              <label class="govuk-label govuk-label--m" for="documents">
+                Files uploaded
+              </label>
+             
+              <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
+            </div>
+            
+            
+            
             <input
               class="govuk-file-upload moj-multi-file-upload__input"
               id="documents"
@@ -105,38 +116,40 @@ IHS question
               type="file"
               multiple
             />
+
+            <div id="content-to-show" class="hidden">
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  You'll need to give more information and evidence to explain this gap later.
+                </strong>
+              </div>
+            </div>
+            <br>
+            <!-- Checkbox -->
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="toggle-checkbox"
+                name="waste"
+                type="checkbox"
+                onClick="toggleContent()"
+                value="checked"
+              />
+              <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">
+                I do not have payslips for this month
+              </label>
+              <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                You can explain why and add alternative evidence later.
+              </div>
+            </div>
           </div>
 
         </div>
 
           <!-- Warning text for missing payslips -->
-          <div id="content-to-show" class="hidden">
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-visually-hidden">Warning</span>
-                You'll need to give more information and evidence to explain this gap later.
-              </strong>
-            </div>
-          </div>
-
-          <!-- Checkbox -->
-          <div class="govuk-checkboxes__item">
-            <input
-              class="govuk-checkboxes__input"
-              id="toggle-checkbox"
-              name="waste"
-              type="checkbox"
-              onClick="toggleContent()"
-              value="checked"
-            />
-            <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">
-              I do not have payslips for this month
-            </label>
-            <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-              You can explain why and add alternative evidence later.
-            </div>
-          </div>
+          
           <br>
 
           <button class="govuk-button" data-module="govuk-button">Continue</button>
