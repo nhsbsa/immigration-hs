@@ -15,21 +15,27 @@
 </div>
   <a class="govuk-back-link" href="">Back</a>
 {% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-two-thirds">
-      
-      
-        <h1 class="govuk-heading-l">What is your email address?</h1>
 
-        <p>We'll use this to contact you about your IHS reimbursement applications.</p>
+    
 
-        <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">What is your UK mobile number?</h1>
+
+      <p>We'll send you text messages with a security code when you sign in to your account. We may also use this to contact you about your IHS reimbursement applications.</p>
+
+      <div class="govuk-form-group">
           <input class="govuk-input govuk-input--width-20" id="email-address" name="email-address" type="text">
-        </div>
-        <a class="govuk-button" href="phone-number">Continue</a><br>
+      </div>
+
+      <!--<div class="govuk-inset-text">
+        <span class="govuk-u-visually-hidden">Information: </span>
+        <p>We'll send a security code to this number when you sign in.</p>
+      </div>-->
+
+      <a class="govuk-button" href="full-name">Continue</a><br>
 
     </div>
 
