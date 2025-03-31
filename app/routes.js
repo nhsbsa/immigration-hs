@@ -5959,5 +5959,7 @@ router.post('/change-start-date', function(req,res){
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 
+router.use('/portal/v1', require('./views/portal/v1/_routes'));
+
 
 module.exports = router;
