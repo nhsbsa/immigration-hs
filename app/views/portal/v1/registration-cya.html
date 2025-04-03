@@ -1,0 +1,166 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+  Registration
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+     
+      <h1 class="govuk-heading-xl">Check your details</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+                joebloggs@email.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a href="contact-details">
+                    Change
+                </a>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Phone number
+            </dt>
+            <dd class="govuk-summary-list__value">
+                07777777777
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a href="contact-details">
+                    Change
+                </a>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Joe Bloggs
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a href="full-name">
+                    Change
+                </a>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+                15 March 1984
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a href="date-of-birth">
+                    Change
+                </a>
+            </dd>
+        </div>
+        
+        {% if data['national-insurance-number-question'] == 'No' %}
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Reason
+              <dd class="govuk-summary-list__value">
+                  {% if data['national-insurance-number-reason'] %}
+                    {{ data['national-insurance-number-reason'] }}
+                  {% else %}
+                    I was not living in the UK when I turned 16 and have not worked in the UK.
+                  {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="national-insurance-number-question">
+                      Change<span class="govuk-u-visually-hidden"> reason</span>
+                  </a>
+              </dd>
+          </div>
+        {% else %}
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  QQ 12 34 56 C
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="national-insurance-number">
+                      Change
+                  </a>
+              </dd>
+          </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+                123
+                House Avenue
+                Newcastle
+                NE11 1AB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a href="address">
+                    Change
+                </a>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Username
+            </dt>
+            <dd class="govuk-summary-list__value">
+                MyUsername
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a href="username-password">
+                    Change
+                </a>
+            </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Password
+            </dt>
+            <dd class="govuk-summary-list__value">
+                **********
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a href="username-password">
+                    Change
+                </a>
+            </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Complete registration</h2>
+      <p>By selecting Register, you're confirming the details you've told us are correct.</p>
+
+      <a class="govuk-button" href="registration-done?test-scenario=true">Register</a><br>
+
+
+  </div>
+
+</div>
+{% endblock %}

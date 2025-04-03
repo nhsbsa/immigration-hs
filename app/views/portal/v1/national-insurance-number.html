@@ -1,4 +1,4 @@
-{% extends " layout-portal.html" %}
+{% extends "layout-portal.html" %}
 
 {% block pageTitle %}
   Do you have a NINO
@@ -26,8 +26,9 @@
     <h1 class="govuk-heading-l">What is your National Insurance number?</h1>
 
     <div class="govuk-form-group">
+      <p>It must be the number you used as part of your previous IHS applications.</p>
       <div id="national-insurance-number-hint" class="govuk-hint">
-        It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+         For example, ‘QQ 12 34 56 C’.
       </div>
       <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="national-insurance-number" name="nationalInsuranceNumber" type="text" spellcheck="false" aria-describedby="national-insurance-number-hint">
     </div>
