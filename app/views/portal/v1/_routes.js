@@ -16,14 +16,17 @@ router.post('/ihs-question', function(req,res){
 
 })
 
-router.post('/personal-details-check', function(req, res) {
-    var detailsCorrect = req.body.changedName;  // Using req.body to get form data
-    if (detailsCorrect === "yes") {
-        res.redirect('/v1/details-correct');
-    } else {
-        res.redirect('/v1/details-incorrect');
+
+
+router.post(/test/, function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('yes-answer')
     }
-});
+    else {
+        res.redirect('/v20/not-entitled-rr')
+    }
+})
 
 
 
