@@ -1,0 +1,155 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Check you are still eligible for reimbursement</h1>
+
+      <h2 class="govuk-heading-m">Eligibility questions</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Paid an immigration health surcharge for current visa
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Hold a Skilled Worker visa or Tier 2 (General) visa
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+       <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            A qualified health professional
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Job in health and social care
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Work in the health and social care job for 6 months or more
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Work an average of 16 hours or more per week
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+      <form class="form" action="eligibility" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">Are your answers to the eligibility questions still correct?</h1>
+            </legend>
+  
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="doug-ihs-question-conditional" name="radio-button-route"
+                    type="radio" value="yes" data-aria-controls="doug-conditional-ihs-question-conditional">
+                  <label class="govuk-label govuk-radios__label" for="doug-ihs-question-conditional">
+                    Yes
+                  </label>
+                </div>
+    
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="doug-ihs-question-conditional-2" name="radio-button-route"
+                    type="radio" value="no" data-aria-controls="doug-conditional-ihs-question-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="doug-ihs-question-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+    
+    
+            </div>
+          </fieldset>
+        </div>
+  
+        <button class="govuk-button" type="submit">Continue</button>
+      </form>
+
+      <a href="">We would probably need to make the user go through eligiblity again</a>
+
+    </div>
+  </div>
+{% endblock %}

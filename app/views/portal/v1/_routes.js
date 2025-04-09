@@ -19,12 +19,42 @@ router.post('/ihs-question', function(req,res){
 
 
 router.post(/test/, function(req,res){
-    var contacted = req.session.data['doug-ihs-question-v20']
+    var contacted = req.session.data['radio-button-route']
     if (contacted == "yes"){
-        res.redirect('yes-answer')
+        res.redirect('employment-details')
     }
     else {
-        res.redirect('/v20/not-entitled-rr')
+        res.redirect('update-personal-details')
+    }
+})
+//check for the employment details page
+router.post(/employment-check/, function(req,res){
+    var contacted = req.session.data['radio-button-route']
+    if (contacted == "yes"){
+        res.redirect('ihs-number')
+    }
+    else {
+        res.redirect('update-employment-details')
+    }
+})
+
+router.post(/eligibility/, function(req,res){
+    var contacted = req.session.data['radio-button-route']
+    if (contacted == "yes"){
+        res.redirect('personal-details')
+    }
+    else {
+        res.redirect('eligibility-kickout')
+    }
+})
+
+router.post(/dependant-question/, function(req,res){
+    var contacted = req.session.data['dependant-question']
+    if (contacted == "yes"){
+        res.redirect('dependant-details')
+    }
+    else {
+        res.redirect('start-date')
     }
 })
 
