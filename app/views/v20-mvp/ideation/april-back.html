@@ -14,11 +14,48 @@ IHS question
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<a class="govuk-back-link" onclick="handleBackButtonEvent(e)" href="#">Back</a>
 
 {% endblock %}
 
 {% block content %}
+
+<script>
+  // Function to show confirmation dialog and handle navigation
+  function handleBackButtonEvent(e) {
+    var confirmationMessage = 'If you go back, your files will be deleted. Are you sure you want to leave?';
+
+    if (!confirm(confirmationMessage)) {
+      // User clicked "Cancel", push the current state to prevent navigation
+      history.pushState(null, '', location.href);
+    }
+  }
+
+  // Intercept back button using onpopstate event
+  window.onpopstate = function (e) {
+    handleBackButtonEvent(e);
+  };
+
+  // Ensure the initial state is added to the history stack
+  history.pushState(null, '', location.href);
+
+  // Attach custom warning to the "back" link
+  document.addEventListener('DOMContentLoaded', function () {
+    const backLink = document.querySelector('.govuk-back-link');
+    if (backLink) {
+      backLink.addEventListener('click', function(event) {
+        // Show the confirmation on the back link click
+        if (!confirm("If you go back, your files will be deleted. Do you want to continue?")) {
+          event.preventDefault();  // Prevent the back action if "Cancel" is pressed
+        }
+      });
+    }
+  });
+</script>
+
+
+
+
 <html lang="en">
 
 <head>
