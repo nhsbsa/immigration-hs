@@ -16,6 +16,19 @@ IHS question
 {% endblock %}
 
 {% block content %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Existing init logic
+    toggleContent();
+
+    // Focus the Continue button
+    const continueButton = document.querySelector('button.govuk-button');
+    if (continueButton) {
+      continueButton.focus();
+    }
+  });
+</script>
 <html lang="en">
 
 <head>
@@ -35,20 +48,7 @@ IHS question
       <form class="form" action="/pay-checkbox-mvp" method="post">
         <div class="govuk-form-group">
 
-          <div class="govuk-error-summary" data-module="govuk-error-summary">
-            <div role="alert">
-              <h2 class="govuk-error-summary__title">
-                There is a problem
-              </h2>
-              <div class="govuk-error-summary__body">
-                <ul class="govuk-list govuk-error-summary__list">
-                  <li>
-                    <a href="#delete">You can only upload up to 7 files - you'll need to delete a file if you want to upload anything else   </a>            
-                </ul>
-                <a id="refresh" href="april-max">Continue without uploading any more files</a>
-              </div>
-            </div>
-          </div>
+          
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
             <h1 class="govuk-fieldset__heading">Upload payslips for April 2020</h1>
@@ -89,19 +89,14 @@ IHS question
           </div>
 
 
-          <div class="govuk-form-group govuk-form-group--error">
+          <div class="govuk-form-group ">
                                             
             <h2 class="govuk-heading-m">Files uploaded</h2>
            <!--<span class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Contract 3.doc must be a jpg, bmp, png or pdf<br>Contract 4.pdf must be less than 2MB in size
             </span>-->
             
-            <span class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> You can only upload up to 7 files - you'll need to delete a file if you want to upload anything else
-              <p><a class="govuk-link" href="/v16/upload-of-contract-error-delete-all-function">
-                Continue without uploading any more files
-              </a></p>
-            </span>
+            
             <div class="govuk-summary-list moj-multi-file-upload__list">
               <!--<div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip April.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><button class="moj-multi-file-upload__delete govuk-button govuk-button--secondary govuk-!-margin-bottom-0" type="button" name="delete" value="CAS Statement.jpg">Delete <span class="govuk-visually-hidden">CAS Statement.jpg</span></button></dd> </div>-->
               <div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip April-1.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a id="delete" class="govuk-link" href="/v16/upload-of-contract-error-delete-all">Delete<span class="govuk-visually-hidden"> file 1</span></a></dd> </div>
