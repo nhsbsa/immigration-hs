@@ -58,6 +58,27 @@ router.post(/dependant-question/, function(req,res){
     }
 })
 
+router.post(/checklist-evidence/, function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('dependant-question')
+    }
+    else {
+        res.redirect('checklist-warning')
+    }
+
+})
+
+router.post(/checkbox/, function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("extra-information")
+    } else {
+        response.redirect("payslip-confirmation")
+    }
+})
+
 
 
 module.exports = router;
