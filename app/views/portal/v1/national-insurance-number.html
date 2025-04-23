@@ -1,4 +1,4 @@
-{% extends "layout-portal.html" %}
+{% extends "layout-portal-signed-out.html" %}
 
 {% block pageTitle %}
   Do you have a NINO
@@ -48,7 +48,7 @@
       <a class="govuk-button" href="national-insurance-number-changed">Save and continue</a><br>
       <p><a href="dashboard?questionnaire-completed=Completed#tab-two">Cancel</a></p>
     {% else %}
-      <a class="govuk-button" href="address">Continue</a><br>
+      <a class="govuk-button" href="username-password">Continue</a><br>
     {% endif %}
 
   </div>

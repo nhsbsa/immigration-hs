@@ -38,7 +38,7 @@ router.post(/employment-check/, function(req,res){
     }
 })
 
-router.post(/eligibility/, function(req,res){
+router.post(/eligibility-check/, function(req,res){
     var contacted = req.session.data['radio-button-route']
     if (contacted == "yes"){
         res.redirect('personal-details')
@@ -54,7 +54,7 @@ router.post(/dependant-question/, function(req,res){
         res.redirect('dependant-details')
     }
     else {
-        res.redirect('start-date')
+        res.redirect('/v20/ideation/contract-upload-task')
     }
 })
 
@@ -69,6 +69,17 @@ router.post(/checklist-evidence/, function(req,res){
 
 })
 
+router.post(/your-claim-period/, function(req,res){
+    var contacted = req.session.data['evidence-check']
+    if (contacted == "yes"){
+        res.redirect('/portal/v1/dependant-question')
+    }
+    else {
+        res.redirect('/portal/v1/checklist-warning')
+    }
+
+})
+
 router.post(/checkbox/, function(request, response) {
 
     var checked = request.session.data['waste']
@@ -79,6 +90,84 @@ router.post(/checkbox/, function(request, response) {
     }
 })
 
+router.post(/paid-ihs/, function(req,res){
+    var contacted = req.session.data['ihs-paid']
+    if (contacted == "yes"){
+        res.redirect('applicant-visa-type')
+    }
+    else {
+        res.redirect('not-entitled-rr')
+    }
+})
+
+router.post(/visa-type/, function(req,res){
+    var contacted = req.session.data['visa']
+    if (contacted == "tier2"){
+       res.redirect('ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('tier5-ko')
+        }
+        else
+        {
+            res.redirect('work-question')
+        }
+})
+
+router.post(/health-professional/, function(req,res){
+    var contacted = req.session.data['ihs-tier2-hc-v20']
+    if (contacted == "yes"){
+        res.redirect('ihs-tier2-ukvi')
+    }
+    else {
+        res.redirect('work-question')
+    }
+})
+
+router.post(/work-question/, function(req,res){
+    var contacted = req.session.data['work-question-v20']
+    if (contacted == "yes"){
+        res.redirect('6-months')
+    }
+    else {
+        res.redirect('not-entitled')
+    }
+})
+
+router.post(/6-months/, function(req,res){
+    var contacted = req.session.data['6-months-v20']
+    if (contacted == "yes"){
+        res.redirect('average-time')
+    }
+    else {
+        res.redirect('not-entitled')
+    }
+
+})
+
+
+
+router.post(/average-time/, function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('tier2-declaration')
+    }
+    else {
+        res.redirect('not-entitled-rr')
+    }
+
+})
+
+router.post(/bank-details-check/, function(req,res){
+    var contacted = req.session.data['radio-button-route']
+    if (contacted == "yes"){
+        res.redirect('bank-details-2fa')
+    }
+    else {
+        res.redirect('change-bank-details')
+    }
+})
 
 
 module.exports = router;
