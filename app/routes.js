@@ -5959,6 +5959,28 @@ router.post('/change-start-date', function(req,res){
     }
 
 })
+
+
+
+router.post('/pay-checkbox-cya', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp/ideation/extra-information-gaps")
+    } else {
+        response.redirect("/v20-mvp/check-your-answers-nhs-path")
+    }
+})
+
+router.post('/pay-checkbox-gaps-fix', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp/check-your-answers-gaps")
+    } else {
+        response.redirect("/v20-mvp/check-your-answers-nhs-path")
+    }
+})
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 
