@@ -117,6 +117,17 @@ Dashboard
                 <a href="#to-do">Check to-do list</a>
               </td>
             </tr>
+            <tr role="row" class="govuk-table__row">
+              <td role="cell" class="govuk-table__cell">
+                Application progress updated
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                Your application how now been picked up by the assessment team. You can view the claim for more details.
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                <a href="view-claim-live">View application</a>
+              </td>
+            </tr>
             <!-- <tr role="row" class="govuk-table__row">
                   <td role="cell" class="govuk-table__cell">
                    We require your job contract
@@ -211,15 +222,14 @@ Dashboard
 
           <a href="view-claim-on-hold" class="govuk-panel">
             <h2 class="govuk-panel__title">Missing payslips - ABC2123F</h2>
-            <p class="govuk-panel__body">You need to upload missing payslips to
-              progress your claim</p>
-            <p class="govuk-panel__body__hint">Claim submitted 31 June 2025</p>
+            <p class="govuk-panel__body">You need to upload more payslips for this application.</p>
+            <p class="govuk-panel__body__hint">Application submitted 31 June 2025</p>
           </a>
 
           <a href="view-claim-on-hold-contract" class="govuk-panel">
             <h2 class="govuk-panel__title">Missing contract - IHS9281F</h2>
-            <p class="govuk-panel__body">You need to upload your job contract to support your claim</p>
-              <p class="govuk-panel__body__hint">Claim submitted 31 December 2025</p>
+            <p class="govuk-panel__body">You need to upload your job contract for this application.</p>
+              <p class="govuk-panel__body__hint">Application submitted 31 December 2025</p>
           </a>
 
 
@@ -408,23 +418,14 @@ Dashboard
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Job setting (could be removed)</dt>
-            <dd class="govuk-summary-list__value">
-              Office work for NHSBSA
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a id="updateNINO" href="change-job-setting">
-                Change
-              </a>
-            </dd>
-          </div>
+          
 
 
 
 
         </dl>
         <h2 class="govuk-heading-m">Dependant details</h2>
+        <p><a href="new-dependant">Add a new dependant</a></p>
 
         <h2 class="govuk-heading-s" style="display: inline">Dependant 1</h2>
             <span style="float:right; margin-left: 45px;     font-size: 1.1875rem;">
@@ -548,8 +549,8 @@ Dashboard
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">IHS reference number</th>
-              <th scope="col" class="govuk-table__header">Claim submission date</th>
-              <th scope="col" class="govuk-table__header">Claim date period</th>
+              <th scope="col" class="govuk-table__header">Application date</th>
+              <th scope="col" class="govuk-table__header">Claim period</th>
               <th scope="col" class="govuk-table__header">Status</th>
 
 
@@ -628,7 +629,7 @@ Dashboard
               <td class="govuk-table__cell">31 June 2025</td>
               <td class="govuk-table__cell">1 January 2025 - 31 June 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                  Currently with assessment team
+                  Being assessed
                 </strong></td>
             </tr>
             <tr class="govuk-table__row">
@@ -669,7 +670,7 @@ Dashboard
               <td class="govuk-table__cell">HJABCDEF</td>
               <td class="govuk-table__cell">31 June 2023</td>
               <td class="govuk-table__cell">£1234</td>
-              <td class="govuk-table__cell">Payment has failed - contact UKV&I using you claim ref number.</td>
+              <td class="govuk-table__cell">Payment has failed - contact UKV&I using you claim application reference number.</td>
 
             </tr>
             <tr class="govuk-table__row">

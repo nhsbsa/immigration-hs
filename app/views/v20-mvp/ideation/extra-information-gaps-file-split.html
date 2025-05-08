@@ -1,0 +1,85 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Extra information
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="check-extra-info-gaps" method="post">
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Application</span>
+            Upload evidence for your extra information (optional)
+          </h1>
+          <p>This is optional but if you do not upload evidence to support this extra information, we may put this claim on hold and ask the applicant to send us extra evidence after you apply.</p>
+
+
+          
+
+          
+
+          
+
+
+        <h2 class="govuk-heading-m">Files</h2>
+        <p>Files must:</p>
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>be clear and readable</li>
+          <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+          <li>be smaller than 2MB each</li>
+        </ul>
+        <!--<div class="govuk-grid-column-two-thirds">-->
+        <div class="moj-multi-file-upload">
+              
+          <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="documents">Upload a file</label>
+
+            <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+          </div>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.form');
+    const textarea = document.querySelector('#with-hint');
+    
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      const textValue = textarea.value.trim(); // Trim to check for empty input
+      
+      if (textValue === '') {
+        // Redirect to Page A alternative if the textarea is empty
+        window.location.href = '/v20-mvp/check-your-answers-gaps';
+      } else {
+        // Store text in localStorage
+        localStorage.setItem('extraInfo', textValue);
+        // Redirect to Page B
+        window.location.href = 'check-extra-info-gaps';
+      }
+    });
+  });
+</script>
+
+{% endblock %}
