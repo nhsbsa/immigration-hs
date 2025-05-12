@@ -5952,7 +5952,7 @@ router.post('/checklist-evidence', function(req,res){
 router.post('/change-start-date', function(req,res){
     var contacted = req.session.data['6-months-v20']
     if (contacted == "yes"){
-        res.redirect('/v20-mvp/ideation/task-list-changed')
+        res.redirect('/v20-mvp/ideation/check-contract-changed')
     }
     else {
         res.redirect('/v20-mvp/check-your-answers-nhs-path')
@@ -5981,6 +5981,19 @@ router.post('/pay-checkbox-gaps-fix', function(request, response) {
         response.redirect("/v20-mvp/check-your-answers-nhs-path")
     }
 })
+
+router.post('/yes-contract-add-changed', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/ideation/contract-upload-task-changed')
+    }
+    else {
+        res.redirect('/v20-mvp/ideation/task-list-changed')
+    }
+
+})
+
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 
