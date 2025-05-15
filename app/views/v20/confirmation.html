@@ -1,15 +1,16 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-  Application complete
+Application complete
 {% endblock %}
 
 {% block beforeContent %}
-   <div class="govuk-phase-banner">
+<div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    
+
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
@@ -17,39 +18,117 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Application complete</h1>
-        <div class="govuk-panel__body">
-          Your reference number<br><strong>HDJ2123F</strong>
-        </div>
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Application complete</h1>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>HDJ2123F</strong>
+      </div>
+    </div>
+
+    <p>You've successfully submitted a claim for an immigration health surcharge reimbursement. We've sent you an email
+      to <strong>john.smith@email.com</strong> to confirm this.</p>
+
+
+    <h3 class="govuk-heading-m">Application details</h3>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name of the applicant
+        </dt>
+        <dd class="govuk-summary-list__value">
+          John Smith
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          5 January 1978
+        </dd>
       </div>
 
-      <p>You've successfully submitted a claim for an immigration health surcharge reimbursement. We've sent you an email to confirm this.</p>
-      <p>The applicant's claim period is: <strong>20 April 2020</strong> to <strong>19 October 2020</strong>.</p>
-      <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          IHS number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          IHS123456789
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          20 April 2020
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          19 October 2020
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number (?)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ123456B
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employment details (?)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Pharmacy assistant<br>Boots
+        </dd>
+      </div>
+    </dl>
+    <!-- <h2 class="govuk-heading-m">Download your application details</h2>
       <p>You can download the details of your application and use them for future applications.</p>
       <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Save application details as PDF
       </button> -->
 
-      <h3 class="govuk-heading-m">Save your application details</h3>
-    <p>You can print or save your application details for your records.</p>
+    <h3 class="govuk-heading-m">Save your application details</h3>
+    <p>You can print a copy of your application details or save the as a PDF.</p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How to save your application details as a PDF
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ol class="govuk-list govuk-list--number">
+          <li>Select the 'Print this page' button.</li>
+          <li>Select 'Save as PDF' as the destination.</li>
+          <li>Select 'Save'.</li>
+          <li>Select where you want the file to be saved.</li>
+        </ol>
+      </div>
+    </details>
 
     <style>
       .govuk-frontend-supported .gem-c-print-link {
         display: block;
       }
 
-      
+
 
       .govuk-\!-margin-bottom-8 {
         margin-bottom: 30px !important;
       }
 
-      
+
 
       .gem-c-layout-for-public {
         font-family: "GDS Transport", arial, sans-serif;
@@ -115,7 +194,7 @@
         text-underline-offset: .1578em;
       }
 
-      
+
 
       .gem-c-layout-for-public {
         font-family: "GDS Transport", arial, sans-serif;
@@ -137,22 +216,25 @@
     </style>
 
     <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-8">
-      <button onclick="window.print();" class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link"
-        data-print-link-module-started="true" style="color: #1d70b8;;">Print this page</button>
+      <button onclick="window.print();" class="govuk-link govuk-body-s gem-c-print-link__button"
+        data-module="print-link" data-print-link-module-started="true" style="color: #1d70b8;;">Print this page</button>
     </div>
 
-      <h2 class="govuk-heading-m">What happens next</h2>
-      <p>We'll assess the claim within the next 6 weeks. However, it could take longer than this to receive your money.</p>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p>We'll assess the claim within the next 6 weeks. However, it could take longer than this to receive your money.
+    </p>
 
-      <!--
+    <!--
       <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
       -->
 
-      <br>
-      <p class="govuk-body">If you have any questions, <a href="/footer-HSC/contact-us" target="_blank">contact us (opens in new tab)</a>. 
-      <p><a href="https://www.gov.uk/done/apply-immigration-health-surcharge-refund" target="_blank">What did you think of this service? (opens in new tab)</a> This will take 30 seconds to complete.</p>
+    <br>
+    <p class="govuk-body">If you have any questions, <a href="/footer-HSC/contact-us" target="_blank">contact us (opens
+        in new tab)</a>.
+    <p><a href="https://www.gov.uk/done/apply-immigration-health-surcharge-refund" target="_blank">What did you think of
+        this service? (opens in new tab)</a> This will take 30 seconds to complete.</p>
 
-    </div>
   </div>
+</div>
 
 {% endblock %}
