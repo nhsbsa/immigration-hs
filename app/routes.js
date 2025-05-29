@@ -5993,6 +5993,26 @@ router.post('/yes-contract-add-changed', function(req,res){
 
 })
 
+router.post('/pay-checkbox-mvp-no-js-extra', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp-no-js/ideation/extra-information-gaps")
+    } else {
+        response.redirect("/v20-mvp-no-js/ideation/april-cya-extra")
+    }
+})
+
+router.post('/pay-checkbox-mvp-no-js-cya', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20-mvp-no-js/ideation/check-extra-info-gaps")
+    } else {
+        response.redirect("/v20-mvp-no-js/ideation/april-cya-extra-cya")
+    }
+})
+
 
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
