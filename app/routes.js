@@ -4422,7 +4422,7 @@ router.post('/non-nhs-path-another-job-v20', function(req,res){
         res.redirect('/v20/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v20/ideation/contract-upload-task')
+        res.redirect('/v20/ideation/task-list')
     }
 
 })
