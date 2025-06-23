@@ -6049,6 +6049,16 @@ router.post('/extra-info-evidence-filter', function(req,res){
 
 })
 
+router.post('/pay-checkbox-mega', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20/mega-task-list/no-payslip")
+    } else {
+        response.redirect("/v20/mega-task-list/task-list-2")
+    }
+})
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 
