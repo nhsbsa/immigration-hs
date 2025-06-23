@@ -1,0 +1,633 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+           John Smith
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 January 1978
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="dob">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            QQ 12 34 56 C
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="nino">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Immigration health surcharge number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            IHS123456789
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="ihs-number">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            UK telephone <br>number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            07700 900457
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="telephone-number">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              s.philips@nhs.net
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Dependant details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <!--<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Dependants
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>-->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Dependant 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Michelle Philips</p>
+            <p>15 January 2000</p>
+            <p>IHS123456789</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="dependant-details">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Dependant 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>William Philips</p>
+                <p>7 June 2003</p>
+                <p>IHS123456789</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="dependant-details">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+
+      
+
+      <h2 class="govuk-heading-m">Application details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Claim starting date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>31 March 2020</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="claim-dates-new-edit">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reminder email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Yes</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/v20/subscription-question">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Employment details</h2>
+
+        <!-- <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Employer 1
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Employer name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  NHS Business Services Authority
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="non-nhs-path-change">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                </dd>
+              </div>
+              
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Employer 2
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Employer name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Boots
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="non-nhs-path-change">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Job title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Senior pharmacist Opt 1
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="job-title-change">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Job setting
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 Hospital
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="job-setting-change">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div> -->
+
+        <h3 class="govuk-heading-s">Employer 1</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Employer name
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <p>NHS Business Services Authority</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="non-nhs-path-change">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Job title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+            <p>Pharmacy assistant</p>
+           
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="job-title-change">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        </dl>
+
+
+        <h3 class="govuk-heading-s">Employer 2</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Employer name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>Boots</p>
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="non-nhs-path-change">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Job title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              
+              <p>Senior pharmacist Opt 1</p>
+             
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="job-title-change">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Job setting
+            </dt>
+            <dd class="govuk-summary-list__value">
+             
+              <p>Hospital</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="job-setting-change">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Attachment details</h2>
+      <h3 class="govuk-heading-s">Contracts uploaded</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Contract
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Contract.pdf</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/v20/ideation/contract-upload-task">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        
+      </dl>
+      
+      <h3 class="govuk-heading-s">Payslips uploaded</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              April 2020
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>April-2020.jpg</p>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/v20/ideation/april-cya-page">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              May 2020
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>May-2020.jpg</p>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              June 2020
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>June-2020.jpg</p>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              July 2020
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>July-2020.jpg</p>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              August 2020
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>August-2020.jpg</p>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              September 2020
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>September-2020.jpg</p>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              October 2020
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>October-2020.jpg</p>
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        
+      </dl>
+
+      
+      <h3 class="govuk-heading-s">Extra information added</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Extra information
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['with-hint']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/v20/ideation/extra-information">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Evidence
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>employer-letter.pdf</p>
+          
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/v20/ideation/check-extra-info">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+
+     
+
+
+      <form action="check-your-answers2" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+
+  <style>
+
+.govuk-summary-card {
+    margin-bottom: 20px;
+    border: 1px solid #b1b4b6;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.govuk-template {
+    background-color: #f3f2f1;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+:root {
+    --govuk-frontend-version: "5.4.0";
+    --govuk-frontend-breakpoint-mobile: 20rem;
+    --govuk-frontend-breakpoint-tablet: 40.0625rem;
+    --govuk-frontend-breakpoint-desktop: 48.0625rem;
+}
+
+.govuk-summary-card__title-wrapper {
+    padding: 15px;
+    border-bottom: 1px solid transparent;
+    background-color: #f3f2f1;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.govuk-template {
+    background-color: #f3f2f1;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+:root {
+    --govuk-frontend-version: "5.4.0";
+    --govuk-frontend-breakpoint-mobile: 20rem;
+    --govuk-frontend-breakpoint-tablet: 40.0625rem;
+    --govuk-frontend-breakpoint-desktop: 48.0625rem;
+}
+
+.govuk-summary-card__content {
+    padding: 15px 15px 0;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.govuk-template {
+    background-color: #f3f2f1;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+:root {
+    --govuk-frontend-version: "5.4.0";
+    --govuk-frontend-breakpoint-mobile: 20rem;
+    --govuk-frontend-breakpoint-tablet: 40.0625rem;
+    --govuk-frontend-breakpoint-desktop: 48.0625rem;
+}
+
+.govuk-summary-card__title {
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    margin: 5px 20px 10px 0;
+}
+
+.govuk-summary-list__key {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+  </style>
+{% endblock %}

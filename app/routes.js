@@ -6014,6 +6014,41 @@ router.post('/pay-checkbox-mvp-no-js-cya', function(request, response) {
 })
 
 
+
+router.post('/contract-filter', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-filters/ideation/contract-upload-task')
+    }
+    else {
+        res.redirect('/v20-filters/ideation/extra-info-filter')
+    }
+
+})
+
+router.post('/extra-info-filter', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-filters/ideation/extra-information')
+    }
+    else {
+        res.redirect('/v20-filters/check-your-answers-nhs-path')
+    }
+
+})
+
+
+router.post('/extra-info-evidence-filter', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-filters/ideation/extra-information-file-split')
+    }
+    else {
+        res.redirect('/v20-filters/check-your-answers-nhs-path')
+    }
+
+})
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 

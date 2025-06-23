@@ -1,0 +1,86 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Visa type question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20/ihs-question">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/doug-ihs-tier2-question-v20" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Eligibility check</span>
+        <fieldset class="govuk-fieldset" aria-describedby="ihs-question-conditional-hint-v20">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">What type of visa does the applicant hold?</h1>
+          </legend>
+
+
+          <div id="applicant-visa-type-hint-description" class="govuk-hint">
+
+            <p class="govuk-body govuk-hint">To find out what type of visa the applicant
+              holds, check the:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-hint">
+              <li>entry clearance documentation</li>
+              <li>biometric residence permit</li>
+              <li>the sticker (vignette) inside their passport</li>
+            </ul>
+
+          
+          </div>
+
+          <br>
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Select a visa
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live" name="doug-ihs-tier2-question-v20" type="radio"
+                value="tier2">
+              <label class="govuk-label govuk-radios__label" for="visa-type">
+                Skilled Worker visa or Tier 2 (General) visa
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="doug-ihs-tier2-question-v20"
+                type="radio" value="tier5">
+              <label class="govuk-label govuk-radios__label" for="visa-type">
+                Tier 5 Government Authorised Exchange Medical Training Initiative (GAE MTI) or Tier 5 Medical Training
+                Initiative (MTI)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-3" name="doug-ihs-tier2-question-v20"
+                type="radio" value="other">
+              <label class="govuk-label govuk-radios__label" for="visa-type">
+                Other visa
+              </label>
+            </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

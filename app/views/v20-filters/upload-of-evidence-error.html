@@ -1,0 +1,89 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Upload Evidence
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20/non-nhs-path-add">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/v20/payslips-or-contract" method="post">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+    
+            <ul class="govuk-list govuk-error-summary__list">
+    
+              <li>
+    
+                <a href="#documents">Select the type of evidence you are going to upload</a>
+    
+              </li>
+    
+            </ul>
+          </div>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--l" for="file-upload-1">
+                    <h1 class="govuk-fieldset__heading">
+                        <span class="govuk-caption-l">Application</span>
+                        What type of evidence can the applicant provide?
+                    </h1>
+                </label>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              The applicant must provide payslips or a contract of employment as evidence.
+            </div>
+            <div class="govuk-form-group govuk-form-group--error">
+              <span id="documents-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select the type of evidence you are going to upload
+              </span>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option.
+            </div>
+          
+            
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in" name="payslips-or-contract" type="radio" value="payslips" aria-describedby="sign-in-item-hint">
+                <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Payslips
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sign-in-2" name="payslips-or-contract" type="radio" value="contract" aria-describedby="sign-in-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                  Contract of employment
+                </label>
+              </div>
+            </div>
+          </div>
+
+          </fieldset>    
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
