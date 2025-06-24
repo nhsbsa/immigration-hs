@@ -6059,6 +6059,49 @@ router.post('/pay-checkbox-mega', function(request, response) {
     }
 })
 
+router.post('/contract-filter-mega', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/mega-task-list/mega-contract')
+    }
+    else {
+        res.redirect('/v20/mega-task-list/task-list-9')
+    }
+
+})
+
+router.post('/extra-info-filter-mega', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/mega-task-list/mega-extra')
+    }
+    else {
+        res.redirect('/v20/mega-task-list/task-list-10')
+    }
+
+})
+
+router.post('/contract-filter-mega-gap', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/mega-task-list/mega-contract-gap')
+    }
+    else {
+        res.redirect('/v20/mega-task-list/task-list-9-gap')
+    }
+
+})
+
+router.post('/extra-info-filter-mega-gap', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/mega-task-list/mega-extra-gap')
+    }
+    else {
+        res.redirect('/v20/mega-task-list/task-list-10-gap')
+    }
+
+})
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 
