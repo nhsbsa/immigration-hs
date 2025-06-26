@@ -44,10 +44,28 @@ IHS question
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/check-start-date" method="post">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+      
+              <ul class="govuk-list govuk-error-summary__list"> 
+                <li>
+                  <a href="#waste">Confirm the start date is correct or change the start date</a>
+                </li>
+               
+              </ul>
+            </div>
+          </div>
       <div class="govuk-form-group govuk-form-group--error">
         <span class="govuk-caption-l">Application</span>
         <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
 
+
+
+          
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
             <h1 class="govuk-fieldset__heading">Check the start date</h1>
         </legend>
