@@ -27,7 +27,7 @@ Upload evidence
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form class="form" action="" method="post">
+    <form class="form" action="/v20/extra-information" method="post">
 
       <div class="govuk-error-summary" data-module="govuk-error-summary">
         <div role="alert">
@@ -37,7 +37,7 @@ Upload evidence
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                Select a month to upload payslips for that month
+                You must complete all sections before continuing. Select a month to upload payslips for that month
               </li>
              
             </ul>
@@ -51,7 +51,7 @@ Upload evidence
         <label class="govuk-label govuk-label--l" for="file-upload-1">
           <h1 class="govuk-fieldset__heading">
             <span class="govuk-caption-l">Application</span>
-            Upload payslips
+            Upload evidence
           </h1>
         </label>
 
@@ -64,6 +64,7 @@ Upload evidence
           </h2>
         </div>
         <div class="govuk-notification-banner__content">
+          
           <p>Based on the starting date you entered for this claim, we need to see payslips covering the full period from  <strong>20 April 2020</strong> to<strong> 19 October 2020</strong>.</p>
         </div>
       </div>
@@ -98,8 +99,10 @@ Upload evidence
         </ul> -->
 
 
-        <h2 class="govuk-heading-m">Upload payslips covering every day in this claim period</h2>
+        
+      
 
+        <h2 class="govuk-heading-s">1. Payslips</h2>
         <p>Select each month to upload payslips for that month <strong>or</strong> to tell us you do not have payslips for that time. You can explain any gaps in the payslips later.
         </p>
 
@@ -145,6 +148,7 @@ Upload evidence
 
       <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
       <ul class="govuk-task-list">
+        
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="april" aria-describedby="application-details-1-status">
@@ -159,7 +163,7 @@ Upload evidence
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="may" aria-describedby="application-details-2-status">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="application-details-2-status">
               May 2020
             </a>
           </div>
@@ -231,12 +235,55 @@ Upload evidence
         </li>
       </ul>
 
+
       <br>
+
+      <h2 class="govuk-heading-s">2. Job contract </h2>
+
+      <p>You must complete the payslip section before you can upload a job contract.</p>
+
+
+        <!-- <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="" aria-describedby="application-details-1-status">
+                Upload your contract
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="application-details-2-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                Not yet started
+              </strong>
+            </div>
+          </li>
+          
+        </ul> -->
+   
+
+      <h2 class="govuk-heading-s">3. Extra information </h2>
+      <p> You must complete the job contract section before you can add any other extra information to support your claim.</p>
+
+      <!-- <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="" aria-describedby="application-details-1-status">
+              Upload extra information to support your claim
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="application-details-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              Not yet started
+            </strong>
+          </div>
+        </li>
+        
+      </ul> -->
+      
 
 
 
       <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <a href="task-list-error" class="govuk-button" data-module="govuk-button">Continue</a>
 
     </form>
 
