@@ -1,16 +1,14 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-Extra information
+Upload job contract
 {% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
-        new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
@@ -18,14 +16,29 @@ Extra information
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="check-extra-info-gaps" method="post">
-      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="2000">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IHS Upload Payslips</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/pay-checkbox" method="post">
         <div class="govuk-form-group">
+
+          
           <h1 class="govuk-heading-l">
             <span class="govuk-caption-l">Application</span>
-            Add extra information for this application
+            Add extra information for this application 
           </h1>
 
           <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
@@ -58,9 +71,6 @@ Extra information
 
             </div>
           </div>
-
-          
-
           <p>Add extra information to explain any gaps in the applicant's employment or evidence.</p>
 
 
@@ -86,11 +96,13 @@ Extra information
           <p>You can also include other details that will help us process this application.</p>
 
 
-    
 
 
 
-          <p>For example, if the applicant's name has changed, you should upload evidence that the name in the application and the name on the payslips and contract uploaded are the same person. This could be a marriage certificate or a letter from the applicant's employer confirming that they use a different name at work.
+
+          <p>For example, if the applicant's name has changed, you should upload evidence that the name in the
+            application and the name on the payslips and contract uploaded are the same person. This could be a marriage
+            certificate or a letter from the applicant's employer confirming that they use a different name at work.
           </p>
 
 
@@ -126,11 +138,27 @@ Extra information
           <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
           <li>be smaller than 2MB each</li>
         </ul>
-        <!--<div class="govuk-grid-column-two-thirds">-->
+  
+          
+
+          <!-- Section for uploaded files -->
+
+          <div id="content-to-hide">
+          <div id="uploaded-files-container" class="hidden">
+            <label class="govuk-label govuk-label--m" for="documents">
+              Files uploaded
+            </label>
+            <p>
+              Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.
+            </p>
+            <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
+          </div>
+
+          <!-- File upload input -->
           <div id="file-upload-container" class="moj-multi-file-upload">
             <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
            
-            <p>This is optional but if you do not upload evidence to support this extra information, we may put this claim on hold and ask the applicant to send us extra evidence after you apply.</p>
+            
             <input
               class="govuk-file-upload moj-multi-file-upload__input"
               id="documents"
@@ -141,32 +169,113 @@ Extra information
           </div>
 
         </div>
-        <a href="task-list-10-gap" class="govuk-button" data-module="govuk-button">Continue</a>
-    </form>
-  </div>
-</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.form');
-    const textarea = document.querySelector('#with-hint');
-    
-    form.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent default form submission
-      
-      const textValue = textarea.value.trim(); // Trim to check for empty input
-      
-      if (textValue === '') {
-        // Redirect to Page A alternative if the textarea is empty
-        window.location.href = '/v20-mvp/check-your-answers-gaps';
+         
+
+          <!-- Checkbox -->
+          
+
+          <a href="task-list-9" class="govuk-button" data-module="govuk-button">Continue</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    function toggleContent() {
+      var checkbox = document.getElementById('toggle-checkbox');
+      var contentToHide = document.getElementById('content-to-hide');
+      var contentToShow = document.getElementById('content-to-show');
+
+      if (checkbox.checked) {
+        contentToHide.classList.add('hidden');
+        contentToShow.classList.remove('hidden');
       } else {
-        // Store text in localStorage
-        localStorage.setItem('extraInfo', textValue);
-        // Redirect to Page B
-        window.location.href = 'check-extra-info-gaps';
+        contentToHide.classList.remove('hidden');
+        contentToShow.classList.add('hidden');
+      }
+    }
+
+    // Initialize the state on page load based on the checkbox state
+    document.addEventListener('DOMContentLoaded', function () {
+      toggleContent();
+    });
+  </script>
+  <script>
+    // Toggles content visibility when checkbox is clicked
+    
+
+    // Handles file upload functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const fileInput = document.getElementById('documents');
+      const uploadedFilesContainer = document.getElementById('uploaded-files-container');
+      const fileListContainer = document.getElementById('uploaded-files');
+
+      fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+          uploadedFilesContainer.classList.remove('hidden'); // Show the uploaded files section
+        } else {
+          uploadedFilesContainer.classList.add('hidden'); // Hide if no files
+        }
+
+        fileListContainer.innerHTML = ''; // Clear the list
+
+        // Iterate through the selected files
+        Array.from(fileInput.files).forEach((file, index) => {
+          const fileRow = document.createElement('div');
+          fileRow.className = 'govuk-summary-list__row moj-multi-file-upload__row';
+
+          // File details
+          const fileDetails = `
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message">
+              <span class="moj-multi-file-upload__success">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                  <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
+                </svg>${file.name} successfully uploaded
+              </span>
+            </dd>
+          `;
+
+          // Actions (Preview and Delete)
+          const actions = `
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="/public/images/employer-letter.pdf" target="_blank" style="font-size: 16px;">Preview</a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="april-delete"  style="font-size: 16px;">Delete</a>
+                </li>
+              </ul>
+            </dd>
+          `;
+
+          fileRow.innerHTML = fileDetails + actions;
+          fileListContainer.appendChild(fileRow);
+
+          // Add event listener for delete functionality
+          fileRow.querySelector('[data-index]').addEventListener('click', function () {
+            removeFile(index);
+          });
+        });
+      });
+
+      // Remove file from input and update the display
+      function removeFile(index) {
+        const dataTransfer = new DataTransfer();
+        Array.from(fileInput.files).forEach((file, i) => {
+          if (i !== index) {
+            dataTransfer.items.add(file);
+          }
+        });
+
+        fileInput.files = dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change')); // Trigger the change event to update the UI
       }
     });
-  });
-</script>
+  </script>
+</body>
 
+</html>
 {% endblock %}

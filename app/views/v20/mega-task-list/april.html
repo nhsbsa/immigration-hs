@@ -8,7 +8,8 @@ IHS question
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
@@ -59,39 +60,36 @@ IHS question
             <li>be smaller than 2MB each</li>
             <li><strong>not</strong> be password protected</li>
           </ul>
-  
-          
+
+
 
           <!-- Section for uploaded files -->
 
           <div id="content-to-hide">
-          <div id="uploaded-files-container" class="hidden">
-            <label class="govuk-label govuk-label--m" for="documents">
-              Files uploaded
-            </label>
-            <p>
-              Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.
-            </p>
-            <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
-          </div>
-
-          <!-- File upload input -->
-          <div id="file-upload-container" class="moj-multi-file-upload">
-            <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
-            <div class="govuk-inset-text">
-              If you cannot upload payslips for this month, for example because the applicant was paid in arrears, select 'I do not have payslips for this month'. You can explain this gap later.                  
+            <div id="uploaded-files-container" class="hidden">
+              <label class="govuk-label govuk-label--m" for="documents">
+                Files uploaded
+              </label>
+              <p>
+                Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select
+                'delete' to remove files from this application.
+              </p>
+              <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
             </div>
-            
-            <input
-              class="govuk-file-upload moj-multi-file-upload__input"
-              id="documents"
-              name="documents"
-              type="file"
-              multiple
-            />
-          </div>
 
-        </div>
+            <!-- File upload input -->
+            <div id="file-upload-container" class="moj-multi-file-upload">
+              <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
+              <div class="govuk-inset-text">
+                If you cannot upload payslips for this month, for example because the applicant was paid in arrears,
+                select 'I do not have payslips for this month'. You can explain this gap later.
+              </div>
+
+              <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file"
+                multiple />
+            </div>
+
+          </div>
 
           <!-- Warning text for missing payslips -->
           <div id="content-to-show" class="hidden">
@@ -106,14 +104,8 @@ IHS question
 
           <!-- Checkbox -->
           <div class="govuk-checkboxes__item">
-            <input
-              class="govuk-checkboxes__input"
-              id="toggle-checkbox"
-              name="waste"
-              type="checkbox"
-              onClick="toggleContent()"
-              value="checked"
-            />
+            <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
+              onClick="toggleContent()" value="checked" />
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">
               I do not have payslips for this month
             </label>
@@ -128,7 +120,7 @@ IHS question
       </form>
     </div>
   </div>
-  
+
   <script>
     function toggleContent() {
       var checkbox = document.getElementById('toggle-checkbox');
@@ -151,7 +143,7 @@ IHS question
   </script>
   <script>
     // Toggles content visibility when checkbox is clicked
-    
+
 
     // Handles file upload functionality
     document.addEventListener('DOMContentLoaded', function () {
