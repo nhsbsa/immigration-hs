@@ -4662,10 +4662,10 @@ router.post('/yes-payslip-add-cya', function(req,res){
 router.post('/yes-contract-add', function(req,res){
     var contacted = req.session.data['contracts-add-3-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/ideation/contract-upload-task-no-js')
+        res.redirect('/v20/ideation/contract-upload-task')
     }
     else {
-        res.redirect('/v20/ideation/task-list-no-js')
+        res.redirect('/v20/ideation/task-list')
     }
 
 })

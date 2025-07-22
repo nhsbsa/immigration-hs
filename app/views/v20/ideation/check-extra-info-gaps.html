@@ -25,8 +25,35 @@ Add another contract
     <form class="form" action="/contracts-add-3-v20-ideation-gaps" method="post">
       <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Application</span>
-        More information
+        Check your extra information
       </h1>
+
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Gaps in payslips
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p>
+          <dl class="govuk-summary-list" style="margin-top: -15px; margin-bottom: -10px;">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                April 2020
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="april-add-ur">Upload payslips for April 2020</a>
+              </dd>
+            </div>
+
+          </dl>
+
+
+
+          </p>
+        </div>
+      </div>
 
 
       <!-- <h2 class="govuk-heading-m">Payslips uploaded</h2>
@@ -111,46 +138,21 @@ Add another contract
               </div>
             </dl> -->
 
-      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-        data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Gaps in payslips
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <p>
-          <dl class="govuk-summary-list" style="margin-top: -15px; margin-bottom: -10px;">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                April 2020
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <a href="april-add-ur">Upload payslips for April 2020</a>
-              </dd>
-            </div>
-
-          </dl>
-
-
-
-          </p>
-        </div>
-      </div>
-
 
 
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            More information
+            Extra information
           </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['with-hint']}}
+          <dd class="govuk-summary-list__value-1">
+    
+
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="extra-information-gaps">Change<span class="govuk-visually-hidden"> name</span></a>
+            <a class="govuk-link" href="extra-information#with-hint">Change<span class="govuk-visually-hidden">
+                name</span></a>
           </dd>
         </div>
 
@@ -167,7 +169,7 @@ Add another contract
             File 1
           </dt>
           <dd class="govuk-summary-list__value">
-          employer-letter.pdf
+            employer-letter.pdf
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -177,7 +179,7 @@ Add another contract
                 <a class="govuk-link" href="/public/images/employer-letter.pdf" style="font-size: 16px;" target="_blank">Preview<span class="govuk-visually-hidden"> contact details</span></a>
               </li>
               <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="check-extra-info-delete-gaps"  style="font-size: 16px;">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                <a class="govuk-link" href="check-extra-info-delete"  style="font-size: 16px;">Delete<span class="govuk-visually-hidden"> contact details</span></a>
               </li>
             </ul>
 
@@ -199,7 +201,7 @@ Add another contract
   <fieldset class="govuk-fieldset" aria-describedby="attachments-add-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-      Do you want to upload any more evidence?
+      Do you want to add any other extra information?
 
     </legend>
     <!-- <span id="attachments-add-conditional-hint" class="govuk-hint">
@@ -232,5 +234,21 @@ Add another contract
 </form>
 </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const extraInfoContainer = document.querySelector('.govuk-summary-list__value-1');
+    const extraInfo = localStorage.getItem('extraInfo');
+    
+    if (extraInfo) {
+      // Safely insert the retrieved text into the container
+      extraInfoContainer.textContent = extraInfo;
+    } else {
+      // Provide a fallback in case there's no stored value
+      extraInfoContainer.textContent = 'No extra information provided.';
+    }
+  });
+</script>
+
 
 {% endblock %}

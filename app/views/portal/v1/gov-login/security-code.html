@@ -1,0 +1,57 @@
+{% extends "layout-portal-signed-out.html" %}
+
+{% block pageTitle %}
+Enter your password
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  
+</style>
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+        <form action="enter-auth-code" method="post">
+            <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="auth-code">
+                        Enter the 6-digit security code as you see it in your authenticator app
+                    </label>
+                </h1>
+              
+                <input class="govuk-input govuk-input--width-10" id="auth-code" name="auth-code" type="number">
+            </div>
+
+			<a href="/portal/v1/dashboard" type="submit" class="govuk-button" data-module="govuk-button" data-govuk-button-init="">
+				Continue
+      </a>
+		</form>
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    I do not have access to the authenticator app
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                You can securely <a href="#">change how you get security codes</a>.
+            </div>
+        </details>
+    </div>
+
+{% endblock %}

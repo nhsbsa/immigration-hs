@@ -1,7 +1,7 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-Upload job contract
+Upload evidence
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,38 +12,26 @@ Upload job contract
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
-<html lang="en">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IHS Upload Payslips</title>
-  <style>
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
+    <form class="form" action="/v20/ideation/contract-cya" method="post" enctype="multipart/form-data">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--l" for="file-upload-1">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Upload job contract (optional)
+          </h1>
+        </label>
 
-<body>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox" method="post">
-        <div class="govuk-form-group">
-          <span class="govuk-caption-l">Application</span>
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">Upload job contract (optional)
-            </h1>
-          </legend>
-
-                              <P>This is optional but if you can upload a contract, this makes it easier for us to confirm the applicant is eligible.</P>
+        <span id="file-upload-1-hint" class="govuk-hint">
+                    <P>This is optional but if you can upload a contract, this makes it easier for us to confirm the applicant is eligible.</P>
 
           <p>If the applicant has more than one health and care job, upload copies of their contracts for each of their jobs.</p>
-         
+
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
@@ -51,6 +39,7 @@ Upload job contract
               We cannot accept conditional contracts or contracts that could change.
             </strong>
           </div>
+
           <p>Contracts should include the applicant's:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>name</li>
@@ -67,144 +56,41 @@ Upload job contract
             <li>be smaller than 2MB each</li>
             <li><strong>not</strong> be password protected</li>
           </ul>
-  
-          
+        </span>
+      </div>
 
-          <!-- Section for uploaded files -->
+      <div class="govuk-form-group">
+        <label for="file-upload-1" class="govuk-label govuk-label--m">
+          <span class="label-text break-word">Upload file</span>
+        </label>
 
-          <div id="content-to-hide">
-          <div id="uploaded-files-container" class="hidden">
-            <label class="govuk-label govuk-label--m" for="documents">
-              Files uploaded
-            </label>
-            <p>
-              Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.
-            </p>
-            <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
-          </div>
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
 
-          <!-- File upload input -->
-          <div id="file-upload-container" class="moj-multi-file-upload">
-            <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
-           
-            
-            <input
-              class="govuk-file-upload moj-multi-file-upload__input"
-              id="documents"
-              name="documents"
-              type="file"
-              multiple
-            />
-          </div>
+      <p id="upload-more-files-message" style="display: none;">If you need to upload more contracts, select continue.</p>
 
-        </div>
 
-         
+      <!-- Revealed content -->
 
-          <!-- Checkbox -->
-          
+      <button class="govuk-button" data-module="govuk-button" type="submit">Continue</button>
+    </form>
 
-          <a href="extra-information" class="govuk-button" data-module="govuk-button">Continue</a>
-        </div>
-      </form>
-    </div>
   </div>
-  
-  <script>
-    function toggleContent() {
-      var checkbox = document.getElementById('toggle-checkbox');
-      var contentToHide = document.getElementById('content-to-hide');
-      var contentToShow = document.getElementById('content-to-show');
+</div>
 
-      if (checkbox.checked) {
-        contentToHide.classList.add('hidden');
-        contentToShow.classList.remove('hidden');
+<script>
+  // JavaScript to handle file selection
+  document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('file-upload-1');
+    const message = document.getElementById('upload-more-files-message');
+
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        message.style.display = 'block'; // Show the message
       } else {
-        contentToHide.classList.remove('hidden');
-        contentToShow.classList.add('hidden');
-      }
-    }
-
-    // Initialize the state on page load based on the checkbox state
-    document.addEventListener('DOMContentLoaded', function () {
-      toggleContent();
-    });
-  </script>
-  <script>
-    // Toggles content visibility when checkbox is clicked
-    
-
-    // Handles file upload functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      const fileInput = document.getElementById('documents');
-      const uploadedFilesContainer = document.getElementById('uploaded-files-container');
-      const fileListContainer = document.getElementById('uploaded-files');
-
-      fileInput.addEventListener('change', function () {
-        if (fileInput.files.length > 0) {
-          uploadedFilesContainer.classList.remove('hidden'); // Show the uploaded files section
-        } else {
-          uploadedFilesContainer.classList.add('hidden'); // Hide if no files
-        }
-
-        fileListContainer.innerHTML = ''; // Clear the list
-
-        // Iterate through the selected files
-        Array.from(fileInput.files).forEach((file, index) => {
-          const fileRow = document.createElement('div');
-          fileRow.className = 'govuk-summary-list__row moj-multi-file-upload__row';
-
-          // File details
-          const fileDetails = `
-            <dd class="govuk-summary-list__value moj-multi-file-upload__message">
-              <span class="moj-multi-file-upload__success">
-                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false"
-                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-                  <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
-                </svg>${file.name} successfully uploaded
-              </span>
-            </dd>
-          `;
-
-          // Actions (Preview and Delete)
-          const actions = `
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="/public/images/contract.pdf" target="_blank" style="font-size: 16px;">Preview</a>
-                </li>
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="contract-delete"  style="font-size: 16px;">Delete</a>
-                </li>
-              </ul>
-            </dd>
-          `;
-
-          fileRow.innerHTML = fileDetails + actions;
-          fileListContainer.appendChild(fileRow);
-
-          // Add event listener for delete functionality
-          fileRow.querySelector('[data-index]').addEventListener('click', function () {
-            removeFile(index);
-          });
-        });
-      });
-
-      // Remove file from input and update the display
-      function removeFile(index) {
-        const dataTransfer = new DataTransfer();
-        Array.from(fileInput.files).forEach((file, i) => {
-          if (i !== index) {
-            dataTransfer.items.add(file);
-          }
-        });
-
-        fileInput.files = dataTransfer.files;
-        fileInput.dispatchEvent(new Event('change')); // Trigger the change event to update the UI
+        message.style.display = 'none'; // Hide the message if no file selected
       }
     });
-  </script>
-</body>
-
-</html>
+  });
+</script>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-Add another contract
+Check your extra information
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,8 +25,7 @@ Add another contract
     <form class="form" action="/contracts-add-3-v20-ideation" method="post">
       <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Application</span>
-        More information
-      </h1>
+Check your extra information      </h1>
 
 
       <!-- <h2 class="govuk-heading-m">Payslips uploaded</h2>
@@ -117,10 +116,10 @@ Add another contract
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            More information
+            Extra information
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['with-hint']}}
+            I was off sick in April 2020.
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="extra-information">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -172,7 +171,7 @@ Add another contract
   <fieldset class="govuk-fieldset" aria-describedby="attachments-add-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-      Do you want to upload any more evidence?
+Do you want to add any other extra information?
 
     </legend>
     <!-- <span id="attachments-add-conditional-hint" class="govuk-hint">

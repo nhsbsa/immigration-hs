@@ -45,9 +45,10 @@ Extra information
                     April 2020
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    <a href="april-add-ur">Upload payslips for April 2020</a>
+                    <a href="april-add-extra">Upload payslips for April 2020</a>
                   </dd>
                 </div>
+               
 
               </dl>
 
@@ -127,19 +128,14 @@ Extra information
           <li>be smaller than 2MB each</li>
         </ul>
         <!--<div class="govuk-grid-column-two-thirds">-->
-          <div id="file-upload-container" class="moj-multi-file-upload">
-            <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
-           
-            <p>This is optional but if you do not upload evidence to support this extra information, we may put this claim on hold and ask the applicant to send us extra evidence after you apply.</p>
-            <input
-              class="govuk-file-upload moj-multi-file-upload__input"
-              id="documents"
-              name="documents"
-              type="file"
-              multiple
-            />
-          </div>
+        <div class="moj-multi-file-upload">
+              
+          <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="documents">Upload a file</label>
+                        <p>This is optional but if you do not upload evidence to support this extra information, we may put this claim on hold and ask the applicant to send us extra evidence after you apply.</p>
 
+            <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+          </div>
         </div>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
