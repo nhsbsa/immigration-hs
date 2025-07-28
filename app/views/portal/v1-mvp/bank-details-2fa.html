@@ -1,0 +1,83 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+Update bank details
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+  
+      <h1 class="govuk-heading-l">Check your phone</h1>
+
+      {% if data['send-again'] == 'true' %}
+        <div class="govuk-inset-text">
+          <span class="govuk-u-visually-hidden">Information: </span>
+          <p>New code sent.</p>
+        </div>
+      {% endif %}
+
+      <p>We've sent a text message with a security code to <b>*******6920</b>.
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Not received a text message?
+          </span>
+        </summary>
+        {% if data['request-new'] == 'max' %}
+        <div class="govuk-details__text">
+          <p>Text messages sometimes take a few minutes to arrive. You cannot request a new code as you've reached the maximum number of codes you can receive.</p>
+        </div>
+        {% else %}
+        <div class="govuk-details__text">
+          <p>Text messages sometimes take a few minutes to arrive. If you do not receive the text message, you can <a href="phone-number-2fa?send-again=true&request-new=max">request a new one</a>.</p>
+        </div>
+        {% endif %}
+      </details>
+
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="sign-in-username">
+            Security code
+          </label>
+          <div class="govuk-hint" id="example-with-hint-text-hint">
+            This is a 5 digit code
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="security-code" name="security-code" type="text">
+      </div>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I cannot access my phone
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You cannot change some details without entering a security code. Try again later when you can access your phone.</p>
+
+          <p>If you no longer use this phone number, you can change it in your personal details or contact us by:</p>
+          <ul class="govuk-list">
+            <li>Telephone: 0300 330 0521</li>
+            <li>Text relay service: 18001 0300 330 0521</li>
+          </ul>
+      </details>
+
+      <a class="govuk-button" href="bank-details-changed">Save and continue</a><br>
+      
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Missing payslip uploaded</h1>
+        <div class="govuk-panel__body">
+         We will now assess your application
+        </div>
+      </div>
+
+      
+      <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <p>You can download the details of your application and use them for future applications.</p>
+      <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save application details as PDF
+      </button> -->
+
+      
+    <style>
+      .govuk-frontend-supported .gem-c-print-link {
+        display: block;
+      }
+
+      
+
+      .govuk-\!-margin-bottom-8 {
+        margin-bottom: 30px !important;
+      }
+
+      
+
+      .gem-c-layout-for-public {
+        font-family: "GDS Transport", arial, sans-serif;
+      }
+
+      .govuk-template {
+        background-color: #f3f2f1;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      :root {
+        --govuk-frontend-version: "5.8.0";
+        --govuk-frontend-breakpoint-mobile: 20rem;
+        --govuk-frontend-breakpoint-tablet: 40.0625rem;
+        --govuk-frontend-breakpoint-desktop: 48.0625rem;
+      }
+
+      .gem-c-print-link__button {
+        border: 1px solid #505a5f;
+        color: #1d70b8;
+        cursor: pointer;
+        margin: 0;
+      }
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+
+        .gem-c-print-link__link,
+        .gem-c-print-link__button {
+          background-image: url(/public/images/print.png);
+        }
+      }
+
+      .gem-c-print-link__link,
+      .gem-c-print-link__button {
+        background: url(/public/images/print.png) no-repeat 10px 50%;
+        background-size: 16px 18px;
+        padding: 10px 10px 10px 36px;
+        text-decoration: none;
+      }
+
+      .govuk-body-s {
+        color: #0b0c0c;
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.25;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      .govuk-link {
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-decoration: underline;
+        text-decoration-thickness: max(1px, .0625rem);
+        text-underline-offset: .1578em;
+      }
+
+      
+
+      .gem-c-layout-for-public {
+        font-family: "GDS Transport", arial, sans-serif;
+      }
+
+      .govuk-template {
+        background-color: #f3f2f1;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      :root {
+        --govuk-frontend-version: "5.8.0";
+        --govuk-frontend-breakpoint-mobile: 20rem;
+        --govuk-frontend-breakpoint-tablet: 40.0625rem;
+        --govuk-frontend-breakpoint-desktop: 48.0625rem;
+      }
+    </style>
+
+    
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>We'll email you in the next 6 weeks to let you know if your claim is successful or if you need to do anything else.</p>
+        <p>If your claim is successful, we'll tell you when to expect a payment and where the money will be sent.</p>
+      
+      <!--
+      <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
+      -->
+    <a href="dashboard" class="govuk-button">Go back to your account</a>
+    
+
+    </div>
+  </div>
+
+{% endblock %}

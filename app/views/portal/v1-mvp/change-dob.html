@@ -1,0 +1,69 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+        
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="govuk-fieldset__legend">
+                <h1 class="govuk-heading-l">What is your date of birth?</h1>
+              </legend>
+
+              <div class="govuk-hint" id="example-hint">
+                For example, 11 7 2000
+              </div>
+
+              <div class="govuk-date-input" id="example">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="example-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric" value="1">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="example-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric"value="09">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="example-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric"value="1980">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+        <a class="govuk-button" href="dob-updated">Save and continue</a><br>
+
+    </div>
+
+  </div>
+{% endblock %}

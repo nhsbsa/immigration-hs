@@ -1,0 +1,43 @@
+{% extends "layout-portal-signed-out.html" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+    
+
+      <h1 class="govuk-heading-l">What is your UK mobile phone number?</h1>
+
+      <p>We will send you security codes by text message when you sign in to your account. You will need to have access to this phone every time you sign in.</p>
+
+      <div class="govuk-form-group">
+          <input class="govuk-input govuk-input--width-20" id="email-address" name="email-address" type="text">
+      </div>
+
+      <!--<div class="govuk-inset-text">
+        <span class="govuk-u-visually-hidden">Information: </span>
+        <p>We'll send a security code to this number when you sign in.</p>
+      </div>-->
+
+      <a class="govuk-button" href="full-name">Continue</a><br>
+
+    </div>
+
+  </div>
+{% endblock %}

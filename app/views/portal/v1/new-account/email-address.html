@@ -1,0 +1,41 @@
+{% extends "layout-portal-signed-out.html" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+       
+
+        <div class="govuk-form-group">
+				<h1 class="govuk-label-wrapper">
+					<label class="govuk-label govuk-label--l" for="email-login">
+						Enter your email address to sign in to your GOV.UK One Login
+					</label>
+				</h1>
+				<input class="govuk-input" id="email-login" name="email-login" type="email">
+			</div>
+        <a class="govuk-button" href="password">Continue</a><br>
+
+    </div>
+
+  </div>
+{% endblock %}

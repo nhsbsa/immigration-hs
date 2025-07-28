@@ -1,0 +1,95 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+Update bank details
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+   
+
+    <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Bank or building society account details
+              </h1>
+            </legend>
+
+            <div class="govuk-inset-text">
+          
+                <!-- Sentence removed after discussion with Kyna + SMEs on 28th October -->
+                <!-- {% if data['bank-details-complete'] == 'true' %}
+                <p>To guarantee we pay your next payment into your correct account, update your details at least 7 days before it's due.</p>
+                {% else %}
+                <p>To guarantee we pay your next payment into your correct account, add your details at least 7 days before it's due.</p>
+                {% endif %} -->
+
+                <p>Enter these carefully. If they're incorrect, we will not accept responsibility for delayed, missing, or incorrect payments.</p>
+            </div>
+
+            <div class="govuk-form-group" id="group-accountholder">
+              <label for="accountholder" class="govuk-label">Name on the account</label>
+
+              {% if data['prefilled'] == 'true' %}
+                <input class="govuk-input" id="accountholder" name="accountholder" value="Dave" />
+              {% else %}
+              <input class="govuk-input" id="accountholder" name="accountholder" value="Dave" />
+              {% endif %}
+            </div>
+
+            <div class="govuk-form-group" id="group-bankSortCode">
+              <label for="sortcode" class="govuk-label">Sort code</label>
+              <div class="govuk-hint" id="sort-code-hint">Must be 6 digits long</div>
+
+              {% if data['prefilled'] == 'true' %}
+                <input type="text" class="govuk-input govuk-input--width-10" id="sortcode" aria-describedby="sort-code-hint" name="sortcode" value="111545" />
+              {% else %}
+                <input type="text" class="govuk-input govuk-input--width-10" id="sortcode" aria-describedby="sort-code-hint" name="sortcode"  value="111545" />
+              {% endif %}
+            </div>
+
+            <div class="govuk-form-group" id="group-bankaccountNumber">
+              <label for="accountNumber" class="govuk-label">Account number</label>
+              <div class="govuk-hint" id="acc-number-hint">Must be between 6 and 8 digits long</div>
+
+              {% if data['prefilled'] == 'true' %}
+                <input type="text" class="govuk-input govuk-input--width-20" id="accountNumber" autocomplete="on" inputmode="numeric" aria-describedby="acc-number-hint" name="accountNumber" value="00000003" />
+              {% else %}
+                <input type="text" class="govuk-input govuk-input--width-20" id="accountNumber" autocomplete="on" inputmode="numeric" aria-describedby="acc-number-hint" name="accountNumber" value="00000003" />
+              {% endif %}
+            </div>
+
+            <div class="govuk-form-group" id="group-buildingSocietyNo">
+              <label for="buildingSocietyNo" class="govuk-label">Building society roll number (if you have one)</label>
+              <div class="govuk-hint" id="building-soc-hint">You can find it on your card, statement or passbook</div>
+
+              {% if data['prefilled'] == 'true' %}
+                <input type="text" pattern="\d*" class="govuk-input govuk-input--width-20" id="buildingSocietyNo" aria-describedby="building-soc-hint" name="buildingSocietyNo" value="" />
+              {% else %}
+                <input type="text" pattern="\d*" class="govuk-input govuk-input--width-20" id="buildingSocietyNo" aria-describedby="building-soc-hint" name="buildingSocietyNo" value="" />
+              {% endif %}
+            </div>
+
+            <div class="govuk-form-group">
+              <a class="govuk-button" href="bank-details-check">Continue</a>
+            
+            </div>
+          </fieldset>
+
+  </div>
+
+</div>
+{% endblock %}

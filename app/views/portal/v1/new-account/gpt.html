@@ -1,0 +1,134 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+ <a href="#" class="govuk-back-link">Sign out</a>
+
+  <h1 class="govuk-heading-xl">Your IHS Refund Dashboard</h1>
+
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Contents</h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#todo">To-do list</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#applications">Applications & payments</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#evidence">Evidence uploads</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#notifications">Notifications</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#personal">Personal details</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#messages">Messages</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#help">Help & guidance</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#security">Security settings</a>
+      </li>
+    </ul>
+
+    <!-- 1. To-do list -->
+    <div class="govuk-tabs__panel" id="todo">
+      <h2 class="govuk-heading-l">To-do list</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Upload your supporting evidence</li>
+        <li>Add your UK bank details</li>
+        <li>Review your personal information</li>
+      </ul>
+      <p class="govuk-body">Tasks update automatically based on your application progress.</p>
+    </div>
+
+    <!-- 2. Applications & Payments -->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="applications">
+      <h2 class="govuk-heading-l">Applications & Payments</h2>
+      <p class="govuk-body">See the status of your applications and refund payments.</p>
+      <a class="govuk-link" href="/applications">View applications</a>
+    </div>
+
+    <!-- 3. Evidence Uploads -->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="evidence">
+      <h2 class="govuk-heading-l">Evidence Uploads</h2>
+      <p class="govuk-body">Upload or replace your supporting documents.</p>
+      <a class="govuk-link" href="/evidence">Manage uploads</a>
+    </div>
+
+    <!-- 4. Notifications -->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="notifications">
+      <h2 class="govuk-heading-l">Notifications</h2>
+      <ul class="govuk-list govuk-list--spaced">
+        <li><strong class="govuk-tag govuk-tag--blue">New</strong> We’ve received your application – 20 July</li>
+        <li><strong class="govuk-tag govuk-tag--green">Info</strong> Your refund has been approved – 15 July</li>
+      </ul>
+    </div>
+
+    <!-- 5. Personal Details -->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="personal">
+      <h2 class="govuk-heading-l">Personal details</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Full name</dt>
+          <dd class="govuk-summary-list__value">John Smith</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/edit-name">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Email</dt>
+          <dd class="govuk-summary-list__value">john.smith@email.com</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/edit-email">Change<span class="govuk-visually-hidden"> email</span></a>
+          </dd>
+        </div>
+        <!-- Add more personal info rows as needed -->
+      </dl>
+    </div>
+
+    <!-- 6. Messages -->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="messages">
+      <h2 class="govuk-heading-l">Messages</h2>
+      <p class="govuk-body">Secure messages between you and the refund team.</p>
+      <a class="govuk-link" href="/messages">Go to messages</a>
+    </div>
+
+    <!-- 7. Help & Guidance -->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="help">
+      <h2 class="govuk-heading-l">Help & guidance</h2>
+      <p class="govuk-body">Need help? See our step-by-step guides and FAQs.</p>
+      <a class="govuk-link" href="/help">Visit help centre</a>
+    </div>
+
+    <!-- 8. Security Settings -->
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="security">
+      <h2 class="govuk-heading-l">Security settings</h2>
+      <ul class="govuk-list">
+        <li><a href="/change-password" class="govuk-link">Change your password</a></li>
+        <li><a href="/2fa" class="govuk-link">Manage two-factor authentication</a></li>
+        <li><a href="/login-history" class="govuk-link">View recent login activity</a></li>
+      </ul>
+    </div>
+
+  </div>
+{% endblock %}

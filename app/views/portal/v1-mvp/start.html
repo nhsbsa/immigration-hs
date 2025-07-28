@@ -1,0 +1,127 @@
+{% extends "layout-portal-signed-out.html" %}
+
+{% block pageTitle %}
+Sign in to Manage Your IHS Reimbursement
+
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Sign in to your IHS reimbursement account</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sign-in-username">
+          Username or email address
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="sign-in-username" name="sign-in-username" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sign-in-password">Password</label>
+        <input class="nhsbsa-input__password govuk-input govuk-input--width-20" id="sign-in-password" name="sign-in-password" type="text" spellcheck="false" autocomplete="current-password" autocapitalize="none">
+        <button type="button" class="js-disabled nhsbsa-button__password govuk-button" data-module="govuk-button" aria-controls="sign-in-password" aria-label="Hide password">Hide</button>
+      </div>
+
+      <style>
+        .nhsbsa-button__password {
+          padding: 4px;
+          width:100%;
+          margin-top:10px;
+          background:#005eb8;
+          box-shadow: 0 4px 0 #003d78;
+          color: #fff;
+        }
+        .nhsbsa-button__password:hover {
+          background: #004d98;
+          color: #fff;
+        }
+        .nhsbsa-button__password:active {
+          background: #003d78;
+          color: #fff;
+        }
+        @media (min-width: 40.0625em) {
+          .nhsbsa-button__password {
+            padding: 2px;
+          }
+        }
+        @media only screen and (min-width:441px) {
+          .nhsbsa-button__password {
+            width: auto;
+            min-width: 80px;
+            margin-top: 0px;
+            margin-left: 15px;
+          }
+        }
+        @media screen and (max-width: 825px) and (min-width: 769px) {
+          .nhsbsa-button__password {
+            width: 100%;
+            min-width: 70px;
+            margin-top: 20px;
+            margin-left: 0px;
+          }
+        }
+      </style>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var buttons = document.querySelectorAll('.nhsbsa-button__password');
+        
+          buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+              var input = this.previousElementSibling;
+        
+              // Toggle input type between 'password' and 'text'
+              input.type = input.type === 'password' ? 'text' : 'password';
+        
+              if (input.type === 'text') {
+                this.textContent = 'Hide';
+                this.setAttribute('aria-label', 'Hide password');
+                } else {
+                this.textContent = 'Show';
+                this.setAttribute('aria-label', 'Show password');
+              }
+            });
+          });
+        });
+      </script>
+      <noscript>
+        <style>
+          .js-disabled {
+            display:none;
+          }
+        </style>
+      </noscript>
+
+      <form action="sign-in-2fa" method="POST">
+        <button class="govuk-button" type="submit">Sign in</button><br>
+      </form>
+
+      <p><a href="forgotten-username">Forgotten your username?</a></p>
+      <p><a href="forgotten-password">Forgotten your password?</a></p>
+
+      <h2 class="govuk-heading-m govuk-u-margin-bottom-1">Create an account</h2>
+      <p>Visit our <a href="register">registration page</a> to create an account. You will need your:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>National Insurance number</li>
+          <li>current and past IHS reference numbers</li>
+        </ul>
+
+  </div>
+
+</div>
+{% endblock %}

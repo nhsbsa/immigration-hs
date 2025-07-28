@@ -64,11 +64,7 @@ Dashboard
             Applications
           </a>
         </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#payments">
-            Payments
-          </a>
-        </li>
+        
       </ul>
       <div class="govuk-tabs__panel" id="notifications">
         <h2 class="govuk-heading-l">Notifications</h2>
@@ -385,7 +381,7 @@ Dashboard
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+          <!-- <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">IHS number</dt>
             <dd class="govuk-summary-list__value">
               IHS12345678
@@ -393,7 +389,7 @@ Dashboard
             <dd class="govuk-summary-list__actions">
 
             </dd>
-          </div>
+          </div> -->
         </dl>
 
         <h2 class="govuk-heading-m">Current employment details</h2>
@@ -500,13 +496,7 @@ Dashboard
         <h2 class="govuk-heading-m">Account details</h2>
 
         <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Username</dt>
-            <dd class="govuk-summary-list__value"><span id="username" class="wordbreak">dave02</span></dd>
-            <dd class="govuk-summary-list__actions">
-              <a id="editUsername" href="#">Change</a>
-            </dd>
-          </div>
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Email</dt>
             <dd class="govuk-summary-list__value"><span id="studentEmail"
@@ -545,13 +535,17 @@ Dashboard
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="applications">
         <h2 class="govuk-heading-l">Applications</h2>
-        <table class="govuk-table">
+
+         <h3 class="govuk-heading-m">Current applications</h3>
+
+         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">IHS reference number</th>
               <th scope="col" class="govuk-table__header">Application date</th>
               <th scope="col" class="govuk-table__header">Claim period</th>
               <th scope="col" class="govuk-table__header">Status</th>
+               <th scope="col" class="govuk-table__header">Action</th>
 
 
             </tr>
@@ -560,86 +554,132 @@ Dashboard
           <tbody class="govuk-table__body">
 
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim-on-hold-contract">IHS9281F</a></td>
+              <td class="govuk-table__cell">IHS9281F</a></td>
               <td class="govuk-table__cell">31 December 2023</td>
               <td class="govuk-table__cell">1 July 2021 - 31 December 2021</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
                   More evidence needed
                 </strong></td>
+                              <td class="govuk-table__cell"><a href="view-claim-on-hold-contract">View application</a></td>
+
             </tr>
 
+            
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim">HDJ2123F</a></td>
-              <td class="govuk-table__cell">30 June 2022</td>
-              <td class="govuk-table__cell">1 January 2022 - 30 June 2022</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                  Payment completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim">HIS7849F</a></td>
-              <td class="govuk-table__cell">31 December 2022</td>
-              <td class="govuk-table__cell">1 July 2022 - 31 December 2022</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                  Payment completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim">PRO7849F</a></td>
-              <td class="govuk-table__cell">30 June 2023</td>
-              <td class="govuk-table__cell">1 January 2023 - 30 June 2023</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                  Payment completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim-rejected">YUT7849F</a></td>
-              <td class="govuk-table__cell">31 December 2023</td>
-              <td class="govuk-table__cell">1 July 2023 - 31 December 2023</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                  Payment completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim">ERG7849F</a></td>
-              <td class="govuk-table__cell">30 June 2024</td>
-              <td class="govuk-table__cell">1 January 2024 - 30 June 2024</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                  Payment completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim-rejected">CCC7849F</a></td>
-              <td class="govuk-table__cell">29 December 2024</td>
-              <td class="govuk-table__cell">30 June 2024 - 29 December 2024</td>
-              <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red">
-                  Rejected
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim">ZZZ2123F</a></td>
-              <td class="govuk-table__cell">31 December 2024</td>
-              <td class="govuk-table__cell">1 July 2024 - 31 December 2024</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                  Payment completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim-live">HDJ2123F</a></td>
+              <td class="govuk-table__cell">HDJ2123F</a></td>
               <td class="govuk-table__cell">31 June 2025</td>
               <td class="govuk-table__cell">1 January 2025 - 31 June 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
                   Being assessed
                 </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-live">View application</a></td>
+
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="view-claim-on-hold">ABC2123F</a></td>
+              <td class="govuk-table__cell">ABC2123F</a></td>
               <td class="govuk-table__cell">31 December 2025</td>
               <td class="govuk-table__cell">1 July 2025 - 31 December 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
                   More evidence needed
                 </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-on-hold">View application</a></td>
+
             </tr>
+          </tbody>
+
+        </table>
+
+          <h3 class="govuk-heading-m">Completed applications</h3>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">IHS reference number</th>
+              <th scope="col" class="govuk-table__header">Application date</th>
+              <th scope="col" class="govuk-table__header">Claim period</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+                            <th scope="col" class="govuk-table__header">Action</th>
+
+
+
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+
+           
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">HDJ2123F</a></td>
+              <td class="govuk-table__cell">30 June 2022</td>
+              <td class="govuk-table__cell">1 January 2022 - 30 June 2022</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">HIS7849F</a></td>
+              <td class="govuk-table__cell">31 December 2022</td>
+              <td class="govuk-table__cell">1 July 2022 - 31 December 2022</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">PRO7849F</a></td>
+              <td class="govuk-table__cell">30 June 2023</td>
+              <td class="govuk-table__cell">1 January 2023 - 30 June 2023</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">YUT7849F</a></td>
+              <td class="govuk-table__cell">31 December 2023</td>
+              <td class="govuk-table__cell">1 July 2023 - 31 December 2023</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-rejected">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ERG7849F</a></td>
+              <td class="govuk-table__cell">30 June 2024</td>
+              <td class="govuk-table__cell">1 January 2024 - 30 June 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">CCC7849F</a></td>
+              <td class="govuk-table__cell">29 December 2024</td>
+              <td class="govuk-table__cell">30 June 2024 - 29 December 2024</td>
+              <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red">
+                  Rejected
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-rejected">View application</a></td>
+
+
+              </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ZZZ2123F</a></td>
+              <td class="govuk-table__cell">31 December 2024</td>
+              <td class="govuk-table__cell">1 July 2024 - 31 December 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+           
           </tbody>
 
         </table>
@@ -652,7 +692,7 @@ Dashboard
 
 
 
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payments">
+      <!-- <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payments">
         <h2 class="govuk-heading-l">Payments</h2>
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -689,7 +729,7 @@ Dashboard
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> -->
     </div>
 
 

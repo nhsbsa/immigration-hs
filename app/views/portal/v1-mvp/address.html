@@ -1,0 +1,49 @@
+{% extends "layout-portal-signed-out.html" %}
+
+{% block pageTitle %}
+  What is your address?
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">What is your address?</h1>
+    
+    <form id="postcode-form">
+      <label class="govuk-label" for="postcode">Postcode</label>
+      <input class="govuk-input govuk-!-width-one-third" id="postcode" name="postcode" type="text">
+      
+      <br><br><button type="button" class="govuk-button govuk-!-margin-top-2" id="find-address">Find address</button>
+    </form>
+    
+    <div id="address-dropdown" class="govuk-form-group" style="display: none;">
+      <label class="govuk-label" for="address">Select your address</label>
+      <select class="govuk-select" id="address" name="address">
+        <option value="">123 Example Street, City, AB1 2CD</option>
+        <option value="">456 Sample Road, Town, XY3 4YZ</option>
+        <option value="">789 Test Avenue, Village, ZZ5 6WV</option>
+      </select>
+      <br><br><a href="username-password" class="govuk-button govuk-!-margin-top-2" id="continue-button">Continue</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("find-address").addEventListener("click", function () {
+    document.getElementById("postcode-form").style.display = "none";
+    document.getElementById("address-dropdown").style.display = "block";
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout-portal-blank.html" %}
+
+{% block pageTitle %}
+Sign in to Manage Your IHS Reimbursement
+
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Returning you to the Manage your IHS Reimbursement Application service
+      </h1>
+
+      <img src="/public/images/spinner.png">
+
+      <div class="hods-loading-spinner">
+        <div class="hods-loading-spinner__spinner" aria-live="polite" role="status"></div>
+        <div class="hods-loading-spinner__content">
+          <p>Please wait</p>
+        </div>
+      </div>
+
+
+      <a href="/portal/v1/new-account/start-page" class="govuk-button">Return to service</a>
+
+    </div>
+</div>
+{% endblock %}
