@@ -181,4 +181,15 @@ router.post(/add-dependants/, function(req,res){
 
 })
 
+
+router.post(/dependant-details-portal/, function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('dependant-details-2')
+    }
+    else {
+        res.redirect('dependant-added')
+    }
+
+})
 module.exports = router;

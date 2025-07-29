@@ -49,6 +49,123 @@ Dashboard
         <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
       </svg>
     </a>
+<h2 class="govuk-heading-l">Application Timeline</h2>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          
+        }
+    
+        .timeline {
+          position: relative;
+          margin-left: 60px; /* space to the left of the timeline */
+          padding-left: 40px; /* space between the line and content */
+        }
+    
+        /* vertical line */
+        .timeline::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 30px; /* vertical line position */
+          width: 4px;
+          background: #005ea5; /* govuk blue */
+          z-index: 0;
+        }
+    
+        .timeline-entry {
+          position: relative;
+          margin-bottom: 40px;
+        }
+    
+        /* timeline circle */
+        .circle {
+          position: absolute;
+          left: -8px; /* match the line position */
+          top: 0;
+          width: 20px;
+          height: 20px;
+          background: #fff;
+          border: 4px solid #005ea5;
+          border-radius: 50%;
+          transform: translateX(-50%); /* center the circle over the line */
+          z-index: 1;
+        }
+    
+        .circle.green {
+          background: #00703c;
+          border-color: #00703c;
+        }
+    
+        .timeline-text {
+          margin-left: 40px;
+        }
+    
+        .timeline-text strong {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 2px;
+        }
+      </style>
+  
+    
+   
+    
+      <div class="timeline">
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Application submitted</strong>
+            Status: Complete - 	31 December 2023
+          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Application picked up by assessment team</strong>
+            Status: Complete -	11 January 2024
+          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Eligibility and evidence assessment</strong>
+                       Status: Complete -	11 January 2024
+         </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle green"></div>
+          <div class="timeline-text">
+            <strong>Application on hold</strong>
+            Status: More evidence required          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Payment approved</strong>
+            Status: Pending          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Payment completed</strong>
+            Status: Pending
+          </div>
+        </div>
+    
+      </div>
+    
+  
+    
+    <br>
+    
     <h2 class="govuk-heading-l">Application details</h2>
 
     <h2 class="govuk-heading-m">Personal details</h2>

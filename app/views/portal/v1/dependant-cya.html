@@ -1,4 +1,4 @@
-{% extends "layout-health.html" %}
+{% extends "layout-portal.html" %}
 
 {% block pageTitle %}
   Dependant add
@@ -19,7 +19,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/dependant-details-v20" method="post">
+      <form class="form" action="dependant-details-portal" method="post">
       
         <!--<h1 class="govuk-fieldset__heading">Dependant details</h1>-->
         <h1 class="govuk-heading-l">
@@ -111,7 +111,7 @@
           </fieldset>
         </div>
 
-        <a href="/v20/ideation/contract-upload-task" class="govuk-button" data-module="govuk-button">Continue</a>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
       </form>
     </div>
   </div>
