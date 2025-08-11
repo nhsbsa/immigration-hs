@@ -1,0 +1,129 @@
+<!-- claim-date.html -->
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Start date of new claim – Immigration Health Surcharge Refund Service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank"
+        rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20/dependant-question">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- Error summary (hidden by default) -->
+    <div id="error-summary" class="govuk-error-summary govuk-!-display-none" data-module="govuk-error-summary"
+      role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#passport-issued-day">The start date cannot overlap with a previous claim period</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Your previous successful applications
+    </h1>
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">BSA reference number</th>
+          <th scope="col" class="govuk-table__header">Claim start date</th>
+          <th scope="col" class="govuk-table__header">Claim end date</th>
+          <th scope="col" class="govuk-table__header">IHS number</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">ABC1234567</th>
+          <td class="govuk-table__cell">1 August 2021</td>
+          <td class="govuk-table__cell">31 January 2022</td>
+          <td class="govuk-table__cell">IHS12345678</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">ABC1234567</th>
+          <td class="govuk-table__cell">1 February 2022</td>
+          <td class="govuk-table__cell">31 July 2022</td>
+          <td class="govuk-table__cell">IHS12345678</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">ABC1234567</th>
+          <td class="govuk-table__cell">1 August 2022</td>
+          <td class="govuk-table__cell">31 January 2023</td>
+          <td class="govuk-table__cell">IHS12345678</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <p class="govuk-hint" style="margin-top: -25px;">Table last updated: 4 August 2025</p>
+<br>
+
+    <form class="form" action="start-date-cya" method="post" onsubmit="return validateStartDate(event)">
+
+
+      <div id="form-group" class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+        <h2 class="govuk-heading-m">What is the start date of this new claim?</h2>
+        <p class="govuk-body">You can only claim reimbursement for 6 months at a time. We'll work out the end date of
+          this claim from the start date you enter.</p>
+        <p class="govuk-body">The earliest day you can claim from is <strong>31 March 2020</strong>.</p>
+        <div id="passport-issued-hint" class="govuk-hint">For example, 15 8 2020</div>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint" aria-invalid="false"
+          id="passport-issued-fieldset">
+          <p id="passport-issued-error" class="govuk-error-message govuk-!-display-none" aria-live="assertive">
+            <span class="govuk-visually-hidden">Error:</span> The start date cannot overlap with a previous claim period
+          </p>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error" aria-invalid="false">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error" aria-invalid="false">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error" aria-invalid="false">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

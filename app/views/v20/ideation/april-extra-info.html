@@ -26,13 +26,18 @@ IHS question
     .hidden {
       display: none;
     }
+
+    .drag-over {
+      border: 2px dashed #1d70b8;
+      background-color: #f3f2f1;
+    }
   </style>
 </head>
 
 <body>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/pay-checkbox" method="post">
+      <form class="form" action="/pay-checkbox" method="post" enctype="multipart/form-data">
         <div class="govuk-form-group">
           <span class="govuk-caption-l">Application</span>
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
@@ -59,41 +64,32 @@ IHS question
             <li>be smaller than 2MB each</li>
             <li><strong>not</strong> be password protected</li>
           </ul>
-  
-          
-
-          <!-- Section for uploaded files -->
 
           <div id="content-to-hide">
-          <div id="uploaded-files-container" class="hidden">
-            <label class="govuk-label govuk-label--m" for="documents">
-              Files uploaded
-            </label>
-            <p>
-              Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.
-            </p>
-            <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
-          </div>
-
-          <!-- File upload input -->
-          <div id="file-upload-container" class="moj-multi-file-upload">
-            <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
-            <div class="govuk-inset-text">
-              If you cannot upload payslips for this month, for example because the applicant was paid in arrears, select 'I do not have payslips for this month'. You can explain this gap later.                  
+            <div id="uploaded-files-container" class="hidden">
+              <label class="govuk-label govuk-label--m" for="documents">
+                Files uploaded
+              </label>
+              <p>
+                Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.
+              </p>
+              <div id="uploaded-files" class="govuk-summary-list moj-multi-file-upload__list"></div>
             </div>
-            
-            <input
-              class="govuk-file-upload moj-multi-file-upload__input"
-              id="documents"
-              name="documents"
-              type="file"
-              multiple
-            />
+
+            <!-- Drop zone wrapper -->
+            <div id="file-upload-container" class="moj-multi-file-upload drag-drop-area">
+              <label class="govuk-label govuk-label--m" for="documents">Upload files</label>
+              <div class="govuk-inset-text">
+                If you cannot upload payslips for this month, for example because the applicant was paid in arrears, select 'I do not have payslips for this month'. You can explain this gap later.
+              </div>
+
+              <div id="drop-zone" class="govuk-form-group" style="padding: 20px; border: 2px;">
+               
+                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple />
+              </div>
+            </div>
           </div>
 
-        </div>
-
-          <!-- Warning text for missing payslips -->
           <div id="content-to-show" class="hidden">
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -104,16 +100,8 @@ IHS question
             </div>
           </div>
 
-          <!-- Checkbox -->
           <div class="govuk-checkboxes__item">
-            <input
-              class="govuk-checkboxes__input"
-              id="toggle-checkbox"
-              name="waste"
-              type="checkbox"
-              onClick="toggleContent()"
-              value="checked"
-            />
+            <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox" onClick="toggleContent()" value="checked" />
             <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">
               I do not have payslips for this month
             </label>
@@ -121,14 +109,14 @@ IHS question
               You can explain why and add alternative evidence later.
             </div>
           </div>
-          <br>
 
-          <button class="govuk-button" data-module="govuk-button">Continue</button>
+          <br>
+          <a href="april-gaps" class="govuk-button" data-module="govuk-button">Continue</a>
         </div>
       </form>
     </div>
   </div>
-  
+
   <script>
     function toggleContent() {
       var checkbox = document.getElementById('toggle-checkbox');
@@ -144,36 +132,26 @@ IHS question
       }
     }
 
-    // Initialize the state on page load based on the checkbox state
     document.addEventListener('DOMContentLoaded', function () {
       toggleContent();
-    });
-  </script>
-  <script>
-    // Toggles content visibility when checkbox is clicked
-    
 
-    // Handles file upload functionality
-    document.addEventListener('DOMContentLoaded', function () {
       const fileInput = document.getElementById('documents');
       const uploadedFilesContainer = document.getElementById('uploaded-files-container');
       const fileListContainer = document.getElementById('uploaded-files');
+      const dropZone = document.getElementById('drop-zone');
 
       fileInput.addEventListener('change', function () {
         if (fileInput.files.length > 0) {
-          uploadedFilesContainer.classList.remove('hidden'); // Show the uploaded files section
+          uploadedFilesContainer.classList.remove('hidden');
         } else {
-          uploadedFilesContainer.classList.add('hidden'); // Hide if no files
+          uploadedFilesContainer.classList.add('hidden');
         }
 
-        fileListContainer.innerHTML = ''; // Clear the list
-
-        // Iterate through the selected files
+        fileListContainer.innerHTML = '';
         Array.from(fileInput.files).forEach((file, index) => {
           const fileRow = document.createElement('div');
           fileRow.className = 'govuk-summary-list__row moj-multi-file-upload__row';
 
-          // File details
           const fileDetails = `
             <dd class="govuk-summary-list__value moj-multi-file-upload__message">
               <span class="moj-multi-file-upload__success">
@@ -185,7 +163,6 @@ IHS question
             </dd>
           `;
 
-          // Actions (Preview and Delete)
           const actions = `
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -193,7 +170,7 @@ IHS question
                   <a class="govuk-link" href="/public/images/april-2020.png" target="_blank" style="font-size: 16px;">Preview</a>
                 </li>
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="april-delete"  style="font-size: 16px;">Delete</a>
+                  <a class="govuk-link" href="april-delete" style="font-size: 16px;">Delete</a>
                 </li>
               </ul>
             </dd>
@@ -201,15 +178,9 @@ IHS question
 
           fileRow.innerHTML = fileDetails + actions;
           fileListContainer.appendChild(fileRow);
-
-          // Add event listener for delete functionality
-          fileRow.querySelector('[data-index]').addEventListener('click', function () {
-            removeFile(index);
-          });
         });
       });
 
-      // Remove file from input and update the display
       function removeFile(index) {
         const dataTransfer = new DataTransfer();
         Array.from(fileInput.files).forEach((file, i) => {
@@ -217,10 +188,38 @@ IHS question
             dataTransfer.items.add(file);
           }
         });
+        fileInput.files = dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change'));
+      }
+
+      // Drag and drop logic
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, e => {
+          e.preventDefault();
+          dropZone.classList.add('drag-over');
+        });
+      });
+
+      ['dragleave', 'dragend'].forEach(eventName => {
+        dropZone.addEventListener(eventName, e => {
+          e.preventDefault();
+          dropZone.classList.remove('drag-over');
+        });
+      });
+
+      dropZone.addEventListener('drop', function (e) {
+        e.preventDefault();
+        dropZone.classList.remove('drag-over');
+        const droppedFiles = e.dataTransfer.files;
+        const dataTransfer = new DataTransfer();
+
+        // Keep existing files
+        Array.from(fileInput.files).forEach(file => dataTransfer.items.add(file));
+        Array.from(droppedFiles).forEach(file => dataTransfer.items.add(file));
 
         fileInput.files = dataTransfer.files;
-        fileInput.dispatchEvent(new Event('change')); // Trigger the change event to update the UI
-      }
+        fileInput.dispatchEvent(new Event('change'));
+      });
     });
   </script>
 </body>
