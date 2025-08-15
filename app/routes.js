@@ -4519,7 +4519,7 @@ router.post('/version-20-dependant-question', function(req,res){
         res.redirect('/v20/dependant-details')
     }
     else {
-        res.redirect('/v20/subscription-question')
+        res.redirect('/v20/start-date-claim-dates-warning')
     }
 
 })
@@ -5940,7 +5940,7 @@ router.post('/live-student/dependant/same-address', function (req, res) {
 router.post('/checklist-evidence', function(req,res){
     var contacted = req.session.data['average-time-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/name')
+        res.redirect('/v20/subscription-question')
     }
     else {
         res.redirect('/v20/checklist-warning')

@@ -36,7 +36,7 @@
     </div>
 
     <h2 class="govuk-heading-m">Job contract</h2>
-    <p>You can also send copies of job contracts for all the jobs you're sending payslips for. This is optional but if you can upload the contracts, this makes it easier for us to confirm the applicant is eligible.</p>
+    <p>You can also send copies of job contracts for all the jobs you're sending payslips for. This is optional but if you can upload the contracts, this makes it easier for us to confirm the applicant is eligible.</p>
 
     <details class="govuk-details">
       <summary class="govuk-details__summary">
@@ -83,6 +83,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // Get stored date values
     const day = parseInt(localStorage.getItem("claimDay"), 10);
     const month = parseInt(localStorage.getItem("claimMonth"), 10);
     const year = parseInt(localStorage.getItem("claimYear"), 10);
@@ -99,25 +100,18 @@
     document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
 
     const payslipList = document.getElementById("payslip-dates");
-    payslipList.innerHTML = ""; // Clear existing list
+    payslipList.innerHTML = "";
 
     let currentStart = new Date(startDate);
     let monthCount = 0;
-
     let lastDayOfStartMonth = new Date(currentStart.getFullYear(), currentStart.getMonth() + 1, 0);
-    
-    // First date range
+
     const firstItem = document.createElement("li");
-
-    if (currentStart.getDate() === lastDayOfStartMonth.getDate()) {
-      firstItem.textContent = currentStart.toLocaleDateString('en-GB', options);
-    } else {
-      firstItem.textContent = `${currentStart.toLocaleDateString('en-GB', options)} to ${lastDayOfStartMonth.toLocaleDateString('en-GB', options)}`;
-    }
-
+    firstItem.textContent = currentStart.getDate() === lastDayOfStartMonth.getDate()
+      ? currentStart.toLocaleDateString('en-GB', options)
+      : `${currentStart.toLocaleDateString('en-GB', options)} to ${lastDayOfStartMonth.toLocaleDateString('en-GB', options)}`;
     payslipList.appendChild(firstItem);
 
-    // Move to first full month
     currentStart = new Date(lastDayOfStartMonth);
     currentStart.setDate(1);
     currentStart.setMonth(currentStart.getMonth() + 1);
@@ -138,28 +132,21 @@
     }
 
     const lastItem = document.createElement("li");
-
-    if (endDate.getDate() === 1) {
-      lastItem.textContent = endDate.toLocaleDateString('en-GB', options);
-    } else {
-      lastItem.textContent = `1 ${endDate.toLocaleString('default', { month: 'long' })} ${endDate.getFullYear()} to ${endDate.toLocaleDateString('en-GB', options)}`;
-    }
-
+    lastItem.textContent = endDate.getDate() === 1
+      ? endDate.toLocaleDateString('en-GB', options)
+      : `1 ${endDate.toLocaleString('default', { month: 'long' })} ${endDate.getFullYear()} to ${endDate.toLocaleDateString('en-GB', options)}`;
     payslipList.appendChild(lastItem);
 
-    // Show 7-month warning if applicable
     if (monthCount + 2 === 7) {
       document.getElementById("seven-month-info").removeAttribute("hidden");
     }
 
-    // Show inset text if end date is in the current month and year
+    // CURRENT MONTH WARNING – compare startDate, not endDate
     const today = new Date();
-    if (endDate.getMonth() === today.getMonth() && endDate.getFullYear() === today.getFullYear()) {
+    if (startDate.getMonth() === today.getMonth() && startDate.getFullYear() === today.getFullYear()) {
       const monthYearString = today.toLocaleString('en-GB', { month: 'long', year: 'numeric' });
-
       document.getElementById("current-month-year").textContent = monthYearString;
       document.getElementById("current-month-year-2").textContent = monthYearString;
-
       document.getElementById("current-month-warning").removeAttribute("hidden");
     }
   });
