@@ -1,0 +1,52 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}Upload evidence{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Add extra information to support your application
+    </h1>
+
+    <p>Select each month you marked as a gap in evidence and upload extra information.</p>
+
+    <ul class="govuk-task-list">
+      {% for month in data.months %}
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link"
+             href="/v20/ideation/checkbox-month?month={{ month | urlencode }}"
+             aria-describedby="{{ month }}-status">
+            {{ month }}
+          </a>
+        </div>
+        <div class="govuk-task-list__status" id="{{ month }}-status">
+          {% if data.status and data.status[month] == "completed" %}
+            <strong class="govuk-tag govuk-tag--green">Completed</strong>
+          {% else %}
+            <strong class="govuk-tag govuk-tag--blue">Not yet started</strong>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+<br><br>
+    <button class="govuk-button">Continue</button>
+
+  </div>
+</div>
+{% endblock %}

@@ -6102,6 +6102,72 @@ router.post('/extra-info-filter-mega-gap', function(req,res){
     }
 
 })
+
+
+router.post('/extra-info-filter-checkbox', function(req,res){
+    var contacted = req.session.data['contracts-add-3-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/ideation/checkbox-extra-info')
+    }
+    else {
+        res.redirect('/v20/check-your-answers-nhs-path')
+    }
+
+})
+
+
+module.exports = function(router) {
+
+  router.post('/v20/ideation/checkbox-extra-info', function (req, res) {
+  let months = req.body.months;
+
+  if (!Array.isArray(months) && months) {
+    months = [months];
+  }
+
+  req.session.data['months'] = months || [];
+  req.session.data['status'] = {}; // reset status
+  res.redirect('/v20/ideation/checkbox-task-list');
+});
+
+
+  // Page 2 → GET task list
+  router.get('/v20/ideation/checkbox-task-list', function (req, res) {
+    if (!req.session.data['months']) req.session.data['months'] = [];
+    if (!req.session.data['status']) req.session.data['status'] = {};
+
+    res.render('v20/ideation/checkbox-task-list', {
+      data: req.session.data
+    });
+  });
+
+  // Page 3 → GET month page with dynamic H1
+  router.get('/v20/ideation/checkbox-month', function (req, res) {
+    const month = req.query.month; // must come from ?month=... in URL
+    if (!month) return res.redirect('/v20/ideation/checkbox-task-list');
+
+    res.render('v20/ideation/checkbox-month', {
+      month: month,
+      data: req.session.data
+    });
+  });
+
+  // Page 3 → POST → mark month completed and return to task list
+  router.post('/v20/ideation/checkbox-month', function (req, res) {
+    const month = req.body.month;
+    if (!req.session.data['status']) req.session.data['status'] = {};
+    req.session.data['status'][month] = 'completed';
+    res.redirect('/v20/ideation/checkbox-task-list');
+  });
+
+};
+
+
+
+
+
+
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 

@@ -1,0 +1,84 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="checkbox-task-list" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="months-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              <span class="govuk-caption-l">Application</span>
+              Months that require extra information
+            </h1>
+          </legend>
+
+<div class="govuk-inset-text">
+We have already selected some months because you told us you were missing evidence for those months.</div>
+
+
+
+          <div id="months-hint" class="govuk-hint">
+            Select all months where you do not have evidence and need to provide extra information.
+          </div>
+
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="april" name="months" type="checkbox" value="April 2020" checked disabled>
+              <label class="govuk-label govuk-checkboxes__label" for="april">April 2020</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="may" name="months" type="checkbox" value="May 2020" checked disabled>
+              <label class="govuk-label govuk-checkboxes__label" for="may">May 2020</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="june" name="months" type="checkbox" value="June 2020">
+              <label class="govuk-label govuk-checkboxes__label" for="june">June 2020</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="july" name="months" type="checkbox" value="July 2020" checked disabled>
+              <label class="govuk-label govuk-checkboxes__label" for="july">July 2020</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="august" name="months" type="checkbox" value="August 2020">
+              <label class="govuk-label govuk-checkboxes__label" for="august">August 2020</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="september" name="months" type="checkbox"
+                value="September 2020">
+              <label class="govuk-label govuk-checkboxes__label" for="september">September 2020</label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="other" name="months" type="checkbox" value="Other">
+              <label class="govuk-label govuk-checkboxes__label" for="other">Other</label>
+              <div class="govuk-hint govuk-checkboxes__hint">Select this if you have extra information not linked to a
+                month</div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
