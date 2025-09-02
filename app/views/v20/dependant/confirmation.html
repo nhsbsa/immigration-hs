@@ -1,0 +1,70 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Application complete
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Dependant application submitted</h1>
+      <div class="govuk-panel__body">
+        Application reference number<br><strong>HDJ2123F</strong>
+      </div>
+    </div>
+
+    <p>You have successfully added a dependant to the claim <strong>BSA12345</strong>.</p>
+
+  
+
+    <p>We've sent a confirmation email to <strong>john.smith@email.com</strong>.</p>
+
+
+    
+    <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <p>You can download the details of your application and use them for future applications.</p>
+      <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save application details as PDF
+      </button> -->
+
+
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p>We'll email the applicant in the next 10 weeks to let them know if the claim is successful or if they need to do anything else.</p>
+
+    <p>If the claim is successful, we'll tell the applicant when to expect a payment. The money will be sent to the account or card the applicant used to pay the IHS.</p>
+
+    <!--
+      <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
+      -->
+
+    <!-- <h2 class="govuk-heading-m">Help</h2>
+
+
+    <p class="govuk-body">If you have any questions or if we have not emailed john.smith@email.com within the next 10 weeks, <a href="/footer-HSC/contact-us" target="_blank">contact us (opens in new tab)</a>.</p>
+
+    <h2 class="govuk-heading-m">Send us feedback</h2>
+
+    <p><a href="https://www.gov.uk/done/apply-immigration-health-surcharge-refund" target="_blank">Complete our survey
+        to let us know what you think about this service (opens in new tab)</a>. This will take 30 seconds to complete.
+    </p> -->
+
+  </div>
+</div>
+
+{% endblock %}

@@ -6164,7 +6164,27 @@ module.exports = function(router) {
 
 
 
+router.post('/dependant-details-journey', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant/dependant-details')
+    }
+    else {
+        res.redirect('/v20/dependant/check-your-answers')
+    }
 
+})
+
+router.post('/dependant-part', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant/dependant-details')
+    }
+    else {
+        res.redirect('/v20/dependant/kickout')
+    }
+
+})
 
 
 
