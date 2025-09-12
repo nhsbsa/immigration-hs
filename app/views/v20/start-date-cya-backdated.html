@@ -1,7 +1,7 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-IHS question
+Check backdated claim – Immigration Health Surcharge Refund Service
 {% endblock %}
 
 {% block beforeContent %}
@@ -35,14 +35,13 @@ IHS question
             </strong>
           </div>
 
+          <!-- Summary List -->
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Claim start date
               </dt>
-      <dd class="govuk-summary-list__value" id="cya-start-date"></dd>
-                <!-- Filled by JavaScript -->
-              </dd>
+              <dd class="govuk-summary-list__value" id="cya-start-date"></dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
                   <li class="govuk-summary-list__actions-list-item">
@@ -53,19 +52,39 @@ IHS question
             </div>
           </dl>
 
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="confirm" name="confirm" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label" for="confirm">
-                I confirm this start date is correct.
-              </label>
-            </div>
+          <!-- Backdated claim question -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="backdated-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Is this a backdated claim?
+              </legend>
+              <div id="backdated-hint" class="govuk-hint">
+                The start date entered is before a claim period you have already submitted. If you don't want to make a backdated claim, you need to correct your start date.
+              </div>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="backdated-yes" name="backdated" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="backdated-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="backdated-no" name="backdated" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="backdated-no">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
+
+          <!-- Confirmation checkbox -->
+          
 
         </fieldset>
       </div>
 
-      <a href="monthly" class="govuk-button" data-module="govuk-button">Continue</a>
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
   </div>
 </div>

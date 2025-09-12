@@ -22,9 +22,9 @@ Start date of new claim – Immigration Health Surcharge Refund Service
 
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Application</span>
-      Your previous successful applications
+     Previous successful applications
     </h1>
-    <p>Based on the information you have provided us, we have found the following successful IHS reimbursement applications.</p>
+    <p>We've found the following previous successful IHS reimbursement applications based on the information you've given us.</p>
 
     <table class="govuk-table govuk-table--small-text-until-tablet" id="claims-table">
       <thead class="govuk-table__head">
@@ -63,9 +63,21 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     <form id="start-date-form">
       <div class="govuk-form-group">
         <h2 class="govuk-heading-m">What is the start date of this new claim?</h2>
-               <p> You can only claim reimbursement for 6 months at a time. We'll work out the end date of this claim from the start date you enter.</p>
-<p>Based on your previous successful applications, the next claim date can start on 1 February 2023.</p>
-<p>If you have an unclaimed period, the earliest date you can claim from is 31 March 2020.</p>
+
+        <p class="govuk-body">We'll work out the end date of this claim from the start date you enter. The end date will
+          be 6 months after the start date because you can only claim reimbursement for 6 months at a time.</p>
+        <p class="govuk-body">Based on the previous successful applications we found, the next claim can start on 1
+          February 2023.</p>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              If you want to make a claim for an earlier time </span>
+          </summary>
+          <div class="govuk-details__text">
+            The earliest date you can claim an IHS reimbursement from is 31 March 2020.
+          </div>
+        </details>
         <div id="passport-issued-hint" class="govuk-hint">For example, 15 8 2020</div>
 
         <div class="govuk-date-input" id="passport-issued">
@@ -109,26 +121,29 @@ document.getElementById('start-date-form').addEventListener('submit', function(e
     return;
   }
 
-  // Store separate values for checklist page
+  // Store date parts
   localStorage.setItem("claimDay", day);
   localStorage.setItem("claimMonth", month + 1);
   localStorage.setItem("claimYear", year);
 
-  // Also store formatted date for summary display
+  // Store formatted date
   const formattedDate = enteredDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   localStorage.setItem('enteredDate', formattedDate);
 
-  // Check if date overlaps any previous claim
-  let withinRange = false;
+  // Check claim table for overlap / identical
+  let warningType = null;
   document.querySelectorAll('#claims-table tbody tr').forEach(row => {
     const start = new Date(row.cells[2].textContent.trim());
     const end = new Date(row.cells[3].textContent.trim());
-    if (enteredDate >= start && enteredDate <= end) {
-      withinRange = true;
+
+    if (enteredDate.getTime() === start.getTime()) {
+      warningType = 'identical'; // priority
+    } else if (!warningType && enteredDate >= start && enteredDate <= end) {
+      warningType = 'overlap';
     }
   });
 
-  localStorage.setItem('showWarning', withinRange ? 'true' : 'false');
+  localStorage.setItem('warningType', warningType || 'none');
   window.location.href = 'start-date-cya-warning';
 });
 </script>

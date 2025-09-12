@@ -30,7 +30,7 @@
     <p>You'll need to send payslips that cover:</p>
     <ul class="govuk-list govuk-list--bullet" id="payslip-dates"></ul>
 
-    <!-- Current month warning inset text -->
+    <!-- Inset text shown if end date is in the future -->
     <div id="current-month-warning" class="govuk-inset-text" hidden>
       If the applicant has not been paid for <span id="current-month-year"></span> yet, you should wait to apply until they have a payslip for <span id="current-month-year-2"></span>.
     </div>
@@ -141,10 +141,11 @@
       document.getElementById("seven-month-info").removeAttribute("hidden");
     }
 
-    // CURRENT MONTH WARNING – compare startDate, not endDate
     const today = new Date();
-    if (startDate.getMonth() === today.getMonth() && startDate.getFullYear() === today.getFullYear()) {
-      const monthYearString = today.toLocaleString('en-GB', { month: 'long', year: 'numeric' });
+
+    // Show inset text if end date is in the future
+    if (endDate > today) {
+      const monthYearString = endDate.toLocaleString('en-GB', { month: 'long', year: 'numeric' });
       document.getElementById("current-month-year").textContent = monthYearString;
       document.getElementById("current-month-year-2").textContent = monthYearString;
       document.getElementById("current-month-warning").removeAttribute("hidden");

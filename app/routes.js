@@ -4324,9 +4324,8 @@ router.post('/dependant-details-v20', function(req,res){
         res.redirect('/v20/dependant-details2')
     }
     else {
-        res.redirect('/v20/subscription-question')
+        res.redirect('/v20/start-date-claim-dates')
     }
-
 })
 
 router.post('/dependant-details-v20-mvp', function(req,res){
@@ -4519,7 +4518,7 @@ router.post('/version-20-dependant-question', function(req,res){
         res.redirect('/v20/dependant-details')
     }
     else {
-        res.redirect('/v20/start-date-claim-dates-warning')
+        res.redirect('/v20/start-date-claim-dates')
     }
 
 })
