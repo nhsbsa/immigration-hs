@@ -92,7 +92,8 @@ Start date of new claim – Immigration Health Surcharge Refund Service
             <span class="govuk-details__summary-text">If you want to make a claim for an earlier time</span>
           </summary>
           <div class="govuk-details__text">
-            The earliest date you can claim an IHS reimbursement from is 31 March 2020.
+            The earliest date you can claim an IHS reimbursement from is 31 March 2020.<br><br>
+            If you have any claim periods you wish to apply for before a more recent claim, you can <a href="backdate">apply for a backdated claim</a>.
           </div>
         </details>
 
@@ -137,7 +138,6 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     </form>
   </div>
 </div>
-
 <script>
   function validateStartDate(event) {
     const startDay = parseInt(document.getElementById("passport-issued-day").value, 10);
@@ -158,7 +158,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       { start: new Date(2023, 0, 1), end: new Date(2023, 5, 30) }
     ];
 
-    // Identical date check
+    // Identical date check (still takes precedence)
     for (let period of previousPeriods) {
       if (newStartDate.getTime() === period.start.getTime()) {
         event.preventDefault();
@@ -167,7 +167,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       }
     }
 
-    // Overlap check
+    // Overlap check (must take precedence)
     for (let period of previousPeriods) {
       if (newStartDate >= period.start && newStartDate <= period.end) {
         event.preventDefault();
@@ -176,16 +176,33 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       }
     }
 
-    // Gap-fill check
+    
+
+    // --- NOW: check if date is before the most recent claim start date ---
+    let mostRecentStart = previousPeriods[0].start;
     for (let i = 1; i < previousPeriods.length; i++) {
-      if (newStartDate > previousPeriods[i-1].end && newStartDate < previousPeriods[i].start) {
-        event.preventDefault();
-        showError("The start date must be after the most recent successful claim end date");
-        return false;
+      if (previousPeriods[i].start.getTime() > mostRecentStart.getTime()) {
+        mostRecentStart = previousPeriods[i].start;
       }
     }
 
-    // ✅ Store both formatted and raw date parts
+    if (newStartDate.getTime() < mostRecentStart.getTime()) {
+      // No overlaps (checked above) and not identical (checked above), so redirect.
+      event.preventDefault();
+
+      // store date parts (so the backdated page can use them if needed)
+      const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
+      localStorage.setItem("enteredDate", formattedDate);
+      localStorage.setItem("claimDay", startDay);
+      localStorage.setItem("claimMonth", startMonth);
+      localStorage.setItem("claimYear", startYear);
+
+      // adjust path if necessary (e.g. '/v20/backdated-claim')
+      window.location.href = 'backdated-claim';
+      return false;
+    }
+
+    // If we reach here, all validations passed — store date and allow submission
     const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
     localStorage.setItem("enteredDate", formattedDate);
     localStorage.setItem("claimDay", startDay);
@@ -222,5 +239,6 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     });
   }
 </script>
+
 
 {% endblock %}

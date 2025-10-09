@@ -1,0 +1,267 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Your previous claims
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <span class="govuk-phase-banner__text">
+        Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="/v20/name">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">Application</span>
+        Your previous IHS reimbursement claims
+      </h1>
+
+      <p class="govuk-body">Below are the previous successful claims we have on record. If there are any gaps between claims you can fill them; if your next claim starts the day after your most recent claim you can continue without entering a start date.</p>
+
+      <div id="summary-inset" class="govuk-inset-text" hidden>
+        If your next claim starts the day after your most recent claim, click <strong>Continue from last claim</strong> — you won’t need to enter the start date.
+      </div>
+
+      <table class="govuk-table govuk-!-margin-top-4" id="claims-table">
+        <caption class="govuk-table__caption govuk-!-font-weight-bold">Previous successful claims</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">IHS number</th>
+            <th scope="col" class="govuk-table__header">BSA reference</th>
+            <th scope="col" class="govuk-table__header">Claim start</th>
+            <th scope="col" class="govuk-table__header">Claim end</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
+        <tbody id="claims-body" class="govuk-table__body">
+          {# Server-side render if you have previous_claims list; each item must have ihs, bsa, start (YYYY-MM-DD), end (YYYY-MM-DD) #}
+          {% if previous_claims is defined and previous_claims|length > 0 %}
+            {% for c in previous_claims|sort(attribute='start') %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">{{ c.ihs }}</th>
+                <td class="govuk-table__cell">{{ c.bsa }}</td>
+                <td class="govuk-table__cell">{{ c.start | date("d MMMM yyyy") }}</td>
+                <td class="govuk-table__cell">{{ c.end | date("d MMMM yyyy") }}</td>
+                <td class="govuk-table__cell"><a class="govuk-link" href="/v20/claim/{{ c.ihs }}">View</a></td>
+              </tr>
+              {# Optionally server-side detect gaps and inject gap rows here in the same loop if you prefer #}
+            {% endfor %}
+          {% else %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" colspan="5">We don’t have any previous claims on record for you.</td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+
+      <div class="govuk-grid-column-full govuk-!-margin-top-4">
+        <!-- Continue from last claim (posts the start date automatically) -->
+        <form id="follow-on-form" action="/v20/claim-start-date" method="post" class="form">
+          <input type="hidden" name="startDay" id="follow-start-day">
+          <input type="hidden" name="startMonth" id="follow-start-month">
+          <input type="hidden" name="startYear" id="follow-start-year">
+
+          <button type="button" class="govuk-button" id="continue-from-last" disabled>Continue from last claim</button>
+          <p class="govuk-body govuk-!-font-size-16">Or enter a start date manually below.</p>
+        </form>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m">Enter the start date for your claim</h2>
+      <form id="manual-start-form" action="/v20/claim-start-date" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date-hint">
+            <span id="start-date-hint" class="govuk-hint">For example, 1 7 2023</span>
+            <br><br>
+
+            <div class="govuk-date-input" id="claim-start">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="claim-start-day">Day</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-start-day" name="claim-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="claim-start-month">Month</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-start-month" name="claim-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="claim-start-year">Year</label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="claim-start-year" name="claim-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+
+      <div id="no-claims" class="govuk-warning-text govuk-!-margin-top-4" hidden>
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">We don’t have any previous claims on record for you.</strong>
+        <p class="govuk-body">Please enter the start date for your claim above.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* small visual helper for gap rows */
+    .gap-row { background: #fff3bf; }
+  </style>
+
+  <script>
+    // Progressive enhancement script: detect gaps, enable continue-from-last button.
+    (function () {
+      // Prefer server-provided claims; if none, example fallback for dev
+      var rows = Array.from(document.querySelectorAll('#claims-body > tr.govuk-table__row'));
+      // convert server-rendered rows into a JS-friendly array if possible
+      var claims = [];
+      if (rows.length && !rows[0].textContent.includes("We don’t have any previous claims")) {
+        rows.forEach(function (r) {
+          // attempt to parse the start/end from the third/fourth cells if they look like dates
+          var cells = r.querySelectorAll('td, th');
+          if (cells.length >= 4) {
+            // cells[2] start, cells[3] end
+            var startText = cells[2].textContent.trim();
+            var endText = cells[3].textContent.trim();
+            // try parse dd MMMM yyyy => convert via Date parsing using UK locale fallback
+            var start = new Date(startText);
+            var end = new Date(endText);
+            // if native parsing fails, ignore – server-side gap detection preferred
+            if (!isNaN(start.getTime()) && !isNaN(end.getTime())) {
+              claims.push({
+                ihs: cells[0].textContent.trim(),
+                bsa: cells[1].textContent.trim(),
+                startISO: start.toISOString().split('T')[0],
+                endISO: end.toISOString().split('T')[0],
+                startDate: start,
+                endDate: end
+              });
+            }
+          }
+        });
+      }
+
+      // fallback demo data if no server data parsed (useful in prototypes)
+      if (claims.length === 0) {
+        claims = [
+          { ihs: 'IHS12345678', bsa: 'ABC1234567', startISO: '2021-01-01', endISO: '2021-06-30', startDate: new Date('2021-01-01'), endDate: new Date('2021-06-30') },
+          { ihs: 'IHS33345678', bsa: 'GHI1234567', startISO: '2022-01-01', endISO: '2022-06-30', startDate: new Date('2022-01-01'), endDate: new Date('2022-06-30') },
+          { ihs: 'IHS44445678', bsa: 'JKL1234567', startISO: '2022-07-01', endISO: '2022-12-31', startDate: new Date('2022-07-01'), endDate: new Date('2022-12-31') },
+          { ihs: 'IHS55545678', bsa: 'MNO1234567', startISO: '2023-01-01', endISO: '2023-06-30', startDate: new Date('2023-01-01'), endDate: new Date('2023-06-30') }
+        ];
+        // remove existing placeholder rows (so demo rows aren't duplicated)
+        var tbody = document.getElementById('claims-body');
+        tbody.innerHTML = '';
+        claims.forEach(function (c) {
+          var tr = document.createElement('tr');
+          tr.className = 'govuk-table__row';
+          tr.innerHTML = '<th scope="row" class="govuk-table__header">' + c.ihs + '</th>' +
+            '<td class="govuk-table__cell">' + c.bsa + '</td>' +
+            '<td class="govuk-table__cell">' + formatLong(c.startDate) + '</td>' +
+            '<td class="govuk-table__cell">' + formatLong(c.endDate) + '</td>' +
+            '<td class="govuk-table__cell"><a class="govuk-link" href="/v20/claim/' + c.ihs + '">View</a></td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      // ensure claims sorted by start date ascending
+      claims.sort(function (a, b) { return new Date(a.startISO) - new Date(b.startISO); });
+
+      // detect gaps and insert gap rows
+      var tbody = document.getElementById('claims-body');
+      // We will rebuild tbody to insert gap rows reliably
+      tbody.innerHTML = '';
+      for (var i = 0; i < claims.length; i++) {
+        var c = claims[i];
+        var start = new Date(c.startISO);
+        var end = new Date(c.endISO);
+
+        // claim row
+        var tr = document.createElement('tr');
+        tr.className = 'govuk-table__row';
+        tr.innerHTML = '<th scope="row" class="govuk-table__header">' + c.ihs + '</th>' +
+          '<td class="govuk-table__cell">' + c.bsa + '</td>' +
+          '<td class="govuk-table__cell">' + formatLong(start) + '</td>' +
+          '<td class="govuk-table__cell">' + formatLong(end) + '</td>' +
+          '<td class="govuk-table__cell"><a class="govuk-link" href="/v20/claim/' + c.ihs + '">View</a></td>';
+        tbody.appendChild(tr);
+
+        // if next exists, detect a gap between (end + 1 day) and (next.start - 1 day)
+        if (i < claims.length - 1) {
+          var nextStart = new Date(claims[i + 1].startISO);
+          var expectedNext = new Date(end.getTime());
+          expectedNext.setDate(expectedNext.getDate() + 1);
+
+          if (expectedNext.getTime() < nextStart.getTime()) {
+            // there is a gap
+            var gapEnd = new Date(nextStart.getTime());
+            gapEnd.setDate(gapEnd.getDate() - 1);
+
+            var gapRow = document.createElement('tr');
+            gapRow.className = 'govuk-table__row gap-row';
+            gapRow.innerHTML =
+              '<td class="govuk-table__cell" colspan="2"><strong>Missing period</strong></td>' +
+              '<td class="govuk-table__cell">' + formatLong(expectedNext) + '</td>' +
+              '<td class="govuk-table__cell">' + formatLong(gapEnd) + '</td>' +
+              '<td class="govuk-table__cell"><a class="govuk-link" href="/v20/fill-gap?start=' + formatForQuery(expectedNext) + '&end=' + formatForQuery(gapEnd) + '">Fill this gap</a></td>';
+            tbody.appendChild(gapRow);
+          }
+        }
+      }
+
+      // Enable continue-from-last if we have at least one claim
+      if (claims.length > 0) {
+        var last = claims[claims.length - 1];
+        var lastEnd = new Date(last.endISO);
+        var followStart = new Date(lastEnd.getTime());
+        followStart.setDate(followStart.getDate() + 1);
+
+        document.getElementById('follow-start-day').value = followStart.getDate();
+        document.getElementById('follow-start-month').value = followStart.getMonth() + 1;
+        document.getElementById('follow-start-year').value = followStart.getFullYear();
+
+        var cbtn = document.getElementById('continue-from-last');
+        cbtn.disabled = false;
+        cbtn.dataset.start = formatForQuery(followStart);
+        document.getElementById('summary-inset').hidden = false;
+      } else {
+        document.getElementById('no-claims').hidden = false;
+      }
+
+      // Hook the continue button to redirect to claim-start-date with start param
+      document.getElementById('continue-from-last').addEventListener('click', function () {
+        var startISO = this.dataset.start;
+        // client-side redirect so the server receives start=YYYY-MM-DD
+        window.location.href = '/v20/claim-start-date?start=' + encodeURIComponent(startISO);
+      });
+
+      // small helpers
+      function formatForQuery(d) {
+        return d.toISOString().split('T')[0];
+      }
+      function formatLong(d) {
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      }
+
+    })();
+  </script>
+
+{% endblock %}

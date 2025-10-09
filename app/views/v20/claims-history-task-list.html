@@ -39,6 +39,9 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     <p>We've found the following previous successful IHS reimbursement applications based on the information you've
       given us.</p>
 
+
+
+
     <table class="govuk-table govuk-table--small-text-until-tablet">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -79,65 +82,53 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     <p class="govuk-hint" style="margin-top: -25px;">Table last updated: 4 August 2025</p>
     <br>
 
-    <form id="claim-form" class="form" action="start-date-cya" method="get" onsubmit="return validateStartDate(event)">
+    <form id="claim-form" class="form" method="get">
       <div id="form-group" class="govuk-form-group">
-        <h2 class="govuk-heading-m">What is the start date of this new claim?</h2>
+        <h2 class="govuk-heading-m">1. Are you applying for a period before 1 July 2023?</h2>
 
-        <p class="govuk-body">We'll work out the end date of this claim from the start date you enter. The end date will
-          be 6 months after the start date because you can only claim reimbursement for 6 months at a time.</p>
-        <p class="govuk-body">Based on the previous successful applications we found, the next claim can start on 1 July 2023.</p>
-
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">If you want to make a claim for an earlier time</span>
-          </summary>
-          <div class="govuk-details__text">
-            The earliest date you can claim an IHS reimbursement from is 31 March 2020.
-          </div>
-        </details>
-
-        <div id="passport-issued-hint" class="govuk-hint">For example, 15 1 2021</div>
-
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint"
-          id="passport-issued-fieldset">
-          <p id="passport-issued-error" class="govuk-error-message govuk-!-display-none" aria-live="assertive">
-            <span class="govuk-visually-hidden">Error:</span>
-            <span id="inline-error-text"></span>
-          </p>
-          <div class="govuk-date-input" id="passport-issued">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
-                  name="start-day" type="text" pattern="[0-9]*" inputmode="numeric"
-                  aria-describedby="passport-issued-hint passport-issued-error">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changedName">Yes</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">No</label>
               </div>
             </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
-                  name="start-month" type="text" pattern="[0-9]*" inputmode="numeric"
-                  aria-describedby="passport-issued-hint passport-issued-error">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
-                  name="start-year" type="text" pattern="[0-9]*" inputmode="numeric"
-                  aria-describedby="passport-issued-hint passport-issued-error">
-              </div>
-            </div>
-          </div>
-        </fieldset>
+          </fieldset>
+        </div>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
+     
+
+
+     <h2 class="govuk-heading-m">2. What is the start date of this new claim?</h2>
+     <p>You must complete the previous section before you can enter your claim start date.</p>
+ <button class="govuk-button" data-module="govuk-button">Continue</button>
+     </form>
+    <script>
+
+      document.getElementById("claim-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const choice = document.querySelector('input[name="changedName"]:checked');
+
+        if (choice.value === "yes") {
+          window.location.href = "task-list-backdated";  // page for YES
+        } else {
+          window.location.href = "task-list-forwarddated"; // page for NO
+        }
+      });
+    </script>
+
+
+
+
   </div>
 </div>
-
 <script>
   function validateStartDate(event) {
     const startDay = parseInt(document.getElementById("passport-issued-day").value, 10);
@@ -158,7 +149,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       { start: new Date(2023, 0, 1), end: new Date(2023, 5, 30) }
     ];
 
-    // Identical date check
+    // Identical date check (still takes precedence)
     for (let period of previousPeriods) {
       if (newStartDate.getTime() === period.start.getTime()) {
         event.preventDefault();
@@ -167,7 +158,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       }
     }
 
-    // Overlap check
+    // Overlap check (must take precedence)
     for (let period of previousPeriods) {
       if (newStartDate >= period.start && newStartDate <= period.end) {
         event.preventDefault();
@@ -176,16 +167,33 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       }
     }
 
-    // Gap-fill check
+
+
+    // --- NOW: check if date is before the most recent claim start date ---
+    let mostRecentStart = previousPeriods[0].start;
     for (let i = 1; i < previousPeriods.length; i++) {
-      if (newStartDate > previousPeriods[i-1].end && newStartDate < previousPeriods[i].start) {
-        event.preventDefault();
-        showError("The start date must be after the most recent successful claim end date");
-        return false;
+      if (previousPeriods[i].start.getTime() > mostRecentStart.getTime()) {
+        mostRecentStart = previousPeriods[i].start;
       }
     }
 
-    // ✅ Store both formatted and raw date parts
+    if (newStartDate.getTime() < mostRecentStart.getTime()) {
+      // No overlaps (checked above) and not identical (checked above), so redirect.
+      event.preventDefault();
+
+      // store date parts (so the backdated page can use them if needed)
+      const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
+      localStorage.setItem("enteredDate", formattedDate);
+      localStorage.setItem("claimDay", startDay);
+      localStorage.setItem("claimMonth", startMonth);
+      localStorage.setItem("claimYear", startYear);
+
+      // adjust path if necessary (e.g. '/v20/backdated-claim')
+      window.location.href = 'backdated-claim';
+      return false;
+    }
+
+    // If we reach here, all validations passed — store date and allow submission
     const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
     localStorage.setItem("enteredDate", formattedDate);
     localStorage.setItem("claimDay", startDay);
@@ -221,6 +229,8 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       input.setAttribute('aria-invalid', 'true');
     });
   }
+
 </script>
+
 
 {% endblock %}
