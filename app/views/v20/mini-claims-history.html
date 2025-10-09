@@ -1,0 +1,234 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+Start date of new claim – Immigration Health Surcharge Refund Service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank"
+        rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20/dependant-question">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div id="error-summary" class="govuk-error-summary govuk-!-display-none" data-module="govuk-error-summary"
+      role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li><a id="error-summary-link" href="#passport-issued-day"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Previous application found
+    </h1>
+    <p>Based on the information you've
+      given us, we have found your most recent successful claim to help you choose your next start date.</p>
+
+    <div class="govuk-inset-text">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            BSA reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            BSA123456789
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 January 2023
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Claim end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            30 June 2023
+
+          </dd>
+          
+        </div>
+
+    </div>
+  
+
+
+
+<p>Based on this application, the next claim can start on <b>1 July 2023</b>.</p>
+
+
+
+
+
+
+
+<form id="claim-form" class="form" method="get">
+
+  <h2 class="govuk-heading-m">Are you applying for a period before this claim?</h2>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="changedName">Yes</label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="changedName-2">No</label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  </div>
+  </div>
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+</form>
+<script>
+
+  document.getElementById("claim-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const choice = document.querySelector('input[name="changedName"]:checked');
+
+    if (choice.value === "yes") {
+      window.location.href = "mini-claims-history-yes";  // page for YES
+    } else {
+      window.location.href = "mini-claims-history-no"; // page for NO
+    }
+  });
+</script>
+
+
+
+
+</div>
+</div>
+<script>
+  function validateStartDate(event) {
+    const startDay = parseInt(document.getElementById("passport-issued-day").value, 10);
+    const startMonth = parseInt(document.getElementById("passport-issued-month").value, 10);
+    const startYear = parseInt(document.getElementById("passport-issued-year").value, 10);
+
+    const newStartDate = new Date(startYear, startMonth - 1, startDay);
+    if (isNaN(newStartDate.getTime())) return true;
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+
+    // Updated periods with 2nd claim removed
+    const previousPeriods = [
+      { start: new Date(2021, 0, 1), end: new Date(2021, 5, 30) },
+      { start: new Date(2022, 0, 1), end: new Date(2022, 5, 30) },
+      { start: new Date(2022, 6, 1), end: new Date(2022, 11, 31) },
+      { start: new Date(2023, 0, 1), end: new Date(2023, 5, 30) }
+    ];
+
+    // Identical date check (still takes precedence)
+    for (let period of previousPeriods) {
+      if (newStartDate.getTime() === period.start.getTime()) {
+        event.preventDefault();
+        showError("The start date cannot be the same as a previous claim you have made");
+        return false;
+      }
+    }
+
+    // Overlap check (must take precedence)
+    for (let period of previousPeriods) {
+      if (newStartDate >= period.start && newStartDate <= period.end) {
+        event.preventDefault();
+        showError("The claim period based on this start date cannot overlap with a previous application");
+        return false;
+      }
+    }
+
+
+
+    // --- NOW: check if date is before the most recent claim start date ---
+    let mostRecentStart = previousPeriods[0].start;
+    for (let i = 1; i < previousPeriods.length; i++) {
+      if (previousPeriods[i].start.getTime() > mostRecentStart.getTime()) {
+        mostRecentStart = previousPeriods[i].start;
+      }
+    }
+
+    if (newStartDate.getTime() < mostRecentStart.getTime()) {
+      // No overlaps (checked above) and not identical (checked above), so redirect.
+      event.preventDefault();
+
+      // store date parts (so the backdated page can use them if needed)
+      const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
+      localStorage.setItem("enteredDate", formattedDate);
+      localStorage.setItem("claimDay", startDay);
+      localStorage.setItem("claimMonth", startMonth);
+      localStorage.setItem("claimYear", startYear);
+
+      // adjust path if necessary (e.g. '/v20/backdated-claim')
+      window.location.href = 'backdated-claim';
+      return false;
+    }
+
+    // If we reach here, all validations passed — store date and allow submission
+    const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
+    localStorage.setItem("enteredDate", formattedDate);
+    localStorage.setItem("claimDay", startDay);
+    localStorage.setItem("claimMonth", startMonth);
+    localStorage.setItem("claimYear", startYear);
+
+    return true;
+  }
+
+  function showError(message) {
+    const errorSummary = document.getElementById('error-summary');
+    const errorSummaryLink = document.getElementById('error-summary-link');
+    const formGroup = document.getElementById('form-group');
+    const errorMessage = document.getElementById('passport-issued-error');
+    const inlineErrorText = document.getElementById('inline-error-text');
+    const inputs = [
+      document.getElementById("passport-issued-day"),
+      document.getElementById("passport-issued-month"),
+      document.getElementById("passport-issued-year")
+    ];
+
+    inlineErrorText.textContent = message;
+    errorSummaryLink.textContent = message;
+
+    errorSummary.classList.remove('govuk-!-display-none');
+    errorSummary.focus();
+
+    formGroup.classList.add('govuk-form-group--error');
+    errorMessage.classList.remove('govuk-!-display-none');
+
+    inputs.forEach(input => {
+      input.classList.add('govuk-input--error');
+      input.setAttribute('aria-invalid', 'true');
+    });
+  }
+
+</script>
+
+
+{% endblock %}

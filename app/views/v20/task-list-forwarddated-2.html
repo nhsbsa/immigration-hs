@@ -39,6 +39,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     <p>We've found the following previous successful IHS reimbursement applications based on the information you've
       given us.</p>
 
+   
 
 
     <table class="govuk-table govuk-table--small-text-until-tablet">
@@ -106,55 +107,23 @@ Start date of new claim – Immigration Health Surcharge Refund Service
 
 
      <h2 class="govuk-heading-m">2. What is the start date of this new claim?</h2>
-       <p class="govuk-body">We'll work out the end date of this claim from the start date you enter. The end date will
-          be 6 months after the start date because you can only claim reimbursement for 6 months at a time.</p>
-
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">If you want to make a claim for an earlier time</span>
-          </summary>
-          <div class="govuk-details__text">
-            The earliest date you can claim an IHS reimbursement from is 31 March 2020.
-          </div>
-        </details>
-
-        <div id="passport-issued-hint" class="govuk-hint">For example, 15 1 2021</div>
-
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint"
-          id="passport-issued-fieldset">
-          <p id="passport-issued-error" class="govuk-error-message govuk-!-display-none" aria-live="assertive">
-            <span class="govuk-visually-hidden">Error:</span>
-            <span id="inline-error-text"></span>
-          </p>
-          <div class="govuk-date-input" id="passport-issued">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
-                  name="start-day" type="text" pattern="[0-9]*" inputmode="numeric"
-                  aria-describedby="passport-issued-hint passport-issued-error">
-              </div>
+       <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="claims-history-task-list" aria-describedby="application-details-1-status">
+                Change your start date
+              </a>
             </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
-                  name="start-month" type="text" pattern="[0-9]*" inputmode="numeric"
-                  aria-describedby="passport-issued-hint passport-issued-error">
-              </div>
+            <div class="govuk-task-list__status" id="application-details-2-status">
+             <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
             </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
-                  name="start-year" type="text" pattern="[0-9]*" inputmode="numeric"
-                  aria-describedby="passport-issued-hint passport-issued-error">
-              </div>
-            </div>
-          </div>
-        </fieldset>
+          </li>
+          
+        </ul>
 
-     
+     <br>
 
 
 
@@ -163,7 +132,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
 
 
 
- <button class="govuk-button" data-module="govuk-button">Continue</button>
+ <a href="task-list-forwarddated-2" class="govuk-button" data-module="govuk-button">Continue</a>
      </form>
     <script>
 
