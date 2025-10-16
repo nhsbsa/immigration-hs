@@ -1,0 +1,36 @@
+{% extends "layout-health.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">The applicant's dependants are not eligible for an immigration health surcharge reimbursement</h1>
+
+      <form class="form" action="/v10/start" method="post">
+
+        <p class="govuk-body">This is because dependants must be included on the main applicant's visa for the full claim period to be eligible.</p>
+
+        
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}
