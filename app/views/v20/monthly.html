@@ -15,7 +15,11 @@
       Check you have all the evidence you need
     </h1>
 
-    <p>Based on the start date you gave us, you'll need to send evidence showing that the applicant worked in a health and social care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
+    <p>
+      Based on the start date you gave us, you'll need to send evidence showing that the applicant
+      worked in a health and social care role from <strong><span id="start-date"></span></strong>
+      to <strong><span id="end-date"></span></strong>.
+    </p>
 
     <h2 class="govuk-heading-m">Payslips</h2>
 
@@ -32,11 +36,15 @@
 
     <!-- Inset text shown if end date is in the future -->
     <div id="current-month-warning" class="govuk-inset-text" hidden>
-      If the applicant has not been paid for <span id="current-month-year"></span> yet, you should wait to apply until they have a payslip for <span id="current-month-year-2"></span>.
+      If the applicant has not been paid for <span id="current-month-year"></span> yet,
+      you should wait to apply until they have a payslip for <span id="current-month-year-2"></span>.
     </div>
 
     <h2 class="govuk-heading-m">Job contract</h2>
-    <p>You can also send copies of job contracts for all the jobs you're sending payslips for. This is optional but if you can upload the contracts, this makes it easier for us to confirm the applicant is eligible.</p>
+    <p>
+      You can also send copies of job contracts for all the jobs you're sending payslips for.
+      This is optional but if you can upload the contracts, this makes it easier for us to confirm the applicant is eligible.
+    </p>
 
     <details class="govuk-details">
       <summary class="govuk-details__summary">
@@ -45,8 +53,10 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        If you cannot send some of the payslips in this list, you'll need to add some extra information and evidence to your application explaining the gaps.<br><br> 
-        For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.
+        If you cannot send some of the payslips in this list, you'll need to add some extra information and evidence
+        to your application explaining the gaps.<br><br> 
+        For example, if you were on leave, you'll need to send a headed, signed and dated letter
+        from your employer confirming the dates you were on leave.
       </div>
     </details>
 
@@ -60,97 +70,91 @@
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="average-time-conditional" name="average-time-v20" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="average-time-conditional">
-              Yes
-            </label>
+            <label class="govuk-label govuk-radios__label" for="average-time-conditional">Yes</label>
           </div>
 
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="average-time-conditional-2" name="average-time-v20" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="average-time-conditional-2">
-              No
-            </label>
+            <label class="govuk-label govuk-radios__label" for="average-time-conditional-2">No</label>
           </div>
         </div>
       </fieldset>
       <br>
-      <button type="submit" class="govuk-button">
-        Continue
-      </button>
+      <button type="submit" class="govuk-button">Continue</button>
     </form>
   </div>
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Get stored date values
-    const day = parseInt(localStorage.getItem("claimDay"), 10);
-    const month = parseInt(localStorage.getItem("claimMonth"), 10);
-    const year = parseInt(localStorage.getItem("claimYear"), 10);
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (!day || !month || !year) return;
+  // Pull from localStorage (set on Page 1 + 2)
+  const day = parseInt(localStorage.getItem("claimDay"), 10);
+  const month = parseInt(localStorage.getItem("claimMonth"), 10);
+  const year = parseInt(localStorage.getItem("claimYear"), 10);
 
-    const startDate = new Date(year, month - 1, day);
-    const endDate = new Date(startDate);
-    endDate.setMonth(endDate.getMonth() + 6);
-    endDate.setDate(endDate.getDate() - 1);
+  if (!day || !month || !year) return; // No date saved yet
 
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    document.getElementById("start-date").textContent = startDate.toLocaleDateString('en-GB', options);
-    document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
+  const startDate = new Date(year, month - 1, day);
 
-    const payslipList = document.getElementById("payslip-dates");
-    payslipList.innerHTML = "";
+  // Correct end date calculation
+  function addMonthsSafe(date, months) {
+    const d = new Date(date);
+    const targetMonth = d.getMonth() + months;
+    d.setMonth(targetMonth);
+    // Handle month overflow for short months
+    while (d.getMonth() !== ((targetMonth) % 12 + 12) % 12) {
+      d.setDate(d.getDate() - 1);
+    }
+    return d;
+  }
 
-    let currentStart = new Date(startDate);
-    let monthCount = 0;
-    let lastDayOfStartMonth = new Date(currentStart.getFullYear(), currentStart.getMonth() + 1, 0);
+  let endDate = addMonthsSafe(startDate, 6);
+  endDate.setDate(endDate.getDate() - 1);
 
-    const firstItem = document.createElement("li");
-    firstItem.textContent = currentStart.getDate() === lastDayOfStartMonth.getDate()
-      ? currentStart.toLocaleDateString('en-GB', options)
-      : `${currentStart.toLocaleDateString('en-GB', options)} to ${lastDayOfStartMonth.toLocaleDateString('en-GB', options)}`;
-    payslipList.appendChild(firstItem);
+  const options = { day: "numeric", month: "long", year: "numeric" };
+  document.getElementById("start-date").textContent = startDate.toLocaleDateString("en-GB", options);
+  document.getElementById("end-date").textContent = endDate.toLocaleDateString("en-GB", options);
 
-    currentStart = new Date(lastDayOfStartMonth);
-    currentStart.setDate(1);
-    currentStart.setMonth(currentStart.getMonth() + 1);
+  const payslipList = document.getElementById("payslip-dates");
+  payslipList.innerHTML = "";
 
-    while (currentStart.getMonth() !== endDate.getMonth() || currentStart.getFullYear() !== endDate.getFullYear()) {
-      let currentEnd = new Date(currentStart);
-      currentEnd.setMonth(currentEnd.getMonth() + 1);
-      currentEnd.setDate(0);
+  let current = new Date(startDate);
+  let bulletCount = 0;
 
-      const listItem = document.createElement("li");
-      listItem.textContent = `${currentStart.toLocaleDateString('en-GB', options)} to ${currentEnd.toLocaleDateString('en-GB', options)}`;
-      payslipList.appendChild(listItem);
-      monthCount++;
+  while (current <= endDate) {
+    const monthStart = new Date(current.getFullYear(), current.getMonth(), 1);
+    const monthEnd = new Date(current.getFullYear(), current.getMonth() + 1, 0);
+    const periodStart = (monthStart < startDate) ? startDate : monthStart;
+    const periodEnd = (monthEnd > endDate) ? endDate : monthEnd;
 
-      currentStart = new Date(currentEnd);
-      currentStart.setDate(1);
-      currentStart.setMonth(currentStart.getMonth() + 1);
+    const listItem = document.createElement("li");
+
+    if (periodStart.getTime() === periodEnd.getTime()) {
+      listItem.textContent = periodStart.toLocaleDateString("en-GB", options);
+    } else {
+      listItem.textContent = `${periodStart.toLocaleDateString("en-GB", options)} to ${periodEnd.toLocaleDateString("en-GB", options)}`;
     }
 
-    const lastItem = document.createElement("li");
-    lastItem.textContent = endDate.getDate() === 1
-      ? endDate.toLocaleDateString('en-GB', options)
-      : `1 ${endDate.toLocaleString('default', { month: 'long' })} ${endDate.getFullYear()} to ${endDate.toLocaleDateString('en-GB', options)}`;
-    payslipList.appendChild(lastItem);
+    payslipList.appendChild(listItem);
+    bulletCount++;
 
-    if (monthCount + 2 === 7) {
-      document.getElementById("seven-month-info").removeAttribute("hidden");
-    }
+    current = new Date(periodEnd.getFullYear(), periodEnd.getMonth() + 1, 1);
+  }
 
-    const today = new Date();
+  if (bulletCount === 7) {
+    document.getElementById("seven-month-info").hidden = false;
+  }
 
-    // Show inset text if end date is in the future
-    if (endDate > today) {
-      const monthYearString = endDate.toLocaleString('en-GB', { month: 'long', year: 'numeric' });
-      document.getElementById("current-month-year").textContent = monthYearString;
-      document.getElementById("current-month-year-2").textContent = monthYearString;
-      document.getElementById("current-month-warning").removeAttribute("hidden");
-    }
-  });
+  const today = new Date();
+  if (endDate > today) {
+    const monthYearString = endDate.toLocaleString("en-GB", { month: "long", year: "numeric" });
+    document.getElementById("current-month-year").textContent = monthYearString;
+    document.getElementById("current-month-year-2").textContent = monthYearString;
+    document.getElementById("current-month-warning").hidden = false;
+  }
+
+});
 </script>
 
 {% endblock %}
