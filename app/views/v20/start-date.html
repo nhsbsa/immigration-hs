@@ -1,4 +1,3 @@
-<!-- claim-date.html -->
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
@@ -36,28 +35,30 @@
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="passport-issued-day" name="passport-issued-day"
+                       type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="passport-issued-month" name="passport-issued-month"
+                       type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                       id="passport-issued-year" name="passport-issued-year"
+                       type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
           </div>
         </fieldset>
       </div>
-
-      <!-- <div class="govuk-inset-text" id="inset-text" style="display: none;">
-        The end date for this claim will be <strong><span id="end-date"></span></strong>.
-      </div> -->
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
@@ -65,42 +66,20 @@
 </div>
 
 <script>
-  function updateEndDate() {
+  function saveDate() {
     const day = document.getElementById("passport-issued-day").value;
     const month = document.getElementById("passport-issued-month").value;
     const year = document.getElementById("passport-issued-year").value;
 
     if (day && month && year) {
       const startDate = new Date(Number(year), Number(month) - 1, Number(day));
-
       if (!isNaN(startDate.getTime())) {
-        startDate.setMonth(startDate.getMonth() + 6);
-        startDate.setDate(startDate.getDate() - 1); // Subtract 1 day
-
         const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        const formattedEndDate = startDate.toLocaleDateString('en-GB', options);
-
-        document.getElementById("end-date").textContent = formattedEndDate;
-        document.getElementById("inset-text").style.display = "block";
+        const formattedDate = startDate.toLocaleDateString('en-GB', options);
+        localStorage.setItem('enteredDate', formattedDate);
       }
-    } else {
-      document.getElementById("inset-text").style.display = "none";
     }
   }
-
-  function saveDate() {
-    const day = document.getElementById("passport-issued-day").value;
-    const month = document.getElementById("passport-issued-month").value;
-    const year = document.getElementById("passport-issued-year").value;
-
-    localStorage.setItem("claimDay", day);
-    localStorage.setItem("claimMonth", month);
-    localStorage.setItem("claimYear", year);
-  }
-
-  document.querySelectorAll("#passport-issued-day, #passport-issued-month, #passport-issued-year").forEach(input => {
-    input.addEventListener("input", updateEndDate);
-  });
 </script>
 
 {% endblock %}

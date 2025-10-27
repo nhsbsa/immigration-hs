@@ -1,7 +1,7 @@
 {% extends "layout-health.html" %}
 
 {% block pageTitle %}
-IHS question
+  IHS question
 {% endblock %}
 
 {% block beforeContent %}
@@ -40,7 +40,7 @@ IHS question
               <dt class="govuk-summary-list__key">
                 Claim start date
               </dt>
-      <dd class="govuk-summary-list__value" id="cya-start-date"></dd>
+              <dd class="govuk-summary-list__value" id="cya-start-date">
                 <!-- Filled by JavaScript -->
               </dd>
               <dd class="govuk-summary-list__actions">
@@ -75,7 +75,10 @@ IHS question
     const date = localStorage.getItem('enteredDate');
     if (date) {
       document.getElementById('cya-start-date').textContent = date;
+    } else {
+      document.getElementById('cya-start-date').textContent = 'No date entered';
     }
   });
 </script>
+
 {% endblock %}
