@@ -6185,6 +6185,17 @@ router.post('/dependant-part', function(req,res){
 
 })
 
+router.post('/correct-application', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant/dependant-details')
+    }
+    else {
+        res.redirect('/v20/dependant/wrong-application')
+    }
+
+})
+
 
 
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
