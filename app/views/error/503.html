@@ -1,30 +1,30 @@
 {% extends "v1/layout.html" %}
 
 {% block pageTitle %}
-  Start page example
+Start page example
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
-        <p class="govuk-body">
-          You will be able to use the service from 9am on Monday 19 November 2018.
-        </p>
-        <p class="govuk-body">We have not saved your answers. When the service is available, you'll have to start again.</p>
-        <p class="govuk-body">
-           If you need to speak to someone, you can <a class="govuk-link" href="/footer/contact-us">contact us</a>.
-        </p>
-      </div>
-    </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+    <p class="govuk-body">
+      You will be able to use the service from 9am on Monday 19 November 2018.
+    </p>
+    <p class="govuk-body">We have not saved your answers. When the service is available, you'll have to start again.</p>
+    <p class="govuk-body">
+      If you need to speak to someone, you can <a class="govuk-link" href="/footer/contact-us">contact us</a>.
+    </p>
+  </div>
+</div>
 
 
- 
+
 
 {% endblock %}
