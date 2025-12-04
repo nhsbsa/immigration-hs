@@ -31,7 +31,7 @@ Dependant add
             <div class="govuk-radios__item">
               <!-- value points directly at the route target for simplicity -->
               <input class="govuk-radios__input" id="route-main-applicant" name="dependantRoute" type="radio"
-                value="/v20/dependant/name">
+                value="/v20/name">
               <label class="govuk-label govuk-radios__label" for="route-main-applicant">
                 Main applicant only
               </label>
@@ -39,7 +39,7 @@ Dependant add
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="route-main-and-dependants" name="dependantRoute" type="radio"
-                value="/v20/dependant/name">
+                value="/v20/name">
               <label class="govuk-label govuk-radios__label" for="route-main-and-dependants">
                 Main applicant and dependants
               </label>
@@ -92,7 +92,7 @@ Dependants are people who are eligible to live in the UK because of their relati
 
       // If nothing selected, fall back to server-side handling (submit the form)
       // This keeps behaviour safe if JS routing isn't desired for a particular case
-      form.submit();
+
     });
   })();
 </script>
