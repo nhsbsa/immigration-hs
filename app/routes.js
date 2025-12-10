@@ -6198,6 +6198,37 @@ router.post('/correct-application', function(req,res){
 
 
 
+router.post('/nino-check', (req, res) => {
+
+  const correctBsa = 'BSA123456789';
+
+  // Store the expected NINO stripped of spaces and made uppercase
+  const correctNino = 'QQ123456C';
+
+  // Clean user input for BSA
+  const enteredBsa = (req.session.data['bsa-number'] || '')
+    .replace(/\s+/g, '')
+    .toUpperCase()
+    .trim();
+
+  // Clean user input for NINO
+  const enteredNino = (req.session.data['nino'] || '')
+    .replace(/\s+/g, '')    // remove all spaces
+    .toUpperCase()          // uppercase everything
+    .trim();
+
+  // Compare cleaned versions
+  if (enteredBsa === correctBsa && enteredNino === correctNino) {
+    return res.redirect('/v20/dependant/previous-claim');
+  }
+
+  return res.redirect('/v20/dependant/no-application-found');
+});
+
+
+
+
+
 router.use('/user-research/health-social-care/july-2023', require('./views/user-research/health-social-care/july-2023/_routes'));
 
 

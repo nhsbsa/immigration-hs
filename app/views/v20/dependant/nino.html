@@ -6,14 +6,14 @@
 
 {% block beforeContent %}
    <div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    
-    <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
-    </span>
-  </p>
-</div>
-  <a class="govuk-back-link" href="/v20/dob">Back</a>
+      <p class="govuk-phase-banner__content">
+        <span class="govuk-phase-banner__text">
+          Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+        </span>
+      </p>
+   </div>
+
+   <a class="govuk-back-link" href="bsa-reference">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -21,25 +21,30 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!--<h1 class="govuk-fieldset__heading">What's the applicant's National Insurance number?</h1>-->
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Dependant application</span>
          What is the main applicant's National Insurance number? 
       </h1>
+
       <p>We'll use this to find the correct application to link their dependants to.</p>
 
-      <form class="form" action="previous-claim" method="post">
+      <form class="form" action="/nino-check" method="post">
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="national-insurance-number">
+          <label class="govuk-label" for="nino">
             National Insurance number
           </label>
           <span id="national-insurance-number-hint" class="govuk-hint">
             It's on your National Insurance card, payslip, P60 or biometric residence permit (BRP). For example, 'QQ 12 34 56 C'.
           </span>
-        </br>
-      </br>
-          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
+
+          <br><br>
+
+          <input class="govuk-input govuk-input--width-10"
+                 id="nino"
+                 name="nino"
+                 type="text"
+                 spellcheck="false">
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
