@@ -1,0 +1,55 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div id="my-div" class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      IHS - Health & Social Care
+    </h1>{{releaseVersion | log }}
+
+    <h2 class="govuk-heading-m">Evidence upload design changes - December 2024</h2>
+
+    <div class="my-div" style="background-color:#1d70b8; padding:20px; border-radius: 10px;">
+      <a class="fill-div" href="v20-mvp">
+      <h2 class="govuk-heading-m" style="color: white;">MVP Prototypes</h2>
+
+    <p style="color: white;">Links to prototype journeys, error messages and ADHOC screens from the MVP version of the evidence upload design changes.</p>
+    </a></div>
+    <Br>
+      <br>
+
+    <div class="my-div" style="background-color:#1d70b8; padding:20px; border-radius: 10px;">
+      <a class="fill-div" >
+      <h2 class="govuk-heading-m" style="color: white;">Version 2.0 Prototypes</h2>
+
+    <p style="color: white;">Links to prototype journeys, error messages and ADHOC screens from the 2.0 and post MVP version of the evidence upload design changes.</p>
+    </a></div>
+
+
+
+
+  
+  
+  
+  </div>
+</div>
+<style>
+  #my-div {
+   
+  
+}
+a.fill-div {
+    
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+</style>
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v10/ihs-question">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+      <form class="form" action="/doug-ihs-tier2-question-v10" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="ihs-question-conditional-hint-v10">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                  Does the applicant have a Tier 2 (General) visa?
+              </h1>
+            </legend> 
+      
+            <span id="work-question-conditional-hint" class="govuk-hint">
+              The applicants visa type should be on their:
+   <br>
+   <br>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>entry clearance documentation</li>
+              <li>biometric residence permit</li>
+              <li>sticker (vignette) inside their passport</li>
+            </ul>
+              </span>
+            <br>
+           <!-- <span id="ihs-question-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+
+            <div class="govuk-radios govuk-radios--inline" data-module="radios">
+            <!-- <div class="govuk-radios govuk-radios--conditional" data-module="radios"> -->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-question-conditional-v10" name="doug-ihs-tier2-question-v10" type="radio" value="yes" data-aria-controls="conditional-ihs-question-conditional-v10">
+                <label class="govuk-label govuk-radios__label" for="ihs-question-conditional-v10">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-question-conditional-2-v10" name="doug-ihs-tier2-question-v10" type="radio" value="no" data-aria-controls="conditional-ihs-question-conditional-2-v10">
+                <label class="govuk-label govuk-radios__label" for="ihs-question-conditional-2-v10">
+                  No
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

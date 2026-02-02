@@ -1,0 +1,381 @@
+<!-- application-complete.html -->
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Check you have all the evidence you need
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://design-system.dwp.gov.uk/assets/dwp-frontend/dwp-frontend.min.css">
+
+<style>
+  .dwp-timeline {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  user agent stylesheet div {
+    display: block;
+    unicode-bidi: isolate;
+  }
+
+  :root {
+    --govuk-frontend-version: "5.8.0";
+    --govuk-frontend-breakpoint-mobile: 20rem;
+    --govuk-frontend-breakpoint-tablet: 40.0625rem;
+    --govuk-frontend-breakpoint-desktop: 48.0625rem;
+  }
+
+  .dwp-timeline__items {
+    padding: 0;
+    list-style-type: none;
+    border-left: 3px solid #1d70b8;
+  }
+
+  ol,
+  .govuk-list--number {
+    padding-left: 20px;
+    list-style-type: decimal;
+  }
+
+  ul,
+  ol,
+  footer ul,
+  .app-masthead__new ul,
+  .govuk-list {
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+
+    line-height: 1.25;
+    color: #0b0c0c;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  user agent stylesheet ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+  }
+
+  :root {
+    --govuk-frontend-version: "5.8.0";
+    --govuk-frontend-breakpoint-mobile: 20rem;
+    --govuk-frontend-breakpoint-tablet: 40.0625rem;
+    --govuk-frontend-breakpoint-desktop: 48.0625rem;
+  }
+
+  element.style {}
+
+  @media (max-width: 48.0525em) {
+    .dwp-timeline__item {
+      padding-top: 2px;
+    }
+  }
+
+  .dwp-timeline__item {
+    position: relative;
+    top: -8px;
+    margin: 15px 0;
+    padding: 0 0 15px 18px;
+  }
+
+  ul>li,
+  .app-masthead__new ul>li,
+  .govuk-list--bullet>li,
+  ol>li,
+  .govuk-list--number>li {
+    margin-bottom: 0;
+  }
+
+  ul>li,
+  ol>li,
+  .app-masthead__new ul>li,
+  .govuk-list>li {
+    margin-bottom: 5px;
+  }
+
+  user agent stylesheet li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+
+  .dwp-timeline__items {
+    padding: 0;
+    list-style-type: none;
+    border-left: 3px solid #1d70b8;
+  }
+
+  ol,
+  .govuk-list--number {
+    padding-left: 20px;
+    list-style-type: decimal;
+  }
+
+  ul,
+  ol,
+  footer ul,
+  .app-masthead__new ul,
+  .govuk-list {
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+
+    color: #0b0c0c;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  user agent stylesheet ol {
+    list-style-type: decimal;
+  }
+
+  :root {
+    --govuk-frontend-version: "5.8.0";
+    --govuk-frontend-breakpoint-mobile: 20rem;
+    --govuk-frontend-breakpoint-tablet: 40.0625rem;
+    --govuk-frontend-breakpoint-desktop: 48.0625rem;
+  }
+
+  .dwp-timeline__item::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -1px;
+    width: 11px;
+    border-top: 3px solid #1d70b8;
+  }
+
+  .dwp-timeline__datetime {
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+    margin-bottom: 5px;
+  }
+
+
+
+
+  .dwp-timeline__heading {
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    line-height: 1.25;
+    margin-block: 0;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    display: block;
+
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+  }
+
+  .dwp-timeline__by-line {
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+   
+    line-height: 1.1428571429;
+    margin-bottom: 15px;
+  }
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Check you have all the evidence you need
+    </h1>
+
+    <p>Based on the start date you gave us, you'll need to send evidence showing that you worked in a health and social
+      care role from <strong><span id="start-date"></span></strong> to <strong><span id="end-date"></span></strong>.</p>
+
+
+    
+     
+      <div class="dwp-timeline">
+      <ol class="dwp-timeline__items">
+      <li class="dwp-timeline__item">
+        
+        <h2 class="dwp-timeline__heading">April 2020</h2>
+        <p class="dwp-timeline__by-line">Payslips covering: 20 April 2020 to 30 April 2020</p>
+      </li>
+      <li class="dwp-timeline__item">
+       
+        <h2 class="dwp-timeline__heading">May 2020</h2>
+        <p class="dwp-timeline__by-line">Payslips covering: 1 May 2020 to 31 May 2020</p>
+      </li>
+      <li class="dwp-timeline__item">
+        
+        <h2 class="dwp-timeline__heading">June 2020</h2>
+        <p class="dwp-timeline__by-line">Payslips covering: 1 June 2020 to 30 June 2020</p>
+      </li> <li class="dwp-timeline__item">
+        
+        <h2 class="dwp-timeline__heading">July 2020</h2>
+        <p class="dwp-timeline__by-line">Payslips covering: 1 July 2020 to 31 July 2020</p>
+      </li> <li class="dwp-timeline__item">
+        
+        <h2 class="dwp-timeline__heading">August 2020</h2>
+        <p class="dwp-timeline__by-line">Payslips covering: 1 August 2020 to 31 August 2020</p>
+      </li> <li class="dwp-timeline__item">
+        
+        <h2 class="dwp-timeline__heading">September 2020</h2>
+        <p class="dwp-timeline__by-line">Payslips covering: 1 September 2020 to 31 September 2020</p>
+      </li> <li class="dwp-timeline__item">
+        
+        <h2 class="dwp-timeline__heading">October 2020</h2>
+        <p class="dwp-timeline__by-line">Payslips covering: 1 October 2020 to 31 October 2020</p>
+      </li>
+      </ol>
+      </div>
+      <h2 class="govuk-heading-m">Job contract</h2>
+      <p>You'll also need to send copies of your contracts for all the jobs you're sending payslips for. You should ask
+        your employer for a copy of your contract if you do not have one.
+      </p>
+
+
+
+
+   
+    
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If you cannot get all of this evidence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you cannot send some of the payslips in this list, you'll need to add some extra information and evidence to
+        your application explaining the gaps.<br><br> For example, if you were on leave, you'll need to send a headed,
+        signed and dated letter from your employer confirming the dates you were on leave. </div>
+    </details>
+
+
+    <!-- <p>For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.</p>
+
+
+      <h2 class="govuk-heading-m">Apply now</h2>
+      <p>If you have all the evidence you need, you can make your application online now.</p> -->
+
+    <!-- <a href="/v20/start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+        Apply for an IHS refund
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a> -->
+
+   
+    <form class="form" action="/checklist-evidence" method="post">
+
+      <fieldset class="govuk-fieldset" aria-describedby="average-time-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+          <!-- <h1 class="govuk-fieldset__heading">
+              When working in the health and social care job, was the applicant working an average of 16 hours or more per week?
+          </h1>-->
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Do you have all the evidence in the list or alternative evidence to cover any gaps?
+            </h1>
+          </legend>
+        </legend>
+
+
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="average-time-conditional" name="average-time-v20" type="radio"
+                value="yes" data-aria-controls="conditional-average-time-conditional">
+              <label class="govuk-label govuk-radios__label" for="average-time-conditional">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="average-time-conditional-2" name="average-time-v20" type="radio"
+                value="no" data-aria-controls="conditional-average-time-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="average-time-conditional-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <br>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const day = localStorage.getItem("claimDay");
+    const month = localStorage.getItem("claimMonth");
+    const year = localStorage.getItem("claimYear");
+
+    if (day && month && year) {
+      const startDate = new Date(Number(year), Number(month) - 1, Number(day));
+      const endDate = new Date(startDate);
+      endDate.setMonth(endDate.getMonth() + 6);
+      endDate.setDate(endDate.getDate() - 1);
+
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      document.getElementById("start-date").textContent = startDate.toLocaleDateString('en-GB', options);
+      document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
+
+      const payslipList = document.getElementById("payslip-dates");
+      let currentStart = new Date(startDate);
+
+      while (currentStart <= endDate) {
+        let currentEnd = new Date(currentStart);
+        if (currentStart.getDate() !== 1) {
+          // First month - end at the last day of the same month
+          currentEnd.setMonth(currentEnd.getMonth() + 1);
+          currentEnd.setDate(0); // Last day of the previous month
+        } else {
+          // For all other months, start on the 1st and end on the last day
+          currentEnd.setMonth(currentEnd.getMonth() + 1);
+          currentEnd.setDate(0); // Last day of the previous month
+        }
+
+        if (currentEnd > endDate) {
+          currentEnd = new Date(endDate);
+        }
+
+        const listItem = document.createElement("li");
+        listItem.textContent = `${currentStart.toLocaleDateString('en-GB', options)} to ${currentEnd.toLocaleDateString('en-GB', options)}`;
+        payslipList.appendChild(listItem);
+
+        // Move to the next month, starting on the 1st
+        currentStart = new Date(currentEnd);
+        currentStart.setDate(1);
+        currentStart.setMonth(currentStart.getMonth() + 1);
+      }
+    }
+  });
+</script>
+{% endblock %}

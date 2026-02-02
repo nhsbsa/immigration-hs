@@ -1,0 +1,68 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/v4/attachments-preview" method="post">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#passport-issued-error">Select the file you want to upload as evidence</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+            <h1 class="govuk-heading-l">Upload evidence</h1>
+            </label>
+
+          <span id="file-upload-1-hint" class="govuk-hint">
+              You can upload your evidence as a scanned copy or photo of the original. 
+              We accept:
+              <ul>
+                <li>payslips for your work in a health and social care job for 6 months or more</li>
+                <li>biometric residence permits (BRPs) - we'll need both sides</li>
+                <li>biometric residence cards (BRCs) - we'll need both sides</li>
+              </ul>
+              Your uploaded file must be:
+              <ul>
+                  <li>a jpg, jpeg, bmp, png or pdf</li>
+                  <li>a file size no larger than 2MB</li>
+                  <li>show [your name] and [the date]</li>
+                </ul>
+              </span>
+            
+          
+          <div class="govuk-form-group govuk-form-group--error">
+           
+            <span id="file-upload-1-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select the file you want to upload as evidence
+            </span>
+            <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
+          </div>
+          <br>
+          
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

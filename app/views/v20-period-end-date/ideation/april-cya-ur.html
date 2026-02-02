@@ -1,0 +1,178 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+  <!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+    
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/yes-payslip-add-ur" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Payslips uploaded for April 2020</h1>
+        </legend>
+
+        
+        <div class="govuk-form-group">
+
+
+        
+          <p>Select 'preview' to check the files you've uploaded or select 'delete' to remove files from this application.</p>
+            
+            <dl class="govuk-summary-list">
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!-- <a download href="/">contract.pdf</a> -->
+                  <a href="/public/images/april-2020.png" target="_blank" >april-2020.png</a>
+                </dd>
+                <dd class="govuk-summary-list__value">
+                  <!-- <a download href="/">contract.pdf</a> -->
+                  <a href="april-delete" >Delete</a>
+                </dd>
+            
+                
+            
+              </div>
+
+                   
+
+            </dl>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+                  Do you want to upload more payslips for April 2020?
+  
+              </legend>            
+             <!-- <span id="attachments-add-conditional-hint" class="govuk-hint">
+              hint text goes here.
+              </span>-->
+  
+              
+  
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="attachments-add-3-conditional" name="contracts-add-3-v20" type="radio" value="yes" data-aria-controls="conditional-attachments-add-3-conditional">
+                  <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional">
+                    Yes
+                  </label>
+                </div>
+  
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="attachments-add-3-conditional-2" name="contracts-add-3-v20" type="radio" value="no" data-aria-controls="conditional-attachments-add-3-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="attachments-add-3-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+
+
+      
+
+            
+
+          <!-- <img src="/public/images/april-2020.png" style="height: 300px;" alt="Three illustrations of taking a passport photo. Two incorrect ways show someone taking their own photo with a phone camera or webcam. The correct way shows someone else helping to take a photo that includes the person's head and shoulders."> -->
+       
+         
+            </fieldset>
+          
+            <!-- <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-heading-m">
+                 What is the end date of this payslip
+                </h2>
+              </legend>
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset> -->
+          </div>
+          
+        </div>
+        </fieldset>
+      </div>
+
+        
+
+      <a href="task-list-3" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

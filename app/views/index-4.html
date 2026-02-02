@@ -1,0 +1,128 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Apply for your immigration health surcharge reimbursement
+    </h1>{{releaseVersion | log }}
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <p>The online IHS application is used by certain types of visa holders to apply for a refund of the IHS payment they paid as part of their visa application. Certain roles within health and social care and student status make user eligible to apply using this online service.</p>
+
+      <p>Within the journey, users need to upload proof that they hold one of these roles, as well as supporting documentation. This commonly takes place as job contract and payslips for health and social care, and GHIC and proof of student status for students.</p>
+
+<hr><br>
+
+
+
+
+<h2 class="govuk-heading-m">&nbsp;&nbsp;&nbsp;&nbsp;Prototypes</h2>
+      <div class="govuk-grid-column-one-half govuk-!-margin-bottom-5">
+        
+        <a class="fill-div" href="health-index" style="text-decoration: none;">
+          <div class="my-div" style="background-color:#1d70b8; padding:20px; border-radius: 10px; color: white;">
+            <h2 class="govuk-heading-m" style="color: white;">Health & Social Care</h2>
+            <p style="color: white;">Click here to find prototype links for the health and social care journey of the
+              IHS application.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="govuk-grid-column-one-half govuk-!-margin-bottom-5">
+        <a class="fill-div" href="student-index" style="text-decoration: none;">
+          <div class="my-div" style="background-color:#007f3b; padding:20px; border-radius: 10px;">
+            <h2 class="govuk-heading-m" style="color: white;">Students</h2>
+            <p style="color: white;">Click here to find prototype links for the student journey of the IHS application.
+            </p>
+
+
+
+          </div>
+        </a>
+
+      </div>
+
+      <hr>
+
+  
+<br>
+      <h2 class="govuk-heading-m">About this project</h2>
+
+      <p><strong>Design team</strong></p>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Interaction Designer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Matthew Murphy
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="mailto:matthew.murphy@nhsbsa.nhs.uk">Contact by email<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            User Researcher </dt>
+          <dd class="govuk-summary-list__value">
+            On-Ying Chan
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Contact by email<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Content Designer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Rhyanna Hoyle
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Contact by email<span class="govuk-visually-hidden"> address</span></a>
+          </dd>
+        </div>
+        
+      </dl>
+      <hr>
+<br>
+      <p><STRONG>Useful links:</STRONG></p>
+
+      <p>Within the following Miro spaces you will find all of the miro boards and work completed on IHS.</p>
+      <ul class="govuk-list--bullet">
+        <li><a href="https://miro.com/app/dashboard/space/3074457350614551206">IHS Miro Team Space</a></li>
+        <li><a href="https://miro.com/app/dashboard/space/3074457360884956845">IHS Students Miro Team Space</a></li>
+        <li><a href="">Design logs and change history</a></li>
+      </ul>
+      </ul>
+    
+
+
+
+
+    </div>
+  </div>
+
+  <style>
+    #my-div {}
+
+    a.fill-div {
+
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+    }
+  </style>
+
+
+
+  {% endblock %}

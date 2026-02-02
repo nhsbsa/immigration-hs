@@ -1,0 +1,60 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+  Do you have a NINO
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <form action="v1/national-insurance-number-question" method="POST">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Do you have a National Insurance number?
+          </h1>
+        </legend>
+
+        <div class="govuk-form-group">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="national-insurance-number-question-yes" name="national-insurance-number-question" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="national-insurance-number-question-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="national-insurance-number-question-no" name="national-insurance-number-question" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="national-insurance-number-question-no">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+      <button class="govuk-button" type="submit">Continue</button><br>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

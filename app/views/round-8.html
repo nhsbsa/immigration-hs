@@ -1,0 +1,84 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            <span class="govuk-caption-l">Health & Social Care</span>
+            User Research - Round 8
+        </h1>{{releaseVersion | log }}
+
+        <h2 class="govuk-heading-m">Whats being tested?</h2>
+        <p>This round of research is the first round of research following the sign of the <a href="v20-mvp">MVP
+                prototype</a>.</p>
+        <P>Within this round, we will be revisiting and testing the following post MVP features:</P>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>period end date validation</li>
+            <li>preview file functionality</li>
+            <li>multi file upload on all file upload</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Prototype and user journeys</h2>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Journey</th>
+                            <th scope="col" class="govuk-table__header">Prototype</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Description</th>
+                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">1</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Full 2.0 Functionality</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">This prototype includes all post
+                                MVP functionalities, and had the period end date validation included within the journey.
+                            </td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a
+                                    href="/v20/gate-page">Prototype link</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">2</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Payslip checker tool</td>
+
+                            <td class="govuk-table__cell govuk-table__cell--numeric">This version of the prototype does
+                                not have the period end date validation included within the main journey, and instead
+                                has a link on the start page to a new standalone payslip checker service where users can
+                                choose to enter the dates and get a general verdict on whether they will cover their
+                                claim period.<br><br>This prototype starts at the new version of the start page (Gov and IHS managed) but will skip to evidence upload on start click.</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/v20/payslip-checker/ur-start">Prototype
+                                    link</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">3</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">Preview and multi file upload, but no period end date</td>
+
+                            <td class="govuk-table__cell govuk-table__cell--numeric">This is the version of the prototype which entirely scraps period end date validation, if we decide that users do not understand the process.<br><br>It will include the post mvp features of file preview and multi file.</td>
+                            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="/v20-UR/gate-page">Prototype link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+         </div>
+
+
+</div>
+
+{% endblock %}

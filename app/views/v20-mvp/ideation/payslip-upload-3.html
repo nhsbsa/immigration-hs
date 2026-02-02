@@ -1,0 +1,199 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/v20-mvp/extra-information" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--l" for="file-upload-1">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Upload missing payslips
+          </h1>
+        </label>
+
+        <!-- start callout box -->
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+            <p>Upload evidence for the period: <strong>20 April 2020</strong> to <strong>24 October
+                2020</strong>.</p>
+            <p>If the applicant does not have the correct evidence, their claim for reimbursement may be rejected or
+              declined.</p>
+            </p>
+          </div>
+        </div>
+        <!-- end callout box -->
+
+
+
+        <span id="file-upload-1-hint" class="govuk-hint">
+          
+
+
+
+
+
+          <span id="file-upload-1-hint" class="">
+            <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>employee name</li>
+              <li>employer name</li>
+              <li>National Insurance number</li>
+              <li>pay date or period covered</li>
+              <li>employment start date</li>
+              <li>contracted hours</li>
+            </ul>
+
+
+
+            <p>Uploaded evidence must be:</p>
+            <ul class="govuk-list govuk-list--bullet ">
+              <li>clear and readable</li>
+              <li>descriptive, with the file name containing the period that the evidence covers such as
+                'payslip-090123-150123.pdf'</li>
+              <li>JPG, JPEG, BMP, PNG or PDF</li>
+              <li>smaller than 2MB in size for single files</li>
+            </ul>
+          </span>
+
+      </div>
+
+
+
+      <h2 class="govuk-heading-m">Files uploaded</h2>
+      <div class="moj-multi-file__uploaded-files">
+
+        <div class="govuk-summary-list moj-multi-file-upload__list">
+
+          
+
+
+
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+              <span class="moj-multi-file-upload__success"> 
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                <div class="moj-file-message_span">april-2020.png successfully uploaded</div>
+            </span>
+            <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a>Delete</a></dd>
+          </div>
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+              <span class="moj-multi-file-upload__success"> 
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                <div class="moj-file-message_span">May-2020.jpg successfully uploaded</div>
+            </span>
+            <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a>Delete</a></dd>
+          </div>
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+              <span class="moj-multi-file-upload__success"> 
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                <div class="moj-file-message_span">June-2020.jpg successfully uploaded</div>
+            </span>
+            <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a>Delete</a></dd>
+          </div>
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+              <span class="moj-multi-file-upload__success"> 
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                <div class="moj-file-message_span">July-2020.jpg successfully uploaded</div>
+            </span>
+            <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a>Delete</a></dd>
+          </div>
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+              <span class="moj-multi-file-upload__success"> 
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                <div class="moj-file-message_span">August-2020.jpg successfully uploaded</div>
+            </span>
+            <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a>Delete</a></dd>
+          </div>
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+              <span class="moj-multi-file-upload__success"> 
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                <div class="moj-file-message_span">September-2020.jpg successfully uploaded</div>
+            </span>
+            <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a>Delete</a></dd>
+          </div>
+          <div class="govuk-summary-list__row moj-multi-file-upload__row">
+            <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+              <span class="moj-multi-file-upload__success"> 
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+                <div class="moj-file-message_span">October-2020.jpg successfully uploaded</div>
+            </span>
+            <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a>Delete</a></dd>
+          </div>
+        </div>
+      </div>
+      <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
+      <label class="govuk-label govuk-label--m" for="documents">
+        Upload files
+      </label>
+      <!--<div class="govuk-grid-column-two-thirds">-->
+      <div class="moj-multi-file-upload">
+
+
+
+
+        <div class="govuk-form-group">
+
+
+          <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file"
+            multiple="">
+        </div>
+
+
+
+        <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+          Upload file
+        </button>
+
+
+
+
+
+        <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
+        <a href="check-payslip" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

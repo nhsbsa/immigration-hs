@@ -1,0 +1,130 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div id="content"></div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/check-start-date" method="post">
+      <div class="govuk-form-group">
+
+        <!-- Notification/banner (removed if not needed) -->
+        <div id="warning-banner" class="govuk-notification-banner" aria-labelledby="notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p id="banner-text" class="govuk-notification-banner__heading"></p>
+          </div>
+        </div>
+
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Check the start date</h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+                You will not be able to change this date again.
+              </strong>
+            </div>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Claim start date</dt>
+                <dd class="govuk-summary-list__value" id="claim-start-date">20 April 2020</dd>
+                <dd class="govuk-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="/v20/claim-dates-new">Change
+                        <span class="govuk-visually-hidden"> claim start date</span>
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+
+            <div class="govuk-form-group">
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="confirm-start-date" name="confirm-start-date" type="checkbox" value="yes">
+                  <label class="govuk-label govuk-checkboxes__label" for="confirm-start-date">
+                    I confirm this start date is correct.
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="monthly" class="govuk-button" data-module="govuk-button">Continue</a>
+    </form>
+  </div>
+</div>
+
+<script>
+  (function () {
+    function showBanner(message) {
+      const banner = document.getElementById('warning-banner');
+      const bannerText = document.getElementById('banner-text');
+      bannerText.textContent = message;
+    }
+
+    // retrieve
+    const enteredDate = localStorage.getItem('enteredDate');
+    const warningType = localStorage.getItem('warningType'); // 'identical' | 'overlap' | 'none' | null
+
+    // populate date display
+    const claimDateEl = document.getElementById('claim-start-date');
+    if (enteredDate && claimDateEl) {
+      claimDateEl.textContent = enteredDate;
+    } else {
+      // try assembling from stored parts
+      const d = localStorage.getItem('claimDay');
+      const m = localStorage.getItem('claimMonth');
+      const y = localStorage.getItem('claimYear');
+      if (d && m && y) {
+        const assembled = new Date(parseInt(y,10), parseInt(m,10)-1, parseInt(d,10));
+        if (!isNaN(assembled.getTime())) {
+          claimDateEl.textContent = assembled.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+      }
+    }
+
+    // show banner if warningType set
+    if (warningType === 'identical') {
+      showBanner("This start date is the same as a previous claim you have made. If you continue with this claim, you might be rejected");
+    } else if (warningType === 'overlap') {
+      showBanner("This application overlaps with a previous claim period. If you continue with this start date, this application might be rejected");
+    } else {
+      // remove banner node entirely for cleaner output
+      const banner = document.getElementById('warning-banner');
+      if (banner && banner.parentNode) banner.parentNode.removeChild(banner);
+    }
+  })();
+</script>
+{% endblock %}

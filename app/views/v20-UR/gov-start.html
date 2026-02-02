@@ -1,0 +1,320 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Reimbursement start page
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/index" class="govuk-header__link govuk-header__link--homepage">
+        <svg focusable="false" role="img" class="govuk-header__logotype govuk-header__logotype-crown"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 30" height="30" width="148" aria-label="GOV.UK">
+          <title>GOV.UK</title>
+          <path
+            d="M22.6 10.4c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m-5.9 6.7c-.9.4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4m10.8-3.7c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s0 2-1 2.4m3.3 4.8c-1 .4-2-.1-2.4-1-.4-.9.1-2 1-2.4.9-.4 2 .1 2.4 1s-.1 2-1 2.4M17 4.7l2.3 1.2V2.5l-2.3.7-.2-.2.9-3h-3.4l.9 3-.2.2c-.1.1-2.3-.7-2.3-.7v3.4L15 4.7c.1.1.1.2.2.2l-1.3 4c-.1.2-.1.4-.1.6 0 1.1.8 2 1.9 2.2h.7c1-.2 1.9-1.1 1.9-2.1 0-.2 0-.4-.1-.6l-1.3-4c-.1-.2 0-.2.1-.3m-7.6 5.7c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m-5 3c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s.1 2 1 2.4m-3.2 4.8c.9.4 2-.1 2.4-1 .4-.9-.1-2-1-2.4-.9-.4-2 .1-2.4 1s0 2 1 2.4m14.8 11c4.4 0 8.6.3 12.3.8 1.1-4.5 2.4-7 3.7-8.8l-2.5-.9c.2 1.3.3 1.9 0 2.7-.4-.4-.8-1.1-1.1-2.3l-1.2 4c.7-.5 1.3-.8 2-.9-1.1 2.5-2.6 3.1-3.5 3-1.1-.2-1.7-1.2-1.5-2.1.3-1.2 1.5-1.5 2.1-.1 1.1-2.3-.8-3-2-2.3 1.9-1.9 2.1-3.5.6-5.6-2.1 1.6-2.1 3.2-1.2 5.5-1.2-1.4-3.2-.6-2.5 1.6.9-1.4 2.1-.5 1.9.8-.2 1.1-1.7 2.1-3.5 1.9-2.7-.2-2.9-2.1-2.9-3.6.7-.1 1.9.5 2.9 1.9l.4-4.3c-1.1 1.1-2.1 1.4-3.2 1.4.4-1.2 2.1-3 2.1-3h-5.4s1.7 1.9 2.1 3c-1.1 0-2.1-.2-3.2-1.4l.4 4.3c1-1.4 2.2-2 2.9-1.9-.1 1.5-.2 3.4-2.9 3.6-1.9.2-3.4-.8-3.5-1.9-.2-1.3 1-2.2 1.9-.8.7-2.3-1.2-3-2.5-1.6.9-2.2.9-3.9-1.2-5.5-1.5 2-1.3 3.7.6 5.6-1.2-.7-3.1 0-2 2.3.6-1.4 1.8-1.1 2.1.1.2.9-.3 1.9-1.5 2.1-.9.2-2.4-.5-3.5-3 .6 0 1.2.3 2 .9l-1.2-4c-.3 1.1-.7 1.9-1.1 2.3-.3-.8-.2-1.4 0-2.7l-2.9.9C1.3 23 2.6 25.5 3.7 30c3.7-.5 7.9-.8 12.3-.8m28.3-11.6c0 .9.1 1.7.3 2.5.2.8.6 1.5 1 2.2.5.6 1 1.1 1.7 1.5.7.4 1.5.6 2.5.6.9 0 1.7-.1 2.3-.4s1.1-.7 1.5-1.1c.4-.4.6-.9.8-1.5.1-.5.2-1 .2-1.5v-.2h-5.3v-3.2h9.4V28H55v-2.5c-.3.4-.6.8-1 1.1-.4.3-.8.6-1.3.9-.5.2-1 .4-1.6.6s-1.2.2-1.8.2c-1.5 0-2.9-.3-4-.8-1.2-.6-2.2-1.3-3-2.3-.8-1-1.4-2.1-1.8-3.4-.3-1.4-.5-2.8-.5-4.3s.2-2.9.7-4.2c.5-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.6 2.6-.8 4.1-.8 1 0 1.9.1 2.8.3.9.2 1.7.6 2.4 1s1.4.9 1.9 1.5c.6.6 1 1.3 1.4 2l-3.7 2.1c-.2-.4-.5-.9-.8-1.2-.3-.4-.6-.7-1-1-.4-.3-.8-.5-1.3-.7-.5-.2-1.1-.2-1.7-.2-1 0-1.8.2-2.5.6-.7.4-1.3.9-1.7 1.5-.5.6-.8 1.4-1 2.2-.3.8-.4 1.9-.4 2.7zM71.5 6.8c1.5 0 2.9.3 4.2.8 1.2.6 2.3 1.3 3.1 2.3.9 1 1.5 2.1 2 3.4s.7 2.7.7 4.2-.2 2.9-.7 4.2c-.4 1.3-1.1 2.4-2 3.4-.9 1-1.9 1.7-3.1 2.3-1.2.6-2.6.8-4.2.8s-2.9-.3-4.2-.8c-1.2-.6-2.3-1.3-3.1-2.3-.9-1-1.5-2.1-2-3.4-.4-1.3-.7-2.7-.7-4.2s.2-2.9.7-4.2c.4-1.3 1.1-2.4 2-3.4.9-1 1.9-1.7 3.1-2.3 1.2-.5 2.6-.8 4.2-.8zm0 17.6c.9 0 1.7-.2 2.4-.5s1.3-.8 1.7-1.4c.5-.6.8-1.3 1.1-2.2.2-.8.4-1.7.4-2.7v-.1c0-1-.1-1.9-.4-2.7-.2-.8-.6-1.6-1.1-2.2-.5-.6-1.1-1.1-1.7-1.4-.7-.3-1.5-.5-2.4-.5s-1.7.2-2.4.5-1.3.8-1.7 1.4c-.5.6-.8 1.3-1.1 2.2-.2.8-.4 1.7-.4 2.7v.1c0 1 .1 1.9.4 2.7.2.8.6 1.6 1.1 2.2.5.6 1.1 1.1 1.7 1.4.6.3 1.4.5 2.4.5zM88.9 28 83 7h4.7l4 15.7h.1l4-15.7h4.7l-5.9 21h-5.7zm28.8-3.6c.6 0 1.2-.1 1.7-.3.5-.2 1-.4 1.4-.8.4-.4.7-.8.9-1.4.2-.6.3-1.2.3-2v-13h4.1v13.6c0 1.2-.2 2.2-.6 3.1s-1 1.7-1.8 2.4c-.7.7-1.6 1.2-2.7 1.5-1 .4-2.2.5-3.4.5-1.2 0-2.4-.2-3.4-.5-1-.4-1.9-.9-2.7-1.5-.8-.7-1.3-1.5-1.8-2.4-.4-.9-.6-2-.6-3.1V6.9h4.2v13c0 .8.1 1.4.3 2 .2.6.5 1 .9 1.4.4.4.8.6 1.4.8.6.2 1.1.3 1.8.3zm13-17.4h4.2v9.1l7.4-9.1h5.2l-7.2 8.4L148 28h-4.9l-5.5-9.4-2.7 3V28h-4.2V7zm-27.6 16.1c-1.5 0-2.7 1.2-2.7 2.7s1.2 2.7 2.7 2.7 2.7-1.2 2.7-2.7-1.2-2.7-2.7-2.7z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/visas-immigration">Visas and immigration</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/visas-immigration/work-visas"> Work in the
+        UK</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+  .guide .part-navigation-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b1b4b6;
+  }
+
+  .gem-c-contents-list {
+    position: relative;
+    margin: 0 0 20px 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 20px 15px -10px #fff;
+  }
+
+  .gem-c-contents-list__title {
+    color: #0b0c0c;
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .gem-c-contents-list__list,
+  .gem-c-contents-list__nested-list {
+    color: #0b0c0c;
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  ol,
+  ul,
+  nav ol,
+  nav ul {
+    list-style: inherit;
+  }
+
+  .gem-c-contents-list__list-item--dashed {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .gem-c-contents-list__list-item {
+    padding-top: 10px;
+    line-height: 1.3;
+    list-style-type: none;
+  }
+
+  .gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 40.0625em) {
+    .gem-c-contents-list__title {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .gem-c-contents-list__list,
+    .gem-c-contents-list__nested-list {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .gem-c-contents-list__list-item {
+      padding-top: 7.5px;
+    }
+  }
+
+  .gem-c-govspeak .contact {
+    position: relative;
+  }
+
+  .gem-c-govspeak .address,
+  .gem-c-govspeak .contact {
+    border-left: 1px solid #b1b4b6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+    <h1 class="govuk-heading-xl">
+      Get an immigration health surcharge refund if you work in health and care
+    </h1>
+
+    <aside class="part-navigation-container" role="complementary"
+      style="border-bottom: 1px solid #b1b4b6; margin-top: 30px; margin-bottom: 30px; padding-bottom: 15px;">
+      <nav class="gem-c-contents-list " aria-label="Pages in this guide" role="navigation" data-module="track-click">
+        <h2 class="gem-c-contents-list__title">Contents</h2>
+
+        <ol class="gem-c-contents-list__list">
+          <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+            <a class="gem-c-contents-list__link govuk-link" href="/v20-UR-mvp/start-refund">Who can get a refund</a>
+          </li>
+          <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+            <a class="gem-c-contents-list__link govuk-link" href="/v20-UR-mvp/start-tier2"> Medical professionals with a
+              Tier 2 (General) visa</a>
+          </li>
+          <li
+            class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active"
+            aria-current="true">
+            <span class="gem-c-contents-list__list-item-dash" aria-hidden="true"></span>
+            Other roles in health and care settings
+          </li>
+          <!-- <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+            <a class="gem-c-contents-list__link govuk-link" href="/v20-UR-mvp/start-tier5">If you have a Tier 5 Medical
+              Training Initiative (MTI) visa</a>
+          </li> -->
+        </ol>
+      </nav>
+    </aside>
+
+    <h2 class="govuk-heading-m">Other roles in health and care settings</h2>
+    <p>You can apply for a refund ('reimbursement') online if you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>have paid the immigration health surcharge (IHS)</li>
+      <li>work for an eligible company or organisation, for example, the NHS</li>
+      <li>have worked in your role for at least <strong>6 months</strong>, for an average of at least <strong>16 hours a
+          week</strong></li>
+    </ul>
+
+    <p>The 6 months can include paid leave, such as maternity or statutory sick leave.</p>
+
+    <p>You will <strong>not</strong> be eligible if you were unemployed or had unpaid leave for more than 28 days during the 6 months.
+    </p>
+
+    <p>You can also apply this way if you are a medical professional but do <strong>not</strong> have a Tier 2 visa.</p>
+
+
+    <h2 class="govuk-heading-m">Eligible organisations</h2>
+    <p>Examples of eligible organisations include:</p>
+
+
+
+
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the NHS</li>
+      <li>the Care Quality Commission (CQC)</li>
+      <li> National Institute for Health and Care Excellence</li>
+
+    </ul>
+    <p> Check <a href="">'Annex A' of our detailed guidance</a> for more details about eligible organisations.</p>
+   
+
+
+    <h2 class="govuk-heading-m">Dependants</h2>
+    <p>Your dependants can also get a refund if you are eligible. You need to include them in your application.</p>
+    
+
+    <h2 class="govuk-heading-m">When to apply and what you will get</h2>
+    <p>You can only apply if you have worked in an eligible role for at least 6 months.</p>
+
+      <p>You can apply for a refund for one 6-month period at a time.</p>
+      
+     <p> The period you apply for must start on or after 31 March 2020. If you paid the IHS before then, you can still apply but you'll only be reimbursed for the time after 31 March 2020.</p>
+    <h2 class="govuk-heading-s">Example</h2>
+    <div class="govuk-inset-text">
+      <p>If you paid the IHS on 20 December 2019, you could get money back for the period from 31 March 2020 to 30 September 2020.
+      </p>
+      <p>You should enter 31 March 2020 as the start date for your claim because you could <strong>not</strong> get money back for the time before that.</p>
+    </div>
+    <p>If your application is successful, you will be sent the money within 6 weeks.</p>
+
+      <p>The money will be sent to the account or card you used to pay the IHS. If a third party paid your IHS, the money will go to their account</p>
+
+  
+
+
+
+    <!-- <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text " >
+    <span class="govuk-warning-text__assistive">Warning</span>
+    If the applicant's Immigration Health Surcharge payment was made by a third party, such as a legal representative or agent, all reimbursements will be made to the third party. The applicant will need to contact the third party to reclaim these funds.
+  </strong>
+</div>  -->
+
+    <a href="ihs-start" role="button" draggable="false"
+      class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" data-module="govuk-button">
+     Apply for an IHS refund
+      
+    </a>
+
+    <section class="more">
+      <br>
+      <div id="other-ways-to-apply">
+        <h2 class="govuk-heading-m">Help</h2>
+
+        <p>If you need help, you can contact the IHS reimbursement team at the NHS Business Services Authority.</p>
+
+
+          <h2 class="govuk-heading-s">Telephone</h2>
+
+
+          <p>Phone: 0300 330 7693</p>
+
+            <p>Phone from outside the UK: +44 191 283 8937</p>
+            
+            <p>Monday to Friday, 9am to 5pm</p>
+
+            <h2 class="govuk-heading-s">Email</h2>
+            <P>Email us at IHSreimbursements@nhsbsa.nhs.uk</P>
+
+              <p>We aim to respond within 5 working days.</P>
+                <br><br>
+
+                <div class="govuk-pagination__prev">
+                  <a class="govuk-link govuk-pagination__link" href="/apply-immigration-health-surcharge-refund/tier-2-visa-medical-professional" rel="prev" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;previous and next&quot;,&quot;text&quot;:&quot;If you have a Tier 2 visa and you’re a medical professional&quot;,&quot;section&quot;:&quot;Previous&quot;}">
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                      <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    <span class="govuk-pagination__link-title">Previous</span>
+                      <span class="govuk-visually-hidden">:</span>
+                      <span class="govuk-pagination__link-label">If you have a Tier 2 visa and you’re a medical professional</span>
+                  </a>
+                </div>
+<br><br><br><br><br>
+
+                <a href="/apply-immigration-health-surcharge-refund/print" class="govuk-link govuk-link--no-visited-state govuk-body" data-module="ga4-link-tracker" data-ga4-link="{&quot;event_name&quot;:&quot;navigation&quot;,&quot;type&quot;:&quot;print page&quot;,&quot;section&quot;:&quot;Footer&quot;,&quot;text&quot;:&quot;View a printable version of the whole guide&quot;}" data-ga4-link-tracker-module-started="true">
+                  View a printable version of the whole guide
+                </a>
+
+
+         
+        
+      </div>
+
+    </section>
+
+
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href=https://www.gov.uk/healthcare-immigration-application>
+              Pay for UK healthcare as part of your immigration application
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+{% endblock %}

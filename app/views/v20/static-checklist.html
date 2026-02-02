@@ -1,0 +1,176 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Check you have all the evidence you need
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://design-system.dwp.gov.uk/assets/dwp-frontend/dwp-frontend.min.css">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Check you have all the evidence you need
+    </h1>
+
+    <p>Based on the start date you gave us, you'll need to send evidence showing that the applicant worked in a health and social care role from <strong>31 October 2024</strong> to <strong>30 April 2025.</p>
+
+    <h2 class="govuk-heading-m">Payslips</h2>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Your claim period includes days from 7 months. You'll need to upload payslips from all 7 months to cover the full period.
+      </strong>
+    </div>
+
+    <p>You'll need to send payslips that cover:</p>
+    <ul class="govuk-list govuk-list--bullet" id="payslip-dates">
+      <li>31 October 2024</li>
+       <li>1 November 2024 to 30 November 2024</li>
+        <li>1 December 2024 to 31 December 2024</li>
+         <li>1 January 2025 to 31 January 2025 </li>
+          <li>1 February 2025 to 31 February 2025 </li>
+       <li>1 March 2025 to 31 March 2025 </li>
+        <li>1 April 2025 to 31 April 2025 </li>
+    </ul>
+
+    <!-- Current month warning inset text -->
+    <div class="govuk-inset-text">
+      If the applicant has not been paid for April 2025 yet, you should wait to apply until they have a payslip for April 2025.
+    </div>
+
+    <h2 class="govuk-heading-m">Job contract</h2>
+    <p>You can also send copies of job contracts for all the jobs you're sending payslips for. This is optional but if you can upload the contracts, this makes it easier for us to confirm the applicant is eligible.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If you cannot get all of this evidence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you cannot send some of the payslips in this list, you'll need to add some extra information and evidence to your application explaining the gaps.<br><br> 
+        For example, if you were on leave, you'll need to send a headed, signed and dated letter from your employer confirming the dates you were on leave.
+      </div>
+    </details>
+
+    <form class="form" action="/checklist-evidence" method="post">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Do you have all the evidence in the list or alternative evidence to cover any gaps?
+          </h1>
+        </legend>            
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="average-time-conditional" name="average-time-v20" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="average-time-conditional">
+              Yes
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="average-time-conditional-2" name="average-time-v20" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="average-time-conditional-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <br>
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const day = parseInt(localStorage.getItem("claimDay"), 10);
+    const month = parseInt(localStorage.getItem("claimMonth"), 10);
+    const year = parseInt(localStorage.getItem("claimYear"), 10);
+
+    if (!day || !month || !year) return;
+
+    const startDate = new Date(year, month - 1, day);
+    const endDate = new Date(startDate);
+    endDate.setMonth(endDate.getMonth() + 6);
+    endDate.setDate(endDate.getDate() - 1);
+
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById("start-date").textContent = startDate.toLocaleDateString('en-GB', options);
+    document.getElementById("end-date").textContent = endDate.toLocaleDateString('en-GB', options);
+
+    const payslipList = document.getElementById("payslip-dates");
+    payslipList.innerHTML = ""; // Clear existing list
+
+    let currentStart = new Date(startDate);
+    let monthCount = 0;
+
+    let lastDayOfStartMonth = new Date(currentStart.getFullYear(), currentStart.getMonth() + 1, 0);
+    
+    // First date range
+    const firstItem = document.createElement("li");
+
+    if (currentStart.getDate() === lastDayOfStartMonth.getDate()) {
+      firstItem.textContent = currentStart.toLocaleDateString('en-GB', options);
+    } else {
+      firstItem.textContent = `${currentStart.toLocaleDateString('en-GB', options)} to ${lastDayOfStartMonth.toLocaleDateString('en-GB', options)}`;
+    }
+
+    payslipList.appendChild(firstItem);
+
+    // Move to first full month
+    currentStart = new Date(lastDayOfStartMonth);
+    currentStart.setDate(1);
+    currentStart.setMonth(currentStart.getMonth() + 1);
+
+    while (currentStart.getMonth() !== endDate.getMonth() || currentStart.getFullYear() !== endDate.getFullYear()) {
+      let currentEnd = new Date(currentStart);
+      currentEnd.setMonth(currentEnd.getMonth() + 1);
+      currentEnd.setDate(0);
+
+      const listItem = document.createElement("li");
+      listItem.textContent = `${currentStart.toLocaleDateString('en-GB', options)} to ${currentEnd.toLocaleDateString('en-GB', options)}`;
+      payslipList.appendChild(listItem);
+      monthCount++;
+
+      currentStart = new Date(currentEnd);
+      currentStart.setDate(1);
+      currentStart.setMonth(currentStart.getMonth() + 1);
+    }
+
+    const lastItem = document.createElement("li");
+
+    if (endDate.getDate() === 1) {
+      lastItem.textContent = endDate.toLocaleDateString('en-GB', options);
+    } else {
+      lastItem.textContent = `1 ${endDate.toLocaleString('default', { month: 'long' })} ${endDate.getFullYear()} to ${endDate.toLocaleDateString('en-GB', options)}`;
+    }
+
+    payslipList.appendChild(lastItem);
+
+    // Show 7-month warning if applicable
+    if (monthCount + 2 === 7) {
+      document.getElementById("seven-month-info").removeAttribute("hidden");
+    }
+
+    // Show inset text if end date is in the current month and year
+    const today = new Date();
+    if (endDate.getMonth() === today.getMonth() && endDate.getFullYear() === today.getFullYear()) {
+      const monthYearString = today.toLocaleString('en-GB', { month: 'long', year: 'numeric' });
+
+      document.getElementById("current-month-year").textContent = monthYearString;
+      document.getElementById("current-month-year-2").textContent = monthYearString;
+
+      document.getElementById("current-month-warning").removeAttribute("hidden");
+    }
+  });
+</script>
+
+{% endblock %}

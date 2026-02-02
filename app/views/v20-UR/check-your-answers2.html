@@ -1,0 +1,62 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20-UR-mvp/check-your-answers-nhs-path">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Submit application</span>
+          Declaration
+      </h1>
+    
+
+      <p>By continuing, you declare and agree that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li> the information you've given on this form, including any supporting documents, is complete and accurate</li>
+          <li> if you provide false or misleading information, you may not receive your payment and you could be liable to criminal prosecution and / or civil proceedings</li>
+          <li>you're aware that <a href="/footer-HSC/privacy" target="_blank">information you give may be shared with other departments (opens in new tab)</a> for the purposes of fraud prevention, detection and investigations</li>
+          <li>you're aware that information you give may be shared as part of the Cabinet Office National Fraud Initiative (NFI) exercise to prevent and detect fraud</li>
+          <li>you're aware that the NHSBSA provides data to the NHS Counter Fraud Authority when referrals of alleged fraud, bribery and corruption are received</li>
+          <li>you're aware that we may share your information with NHS service providers and your employer to prevent, detect and investigate fraud and errors</li>
+
+      </ul>
+
+      <!-- <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+           Giving false or misleading information, payment may be refused and you may be prosecuted
+            <p>If you deliberately give false or misleading information you may get less compensation or be prosecuted by XXXX for a penalty of up to YYYY.</p>
+          </strong>
+        
+        </div>-->
+
+      <form action="/v20-UR/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

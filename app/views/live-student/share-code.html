@@ -1,0 +1,54 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Share code
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/live-student/ihs-number">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the applicant's visa share code?
+      </h1>
+      <label class="govuk-label" for="event-name">
+        Visa share code
+        </label>
+
+      <div class="govuk-hint">
+        <span id="access-code-hint" class="form-hint">For example, S12 345 67G</span>
+      </div>
+
+      <form class="form" action="/live-student/manual-address" method="post">
+
+        <div class="govuk-form-group">
+          
+          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="share code" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
+        </div>
+        <p>If the applicant does not have a share code, use the <a href="https://www.gov.uk/view-prove-immigration-status" title="view and prove your immigration status (Opens in a new tab)" class="govuk-link" target="_blank">view and prove your immigration status (opens in new tab)</a> service to request one. 
+          
+        <!--<p>A share code is valid for 30 days.</p>-->
+          
+        <p>If an existing share code has been used, a new share code will need to be generated.</p>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

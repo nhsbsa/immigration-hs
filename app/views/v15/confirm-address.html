@@ -1,0 +1,41 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+Confirm address
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: { text: "beta" },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="/v15/select-address">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Confirm the applicant's current address</h1>
+
+    <form method="get" action="/v15/email-address" class="form">
+
+      <p>2 Hayward <br />
+      100 Alfred Road<br />
+      Southampton<br />
+      SO11 2AB<br />
+      United Kingdom</p>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

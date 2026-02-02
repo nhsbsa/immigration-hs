@@ -1,0 +1,291 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-panel govuk-panel--confirmation" style="background-color: #fcd6c3;">
+      <h1 class="govuk-panel__title" style="color: #6e3619;">
+        More evidence needed
+      </h1>
+      <div class="govuk-panel__body" style="color: #6e3619;">
+        Your reference number<br><strong>ABC2123F</strong>
+      </div>
+
+    </div>
+    <br>
+
+
+    <h2 class="govuk-heading-l">Upload missing evidence</h2>
+    <p>Your application is on hold because you have not uploaded all the evidence we need. You need to upload more evidence before we can tell you if your application is successful or not.</p>
+
+     <p>If you do not do this, your application will be rejected and you will need to apply again.</p>
+    
+      <div class="govuk-inset-text"><strong>Missing evidence: June 2024 Payslip</strong></div>
+    <a href="upload-missing-payslip" role="button" draggable="false" class="govuk-button govuk-button--start"
+      data-module="govuk-button">
+      Upload missing evidence
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+        viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+<h2 class="govuk-heading-l">Application Timeline</h2>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          
+        }
+    
+        .timeline {
+          position: relative;
+          margin-left: 60px; /* space to the left of the timeline */
+          padding-left: 40px; /* space between the line and content */
+        }
+    
+        /* vertical line */
+        .timeline::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 30px; /* vertical line position */
+          width: 4px;
+          background: #005ea5; /* govuk blue */
+          z-index: 0;
+        }
+    
+        .timeline-entry {
+          position: relative;
+          margin-bottom: 40px;
+        }
+    
+        /* timeline circle */
+        .circle {
+          position: absolute;
+          left: -8px; /* match the line position */
+          top: 0;
+          width: 20px;
+          height: 20px;
+          background: #fff;
+          border: 4px solid #005ea5;
+          border-radius: 50%;
+          transform: translateX(-50%); /* center the circle over the line */
+          z-index: 1;
+        }
+    
+        .circle.green {
+          background: #00703c;
+          border-color: #00703c;
+        }
+    
+        .timeline-text {
+          margin-left: 40px;
+        }
+    
+        .timeline-text strong {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 2px;
+        }
+      </style>
+  
+    
+   
+    
+      <div class="timeline">
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Application submitted</strong>
+            Status: Complete - 	31 December 2023
+          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Application picked up by assessment team</strong>
+            Status: Complete -	11 January 2024
+          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Eligibility and evidence assessment</strong>
+                       Status: Complete -	11 January 2024
+         </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle green"></div>
+          <div class="timeline-text">
+            <strong>Application on hold</strong>
+            Status: More evidence required          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Payment approved</strong>
+            Status: Pending          </div>
+        </div>
+    
+        <div class="timeline-entry">
+          <div class="circle"></div>
+          <div class="timeline-text">
+            <strong>Payment completed</strong>
+            Status: Pending
+          </div>
+        </div>
+    
+      </div>
+    
+  
+    
+    <br>
+    
+    <h2 class="govuk-heading-l">Application details</h2>
+
+    <h2 class="govuk-heading-m">Personal details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">Dave Smith</dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Date of birth</dt>
+        <dd class="govuk-summary-list__value">1 September 2020</dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">National Insurance number</dt>
+        <dd class="govuk-summary-list__value">
+          QQ 12 34 56 C
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">IHS number</dt>
+        <dd class="govuk-summary-list__value">
+          IHS12345678
+        </dd>
+
+      </div>
+    </dl>
+    <br>
+
+    <h2 class="govuk-heading-m">Employment details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Employer name</dt>
+        <dd class="govuk-summary-list__value">NHSBSA</dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Role</dt>
+        <dd class="govuk-summary-list__value">Interaction Designer</dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Job setting (could be removed)</dt>
+        <dd class="govuk-summary-list__value">
+          Office work for NHSBSA
+        </dd>
+        <dd class="govuk-summary-list__actions">
+
+        </dd>
+      </div>
+
+    </dl>
+    <br>
+    <h2 class="govuk-heading-m">Claim details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Application reference number</dt>
+        <dd class="govuk-summary-list__value">HDJ2123F</dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Claim start date</dt>
+        <dd class="govuk-summary-list__value">1 January 2024</dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Claim end date</dt>
+        <dd class="govuk-summary-list__value">
+          31 June 2024
+        </dd>
+
+      </div>
+
+    </dl>
+    <br>
+    <h2 class="govuk-heading-m">Evidence uploaded</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Contract</dt>
+        <dd class="govuk-summary-list__value">Bsa-contract.pdf</dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Payslips</dt>
+        <dd class="govuk-summary-list__value">
+          jan-24.pdf<br>feb-24.pdf<br>march-24.pdf<br>april-24.pdf<br>may-24.pdf</dd>
+
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Extra information</dt>
+        <dd class="govuk-summary-list__value">
+          -
+        </dd>
+
+      </div>
+
+    </dl>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+</div>
+{% endblock %}

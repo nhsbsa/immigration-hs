@@ -1,0 +1,58 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Telephone number
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/interview/fe3f73f3-2547-4376-8d15-79bccfd65406?preview=true">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v17/email-address">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-heading-l">What's the applicant's mobile phone number? (optional)</h1>-->
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the applicant's phone number? (optional)
+      </h1>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="telephone-number">
+              Telephone number
+          </label>
+          <div id="telephone-number-hint" class="govuk-hint">
+            This can be a UK or international phone number.
+            <br>
+            <br>
+            We'll only use this to contact the applicant about the reimbursement.
+            <br>
+            <br>
+            International call rates may apply.
+          </div>
+
+          <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
+        </div>
+
+        <a class="govuk-button" data-module="govuk-button" href="upload-of-ehic">Continue</a>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

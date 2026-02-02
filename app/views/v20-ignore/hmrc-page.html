@@ -1,0 +1,177 @@
+{% extends "v7/layout-health.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Pay for UK healthcare as part of your immigration application
+      </h1>
+
+      
+<h2 class="govuk-heading-l">Refunds</h2>
+<p>You do not need to do anything to get an immigration health surcharge (IHS) refund - it's automatically paid to the account or card you paid with.</p>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>do something</li>
+        <li>update your name, address or other details</li>
+        <li>do something else</li>
+      </ul>
+
+      <p>Registering takes around [5] minutes.</p>
+
+      <a href="/v7/ihs-question" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+     
+        <p>You do not need to do anything to get an immigration health surcharge (<abbr title="immigration health surcharge">IHS</abbr>) refund - it's automatically paid to the account or card you paid with.</p>
+  
+  <p>You'll get a full <abbr title="immigration health surcharge">IHS</abbr> refund if:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>you paid twice</li>
+    <li>your visa application is refused</li>
+    <li>you withdraw your visa application</li>
+  </ul>
+  
+  <p>You'll get a partial <abbr title="immigration health surcharge">IHS</abbr> refund if your visa application's successful but:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>you get less time on your visa than you asked for</li>
+    <li>any dependants on your visa application are refused</li>
+  </ul>
+  
+  <p>You will not get a refund if:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>your visa application is successful but you do not come to the UK</li>
+    <li>you leave the UK before your visa ends, for example to make a new application</li>
+    <li>you're told to leave the UK before your visa expires</li>
+    <li>you're applying for indefinite leave to remain or changing to another visa where <a href="/healthcare-immigration-application/who-needs-pay">you do not need to pay the <abbr title="immigration health surcharge">IHS</abbr></a>
+  </li>
+  </ul>
+  
+  <h2 class="govuk-heading-l" id="refunds-for-health-and-care-workers">Refunds for health and care workers</h2>
+  
+  <p>You'll get a full refund if all the following are true:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>you paid the <abbr title="immigration health surcharge">IHS</abbr> on or after 31 March 2020</li>
+    <li>you're a qualified doctor, nurse or other health professional on a <a href="/tier-2-general">Tier 2 visa</a> who would have benefitted from the Health and Care Visa</li>
+    <li>you're sponsored by the NHS, an organisation providing medical services to the NHS or an organisation providing adult social care</li>
+  </ul>
+  
+  <p>If you meet all these conditions, your dependants are also entitled to the refund.</p>
+  
+  <p>If you think you should get this refund but have not yet received it, email the <abbr title="immigration health surcharge">IHS</abbr> refunds team. In your mail, include your:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>name</li>
+    <li>sponsor's name</li>
+    <li>Certificate of Sponsorship (CoS) number</li>
+    <li>
+  <abbr title="immigration health surcharge">IHS</abbr> number</li>
+  </ul>
+  
+  <div class="contact">
+  <p><strong>Immigration health surcharge refunds</strong> <br>
+  <a href="mailto:IHSrefunds@homeoffice.gov.uk">IHSrefunds@homeoffice.gov.uk</a></p>
+  </div>
+  
+  <p>If you're a health or care worker and you cannot get a refund through this scheme, you might be eligible for a different scheme starting in October 2020. Email <abbr title="immigration health surcharge">IHS</abbr> enquiries if you have questions about this reimbursement scheme.</p>
+  
+  <div class="contact">
+  <p><strong>Immigration health surcharge reimbursement enquiries</strong> <br>
+  <a href="mailto:IHSEnquiries@dhsc.gov.uk">IHSEnquiries@dhsc.gov.uk</a></p>
+  </div>
+  
+  <h2 class="govuk-heading-l" id="how-long-it-takes">How long it takes</h2>
+  
+  <p>You usually get your refund within 6 weeks of getting a decision on your visa application. It can take longer if you <a href="/immigration-asylum-tribunal">appeal</a> or ask for an <a href="/ask-for-a-visa-administrative-review">administrative review</a> after your visa application is refused.</p>
+  
+  <h3 id="if-you-appeal-or-ask-for-an-administrative-review">If you appeal or ask for an administrative review</h3>
+  
+  <p>If you applied from:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>inside the UK - you'll get your refund up to 6 weeks after your appeal or administrative review is dismissed</li>
+    <li>outside the UK - you'll get your refund up to 6 weeks after your visa application is refused</li>
+  </ul>
+  
+  <p>You'll have to repay the <abbr title="immigration health surcharge">IHS</abbr> if your appeal or administrative review is successful and you've already got your <abbr title="immigration health surcharge">IHS</abbr> refund.</p>
+  
+  <p>You might have to repay a different amount if:</p>
+  
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the length of your stay changes</li>
+    <li>you get less time on your visa than you asked for</li>
+  </ul>
+  
+  <div role="note" aria-label="Information" class="application-notice info-notice">
+  <p><a href="/contact-ukvi-outside-uk">Contact UK Visas and Immigration</a> (<abbr title="UK Visas and Immigration">UKVI</abbr>) if your refund is not paid within 6 weeks.</p>
+</div>
+  
+  
+
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also <a href="#">register by post</a>.</p>
+
+      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
+
+      <p>You can't register for this service if you're in the UK illegally.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/apply-to-come-to-the-uk">
+                Applying for a visa to come to the UK
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

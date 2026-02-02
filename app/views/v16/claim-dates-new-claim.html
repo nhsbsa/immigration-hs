@@ -1,0 +1,76 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+<style>
+.float--right {
+    float: right !important;
+}
+</style>
+
+{% block content %}
+<div id="content">
+  
+<!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+       
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+        
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/v10/ihs-number" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v10">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!--<h1 class="govuk-fieldset__heading">
+                  Has the applicant paid an immigration health surcharge for their current visa?
+              </h1>-->
+
+              <h1 class="govuk-heading-l">
+
+                  The applicant is not currently eligible to start a new claim
+              </h1>
+            </legend> 
+            
+           <span id="ihs-question-conditional-hint" class="govuk-hint">
+              The applicant's previous claim period was from 1 April 2020 to 30 September 2020.
+            </span>
+
+
+<div class="govuk-inset-text">
+  The earliest date the applicant can submit their new claim is 1 April 2021.
+</div>
+<!--
+         <span id="ihs-question-conditional-hint" class="govuk-hint">
+              The earliest date the applicant can submit their new claim is 01 October 2021.
+          </span>
+-->
+            <p class="govuk-body">If you have any questions, <a href="/footer/contact-us">contact us</a>. 
+            <p class="govuk-body">Find out <a href="https://www.gov.uk/healthcare-immigration-application">more about immigration health surcharge.</a></p> 
+          </fieldset>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+  <!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+    
+
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/pay-v20-UR" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Eligibility check</span>
+        <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Upload the payslip for the first month of your reimbursement period </h1>
+        </legend>
+
+        <div id="immigration-health-surcharge-paid-hint" class="govuk-hint">This payslip should begin from the start date you have provided: <strong>05 January 2024</strong></div>
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="documents">Upload a file</label>
+
+            <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+          </div>
+        </div>
+        </fieldset>
+      </div>
+
+        
+
+      <a href="monthly-2" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

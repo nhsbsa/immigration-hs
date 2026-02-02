@@ -1,0 +1,88 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  IHS question
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v11/start">Back</a>
+{% endblock %}
+
+{% block content %}
+<div id="content">
+
+<!-- <div class="float--right">
+      <nav aria-label="language-switcher.nav" class="language-switcher">
+        <ul>
+          <li>
+
+         <span>English</span>
+         <span aria-hidden="true"> | </span>
+         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
+           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
+           <span aria-hidden="true">Cymraeg</span>
+         </a>
+
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/doug-ihs-question-v11" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="doug-ihs-question-conditional-hint-v8">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!--<h1 class="govuk-fieldset__heading">
+                  Has the applicant paid an immigration health surcharge for their current visa?
+              </h1>-->
+
+              <h1 class="govuk-heading-l">
+                  <span class="govuk-caption-l">Eligibility check</span>
+                  Has the applicant paid an immigration health surcharge for their visa?
+              </h1>
+            </legend>
+
+           <span id="ihs-question-conditional-hint" class="govuk-hint">
+              An immigration health surcharge is paid as part of the immigration application process.
+            </span>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="doug-ihs-question-conditional" name="doug-ihs-question-v11" type="radio" value="yes" data-aria-controls="doug-conditional-ihs-question-conditional">
+                  <label class="govuk-label govuk-radios__label" for="doug-ihs-question-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="doug-ihs-question-conditional-2" name="doug-ihs-question-v11" type="radio" value="no" data-aria-controls="doug-conditional-ihs-question-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="doug-ihs-question-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

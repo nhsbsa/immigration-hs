@@ -1,0 +1,30 @@
+{% extends "v1/layout.html" %}
+
+{% block pageTitle %}
+Start page example
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+      <h1 class="govuk-heading-l">Sorry, there is a problem with the service</h1>
+      <p class="govuk-body">Try again later.</p>
+      <p class="govuk-body">
+        We have not saved your answers. When the service is available, you'll have to start again.
+      </p>
+      <p class="govuk-body">
+        If you are still experiencing problems, you can <a class="govuk-link" href="/footer/contact-us">contact us</a>.
+      </p>
+    </div>
+  </div>
+
+
+
+  {% endblock %}

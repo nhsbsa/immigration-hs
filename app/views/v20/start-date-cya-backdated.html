@@ -1,0 +1,100 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Check backdated claim – Immigration Health Surcharge Refund Service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/check-start-date" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Check the start date</h1>
+          </legend>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              You will not be able to change this date again.
+            </strong>
+          </div>
+
+          <!-- Summary List -->
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Claim start date
+              </dt>
+              <dd class="govuk-summary-list__value" id="cya-start-date"></dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/v20/claim-dates-new">Change<span class="govuk-visually-hidden"> start date</span></a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+
+          <!-- Backdated claim question -->
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="backdated-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Is this a backdated claim?
+              </legend>
+              <div id="backdated-hint" class="govuk-hint">
+                The start date entered is before a claim period you have already submitted. If you don't want to make a backdated claim, you need to correct your start date.
+              </div>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="backdated-yes" name="backdated" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="backdated-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="backdated-no" name="backdated" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="backdated-no">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <!-- Confirmation checkbox -->
+          
+
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const date = localStorage.getItem('enteredDate');
+    if (date) {
+      document.getElementById('cya-start-date').textContent = date;
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Dates checked</h1>
+        <div class="govuk-panel__body">
+          Your first and last payslips cover the start and end of your claim period         </div>
+      </div>
+
+      <p>Based on the dates you've given, your evidence will cover the start and end of your claim period from 20 April 2020 to 19 October 2020.</p>
+      <p>We have <strong>not</strong> saved this information. When you make your application, you will need to enter your start date again and upload all of your payslips including the first and last.</p>
+      <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <p>You can download the details of your application and use them for future applications.</p>
+      <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save application details as PDF
+      </button> -->
+
+      <a href="ur-start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+      Apply now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+
+      <!--
+      <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
+      -->
+
+      <br>
+      <p class="govuk-body">If you have any questions, <a href="/footer-HSC/contact-us" target="_blank">contact us (opens in new tab)</a>. 
+
+    </div>
+  </div>
+
+{% endblock %}

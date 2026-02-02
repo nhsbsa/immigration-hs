@@ -1,0 +1,104 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Success
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p>File named contract.pdf has been deleted</p>
+            </div>
+          </div>
+
+    <form class="form" action="/v20-mvp-no-js/ideation/contract-cya" method="post" enctype="multipart/form-data">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--l" for="file-upload-1">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Upload job contract
+          </h1>
+        </label>
+
+        <span id="file-upload-1-hint" class="govuk-hint">
+          <p>If the applicant has more than one health and care job, upload copies of their contracts for each of their jobs.</p>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              We cannot accept conditional contracts or contracts that could change.
+            </strong>
+          </div>
+
+          <p>Contracts should include the applicant's:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>name</li>
+            <li>employer name</li>
+            <li>employment start date</li>
+            <li>contracted hours</li>
+          </ul>
+
+          <h2 class="govuk-heading-m">Files</h2>
+          <p>Files must:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>be clear and readable</li>
+            <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+            <li>be smaller than 2MB each</li>
+            <li><strong>not</strong> be password protected</li>
+          </ul>
+        </span>
+      </div>
+
+      <div class="govuk-form-group">
+        <label for="file-upload-1" class="govuk-label govuk-label--m">
+          <span class="label-text break-word">Upload file</span>
+        </label>
+        <p>If you have multiple contracts, upload them one at a time by selecting 'continue' after adding each file.</p>
+
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
+
+      <!-- Revealed content -->
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">Continue</button>
+    </form>
+
+  </div>
+</div>
+
+<script>
+  // JavaScript to handle file selection
+  document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('file-upload-1');
+    const message = document.getElementById('upload-more-files-message');
+
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        message.style.display = 'block'; // Show the message
+      } else {
+        message.style.display = 'none'; // Hide the message if no file selected
+      }
+    });
+  });
+</script>
+{% endblock %}

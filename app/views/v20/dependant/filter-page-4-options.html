@@ -1,0 +1,114 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Dependant add
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" id="dependant-form" action="/dependant-details-journey" method="post" novalidate>
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">Application</span>
+        Who are you applying for?
+      </h1>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="whereTo-route-hint">
+          <div class="govuk-radios" data-module="govuk-radios" id="dependant-route-radios">
+            <div class="govuk-radios__item">
+              <!-- value points directly at the route target for simplicity -->
+              <input class="govuk-radios__input" id="route-main-applicant" name="dependantRoute" type="radio"
+                value="/v20/ihs-question">
+              <label class="govuk-label govuk-radios__label" for="route-main-applicant">
+                Main applicant only
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="route-main-and-dependants" name="dependantRoute" type="radio"
+                value="/v20/ihs-question">
+              <label class="govuk-label govuk-radios__label" for="route-main-and-dependants">
+                Main applicant and dependants
+              </label>
+              <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
+                Dependants are people who are eligible to live in the UK because of their relationship with the main
+                applicant. </div>
+            </div>
+
+           
+
+              <div class="govuk-radios__divider">or</div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="route-add-to-existing" name="dependantRoute" type="radio"
+                  value="/v20/dependant/bsa-reference">
+                <label class="govuk-label govuk-radios__label" for="route-add-to-existing">
+                  Add dependants to an existing claim
+                </label>
+                <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
+                  You'll need the BSA reference number for that application. This was included in the confirmation email
+                  we sent the applicant.
+                </div>
+              </div>
+
+               <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="route-main-and-dependants" name="dependantRoute" type="radio"
+                value="/v20/ihs-question">
+              <label class="govuk-label govuk-radios__label" for="route-main-and-dependants">
+                Apply for a dependant with a different start date and claim period
+              </label>
+              <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
+                The main applicant will need to provide evidence for the full claim period of the dependant to prove
+                they are eligible. </div>
+            </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button" id="continue-button" type="submit">Continue</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  (function () {
+    'use strict';
+
+    // The radios' values are the target routes (so it's trivial to map)
+    const form = document.getElementById('dependant-form');
+    const routeRadiosName = 'dependantRoute';
+
+    form.addEventListener('submit', function (e) {
+      // Prevent the default post so we can route client-side
+      e.preventDefault();
+
+      // Find the selected radio
+      const selected = form.querySelector('input[name="' + routeRadiosName + '"]:checked');
+
+      if (selected && selected.value) {
+        // Client-side route: navigate to the chosen page
+        // (these can be view renders or static files you will add: /page-1, /page-2, /page-3)
+        window.location.href = selected.value;
+        return;
+      }
+
+      // If nothing selected, fall back to server-side handling (submit the form)
+      // This keeps behaviour safe if JS routing isn't desired for a particular case
+
+    });
+  })();
+</script>
+
+{% endblock %}

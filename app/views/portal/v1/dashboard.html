@@ -1,0 +1,743 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l govuk-caption--bottom">Your IHS account number is IHS123456789</span>
+        IHS reimbursement account
+      </h1>
+      <a href="eligibility/ihs-question" role="button" draggable="false" class="govuk-button govuk-button--start"
+        data-module="govuk-button">
+        New application
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+          viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+    </div>
+
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#notifications">
+            Notifications (3)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#to-do" id="to-do">
+            To-do list
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#personal">
+            Personal details
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#applications">
+            Applications
+          </a>
+        </li>
+        
+      </ul>
+      <div class="govuk-tabs__panel" id="notifications">
+        <h2 class="govuk-heading-l">Notifications</h2>
+        <table role="table" class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Notification</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Action</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+
+            <tr role="row" class="govuk-table__row">
+              <td role="cell" class="govuk-table__cell">
+                You can now claim for the last 6 months
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                It has been 6 months since your last claim. You can now begin a claim for the last 6 months claim
+                period: <strong>1 January 2025</strong> to <strong>31 June 2025</strong>
+                <!-- <details class="govuk-details" style="margin-bottom: 0px;">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          What you need to change
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <p>Your name on Learning Support Fund does not match University records.</p>
+                      </div>
+                    </details> -->
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                <a href="eligibility-now/ihs-question">Apply now</a>
+              </td>
+            </tr>
+            <tr role="row" class="govuk-table__row">
+              <td role="cell" class="govuk-table__cell">
+                We need extra evidence
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                You need to make changes to your application on 31st December for the period from 1 January 2024 to 31 June 2024.
+
+                <br><br> Check your to-do list to find out what you need to do.
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                <a href="#to-do">Check to-do list</a>
+              </td>
+            </tr>
+            <tr role="row" class="govuk-table__row">
+              <td role="cell" class="govuk-table__cell">
+                Application progress updated
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                Your application how now been picked up by the assessment team. You can view the claim for more details.
+              </td>
+              <td role="cell" class="govuk-table__cell">
+                <a href="view-claim-live">View application</a>
+              </td>
+            </tr>
+            <!-- <tr role="row" class="govuk-table__row">
+                  <td role="cell" class="govuk-table__cell">
+                   We require your job contract
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    The job contract you uploaded was password protected. Please upload your job contract again without the restrictions.
+                    <details class="govuk-details" style="margin-bottom: 0px;">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          What you need to change
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <p>Your name on Learning Support Fund does not match University records.</p>
+                      </div>
+                    </details
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    <a href="upload-job-contract">Upload job contract</a>
+                  </td>
+                </tr> -->
+
+
+
+
+
+
+
+
+
+          </tbody>
+        </table>
+      </div>
+
+
+      <!--Tab 2-->
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="to-do">
+
+        <h2 class="govuk-heading-l">To-do list</h2>
+
+        <style>
+          body {
+            font-family: 'Inter', sans-serif;
+            margin: 20px;
+          }
+
+          .govuk-panel {
+            border-left: 5px solid black;
+            background-color: #f3f2f1;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            /* Makes the panel clickable */
+            text-decoration: none;
+            /* Removes underline */
+            display: block;
+            /* Ensures the whole panel is clickable */
+          }
+
+          .govuk-panel__title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #003087;
+            margin-bottom: 10px;
+            text-align: left;
+            /* Align text to the left */
+          }
+
+          .govuk-panel__body {
+            font-size: 19px;
+            /* Correct GOV.UK standard paragraph text size */
+            color: #1d1b1b;
+            text-align: left;
+            line-height: 1.5;
+            /* Standard line height */
+
+          }
+
+          .govuk-panel__body__hint {
+            font-size: 19px;
+            /* Correct GOV.UK standard paragraph text size */
+            color: #505a5f;
+            text-align: left;
+            line-height: 1.5;
+            /* Standard line height */
+
+          }
+        </style>
+        </head>
+
+        <body>
+
+          <a href="view-claim-on-hold" class="govuk-panel">
+            <h2 class="govuk-panel__title">Missing payslips - ABC2123F</h2>
+            <p class="govuk-panel__body">You need to upload more payslips for this application.</p>
+            <p class="govuk-panel__body__hint">Application submitted 31 June 2025</p>
+          </a>
+
+          <a href="view-claim-on-hold-contract" class="govuk-panel">
+            <h2 class="govuk-panel__title">Missing contract - IHS9281F</h2>
+            <p class="govuk-panel__body">You need to upload your job contract for this application.</p>
+              <p class="govuk-panel__body__hint">Application submitted 31 December 2025</p>
+          </a>
+
+
+
+
+
+
+          <!-- <table role="table" class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Notification</th>
+                  <th scope="col" class="govuk-table__header">Description</th>
+                  <th scope="col" class="govuk-table__header">Action</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+                <tr role="row" class="govuk-table__row">
+                  <td role="cell" class="govuk-table__cell">
+                    You can now claim for the last 6 months
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    It has been 6 months since your last claim. You can now begin a claim for the last 6 months claim
+                    period: <strong>1 January 2025</strong> to <strong>31 June 2025</strong>
+                   <details class="govuk-details" style="margin-bottom: 0px;">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          What you need to change
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <p>Your name on Learning Support Fund does not match University records.</p>
+                      </div>
+                    </details>
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    <a href="information-mismatch-confirm">Apply now</a>
+                  </td>
+                </tr>
+                <tr role="row" class="govuk-table__row">
+                  <td role="cell" class="govuk-table__cell">
+                    Extra evidence needed
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    Your claim on the 20th December 2024 for the claim period of: 1 January 2024 to 31 June 2024 could
+                    not
+                    be approved because you did not upload a payslip for June 2024.
+
+                    <br><br>
+                    <p>You must submit the missing payslip <strong>or</strong> submit evidence explaining the gap in
+                      employment to progress your claim.</p>
+                    <details class="govuk-details" style="margin-bottom: 0px;">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          What you need to change
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <p>Your name on Learning Support Fund does not match University records.</p>
+                      </div>
+                    </details>
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    <a href="upload-missing-payslip">Upload extra evidence</a>
+                  </td>
+                </tr>
+                <tr role="row" class="govuk-table__row">
+                  <td role="cell" class="govuk-table__cell">
+                    We require your job contract
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    The job contract you uploaded was password protected. Please upload your job contract again without
+                    the restrictions.
+                    <details class="govuk-details" style="margin-bottom: 0px;">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          What you need to change
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <p>Your name on Learning Support Fund does not match University records.</p>
+                      </div>
+                    </details> 
+                  </td>
+                  <td role="cell" class="govuk-table__cell">
+                    <a href="upload-job-contract">Upload job contract</a>
+                  </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+              </tbody>
+            </table> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="personal">
+
+        <h2 class="govuk-heading-l">Personal details</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">Dave Smith</dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateName" href="change-name">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">1 September 1980</dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateDOB" href="change-dob">
+                Change
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">National Insurance number</dt>
+            <dd class="govuk-summary-list__value">
+              QQ 12 34 56 C
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateNINO" href="change-nino">
+                Change
+              </a>
+            </dd>
+          </div>
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">IHS number</dt>
+            <dd class="govuk-summary-list__value">
+              IHS12345678
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+          </div> -->
+        </dl>
+
+        <h2 class="govuk-heading-m">Current employment details</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Employer name</dt>
+            <dd class="govuk-summary-list__value">NHSBSA</dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateName" href="change-employer">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Role</dt>
+            <dd class="govuk-summary-list__value">Interaction Designer</dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateDOB" href="change-job-title">
+                Change
+              </a>
+            </dd>
+          </div>
+
+          
+
+
+
+
+        </dl>
+        <h2 class="govuk-heading-m">Dependant details</h2>
+        <p><a href="new-dependant">Add a new dependant</a></p>
+
+        <h2 class="govuk-heading-s" style="display: inline">Dependant 1</h2>
+            <span style="float:right; margin-left: 45px;     font-size: 1.1875rem;">
+              <a href="">Delete dependant
+                <span class="govuk-visually-hidden"> dependant 1</span>
+              </a>
+            </span>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Name</dt>
+            <dd class="govuk-summary-list__value">	Michelle Philips</dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateDOB" href="dependant-details-change">
+                Change
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">15 January 2000</dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateDOB" href="dependant-details-change">
+                Change
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">National Insurance number</dt>
+            <dd class="govuk-summary-list__value">
+              QC 12 99 88 77 A
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updateDOB" href="dependant-details-change">
+                Change
+              </a>
+            </dd>
+          </div>
+
+
+
+
+        </dl>
+
+        <h2 class="govuk-heading-m">Bank or building society account details</h2>
+
+
+        <p>This will be the account which we pay the IHS reimbursement to. If you need to update this, you will need to
+          complete 2FA.</p>
+        <p><a href="update-bank-details">Update bank details</a></p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Name on the account</dt>
+            <dd class="govuk-summary-list__value"><span id="username" class="wordbreak">Dave Smith</span></dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Account number</dt>
+            <dd class="govuk-summary-list__value"><span id="studentEmail" class="wordbreak">******12</span></dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Sort code</dt>
+            <dd class="govuk-summary-list__value"><span>****78</span></dd>
+
+          </div>
+
+        </dl>
+
+
+        <h2 class="govuk-heading-m">Account details</h2>
+
+        <dl class="govuk-summary-list">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email</dt>
+            <dd class="govuk-summary-list__value"><span id="studentEmail"
+                class="wordbreak">Smith.dave2000@gmail.com</span></dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="editEmail" href="change-email">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Password</dt>
+            <dd class="govuk-summary-list__value"><span>********</span></dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="editPassword" href="change-password">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Phone number</dt>
+            <dd class="govuk-summary-list__value">*******6920</dd>
+            <dd class="govuk-summary-list__actions">
+              <a id="updatePhone" href="change-phone-number-email?sign-in=no">
+                Change
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+      </div>
+
+
+
+
+
+
+
+
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="applications">
+        <h2 class="govuk-heading-l">Applications</h2>
+
+         <h3 class="govuk-heading-m">Current applications</h3>
+
+         <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">IHS reference number</th>
+              <th scope="col" class="govuk-table__header">Application date</th>
+              <th scope="col" class="govuk-table__header">Claim period</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+               <th scope="col" class="govuk-table__header">Action</th>
+
+
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">IHS9281F</a></td>
+              <td class="govuk-table__cell">31 December 2023</td>
+              <td class="govuk-table__cell">1 July 2021 - 31 December 2021</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
+                  More evidence needed
+                </strong></td>
+                              <td class="govuk-table__cell"><a href="view-claim-on-hold-contract">View application</a></td>
+
+            </tr>
+
+            
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">HDJ2123F</a></td>
+              <td class="govuk-table__cell">31 June 2025</td>
+              <td class="govuk-table__cell">1 January 2025 - 31 June 2025</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+                  Being assessed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-live">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ABC2123F</a></td>
+              <td class="govuk-table__cell">31 December 2025</td>
+              <td class="govuk-table__cell">1 July 2025 - 31 December 2025</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
+                  More evidence needed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-on-hold">View application</a></td>
+
+            </tr>
+          </tbody>
+
+        </table>
+
+          <h3 class="govuk-heading-m">Completed applications</h3>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">IHS reference number</th>
+              <th scope="col" class="govuk-table__header">Application date</th>
+              <th scope="col" class="govuk-table__header">Claim period</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+                            <th scope="col" class="govuk-table__header">Action</th>
+
+
+
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+
+           
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">HDJ2123F</a></td>
+              <td class="govuk-table__cell">30 June 2022</td>
+              <td class="govuk-table__cell">1 January 2022 - 30 June 2022</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">HIS7849F</a></td>
+              <td class="govuk-table__cell">31 December 2022</td>
+              <td class="govuk-table__cell">1 July 2022 - 31 December 2022</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">PRO7849F</a></td>
+              <td class="govuk-table__cell">30 June 2023</td>
+              <td class="govuk-table__cell">1 January 2023 - 30 June 2023</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">YUT7849F</a></td>
+              <td class="govuk-table__cell">31 December 2023</td>
+              <td class="govuk-table__cell">1 July 2023 - 31 December 2023</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-rejected">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ERG7849F</a></td>
+              <td class="govuk-table__cell">30 June 2024</td>
+              <td class="govuk-table__cell">1 January 2024 - 30 June 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">CCC7849F</a></td>
+              <td class="govuk-table__cell">29 December 2024</td>
+              <td class="govuk-table__cell">30 June 2024 - 29 December 2024</td>
+              <td class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--red">
+                  Rejected
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim-rejected">View application</a></td>
+
+
+              </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ZZZ2123F</a></td>
+              <td class="govuk-table__cell">31 December 2024</td>
+              <td class="govuk-table__cell">1 July 2024 - 31 December 2024</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                  Payment completed
+                </strong></td>
+                                              <td class="govuk-table__cell"><a href="view-claim">View application</a></td>
+
+            </tr>
+           
+          </tbody>
+
+        </table>
+        <!-- <h2 class="govuk-heading-m">Make an application following your most recent application</h2>
+            <p>You can make an application for the 6 month period after your most recent application.</p>
+            <p>The claim period for this application will be: 1 July 2024 to 31 November 2024</p>
+            <button class="govuk-button">Apply now</button> -->
+      </div>
+
+
+
+
+      <!-- <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payments">
+        <h2 class="govuk-heading-l">Payments</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Application reference number</th>
+              <th scope="col" class="govuk-table__header">Payment date</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+
+
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">HJABCDEF</td>
+              <td class="govuk-table__cell">31 June 2023</td>
+              <td class="govuk-table__cell">£1234</td>
+              <td class="govuk-table__cell">Payment has failed - contact UKV&I using you claim application reference number.</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">KLABCDEF</td>
+              <td class="govuk-table__cell">1 January 2024</td>
+              <td class="govuk-table__cell">£2345</td>
+              <td class="govuk-table__cell">Payment successfully paid</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ZZABCDEF</td>
+              <td class="govuk-table__cell">10 November 2023</td>
+              <td class="govuk-table__cell">£1212</td>
+              <td class="govuk-table__cell">Payment successfully paid</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+</div>
+{% endblock %}

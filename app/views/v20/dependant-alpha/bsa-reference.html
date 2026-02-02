@@ -1,0 +1,52 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+BSA reference number
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" onclick="window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Dependant application</span>
+      What is the BSA reference number for the application you want to add dependants to?
+    </h1>
+
+    <p>This is in the email we sent the applicant when we got their application.</p>
+
+    <form class="form" action="nino" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="bsa-number">
+          BSA number
+        </label>
+        <div id="bsa-number-hhint" class="govuk-hint">
+          For example, 'BSA123456789'
+        </div>
+
+        <input class="govuk-input govuk-input--width-10" id="bsa-number" name="bsa-number" type="text"
+          spellcheck="false">
+      </div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

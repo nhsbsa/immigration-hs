@@ -1,0 +1,81 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v8/attachments-add">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/v8/attachments-add3" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+              <!--<h1 class="govuk-heading-l">Upload evidence</h1>-->
+              <h1 class="govuk-heading-l">
+                <span class="govuk-caption-l">Application</span>
+                Upload evidence
+              </h1>
+          </label>
+          
+          <span id="file-upload-1-hint" class="govuk-hint">
+            <p>The applicant must provide payslips as evidence, from all of the applicant's health and social care employers, for each month of the 6-month period the claim is being made for. We need these payslip so we can match the applicant with the eligibility criteria.</p>
+            <p>Evidence can be uploaded as scanned copies, digital photographs or digital payslips.</p>
+          </span>
+
+
+        <div class="govuk-inset-text" style="overflow:hidden;" id="validEmail">
+            <span class="govuk-hint govuk-!-margin-bottom-0">
+                Attach evidence for the period between 31 March 2020 to 30 September 2020. &nbsp;<span class="govuk-body email-feedback" id="email-show" style="font-weight:800"></span>
+            </span>
+        </div>
+
+ <!--
+              <p>Attach evidence for the period between 31 March 2020 to 30 September 2020.</p>
+-->
+
+      <details class="govuk-details" data-module="govuk-details">
+  
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Things to remember when uploading evidence
+              </span>
+            </summary>
+
+                <ul class="govuk-list govuk-list--bullet">
+                <li>your uploaded attachments must be: jpg, jpeg, bmp, png or pdf and no larger than 2MB in size</li>
+                <li>you upload the correct amount of payslips to cover the claim period</li>
+                <li>you upload payslips that correspond to the claim period entered</li>
+                <li>the payslips are not password-protected</li>
+                </ul>
+      
+      </details>
+
+
+
+          <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-hint">
+          </div>
+          
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

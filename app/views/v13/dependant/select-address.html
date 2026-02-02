@@ -1,0 +1,74 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+Select and confirm address
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: { text: "beta" },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="/v13/dependant/postcode">Back</a>
+{% endblock %}
+
+{% block content %}
+<style>
+    .govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+        border-bottom: none;
+    }
+    </style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+        Select the dependants UK address
+    </h1>
+
+
+    <form class="form" action="/v13/dependant/upload-of-ehic" method="get">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Postcode</h2>
+
+          <div>
+            <p class="govuk-body"><span class="govuk-!-font-weight-bold">SO11 2AB</span> <a class="govuk-link" href="/9/attachments-delete" style="margin-left:10px">Change<span class="govuk-visually-hidden"> file 1</span></a></p>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+            <h2 class="govuk-heading-m"> Select an address</h2>
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="published">1 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="updated">3 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="views">5 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">7 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">9 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">7 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">11 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">13 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">15 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">17 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments">19 Hayward, 100 Alfred Road, Southampton, SO11 2AB</option>
+          <option value="comments" selected style="display:none">11 address found</option>
+        </select>
+        </select>
+      </div>
+
+      <p><a href="/v13/dependant/manual-address">I can't find my address on the list</a> &nbsp;</p>
+      
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}

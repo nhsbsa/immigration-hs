@@ -1,0 +1,51 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+Personal details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Update your employment details</h1>
+    <p>Your employment details must be for the job you had during your claim period for this application.</p>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+       Organisation you work for
+      </label>
+      <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1" value="NHSBSA">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-2">
+       Role
+      </label>
+      <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2" value="Interaction designer">
+    </div>
+    
+    
+    
+    
+
+      <a href="employment-details" class="govuk-button" type="submit">Continue</a>
+    
+
+
+    
+  </div>
+</div>
+
+{% endblock %}

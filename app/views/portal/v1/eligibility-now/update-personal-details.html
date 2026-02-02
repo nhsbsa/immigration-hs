@@ -1,0 +1,111 @@
+{% extends "layout-portal.html" %}
+
+{% block pageTitle %}
+Personal details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Update your personal details</h1>
+    <p>These details must match the evidence you upload for this application.</p>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+       First name
+      </label>
+      <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1" value="Dave">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-2">
+       Last name
+      </label>
+      <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2" value="Test">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-town">
+       Date of birth
+      </label>
+      <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Day
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric" value="5">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric" value="1">
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric" value="1978">
+          </div>
+        </div>
+      </div>    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-postcode">
+        National Insurance number
+      </label>
+      <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code" value="QQ 12 34 56 C">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-postcode">
+        Email address
+      </label>
+      <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2" value="dave.test@example.com">
+    </div>
+    <label class="govuk-label" for="address-postcode">
+      Do you want us to email you when you may be able to apply again?
+    </label>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+  
+      
+      <div class="govuk-radios__item">
+        
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+    </div>
+    <br>
+
+      <a href="personal-details" class="govuk-button" type="submit">Continue</a>
+    
+
+
+    
+  </div>
+</div>
+
+{% endblock %}

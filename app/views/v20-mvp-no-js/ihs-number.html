@@ -1,0 +1,60 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  IHS number
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20/nino">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-fieldset__heading">What's your immigration health surcharge number?</h1>
+      <h1 class="govuk-fieldset__heading">What's the applicant's immigration health surcharge number?</h1>-->
+     
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the IHS reference number for the IHS payment the applicant is applying for a reimbursement for? 
+      </h1>
+
+      <p>The applicant got an email with this number when they paid the IHS.</p>
+
+       <p> If the applicant has paid the IHS more than once, make sure you enter the number for the payment that covers this claim period.</p>
+        
+       <p> If the applicant has lost this number, they need to <a href="">contact UK Visas and Immigration for help (opens in new tab)</a>.</p>
+
+      <form class="form" action="/v20/email-address" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="national-insurance-number">
+            IHS number
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            For example, 'IHS123456789' or 'IHSC123456789'.
+          </div>
+          
+        
+          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
+        </div>
+        
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

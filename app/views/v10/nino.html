@@ -1,0 +1,41 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v10/dob">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-heading-l">What's the applicant's National Insurance number?</h1>-->
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the applicant's National Insurance number?
+      </h1>
+
+      <form class="form" action="/v10/claim-dates-new-claim" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="national-insurance-number">
+            National Insurance number
+          </label>
+          <span id="national-insurance-number-hint" class="govuk-hint">
+            It's on your National Insurance card, payslip, P60 or biometric residence permit (BRP). For example, 'QQ 12 34 56 C'.
+          </span>
+          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

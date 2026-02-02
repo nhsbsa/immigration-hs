@@ -1,0 +1,62 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Before you start
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!--<h1 class="govuk-fieldset__heading">What's your immigration health surcharge number?</h1>
+      <h1 class="govuk-fieldset__heading">What's the applicant's immigration health surcharge number?</h1>-->
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Uploading evidence
+    </h1>
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <form class="form" action="/v20-mvp/email-address" method="post">
+
+      <p>You will need:</p>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Your personal information such as name and date of birth</li>
+        <li>Your national insurance number</li>
+        <li>Your IHS number</li>
+        <li>An email address</li>
+        <li>Your dependant information if you are applying for them</li>
+        <li>The claim starting date</li>
+        <li>Your employment information such as employer, job title and job setting</li>
+
+        <li>Your payslips covering the period you are claiming for</li>
+        <li>Your contract for the roles you have told us you worked in over the claim period</li>
+        <li>Extra evidence if you have any gaps in employment over the claim period</li>
+
+      </ul>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

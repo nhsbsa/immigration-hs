@@ -1,0 +1,68 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/attachment-decision-mvp" method="post">
+
+        <!--<h1 class="govuk-heading-l">Check evidence</h1>-->
+        <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Application</span>
+            Check evidence
+        </h1>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+          <img src="/public/images/docs/payslip.jpg" alt="payslip june" width="100%">
+          </div>
+        </div>
+        <p class="govuk-body">payslip-june.jpg, 2MB</p>
+
+        <div class="govuk-form-group">
+          
+          <fieldset class="govuk-fieldset" aria-describedby="attachment-decision-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+                 Is this file correct?
+
+            </legend>            
+           <!-- <span id="attachment-decision-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="attachment-decision-conditional" name="attachment-decision-mvp" type="radio" value="yes" data-aria-controls="conditional-attachment-decision-conditional">
+                <label class="govuk-label govuk-radios__label" for="attachment-decision-conditional">
+                  Yes, add this file
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="attachment-decision-conditional-2" name="attachment-decision-mvp" type="radio" value="no" data-aria-controls="conditional-attachment-decision-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="attachment-decision-conditional-2">
+                  No, I want to choose a different file
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

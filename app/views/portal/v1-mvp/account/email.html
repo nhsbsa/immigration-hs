@@ -1,0 +1,101 @@
+{% extends "layout-portal-blank.html" %}
+
+{% block pageTitle %}
+Sign in to Manage Your IHS Reimbursement
+
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds ">
+                    
+
+
+
+
+
+
+<form action="/enter-email-create" method="post" novalidate="">
+
+<input type="hidden" name="_csrf" value="89521351a730a4c2f32f4d276463ce3f4a20028e5a21d8be3a8a289dca23a5ab95898ba5cab6f01a6eb75f6e97b319308d5249afb9d4a8235454e5d8c0bb64bc6b400390154da19653324569f529dfedb7ca4848dacefb7d8cf65c3ba0d42ca0e81eb0c3d45c21cd92a6344a57dabdf2c97727ac256e002ac1eec6bf9114765f">
+
+
+
+
+
+  
+<div class="govuk-form-group ">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="email">
+      Enter your email address
+    </label>
+  </h1>
+
+
+  
+  
+  
+  <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" value="" aria-describedby="email-error" autocomplete="email">
+
+</div>
+
+
+<h1 class="govuk-heading-s govuk-!-margin-top-0 govuk-!-margin-bottom-3">Agree to the GOV.UK One Login terms and conditions</h1>
+
+<p class="govuk-body">
+    By continuing, you confirm that you agree to our <a target="_blank" rel="noopener noreferrer" href="https://signin.account.gov.uk/terms-and-conditions">terms and conditions (opens in a new tab)</a>.
+</p>
+
+<p class="govuk-body">
+    To find out how we use your personal information, see our <a target="_blank" rel="noopener noreferrer" href="https://www.gov.uk/government/publications/govuk-one-login-privacy-notice">privacy notice (opens in a new tab)</a>.
+</p>
+
+
+  
+    
+  
+
+<button type="Submit" formaction="email-code" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-govuk-button-init="">
+  Continue
+</button>
+
+
+</form>
+
+<script nonce="">
+    window.addEventListener('load', function () {
+        window
+            .DI.analyticsGa4
+            .pageViewTracker
+            .trackOnPageLoad({
+                statusCode: '200',
+                englishPageTitle: 'Enter your email address',
+                taxonomy_level1: 'authentication',
+                taxonomy_level2: 'create account',
+                taxonomy_level3: '',
+                taxonomy_level4: '',
+                taxonomy_level5: '',
+                content_id: '390f46f9-1f6b-44f2-8fd7-21a5385a7d3a',
+                logged_in_status: false,
+                dynamic: false
+            });
+    });
+</script>
+
+                </div>
+
+</div>
+{% endblock %}

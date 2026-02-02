@@ -1,0 +1,133 @@
+{% extends "layout-portal-blank.html" %}
+
+{% block pageTitle %}
+Sign in to Manage Your IHS Reimbursement
+
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+ <div class="govuk-grid-column-two-thirds ">
+                    
+  
+
+
+
+  <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">Check your email</h1>
+
+  <div class="govuk-inset-text">
+  We have sent an email to: <span class="govuk-body govuk-!-font-weight-bold permit-reflow">test@email.co.uk</span>
+</div>
+
+
+  <p class="govuk-body">The email contains a 6 digit security code.</p>
+  <p class="govuk-body">Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
+  <p class="govuk-body">The code will expire after one hour.</p>
+
+  <form action="/check-your-email" method="post" novalidate="novalidate">
+
+    <input type="hidden" name="_csrf" value="89521351a730a4c2f32f4d276463ce3f4a20028e5a21d8be3a8a289dca23a5ab95898ba5cab6f01a6eb75f6e97b319308d5249afb9d4a8235454e5d8c0bb64bc6b400390154da19653324569f529dfedb7ca4848dacefb7d8cf65c3ba0d42ca0e81eb0c3d45c21cd92a6344a57dabdf2c97727ac256e002ac1eec6bf9114765f">
+    <input type="hidden" name="email" value="test@email.co.uk">
+    
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label" for="code">
+    Enter the 6 digit code
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-10 govuk-!-font-weight-bold" id="code" name="code" type="text" spellcheck="false" autocomplete="one-time-code" inputmode="numeric">
+
+</div>
+
+
+    
+
+    
+  
+    
+  
+
+<button type="Submit" formaction="password" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-govuk-button-init="">
+  Continue
+</button>
+
+
+    <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Problems with the code?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    
+    <p class="govuk-body">
+      We can 
+      <a href="/resend-email-code" class="govuk-link" rel="noreferrer noopener">send the code again</a>
+       or you can 
+      <a href="/enter-email-create" class="govuk-link" rel="noreferrer noopener">use a different email address</a>.
+    </p>
+    
+  </div>
+</details>
+
+
+  </form>
+
+<script nonce="">
+    window.addEventListener('load', function () {
+        window
+            .DI.analyticsGa4
+            .pageViewTracker
+            .trackOnPageLoad({
+                statusCode: '200',
+                englishPageTitle: 'Check your email',
+                taxonomy_level1: 'authentication',
+                taxonomy_level2: 'create account',
+                taxonomy_level3: '',
+                taxonomy_level4: '',
+                taxonomy_level5: '',
+                content_id: '054e1ea8-97a8-461a-a964-07345c80098e',
+                logged_in_status: false,
+                dynamic: true
+            });
+    });
+</script>
+
+
+<hr><br><br>
+
+<div class="govuk-notification-banner govuk-notification-banner--journey-options" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" data-govuk-notification-banner-init="">
+  <div class="govuk-notification-banner__header govuk-notification-banner__header--journey-options">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Prototype options
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-body">You can:</p>
+    <p class="govuk-body">
+      <a href="https://govuk-one-login-prototype-6d2545e2d700.herokuapp.com/page-index/authentication/create-account/emails/otp-email" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">view security code email (opens in new tab)</a>
+    </p>
+  </div>
+</div>
+
+                </div>
+
+</div>
+{% endblock %}

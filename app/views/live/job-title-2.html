@@ -1,0 +1,65 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Job title
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-fieldset__heading">What are the applicant's employment details?</h1>-->
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the applicant's job title?
+      </h1>
+
+      <div id="changed-name-hint" class="govuk-hint">
+        The applicant's job title doesn't have to relate to direct care. For example, receptionist.
+      </div>
+
+      <!--via https://github.com/UKHomeOffice/design-system/issues/84-->
+      <form class="form" action="/live/job-setting-2" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="full-name">
+              Job title
+          </label>
+          <!--<span id="national-insurance-number-hint" class="govuk-hint">
+            here is a hint text explaining why we need this info
+          </span>-->
+          <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+        </div>
+
+        <!-- <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              If the applicant's job title cannot be found automatically
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We will ask for the applicant's job setting. This will help us to progress the claim.
+          </div>
+        </details> -->
+          
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}

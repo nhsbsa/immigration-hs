@@ -1,0 +1,128 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/v20/extra-information" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--l" for="file-upload-1">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Upload job contract
+
+          </h1>
+        </label>
+
+        <!-- start callout box -->
+        <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+            <p>Upload evidence for the period: <strong>30 April 2020</strong> to <strong>29 October
+                2020</strong>.</p>
+            <p>If the applicant does not have the correct evidence, their claim for reimbursement may be rejected or
+              declined.</p>
+            </p>
+          </div>
+        </div> -->
+        <!-- end callout box -->
+
+       
+
+        <span id="file-upload-1-hint" class="govuk-hint">
+          <p>If the applicant has more than one health and care job, upload copies of their contracts for each of their jobs.
+          </p>
+          
+           
+           
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              We cannot accept conditional contracts or contracts that could change.
+            </strong>
+          </div>
+
+          <!-- <h2 class="govuk-heading-m">What we need</h2> -->
+
+        
+
+          
+
+          <span id="file-upload-1-hint" class="">
+            <p>Contracts should include the applicant's:
+
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>name</li>
+              <li>employer name</li>
+             
+              <li>employment start date</li>
+              <li>contracted hours</li>
+            </ul>
+           
+            <h2 class="govuk-heading-m">Files</h2>
+           
+            <p>Files must:</p>
+            <ul class="govuk-list govuk-list--bullet ">
+              <li>be clear and readable</li>
+              <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+              <li>be smaller than 2MB each</li>
+            </ul>
+          </span>
+
+      </div>
+
+
+      
+      <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="file-upload-1">
+          Upload a file
+        </label>
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
+
+
+
+        <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
+        <a href="/v20/ideation/contract-cya" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

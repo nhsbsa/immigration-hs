@@ -1,0 +1,302 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20/comments">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+  
+          <ul class="govuk-list govuk-error-summary__list"> 
+            <li>
+              <a href="#documents">You must upload evidence to be able to submit your application. Use the 'change' link to upload evidence</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <h1 class="govuk-fieldset__heading">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sarah Philips
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 January 1978
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            QQ 12 34 56 C
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Immigration health surcharge number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            IHS123456789
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact information</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            07700 900457
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              a.vlad@nhs.net
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Dependant details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <!--<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Dependants
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>-->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Dependant 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Michelle Philips</p>
+            <p>15 January 2000</p>
+            <p>IHS123456789</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/v20/check-your-answers-delete-dependant">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Dependant 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <p>William Philips</p>
+                <p>7 June 2003</p>
+                <p>IHS123456789</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/v20/check-your-answers-delete-dependant">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Employment details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Claim starting date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>31 March 2020</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reminder email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>Yes</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Employer 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <p>NHS Business Services Authority</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Employer 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>Boots</p>
+              <p>Senior pharmacist Opt 1</p>
+              <p>Hospital</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+      </dl>
+      <div class="govuk-form-group govuk-form-group--error">
+
+      <h2 class="govuk-heading-m">Attachment details</h2>
+      
+      <span class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> You must upload evidence to be able to submit your application. Use the 'change' link to upload evidence
+        
+      </span>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Files uploaded
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>-</p>
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/v20/contract-add">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+          </div>
+        </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Comments
+            </dt>
+            <dd class="govuk-summary-list__value">
+              -
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="/v20/comments">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          
+      </dl>
+
+    
+     
+
+      <form action="/v20/check-your-answers2" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

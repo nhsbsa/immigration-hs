@@ -1,0 +1,101 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            <span class="govuk-caption-l">Health & Social Care</span>
+            User Research
+        </h1>{{releaseVersion | log }}
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                                July 2023
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+                        aria-labelledby="accordion-default-heading-1">
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption">Start date (idea 3 & 7)</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header app-custom-class">Option</th>
+                                    <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+                                    <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Signpost</th>
+                                    <td class="govuk-table__cell">Signpost question to check user has evidence before offering upload screen</td>
+                                    <td class="govuk-table__cell"><a href="july-2023/start-date/signpost/claim-dates-new"
+                                            class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Important box</th>
+                                    <td class="govuk-table__cell">Important box added to upload screen</td>
+                                    <td class="govuk-table__cell"><a href="july-2023/start-date/important-box/claim-dates-new"
+                                            class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Check your answers</th>
+                                    <td class="govuk-table__cell">Inset text added to CYA and when click 'change' important box added to start date screen</td>
+                                    <td class="govuk-table__cell"><a href="july-2023/start-date/check-your-answers-nhs-path"
+                                            class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br />
+                        <br />
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption">Upload additional evidence</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header app-custom-class">Option</th>
+                                    <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+                                    <th scope="col" class="govuk-table__header app-custom-class">Link</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Single</th>
+                                    <td class="govuk-table__cell">Upload and comments on single page - no signpost question</td>
+                                    <td class="govuk-table__cell"><a href="july-2023/additional-evidence/single/upload-of-contract"
+                                            class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Single signpost</th>
+                                    <td class="govuk-table__cell">Upload and comments on single page - with signpost question</td>
+                                    <td class="govuk-table__cell"><a href="july-2023/additional-evidence/single-signpost/upload-of-contract"
+                                            class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Multi signpost</th>
+                                    <td class="govuk-table__cell">Upload and comments on individual pages - with signpost question</td>
+                                    <td class="govuk-table__cell"><a href="july-2023/additional-evidence/multi-signpost/upload-of-contract"
+                                            class="govuk-link govuk-!-font-weight-bold">Start now</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

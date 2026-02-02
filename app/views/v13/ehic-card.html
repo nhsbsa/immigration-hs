@@ -1,0 +1,78 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Do you have a valid EHIC card from an EU country?
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/interview/fe3f73f3-2547-4376-8d15-79bccfd65406?preview=true">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v13/visa-date">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Eligibility check</span>
+          Does the applicant have a valid European Health Insurance Card (EHIC) from an EU country?
+      </h1>
+      <span id="passport-issued-hint" class="govuk-hint">
+        A European Health Insurance Card (EHIC) entitles the holder to access medically necessary, state-provided healthcare.
+        <br>
+        <br>
+        <!--<details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Different names for a EHIC
+            </span>
+          </summary>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Example 1</li>
+            <li>Example 2</li>
+            <li>Example 3</li>
+          </ul>
+          <p>This does not include time spent on meal breaks or unsupervised study.</p>
+        </details>-->
+        Find out more <a href="https://ec.europa.eu/social/main.jsp?catId=559" class="govuk-link" target="_blank">information about EHIC on the European Commission website.</a>
+      </span>
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eu">
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ehic" name="ehic" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="ehic">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ehic" name="ehic" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ehic">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

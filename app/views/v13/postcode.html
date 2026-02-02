@@ -1,0 +1,47 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Postccode search
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v13/share-code">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          What's the applicant's UK address?
+      </h1>
+  
+      <form class="form" action="/v13/select-address" method="post">
+        <p class="govuk-!-font-weight-bold">Postcode</p>
+        {{ govukInput({
+          id: "auth--official-2-postcode",
+          classes: "govuk-!-width-one-half",
+          name: "auth--official-2-postcode"
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
+      </form>
+      <!--  <p><a href="/v13/enter-uk-address">I live outside the UK</a> &nbsp;</p>
+      -->
+
+
+    </div>
+  </div>
+
+{% endblock %}

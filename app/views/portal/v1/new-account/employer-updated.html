@@ -1,0 +1,79 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Current employment details added</h1>
+        
+      </div>
+
+      
+      <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <p>You can download the details of your application and use them for future applications.</p>
+      <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save application details as PDF
+      </button> -->
+
+      
+    
+
+    
+
+
+      <p>Your employer has been added to your account and can be used for future applications. </p>
+
+      <dl class="govuk-summary-list">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Employer name 
+          </dt>
+          <dd class="govuk-summary-list__value">
+           DWP
+          </dd>
+          
+         
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Job title
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Interaction design
+          </dd>
+          
+         
+        </div>
+        
+        
+      </dl>
+
+      <!--
+      <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
+      -->
+    <a href="blank-dashboard" class="govuk-button">Return to your dashboard</a>
+    
+
+    </div>
+  </div>
+
+{% endblock %}

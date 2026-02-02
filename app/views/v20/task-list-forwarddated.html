@@ -1,0 +1,287 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Start date of new claim – Immigration Health Surcharge Refund Service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank"
+        rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20/dependant-question">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div id="error-summary" class="govuk-error-summary govuk-!-display-none" data-module="govuk-error-summary"
+      role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li><a id="error-summary-link" href="#passport-issued-day"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Previous successful applications
+    </h1>
+    <p>We've found the following previous successful IHS reimbursement applications based on the information you've
+      given us.</p>
+
+   
+
+
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">IHS number</th>
+          <th scope="col" class="govuk-table__header">BSA reference number</th>
+          <th scope="col" class="govuk-table__header">Claim start date</th>
+          <th scope="col" class="govuk-table__header">Claim end date</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS12345678</th>
+          <td class="govuk-table__cell">ABC1234567</td>
+          <td class="govuk-table__cell">1 January 2021</td>
+          <td class="govuk-table__cell">30 June 2021</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS33345678</th>
+          <td class="govuk-table__cell">GHI1234567</td>
+          <td class="govuk-table__cell">1 January 2022</td>
+          <td class="govuk-table__cell">30 June 2022</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS44445678</th>
+          <td class="govuk-table__cell">JKL1234567</td>
+          <td class="govuk-table__cell">1 July 2022</td>
+          <td class="govuk-table__cell">31 December 2022</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS55545678</th>
+          <td class="govuk-table__cell">MNO1234567</td>
+          <td class="govuk-table__cell">1 January 2023</td>
+          <td class="govuk-table__cell">30 June 2023</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="govuk-hint" style="margin-top: -25px;">Table last updated: 4 August 2025</p>
+    <br>
+
+    <form id="claim-form" class="form" method="get">
+      <div id="form-group" class="govuk-form-group">
+        <h2 class="govuk-heading-m">1. Are you applying for a period before 1 July 2023?</h2>
+
+       <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="claims-history-task-list" aria-describedby="application-details-1-status">
+                Change your claim period
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="application-details-2-status">
+             <strong class="govuk-tag govuk-tag--green">
+              Completed
+            </strong>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+
+     
+
+
+     <h2 class="govuk-heading-m">2. What is the start date of this new claim?</h2>
+       <p class="govuk-body">We'll work out the end date of this claim from the start date you enter. The end date will
+          be 6 months after the start date because you can only claim reimbursement for 6 months at a time.</p>
+        <p class="govuk-body">Based on the previous successful applications we found, the next claim can start on 1 July 2023.</p>
+
+        
+
+        <div id="passport-issued-hint" class="govuk-hint">For example, 15 1 2021</div>
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint"
+          id="passport-issued-fieldset">
+          <p id="passport-issued-error" class="govuk-error-message govuk-!-display-none" aria-live="assertive">
+            <span class="govuk-visually-hidden">Error:</span>
+            <span id="inline-error-text"></span>
+          </p>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                  name="start-day" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                  name="start-month" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                  name="start-year" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+     
+
+
+
+
+
+
+
+
+ <a href="task-list-forwarddated-2" class="govuk-button" data-module="govuk-button">Continue</a>
+     </form>
+    <script>
+
+      document.getElementById("claim-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const choice = document.querySelector('input[name="changedName"]:checked');
+
+        if (choice.value === "yes") {
+          window.location.href = "claims-history-task";  // page for YES
+        } else {
+          window.location.href = "claims-history-start-date"; // page for NO
+        }
+      });
+    </script>
+
+
+
+
+  </div>
+</div>
+<script>
+  function validateStartDate(event) {
+    const startDay = parseInt(document.getElementById("passport-issued-day").value, 10);
+    const startMonth = parseInt(document.getElementById("passport-issued-month").value, 10);
+    const startYear = parseInt(document.getElementById("passport-issued-year").value, 10);
+
+    const newStartDate = new Date(startYear, startMonth - 1, startDay);
+    if (isNaN(newStartDate.getTime())) return true;
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+
+    // Updated periods with 2nd claim removed
+    const previousPeriods = [
+      { start: new Date(2021, 0, 1), end: new Date(2021, 5, 30) },
+      { start: new Date(2022, 0, 1), end: new Date(2022, 5, 30) },
+      { start: new Date(2022, 6, 1), end: new Date(2022, 11, 31) },
+      { start: new Date(2023, 0, 1), end: new Date(2023, 5, 30) }
+    ];
+
+    // Identical date check (still takes precedence)
+    for (let period of previousPeriods) {
+      if (newStartDate.getTime() === period.start.getTime()) {
+        event.preventDefault();
+        showError("The start date cannot be the same as a previous claim you have made");
+        return false;
+      }
+    }
+
+    // Overlap check (must take precedence)
+    for (let period of previousPeriods) {
+      if (newStartDate >= period.start && newStartDate <= period.end) {
+        event.preventDefault();
+        showError("The claim period based on this start date cannot overlap with a previous application");
+        return false;
+      }
+    }
+
+
+
+    // --- NOW: check if date is before the most recent claim start date ---
+    let mostRecentStart = previousPeriods[0].start;
+    for (let i = 1; i < previousPeriods.length; i++) {
+      if (previousPeriods[i].start.getTime() > mostRecentStart.getTime()) {
+        mostRecentStart = previousPeriods[i].start;
+      }
+    }
+
+    if (newStartDate.getTime() < mostRecentStart.getTime()) {
+      // No overlaps (checked above) and not identical (checked above), so redirect.
+      event.preventDefault();
+
+      // store date parts (so the backdated page can use them if needed)
+      const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
+      localStorage.setItem("enteredDate", formattedDate);
+      localStorage.setItem("claimDay", startDay);
+      localStorage.setItem("claimMonth", startMonth);
+      localStorage.setItem("claimYear", startYear);
+
+      // adjust path if necessary (e.g. '/v20/backdated-claim')
+      window.location.href = 'backdated-claim';
+      return false;
+    }
+
+    // If we reach here, all validations passed — store date and allow submission
+    const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
+    localStorage.setItem("enteredDate", formattedDate);
+    localStorage.setItem("claimDay", startDay);
+    localStorage.setItem("claimMonth", startMonth);
+    localStorage.setItem("claimYear", startYear);
+
+    return true;
+  }
+
+  function showError(message) {
+    const errorSummary = document.getElementById('error-summary');
+    const errorSummaryLink = document.getElementById('error-summary-link');
+    const formGroup = document.getElementById('form-group');
+    const errorMessage = document.getElementById('passport-issued-error');
+    const inlineErrorText = document.getElementById('inline-error-text');
+    const inputs = [
+      document.getElementById("passport-issued-day"),
+      document.getElementById("passport-issued-month"),
+      document.getElementById("passport-issued-year")
+    ];
+
+    inlineErrorText.textContent = message;
+    errorSummaryLink.textContent = message;
+
+    errorSummary.classList.remove('govuk-!-display-none');
+    errorSummary.focus();
+
+    formGroup.classList.add('govuk-form-group--error');
+    errorMessage.classList.remove('govuk-!-display-none');
+
+    inputs.forEach(input => {
+      input.classList.add('govuk-input--error');
+      input.setAttribute('aria-invalid', 'true');
+    });
+  }
+
+</script>
+
+
+{% endblock %}

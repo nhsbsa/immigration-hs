@@ -1,0 +1,49 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+Select your charity's postal address - Charity Information - Register your charity's details with HMRC - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: { text: "beta" },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">We cannot find an address for the postcode SO11 2BC</h1>
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+    <div class="govuk-!-padding-bottom-5"></div>
+    <form method="post" action="enter-uk-postcode">
+
+      <p class="govuk-!-font-weight"><a href="enter-uk-address">Enter authorised official's full previous home address manually</a> &nbsp;</p>
+
+      <br/>
+
+
+      {{ govukButton({
+        text: "Enter another postcode"
+      }) }}
+
+    </form>
+
+
+    <!-- Link to Help -->
+    {% include "includes/anything-wrong.html" %}
+
+  </div>
+</div>
+
+{% endblock %}

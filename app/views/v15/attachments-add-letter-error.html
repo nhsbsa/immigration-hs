@@ -1,0 +1,272 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="https://online1.snapsurveys.com/interview/fe3f73f3-2547-4376-8d15-79bccfd65406?preview=true">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/letter-add-v15" method="post">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+    
+            <ul class="govuk-list govuk-error-summary__list">
+    
+              <li>
+    
+                <a href="#documents">Add no more than 10 files. If you want to upload this file, you must delete one of the existing files already uploaded</a>
+    
+              </li>
+    
+            </ul>
+          </div>
+        </div>
+        <span class="govuk-caption-l">Application</span>
+
+        <h1 class="govuk-heading-l">Evidence uploaded</h1>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="national-insurance-number">
+            <h2 class="govuk-heading-m">Files uploaded</h2>
+            <span id="national-insurance-number-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Add no more than 10 files. If you want to upload this file, you must delete one of the existing files already uploaded
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 1
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->EHIC-card.jpg<!--</a>, 2MB-->
+                </dd>
+
+                <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="/v15/attachments-delete-ehic">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+
+                </dd>
+
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 2
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-1.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 3
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-2.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 4
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-3.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 5
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-4.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 6
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-5.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 7
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-6.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 8
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-7.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 9
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-8.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  File 10
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <!--<a download href="/">-->letter-page-9.pdf<!--</a>, 2MB-->
+                </dd>
+            
+                <dd class="govuk-summary-list__actions">
+            
+                  <a class="govuk-link" href="/v15/attachments-delete-letter">
+                    Delete<span class="govuk-visually-hidden"> file 1</span>
+                  </a>
+            
+                </dd>
+            
+              </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="letter-add-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+                Do you want to upload more evidence?
+
+            </legend>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="letter-add-conditional" name="letter-add-v15" type="radio" value="yes" data-aria-controls="conditional-letter-add-conditional">
+                  <label class="govuk-label govuk-radios__label" for="letter-add-conditional">
+                    Yes
+                  </label>
+                </div>
+  
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="letter-add-conditional-2" name="letter-add-v15" type="radio" value="no" data-aria-controls="conditional-letter-add-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="letter-add-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+      
+    </div>
+  </div>
+
+{% endblock %}

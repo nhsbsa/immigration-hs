@@ -1,0 +1,138 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+  <style>
+      .govuk-banner--success {
+          border-color: #00703c;
+          color: #00703c;
+      }
+      .govuk-banner {
+          border: 5px solid #1d70b8;
+          font-size: 0;
+          margin-bottom: 30px;
+          padding: 10px;
+      }
+      .govuk-banner__message {
+      font-family: "GDS Transport", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.25;
+      color: #0b0c0c;
+      display: block;
+      overflow: hidden;
+      display: inline-block;
+      margin-left: 10px;
+      }
+      .govuk-banner__assistive {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      clip-path: inset(50%) !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+      }
+  </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">Dependant 1 Michelle Philips has been deleted</p>
+        </div>
+      </div>
+
+        <!--<div class="govuk-banner govuk-banner--success">
+
+            <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25" style="display: inline-block">
+            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+            
+            <div class="govuk-banner__message">
+            <span class="govuk-banner__assistive">Success</span>Dependant 1	Michelle Philips has been deleted</div>
+            
+        </div> -->
+
+        <form class="form" action="/v19/dependant-details-delete" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="dependant-question-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <!--<h1 class="govuk-fieldset__heading">
+                  Do you want to add any dependants who have paid an immigration health surcharge?
+                </h1>-->
+                <h1 class="govuk-heading-l">
+                    <span class="govuk-caption-l">Application</span>
+                    Do you want to add any other dependant's who have a valid European Health Insurance Card (EHIC) issued from an EU country or Switzerland?
+                </h1>
+              </legend> 
+
+              <span id="dependant-question-conditional-hint" class="govuk-hint">
+                Dependants are for example, the applicant's spouse, civil partner, durable partner or children.
+                <br>
+                <br>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Dependant information you will be asked for
+                    </span>
+                  </summary>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>full name</li>
+                    <li>date of birth</li>
+                    <li>immigration health surcharge (IHS) number</li>
+                    <li>visa share code</li>
+                    <li>UK address</li>
+                    <li>scan or photo of EHIC card</li>
+                  </ul>
+                </details>
+              </span>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="eu">
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="ihs-paid" name="dependant-details-delete" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="dependant-details-delete">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="dependant-details-delete" name="dependant-details-delete" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="dependant-details-delete">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </fieldset>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}

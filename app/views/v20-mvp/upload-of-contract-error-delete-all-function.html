@@ -1,0 +1,159 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Upload evidence
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <a class="govuk-back-link" href="/v20-mvp/upload-of-evidence">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .govuk-banner--success {
+      border-color: #00703c;
+      color: #00703c;
+  }
+  .govuk-banner {
+      border: 5px solid #1d70b8;
+      font-size: 0;
+      margin-bottom: 30px;
+      padding: 10px;
+  }
+  .govuk-banner__message {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  display: block;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 10px;
+  }
+  .govuk-banner__assistive {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+  }
+
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body">All unsuccessful files have been deleted</p>
+        </div>
+      </div>
+
+      <form class="form" action="/v20-mvp/comments" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--l" for="file-upload-1">
+              <!--<h1 class="govuk-fieldset__heading">Upload evidence</h1>-->
+              <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-l">Application</span>
+                  Upload evidence
+              </h1>
+          </label>
+          
+          <span id="file-upload-1-hint" class="govuk-hint">
+            <p>Evidence should be payslips, from all the applicant's health and social care employers, for every day of the 6-month period the claim is being made for. More than 6 months' worth of payslips may be necessary to cover this period.</p>
+            <p>Evidence should be a scanned copy or photo of the original documents.</p>
+            <p>Attach evidence for the period: <strong>30 April 2020</strong> to <strong>29 October 2020</strong></p>
+            <p>Uploaded attachments must be:</p>
+            <ul class=“govuk-list govuk-list--bullet”>
+              <li>clear and readable</li>
+              <li>jpg, jpeg, bmp, png or pdf</li>
+              <li>no larger than 2MB in size</li>
+            </ul>
+        </span>
+          
+            
+          
+                          <!--/////////// MOJ Style for multiple file uploader START ///////////////-->
+                         
+                           
+                                <div class="moj-multi-file-upload">
+                                  <div class="moj-multi-file__uploaded-files ">
+                                    <!--<h2 class="govuk-heading-m">Files added</h2>-->
+                                    
+                                    <div class="govuk-summary-list moj-multi-file-upload__list">
+                                      <div class="govuk-summary-list moj-multi-file-upload__list">
+                          
+                                        <div class="moj-multi-file-upload__upload">
+
+                                          
+                                            
+                                            <h2 class="govuk-heading-m">Files added</h2>
+                                           <!--<span class="govuk-error-message">
+                                              <span class="govuk-visually-hidden">Error:</span> Contract 3.doc must be a jpg, bmp, png or pdf<br>Contract 4.pdf must be less than 2MB in size
+                                            </span>-->
+                                            
+                                              <span class="govuk-error-message">
+                                              <!--<span class="govuk-visually-hidden">Error:</span> Delete unsuccessful files and try again to continue</span>-->
+                                            <div class="govuk-summary-list moj-multi-file-upload__list">
+                                              <!--<div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip April.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><button class="moj-multi-file-upload__delete govuk-button govuk-button--secondary govuk-!-margin-bottom-0" type="button" name="delete" value="CAS Statement.jpg">Delete <span class="govuk-visually-hidden">CAS Statement.jpg</span></button></dd> </div>-->
+                                              <div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip April.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a class="govuk-link" href="">Delete<span class="govuk-visually-hidden"> file 1</span></a></dd> </div>
+                                              <div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip May.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a class="govuk-link" href="">Delete<span class="govuk-visually-hidden"> file 1</span></a></dd> </div>
+                                              <div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip August.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a class="govuk-link" href="">Delete<span class="govuk-visually-hidden"> file 1</span></a></dd> </div>
+                                              <div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip September.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a class="govuk-link" href="">Delete<span class="govuk-visually-hidden"> file 1</span></a></dd> </div>
+                                              <div class="govuk-summary-list__row moj-multi-file-upload__row">  <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg> Payslip October.pdf successfully uploaded</span> </span></dd>  <dd class="govuk-summary-list__actions moj-multi-file-upload__actions"><a class="govuk-link" href="">Delete<span class="govuk-visually-hidden"> file 1</span></a></dd> </div>                                            
+                                            </div>
+                                              </div>
+                                              
+                                              <div class=""govuk-heading-m">
+                                              <label class="govuk-label govuk-label--m" for="documents">
+                                              Upload a file
+                                            </label>
+                                
+                  
+                                            <input class="govuk-file-upload moj-multi-file-upload__input govuk-file-upload--error" id="documents" name="documents" type="file" aria-describedby="documents-error" multiple="">
+                                          </div>
+                                
+                                          <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                                            Upload file
+                                          </button>
+                                
+                                        </div>
+                                      
+                                    
+                                  
+                          
+                               
+                                
+
+            <!--/////////// MOJ Style for multiple file uploader END ///////////////-->
+
+            
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    
+    </div>
+  </div>
+
+{% endblock %}

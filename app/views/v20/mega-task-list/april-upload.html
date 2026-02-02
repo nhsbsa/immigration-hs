@@ -1,0 +1,203 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+IHS question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Content Toggle</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/pay-checkbox" method="post">
+        <div class="govuk-form-group">
+          <span class="govuk-caption-l">Application</span>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
+            <h1 class="govuk-fieldset__heading">Upload payslips for April 2020</h1>
+          </legend>
+
+          <P>Payslips must cover a period starting on or before <strong>20 April 2020</strong>.</P>
+          <h2 class="govuk-heading-m">Payslips</h2>
+
+          <p>Payslips must include the applicant's:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>name</li>
+            <li>employer's name</li>
+            <li> National Insurance number</li>
+            <li>pay date or period covered by the payslip</li>
+          </ul>
+
+
+
+
+
+
+
+          <h2 class="govuk-heading-m">Files</h2>
+
+          <p>You must upload scanned copies or photos of the applicant's original documents.</p>
+
+          <p>Files must:</p>
+
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>be clear and readable</li>
+            <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+            <li> be smaller than 2MB each</li>
+            <li><strong>not</strong> be password protected</li>
+
+          </ul>
+          <!-- Div to be hidden -->
+
+
+
+
+          <div id="content-to-hide">
+            <div class="moj-multi-file-upload">
+              
+
+              <label class="govuk-label govuk-label--m" for="documents">
+                Files uploaded
+              </label>
+
+              <p>Select 'preview' to check the files you've uploaded (previewed files will open in a new tab) or select 'delete' to remove files from this application.</p>
+              <div class="moj-multi-file__uploaded-files ">
+
+                <div class="govuk-summary-list moj-multi-file-upload__list">
+                  <div class="govuk-summary-list__row moj-multi-file-upload__row">
+                    <dd class="govuk-summary-list__value moj-multi-file-upload__message"><span
+                        class="moj-multi-file-upload__success"> <svg class="moj-banner__icon" fill="currentColor"
+                          role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"
+                          height="25" width="25">
+                          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path>
+                        </svg> Payslip april-2020.png successfully uploaded</span> </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <ul class="govuk-summary-list__actions-list">
+                            <li class="govuk-summary-list__actions-list-item">
+                              <a class="govuk-link" href="/public/images/april-2020.png" target="_blank" style="font-size: 16px;">Preview<span class="govuk-visually-hidden"> contact details</span></a>
+                            </li>
+                            <li class="govuk-summary-list__actions-list-item">
+                              <a class="govuk-link" href="april-delete"  style="font-size: 16px;">Delete<span class="govuk-visually-hidden"> contact details</span></a>
+                            </li>
+                          </ul>
+                        </dd>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="documents">
+                  Upload files
+                </label>
+                <div class="moj-multi-file__uploaded-files ">
+
+                  <div class="govuk-summary-list moj-multi-file-upload__list">
+
+
+                  </div>
+                </div>
+
+                <div class="govuk-inset-text" style="margin-top: -20px;">
+                  If you cannot upload payslips for this month, for example because the applicant was paid in arrears,
+                  select 'I do not have payslips for this month'. You can explain this gap later. </strong>
+                </div>
+
+                
+
+
+
+                <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents"
+                  type="file" multiple="">
+              </div>
+
+              <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button"
+                data-module="govuk-button">
+                Upload file
+              </button>
+            </div>
+          </div>
+
+          <!-- Div to be revealed -->
+          <div id="content-to-show" class="hidden">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+                You'll need to give more information and evidence to explain this gap later. </strong>
+            </div>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="toggle-checkbox" name="waste" type="checkbox"
+              onClick="toggleContent()" value="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="toggle-checkbox">I do not have payslips for this
+              month</label>
+            <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+              You can explain why and add alternative evidence later
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <script>
+          function toggleContent() {
+            var checkbox = document.getElementById('toggle-checkbox');
+            var contentToHide = document.getElementById('content-to-hide');
+            var contentToShow = document.getElementById('content-to-show');
+
+            if (checkbox.checked) {
+              contentToHide.classList.add('hidden');
+              contentToShow.classList.remove('hidden');
+            } else {
+              contentToHide.classList.remove('hidden');
+              contentToShow.classList.add('hidden');
+            }
+          }
+
+          // Initialize the state on page load based on the checkbox state
+          document.addEventListener('DOMContentLoaded', function () {
+            toggleContent();
+          });
+        </script>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+{% endblock %}

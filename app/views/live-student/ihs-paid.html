@@ -1,0 +1,70 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Has the applicant paid an immigration health surcharge for their visa?
+{% endblock %}
+
+{% block beforeContent %}
+ <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+  <!--<a class="govuk-back-link" href="/v19/start">Back</a>-->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l" style="margin-bottom: 8px;">
+          <span class="govuk-caption-l">Eligibility check</span>
+          Has the applicant paid an immigration health surcharge for their visa?
+      </h1>
+      <span id="passport-issued-hint" class="govuk-hint">
+          An immigration health surcharge is paid as part of the immigration application process.
+      </span>
+      <br>
+      <br>
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eu">
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-paid" name="ihs-paid" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="ihs-paid">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-paid" name="ihs-paid" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="ihs-paid">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text " >
+            <span class="govuk-warning-text__assistive">Warning</span>
+            If the applicant's Immigration Health Surcharge payment was made by a third party, such as a legal representative or agent, all reimbursements will be made to the third party. The applicant will need to contact the third party to reclaim these funds.
+          </strong>
+        </div> 
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

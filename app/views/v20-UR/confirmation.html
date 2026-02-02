@@ -1,0 +1,52 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application complete</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <p>You've successfully submitted a claim for an immigration health surcharge reimbursement. We've sent you an email to confirm this.</p>
+      <p>The applicant's claim period is: <strong>20 April 2020</strong> to <strong>19 October 2020</strong>.</p>
+      <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <p>You can download the details of your application and use them for future applications.</p>
+      <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save application details as PDF
+      </button> -->
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>We'll assess the claim within the next 6 weeks. However, it could take longer than this to receive your money.</p>
+
+      <!--
+      <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
+      -->
+
+      <br>
+      <p class="govuk-body">If you have any questions, <a href="/footer-HSC/contact-us" target="_blank">contact us (opens in new tab)</a>. 
+      <p><a href="https://www.gov.uk/done/apply-immigration-health-surcharge-refund" target="_blank">What did you think of this service? (opens in new tab)</a> This will take 30 seconds to complete.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

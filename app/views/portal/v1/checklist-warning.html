@@ -1,0 +1,52 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  You need additional evidence
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<h1 class="govuk-fieldset__heading">What's your name?</h1>-->
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          You need more evidence before you can make this claim
+      </h1>
+
+     <p>If the applicant does not have all the evidence they need for this claim period, they must collect additional evidence to explain any gaps in their employment.</p>
+ 
+      <p>For example, if the applicant was on leave, they must get a headed, signed and dated letter from their employer confirming the dates they were on leave.</p>
+       
+      <p>If you are applying for a period that includes [Current month and year] and the applicant has not been paid for this month yet, they must wait until they have a payslip for [Current month and year] before making this claim. </p>
+       
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          If you apply without the correct evidence, your claim could be rejected.  
+        </strong>
+      </div>
+      
+    
+
+      
+
+    </div>
+  </div>
+
+{% endblock %}

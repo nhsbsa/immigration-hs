@@ -1,0 +1,55 @@
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/v2/start">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+      <form class="form" action="/ihs-question-v2" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="ihs-question-conditional-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                  Has the qualified person ever paid an immigration health surcharge for their current visa?
+              </h1>
+            </legend> 
+            
+           <!-- <span id="ihs-question-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-question-conditional" name="ihs-question-v2" type="radio" value="yes" data-aria-controls="conditional-ihs-question-conditional">
+                <label class="govuk-label govuk-radios__label" for="ihs-question-conditional">
+                  Yes
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="ihs-question-conditional-2" name="ihs-question-v2" type="radio" value="no" data-aria-controls="conditional-ihs-question-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="ihs-question-conditional-2">
+                  No
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
