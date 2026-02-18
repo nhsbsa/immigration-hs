@@ -1,0 +1,266 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Application complete
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Dependant application submitted</h1>
+      <div class="govuk-panel__body">
+        Application reference number<br><strong>HDJ2123F</strong>
+      </div>
+    </div>
+
+    <p>You have successfully added a dependant to the claim <strong>BSA123456789</strong>.</p>
+
+  
+
+    <p>We've sent a confirmation email to <strong>john.smith@email.com</strong>.</p>
+
+
+    
+    <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <p>You can download the details of your application and use them for future applications.</p>
+      <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save application details as PDF
+      </button> -->
+
+      <h3 class="govuk-heading-m">Save application details</h3>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          BSA reference number of amended claim
+        </dt>
+        <dd class="govuk-summary-list__value">
+          BSA123456789
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number of main applicant
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ 12 34 56 C
+        </dd>
+      </div>
+      
+      
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dependant details
+        </dt>
+        <dd class="govuk-summary-list__value">
+         
+       
+          Michelle Smith<br>
+
+          15 January 2000<br>
+
+          IHS123456789
+         
+        </dd>
+      </div> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+         
+       
+  
+
+          1 January 2022
+         
+        </dd>
+      </div> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+         
+       
+  
+
+          31 June 2022
+         
+        </dd>
+      </div> 
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Evidence submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+         
+       
+          july.png<br>
+
+          august.png<br>
+
+         
+         
+        </dd>
+      </div>  -->
+      
+    </dl>
+    <!-- <h2 class="govuk-heading-m">Download your application details</h2>
+      <p>You can download the details of your application and use them for future applications.</p>
+      <button onclick="window.print();" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save application details as PDF
+      </button> -->
+
+    <p>Select 'Print this page' to print these application details or to save a copy as a PDF.</p>
+
+
+    <style>
+      .govuk-frontend-supported .gem-c-print-link {
+        display: block;
+      }
+
+
+
+      .govuk-\!-margin-bottom-8 {
+        margin-bottom: 30px !important;
+      }
+
+
+
+      .gem-c-layout-for-public {
+        font-family: "GDS Transport", arial, sans-serif;
+      }
+
+      .govuk-template {
+        background-color: #f3f2f1;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      :root {
+        --govuk-frontend-version: "5.8.0";
+        --govuk-frontend-breakpoint-mobile: 20rem;
+        --govuk-frontend-breakpoint-tablet: 40.0625rem;
+        --govuk-frontend-breakpoint-desktop: 48.0625rem;
+      }
+
+      .gem-c-print-link__button {
+        border: 1px solid #505a5f;
+        color: #1d70b8;
+        cursor: pointer;
+        margin: 0;
+      }
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+
+        .gem-c-print-link__link,
+        .gem-c-print-link__button {
+          background-image: url(/public/images/print.png);
+        }
+      }
+
+      .gem-c-print-link__link,
+      .gem-c-print-link__button {
+        background: url(/public/images/print.png) no-repeat 10px 50%;
+        background-size: 16px 18px;
+        padding: 10px 10px 10px 36px;
+        text-decoration: none;
+      }
+
+      .govuk-body-s {
+        color: #0b0c0c;
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.25;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      .govuk-link {
+        font-family: "GDS Transport", arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-decoration: underline;
+        text-decoration-thickness: max(1px, .0625rem);
+        text-underline-offset: .1578em;
+      }
+
+
+
+      .gem-c-layout-for-public {
+        font-family: "GDS Transport", arial, sans-serif;
+      }
+
+      .govuk-template {
+        background-color: #f3f2f1;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      :root {
+        --govuk-frontend-version: "5.8.0";
+        --govuk-frontend-breakpoint-mobile: 20rem;
+        --govuk-frontend-breakpoint-tablet: 40.0625rem;
+        --govuk-frontend-breakpoint-desktop: 48.0625rem;
+      }
+    </style>
+
+    <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-8">
+      <button onclick="window.print();" class="govuk-link govuk-body-s gem-c-print-link__button"
+        data-module="print-link" data-print-link-module-started="true" style="color: #1d70b8;;">Print this page</button>
+    </div>
+
+
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p>We'll email the applicant in the next 10 weeks to let them know if the claim is successful or if they need to do anything else.</p>
+
+    <p>If the claim is successful, we'll tell the applicant when to expect a payment. The money will be sent to the account or card the applicant used to pay the IHS.</p>
+
+
+    <!-- <div class="govuk-inset-text">
+For future claims, you should continue to use the date for the main applicant. Any dependents you claimed for should use the dependent's date.</div> -->
+    <!--
+      <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
+      -->
+
+    <!-- <h2 class="govuk-heading-m">Help</h2>
+
+
+    <p class="govuk-body">If you have any questions or if we have not emailed john.smith@email.com within the next 10 weeks, <a href="/footer-HSC/contact-us" target="_blank">contact us (opens in new tab)</a>.</p>
+
+    <h2 class="govuk-heading-m">Send us feedback</h2>
+
+    <p><a href="https://www.gov.uk/done/apply-immigration-health-surcharge-refund" target="_blank">Complete our survey
+        to let us know what you think about this service (opens in new tab)</a>. This will take 30 seconds to complete.
+    </p> -->
+
+  </div>
+</div>
+
+{% endblock %}

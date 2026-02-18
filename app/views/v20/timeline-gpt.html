@@ -27,7 +27,7 @@
       <p class="govuk-body">Below are the previous successful claims we have on record. If there are any gaps between claims you can fill them; if your next claim starts the day after your most recent claim you can continue without entering a start date.</p>
 
       <div id="summary-inset" class="govuk-inset-text" hidden>
-        If your next claim starts the day after your most recent claim, click <strong>Continue from last claim</strong> — you won’t need to enter the start date.
+        If your next claim starts the day after your most recent claim, click <strong>Continue from last claim</strong> — you won't need to enter the start date.
       </div>
 
       <table class="govuk-table govuk-!-margin-top-4" id="claims-table">
@@ -56,7 +56,7 @@
             {% endfor %}
           {% else %}
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="5">We don’t have any previous claims on record for you.</td>
+              <td class="govuk-table__cell" colspan="5">We don't have any previous claims on record for you.</td>
             </tr>
           {% endif %}
         </tbody>
@@ -114,7 +114,7 @@
 
       <div id="no-claims" class="govuk-warning-text govuk-!-margin-top-4" hidden>
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">We don’t have any previous claims on record for you.</strong>
+        <strong class="govuk-warning-text__text">We don't have any previous claims on record for you.</strong>
         <p class="govuk-body">Please enter the start date for your claim above.</p>
       </div>
 
@@ -133,7 +133,7 @@
       var rows = Array.from(document.querySelectorAll('#claims-body > tr.govuk-table__row'));
       // convert server-rendered rows into a JS-friendly array if possible
       var claims = [];
-      if (rows.length && !rows[0].textContent.includes("We don’t have any previous claims")) {
+      if (rows.length && !rows[0].textContent.includes("We don't have any previous claims")) {
         rows.forEach(function (r) {
           // attempt to parse the start/end from the third/fourth cells if they look like dates
           var cells = r.querySelectorAll('td, th');

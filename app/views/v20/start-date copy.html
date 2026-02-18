@@ -1,0 +1,162 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Start date of new claim – Immigration Health Surcharge Refund Service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank"
+        rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20/dependant-question">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div id="error-summary" class="govuk-error-summary govuk-!-display-none" data-module="govuk-error-summary"
+      role="alert" aria-labelledby="error-summary-title" tabindex="-1">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li><a id="error-summary-link" href="#passport-issued-day"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What's the start date for this 6-month reimbursement claim?
+
+    </h1>
+    <p>You can only claim reimbursement for 6 months at a time. We'll work out the end date of this claim from the start date you enter.</p>
+
+<p>The earliest day this could be is 31 March 2020.</p>
+
+  
+
+
+    <form id="claim-form" class="form" action="start-date-cya" method="get" onsubmit="return validateStartDate(event)">
+      <div id="form-group" class="govuk-form-group">
+        
+
+        <div id="passport-issued-hint" class="govuk-hint">For example, 15 8 2020</div>
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint"
+          id="passport-issued-fieldset">
+          <p id="passport-issued-error" class="govuk-error-message govuk-!-display-none" aria-live="assertive">
+            <span class="govuk-visually-hidden">Error:</span>
+            <span id="inline-error-text"></span>
+          </p>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                  name="start-day" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                  name="start-month" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                  name="start-year" type="text" pattern="[0-9]*" inputmode="numeric"
+                  aria-describedby="passport-issued-hint passport-issued-error">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+<!-- <script>
+  function validateStartDate(event) {
+    const startDay = parseInt(document.getElementById("passport-issued-day").value, 10);
+    const startMonth = parseInt(document.getElementById("passport-issued-month").value, 10);
+    const startYear = parseInt(document.getElementById("passport-issued-year").value, 10);
+
+    const newStartDate = new Date(startYear, startMonth - 1, startDay);
+    if (isNaN(newStartDate.getTime())) return true;
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+
+    // Updated periods with 2nd claim removed
+    const previousPeriods = [
+      { start: new Date(2021, 0, 1), end: new Date(2021, 5, 30) },
+      { start: new Date(2022, 0, 1), end: new Date(2022, 5, 30) },
+      { start: new Date(2022, 6, 1), end: new Date(2022, 11, 31) },
+      { start: new Date(2023, 0, 1), end: new Date(2023, 5, 30) }
+    ];
+
+    // Identical date check
+    for (let period of previousPeriods) {
+      if (newStartDate.getTime() === period.start.getTime()) {
+        event.preventDefault();
+        showError("The start date cannot be the same as a previous claim you have made");
+        return false;
+      }
+    }
+
+   
+
+    // ✅ Store both formatted and raw date parts
+    const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
+    localStorage.setItem("enteredDate", formattedDate);
+    localStorage.setItem("claimDay", startDay);
+    localStorage.setItem("claimMonth", startMonth);
+    localStorage.setItem("claimYear", startYear);
+
+    return true;
+  }
+
+  function showError(message) {
+    const errorSummary = document.getElementById('error-summary');
+    const errorSummaryLink = document.getElementById('error-summary-link');
+    const formGroup = document.getElementById('form-group');
+    const errorMessage = document.getElementById('passport-issued-error');
+    const inlineErrorText = document.getElementById('inline-error-text');
+    const inputs = [
+      document.getElementById("passport-issued-day"),
+      document.getElementById("passport-issued-month"),
+      document.getElementById("passport-issued-year")
+    ];
+
+    inlineErrorText.textContent = message;
+    errorSummaryLink.textContent = message;
+
+    errorSummary.classList.remove('govuk-!-display-none');
+    errorSummary.focus();
+
+    formGroup.classList.add('govuk-form-group--error');
+    errorMessage.classList.remove('govuk-!-display-none');
+
+    inputs.forEach(input => {
+      input.classList.add('govuk-input--error');
+      input.setAttribute('aria-invalid', 'true');
+    });
+  }
+</script> -->
+
+{% endblock %}

@@ -1,29 +1,29 @@
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
-  Check you have all the evidence you need
+Check you have all the evidence you need
 {% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="https://design-system.dwp.gov.uk/assets/dwp-frontend/dwp-frontend.min.css">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-   
+
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Dependant application</span>
-     Evidence you need to prove the dependant's eligibility
+      Evidence you need to prove the dependant's eligibility
     </h1>
 
     <p>
-      Based on the dependant claim start date you gave us, you'll need to send evidence showing that the main applicant
+      Based on the dependant's claim start date you gave us, you'll need to send evidence showing that the main
+      applicant
       worked in a health and social care role from <strong>1 July 2022</strong>
       to <strong>14 August 2022</strong>.
     </p>
 
     <h2 class="govuk-heading-m">Payslips</h2>
 
-    
+
 
     <p>You'll need to send payslips that cover:</p>
     <ul class="govuk-list govuk-list--bullet" id="payslip-dates">
@@ -37,24 +37,26 @@
       you should wait to apply until they have a payslip for <span id="current-month-year-2"></span>.
     </div>
 
-    
 
-    
+
+
 
     <form class="form" action="/task-list-dependant" method="post">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-Do you have all the evidence in the list?           </h1>
-        </legend>            
+            Do you have all the evidence in the list?</h1>
+        </legend>
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="average-time-conditional" name="average-time-v20" type="radio" value="yes">
+            <input class="govuk-radios__input" id="average-time-conditional" name="average-time-v20" type="radio"
+              value="yes">
             <label class="govuk-label govuk-radios__label" for="average-time-conditional">Yes</label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="average-time-conditional-2" name="average-time-v20" type="radio" value="no">
+            <input class="govuk-radios__input" id="average-time-conditional-2" name="average-time-v20" type="radio"
+              value="no">
             <label class="govuk-label govuk-radios__label" for="average-time-conditional-2">No</label>
           </div>
         </div>
@@ -65,7 +67,7 @@ Do you have all the evidence in the list?           </h1>
   </div>
 </div>
 
-<script>
+<!-- <script>
 document.addEventListener("DOMContentLoaded", function () {
 
   // Pull from localStorage (set on Page 1 + 2)
@@ -135,6 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-</script>
+</script> -->
 
 {% endblock %}

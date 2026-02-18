@@ -4258,6 +4258,16 @@ router.post('/work-question-v20-mvp', function(req,res){
     }
 })
 
+router.post('/work-question-v20-UR-mvp', function(req,res){
+    var contacted = req.session.data['work-question-v20-UR']  // <--- match the form name
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/6-months')
+    }
+    else {
+        res.redirect('/v20-UR/not-entitled')
+    }
+})
+
 router.post('/6-months-v20', function(req,res){
     var contacted = req.session.data['6-months-v20']
     if (contacted == "yes"){
@@ -4276,6 +4286,17 @@ router.post('/6-months-v20-mvp', function(req,res){
     }
     else {
         res.redirect('/v20-mvp/not-entitled')
+    }
+
+})
+
+router.post('/6-months-v20-UR-mvp', function(req,res){
+    var contacted = req.session.data['6-months-v20-UR']
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/average-time')
+    }
+    else {
+        res.redirect('/v20-UR/not-entitled')
     }
 
 })
@@ -4302,6 +4323,17 @@ router.post('/average-time-v20-mvp', function(req,res){
 
 })
 
+router.post('/average-time-v20-UR-mvp', function(req,res){
+    var contacted = req.session.data['average-time-v20-UR']
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/tier2-declaration')
+    }
+    else {
+        res.redirect('/v20-UR/not-entitled-rr')
+    }
+
+})
+
 router.post('/dependant-question-v20', function(req,res){
     var contacted = req.session.data['dependant-question-v20']
     if (contacted == "yes"){
@@ -4324,13 +4356,24 @@ router.post('/dependant-question-v20-mvp', function(req,res){
 
 })
 
+router.post('/dependant-question-v20-UR-mvp', function(req,res){
+    var contacted = req.session.data['dependant-question-v20-UR']
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/dependant-details')
+    }
+    else {
+        res.redirect('/v20-UR/non-nhs-path')
+    }
+
+})
+
 router.post('/dependant-details-v20', function(req,res){
     var contacted = req.session.data['dependant-details-v20']
     if (contacted == "yes"){
         res.redirect('/v20/dependant-details2')
     }
     else {
-        res.redirect('/v20/start-date-claim-dates')
+        res.redirect('/v20/subscription-question')
     }
 })
 
@@ -4471,6 +4514,21 @@ router.post('/upload-of-evidence-add2-v20', function(req,res){
         }
 })
 
+ router.post('/doug-ihs-tier2-question-v20-ur-mvp', function(req,res){
+    var contacted = req.session.data['doug-ihs-tier2-question-v20']
+    if (contacted == "tier2"){
+       res.redirect('/v20/ihs-tier2-healthcare')
+    }
+    else
+        if (contacted == "tier5"){
+            res.redirect('/v20-ur/tier5-ko')
+        }
+        else
+        {
+            res.redirect('/v20-ur/work-question')
+        }
+})
+
 router.post('/doug-ihs-tier2-question-v20-mvp', function(req,res){
     var contacted = req.session.data['doug-ihs-tier2-question-v20']
     if (contacted == "tier2"){
@@ -4521,10 +4579,10 @@ router.post('/contracts-add-3-v20', function(req,res){
 router.post('/version-20-dependant-question', function(req,res){
     var contacted = req.session.data['dependant-question-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/dependant-details')
+        res.redirect('/v20/dependant-claim-period')
     }
     else {
-        res.redirect('/v20/start-date-claim-dates')
+        res.redirect('/v20/subscription-question')
     }
 
 })
@@ -4536,6 +4594,18 @@ router.post('/version-20-dependant-question-mvp', function(req,res){
     }
     else {
         res.redirect('/v20-mvp/claim-dates-new')
+    }
+
+})
+
+
+router.post('/UR-dependant-question', function(req,res){
+    var contacted = req.session.data['dependant-question-v20-UR']
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/dependant-claim-period')
+    }
+    else {
+        res.redirect('/v20-UR/subscription-question')
     }
 
 })
@@ -5674,6 +5744,16 @@ router.post('/pay-checkbox-october-ur', function(request, response) {
 })
 
 
+router.post('/ur-ihs-question', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-ur/applicant-visa-type')
+    }
+    else {
+        res.redirect('/v20-ur/not-entitled-rr')
+    }
+})
+
 // checklist routes
 
 router.post('/checklist-checker', function(req,res){
@@ -5945,10 +6025,22 @@ router.post('/live-student/dependant/same-address', function (req, res) {
 router.post('/checklist-evidence', function(req,res){
     var contacted = req.session.data['average-time-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/subscription-question')
+        res.redirect('/v20/dependant-question')
     }
     else {
         res.redirect('/v20/checklist-warning')
+    }
+
+})
+
+
+router.post('/checklist-evidence-ur', function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/dependant-question')
+    }
+    else {
+        res.redirect('/v20-UR/checklist-warning')
     }
 
 })
@@ -6180,6 +6272,20 @@ router.post('/dependant-details-journey', function(req,res){
 
 })
 
+
+router.post('/dependant-details-journey-2', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/dependant-details-2')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/check-your-answers-2')
+    }
+
+})
+
+
+
 router.post('/dependant-part', function(req,res){
     var contacted = req.session.data['dependant-details-v20']
     if (contacted == "yes"){
@@ -6206,6 +6312,17 @@ router.post('/alpha-correct-application', function(req,res){
     var contacted = req.session.data['dependant-details-v20']
     if (contacted == "yes"){
         res.redirect('/v20/dependant-alpha/dependant-start-date')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/wrong-application')
+    }
+
+})
+
+router.post('/alpha-correct-application-2', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/dependant-start-date-2')
     }
     else {
         res.redirect('/v20/dependant-alpha/wrong-application')
@@ -6269,6 +6386,33 @@ router.post('/alpha-nino-check', (req, res) => {
   return res.redirect('/v20/dependant-alpha/no-application-found');
 });
 
+router.post('/alpha-nino-check-2', (req, res) => {
+
+  const correctBsa = 'BSA123456789';
+
+  // Store the expected NINO stripped of spaces and made uppercase
+  const correctNino = 'QQ123456C';
+
+  // Clean user input for BSA
+  const enteredBsa = (req.session.data['bsa-number'] || '')
+    .replace(/\s+/g, '')
+    .toUpperCase()
+    .trim();
+
+  // Clean user input for NINO
+  const enteredNino = (req.session.data['nino'] || '')
+    .replace(/\s+/g, '')    // remove all spaces
+    .toUpperCase()          // uppercase everything
+    .trim();
+
+  // Compare cleaned versions
+  if (enteredBsa === correctBsa && enteredNino === correctNino) {
+    return res.redirect('/v20/dependant-alpha/previous-claim-2');
+  }
+
+  return res.redirect('/v20/dependant-alpha/no-application-found');
+});
+
 
 router.post('/dependant-start-date', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v20']
@@ -6280,6 +6424,35 @@ router.post('/dependant-start-date', function(req,res){
     }
 })
 
+router.post('/dependant-start-date-2', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/dependant-kickout')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/dependant-details-2')
+    }
+})
+
+router.post('/dependant-start-date-3', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-kickout')
+    }
+    else {
+        res.redirect('/v20/dependant-details')
+    }
+})
+
+router.post('/dependant-start-date-4', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/dependant-kickout')
+    }
+    else {
+        res.redirect('/v20/dependant-details')
+    }
+})
 
 router.post('/task-list-dependant', function(req,res){
     var contacted = req.session.data['average-time-v20']

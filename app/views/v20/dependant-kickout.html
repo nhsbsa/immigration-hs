@@ -1,0 +1,64 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">You cannot add your dependant to this claim</h1>
+
+    <form class="form" action="/v10/start" method="post">
+
+
+
+      <p class="govuk-body">The dependant's claim period must be the same as the main applicant's.</p>
+
+      <p>If your dependant has a claim start date which is later than your own, you must miss them out from this claim.
+        You can add them to your next claim.</p>
+
+      <h2 class="govuk-heading-s">Example</h2>
+
+      <div class="govuk-inset-text">
+
+        <p><strong>Main applicant claim period:</strong> 1 January 2022 to 30 June 2022</p>
+        <p><strong>Dependant claim period:</strong> 1 March 2022 to 31 August 2022</p>
+
+        <p>You must miss your dependant from the January to June claim, and begin adding them on from the main
+          applicant's July claim.</p>
+        <p>This is because we do not accept claims for less than 6 months, or claims which are overlapping with another
+          claim period.</p>
+
+
+      </div>
+
+      <p>You can continue with your claim without adding a dependant.</p>
+
+      <!-- <p><a href="dependant-question">You can still apply for the main applicant's claim.</a></p> -->
+
+    </form>
+
+    <a type="submit" href="subscription-question" class="govuk-button" data-module="govuk-button">
+      Continue without a dependant
+    </a>
+  </div>
+</div>
+
+
+{% endblock %}

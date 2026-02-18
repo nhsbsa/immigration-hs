@@ -13,7 +13,7 @@
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v20-UR-mvp/dependant-question">Back</a>
+  <a class="govuk-back-link" href="/v20-UR/dependant-question">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -24,18 +24,14 @@
       <!--<h1 class="govuk-fieldset__heading">What's the starting date of the 6-month period the applicant is claiming for?</h1>-->
       <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Application</span>
-          What's the starting date of the 6-month employment period the applicant is claiming for?
-      </h1>
+What's the start date for this 6-month reimbursement claim?      </h1>
 
-      <form class="form" action="/v20-UR-mvp/subscription-question" method="post">
-        <div id="changed-name-hint" class="govuk-hint">
-          The applicant can only claim reimbursement for a 6-month period.
-        </div>
-        <div id="changed-name-hint" class="govuk-hint">
-          The earliest date a new claim period can start is 31 March 2020. The applicant can claim from any date onwards. We'll automatically work out the end date of the claim.
-        </div>
+      <form class="form" action="start-date-cya" method="post">
+        <P>You can only claim reimbursement for 6 months at a time. We'll work out the end date of this claim from the start date you enter.</P>
+
+        <p>The earliest day this could be is 31 March 2020.</p>
         <div id="passport-issued-hint" class="govuk-hint">
-                For example, 15 8 2020
+                For example, 15 1 2021
             </div>
             
         <div class="govuk-form-group">

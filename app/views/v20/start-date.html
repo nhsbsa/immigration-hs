@@ -35,20 +35,62 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Application</span>
       What's the start date for this 6-month reimbursement claim?
-
     </h1>
-    <p>You can only claim reimbursement for 6 months at a time. We'll work out the end date of this claim from the start date you enter.</p>
+    <!-- <p>We've found the following previous successful IHS reimbursement applications based on the information you've
+      given us.</p>
 
-<p>The earliest day this could be is 31 March 2020.</p>
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">IHS number</th>
+          <th scope="col" class="govuk-table__header">BSA reference number</th>
+          <th scope="col" class="govuk-table__header">Claim start date</th>
+          <th scope="col" class="govuk-table__header">Claim end date</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS12345678</th>
+          <td class="govuk-table__cell">ABC1234567</td>
+          <td class="govuk-table__cell">1 January 2021</td>
+          <td class="govuk-table__cell">30 June 2021</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS33345678</th>
+          <td class="govuk-table__cell">GHI1234567</td>
+          <td class="govuk-table__cell">1 January 2022</td>
+          <td class="govuk-table__cell">30 June 2022</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS44445678</th>
+          <td class="govuk-table__cell">JKL1234567</td>
+          <td class="govuk-table__cell">1 July 2022</td>
+          <td class="govuk-table__cell">31 December 2022</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">IHS55545678</th>
+          <td class="govuk-table__cell">MNO1234567</td>
+          <td class="govuk-table__cell">1 January 2023</td>
+          <td class="govuk-table__cell">30 June 2023</td>
+        </tr>
+      </tbody>
+    </table>
 
-  
-
+    <p class="govuk-hint" style="margin-top: -25px;">Table last updated: 4 August 2025</p>
+    <br> -->
 
     <form id="claim-form" class="form" action="start-date-cya" method="get" onsubmit="return validateStartDate(event)">
       <div id="form-group" class="govuk-form-group">
-        
+        <!-- <h2 class="govuk-heading-m">What is the start date of this new claim?</h2> -->
 
-        <div id="passport-issued-hint" class="govuk-hint">For example, 15 8 2020</div>
+        <p>You can only claim reimbursement for 6 months at a time. We'll work out the end date of this claim from the
+          start date you enter.</p>
+
+        <p>The earliest day this could be is 31 March 2020.</p>
+
+
+
+        <div id="passport-issued-hint" class="govuk-hint">For example, 15 1 2021</div>
 
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint"
           id="passport-issued-fieldset">
@@ -110,16 +152,32 @@ Start date of new claim – Immigration Health Surcharge Refund Service
       { start: new Date(2023, 0, 1), end: new Date(2023, 5, 30) }
     ];
 
-    // Identical date check
-    for (let period of previousPeriods) {
-      if (newStartDate.getTime() === period.start.getTime()) {
-        event.preventDefault();
-        showError("The start date cannot be the same as a previous claim you have made");
-        return false;
-      }
-    }
+    // // Identical date check
+    // for (let period of previousPeriods) {
+    //   if (newStartDate.getTime() === period.start.getTime()) {
+    //     event.preventDefault();
+    //     showError("The start date cannot be the same as a previous claim you have made");
+    //     return false;
+    //   }
+    // }
 
-   
+    // // Overlap check
+    // for (let period of previousPeriods) {
+    //   if (newStartDate >= period.start && newStartDate <= period.end) {
+    //     event.preventDefault();
+    //     showError("The claim period based on this start date cannot overlap with a previous application");
+    //     return false;
+    //   }
+    // }
+
+    // Gap-fill check
+    // for (let i = 1; i < previousPeriods.length; i++) {
+    //   if (newStartDate > previousPeriods[i-1].end && newStartDate < previousPeriods[i].start) {
+    //     event.preventDefault();
+    //     showError("The start date must be after the most recent successful claim end date");
+    //     return false;
+    //   }
+    // }
 
     // ✅ Store both formatted and raw date parts
     const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
@@ -131,32 +189,32 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     return true;
   }
 
-  function showError(message) {
-    const errorSummary = document.getElementById('error-summary');
-    const errorSummaryLink = document.getElementById('error-summary-link');
-    const formGroup = document.getElementById('form-group');
-    const errorMessage = document.getElementById('passport-issued-error');
-    const inlineErrorText = document.getElementById('inline-error-text');
-    const inputs = [
-      document.getElementById("passport-issued-day"),
-      document.getElementById("passport-issued-month"),
-      document.getElementById("passport-issued-year")
-    ];
+  // function showError(message) {
+  //   const errorSummary = document.getElementById('error-summary');
+  //   const errorSummaryLink = document.getElementById('error-summary-link');
+  //   const formGroup = document.getElementById('form-group');
+  //   const errorMessage = document.getElementById('passport-issued-error');
+  //   const inlineErrorText = document.getElementById('inline-error-text');
+  //   const inputs = [
+  //     document.getElementById("passport-issued-day"),
+  //     document.getElementById("passport-issued-month"),
+  //     document.getElementById("passport-issued-year")
+  //   ];
 
-    inlineErrorText.textContent = message;
-    errorSummaryLink.textContent = message;
+  //   inlineErrorText.textContent = message;
+  //   errorSummaryLink.textContent = message;
 
-    errorSummary.classList.remove('govuk-!-display-none');
-    errorSummary.focus();
+  //   errorSummary.classList.remove('govuk-!-display-none');
+  //   errorSummary.focus();
 
-    formGroup.classList.add('govuk-form-group--error');
-    errorMessage.classList.remove('govuk-!-display-none');
+  //   formGroup.classList.add('govuk-form-group--error');
+  //   errorMessage.classList.remove('govuk-!-display-none');
 
-    inputs.forEach(input => {
-      input.classList.add('govuk-input--error');
-      input.setAttribute('aria-invalid', 'true');
-    });
-  }
+  //   inputs.forEach(input => {
+  //     input.classList.add('govuk-input--error');
+  //     input.setAttribute('aria-invalid', 'true');
+  //   });
+  // }
 </script>
 
 {% endblock %}

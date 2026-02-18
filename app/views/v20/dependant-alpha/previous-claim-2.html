@@ -1,0 +1,138 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Start date of new claim – Immigration Health Surcharge Refund Service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank"
+        rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Dependant application</span>
+      Previous application found
+    </h1>
+
+    <p>We've found the following IHS reimbursement application based on the information you've given.</p>
+
+    <table class="govuk-table govuk-table--small-text-until-tablet" id="claims-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">BSA reference number</th>
+          <th scope="col" class="govuk-table__header">National insurance number</th>
+          <th scope="col" class="govuk-table__header">Claim start date</th>
+          <th scope="col" class="govuk-table__header">Claim end date</th>
+          <th scope="col" class="govuk-table__header">Dependants added to the claim</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr>
+          <th scope="row" class="govuk-table__header">BSA123456789</th>
+          <td class="govuk-table__cell">QQ 12 34 56 C</td>
+          <td class="govuk-table__cell">1 January 2022</td>
+          <td class="govuk-table__cell">30 June 2022</td>
+          <td class="govuk-table__cell">None added</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="govuk-hint" style="margin-top: -25px;">Table last updated: 4 August 2025</p>
+
+    <form class="form" action="/alpha-correct-application-2" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Is this the correct application you are trying to add a dependant to?
+            </h2>
+          </legend>
+
+          <!-- FIXED RADIOS -->
+          <div class="govuk-radios govuk-radios--inline govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="dependant-details-yes"
+                name="dependant-details-v20"
+                type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="dependant-details-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="dependant-details-no"
+                name="dependant-details-v20"
+                type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="dependant-details-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById('start-date-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const day = parseInt(document.getElementById('day').value, 10);
+    const month = parseInt(document.getElementById('month').value, 10) - 1;
+    const year = parseInt(document.getElementById('year').value, 10);
+    const enteredDate = new Date(year, month, day);
+
+    if (isNaN(enteredDate)) {
+      alert("Please enter a valid date");
+      return;
+    }
+
+    localStorage.setItem("claimDay", day);
+    localStorage.setItem("claimMonth", month + 1);
+    localStorage.setItem("claimYear", year);
+
+    const formattedDate = enteredDate.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+    localStorage.setItem('enteredDate', formattedDate);
+
+    let withinRange = false;
+    document.querySelectorAll('#claims-table tbody tr').forEach(row => {
+      const start = new Date(row.cells[2].textContent.trim());
+      const end = new Date(row.cells[3].textContent.trim());
+      if (enteredDate >= start && enteredDate <= end) {
+        withinRange = true;
+      }
+    });
+
+    localStorage.setItem('showWarning', withinRange ? 'true' : 'false');
+    window.location.href = 'start-date-cya-warning';
+  });
+</script>
+{% endblock %}

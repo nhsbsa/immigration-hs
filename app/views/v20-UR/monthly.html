@@ -1,0 +1,160 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Check you have all the evidence you need
+{% endblock %}
+
+{% block content %}
+<!-- <link rel="stylesheet" href="https://design-system.dwp.gov.uk/assets/dwp-frontend/dwp-frontend.min.css"> -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+   
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Check you have all the evidence you need
+    </h1>
+
+    <p>
+      Based on the start date you gave us, you'll need to send evidence showing that the applicant
+      worked in a health and social care role from <strong><span id="start-date"></span></strong>
+      to <strong><span id="end-date"></span></strong>.
+    </p>
+
+    <h2 class="govuk-heading-m">Payslips</h2>
+
+    <div id="seven-month-info" class="govuk-warning-text" hidden>
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Your claim period includes days from 7 months. You'll need to upload payslips from all 7 months to cover the full period.
+      </strong>
+    </div>
+
+    <p>You'll need to send payslips that cover:</p>
+    <ul class="govuk-list govuk-list--bullet" id="payslip-dates"></ul>
+
+    <!-- Inset text shown if end date is in the future -->
+    <div id="current-month-warning" class="govuk-inset-text" hidden>
+      If the applicant has not been paid for <span id="current-month-year"></span> yet,
+      you should wait to apply until they have a payslip for <span id="current-month-year-2"></span>.
+    </div>
+
+    <h2 class="govuk-heading-m">Job contract</h2>
+    <p>
+      You can also send copies of job contracts for all the jobs you're sending payslips for.
+      This is optional but if you can upload the contracts, this makes it easier for us to confirm the applicant is eligible.
+    </p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If you cannot get all of this evidence
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If you cannot send some of the payslips in this list, you'll need to add some extra information and evidence
+        to your application explaining the gaps.<br><br> 
+        For example, if you were on leave, you'll need to send a headed, signed and dated letter
+        from your employer confirming the dates you were on leave.
+      </div>
+    </details>
+
+    <form class="form" action="/checklist-evidence-ur" method="post">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Do you have all the evidence in the list or alternative evidence to cover any gaps?
+          </h1>
+        </legend>            
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="average-time-conditional" name="average-time-v20" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="average-time-conditional">Yes</label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="average-time-conditional-2" name="average-time-v20" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="average-time-conditional-2">No</label>
+          </div>
+        </div>
+      </fieldset>
+      <br>
+      <button type="submit" class="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Pull from localStorage (set on Page 1 + 2)
+  const day = parseInt(localStorage.getItem("claimDay"), 10);
+  const month = parseInt(localStorage.getItem("claimMonth"), 10);
+  const year = parseInt(localStorage.getItem("claimYear"), 10);
+
+  if (!day || !month || !year) return; // No date saved yet
+
+  const startDate = new Date(year, month - 1, day);
+
+  // Correct end date calculation
+  function addMonthsSafe(date, months) {
+    const d = new Date(date);
+    const targetMonth = d.getMonth() + months;
+    d.setMonth(targetMonth);
+    // Handle month overflow for short months
+    while (d.getMonth() !== ((targetMonth) % 12 + 12) % 12) {
+      d.setDate(d.getDate() - 1);
+    }
+    return d;
+  }
+
+  let endDate = addMonthsSafe(startDate, 6);
+  endDate.setDate(endDate.getDate() - 1);
+
+  const options = { day: "numeric", month: "long", year: "numeric" };
+  document.getElementById("start-date").textContent = startDate.toLocaleDateString("en-GB", options);
+  document.getElementById("end-date").textContent = endDate.toLocaleDateString("en-GB", options);
+
+  const payslipList = document.getElementById("payslip-dates");
+  payslipList.innerHTML = "";
+
+  let current = new Date(startDate);
+  let bulletCount = 0;
+
+  while (current <= endDate) {
+    const monthStart = new Date(current.getFullYear(), current.getMonth(), 1);
+    const monthEnd = new Date(current.getFullYear(), current.getMonth() + 1, 0);
+    const periodStart = (monthStart < startDate) ? startDate : monthStart;
+    const periodEnd = (monthEnd > endDate) ? endDate : monthEnd;
+
+    const listItem = document.createElement("li");
+
+    if (periodStart.getTime() === periodEnd.getTime()) {
+      listItem.textContent = periodStart.toLocaleDateString("en-GB", options);
+    } else {
+      listItem.textContent = `${periodStart.toLocaleDateString("en-GB", options)} to ${periodEnd.toLocaleDateString("en-GB", options)}`;
+    }
+
+    payslipList.appendChild(listItem);
+    bulletCount++;
+
+    current = new Date(periodEnd.getFullYear(), periodEnd.getMonth() + 1, 1);
+  }
+
+  if (bulletCount === 7) {
+    document.getElementById("seven-month-info").hidden = false;
+  }
+
+  const today = new Date();
+  if (endDate > today) {
+    const monthYearString = endDate.toLocaleString("en-GB", { month: "long", year: "numeric" });
+    document.getElementById("current-month-year").textContent = monthYearString;
+    document.getElementById("current-month-year-2").textContent = monthYearString;
+    document.getElementById("current-month-warning").hidden = false;
+  }
+
+});
+</script>
+
+{% endblock %}
