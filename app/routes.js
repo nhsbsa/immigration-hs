@@ -6273,6 +6273,31 @@ router.post('/dependant-details-journey', function(req,res){
 })
 
 
+
+
+router.post('/dependant-details-journey-continue', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/dependant-start-date-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/monthly')
+    }
+
+})
+
+router.post('/dependant-details-journey-continue-2', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/dependant-start-date-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/monthly-2-dependant')
+    }
+
+})
+
+
 router.post('/dependant-details-journey-2', function(req,res){
     var contacted = req.session.data['dependant-details-v20']
     if (contacted == "yes"){
@@ -6424,6 +6449,16 @@ router.post('/dependant-start-date', function(req,res){
     }
 })
 
+router.post('/dependant-start-date-continue', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/dependant-start-date-input-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/dependant-details-continue-2')
+    }
+})
+
 router.post('/dependant-start-date-2', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v20']
     if (contacted == "yes"){
@@ -6464,6 +6499,19 @@ router.post('/task-list-dependant', function(req,res){
     }
 
 })
+
+
+router.post('/task-list-dependant-2', function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/task-list-2-dependants')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/checklist-warning')
+    }
+
+})
+
 
 
 
