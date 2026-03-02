@@ -6272,6 +6272,17 @@ router.post('/dependant-details-journey', function(req,res){
 
 })
 
+router.post('/dependant-details-journey-alpha', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-alpha/dependant-details')
+    }
+    else {
+        res.redirect('/v20/dependant-alpha/check-your-answers-match')
+    }
+
+})
+
 
 
 
