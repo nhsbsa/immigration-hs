@@ -5747,10 +5747,10 @@ router.post('/pay-checkbox-october-ur', function(request, response) {
 router.post('/ur-ihs-question', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v20']
     if (contacted == "yes"){
-        res.redirect('/v20-ur/applicant-visa-type')
+        res.redirect('/v20-UR/applicant-visa-type')
     }
     else {
-        res.redirect('/v20-ur/not-entitled-rr')
+        res.redirect('/v20-UR/not-entitled-rr')
     }
 })
 
