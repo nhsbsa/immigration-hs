@@ -5745,7 +5745,7 @@ router.post('/pay-checkbox-october-ur', function(request, response) {
 
 
 router.post('/ur-ihs-question', function(req,res){
-    var contacted = req.session.data['doug-ihs-question-v20']
+    var contacted = req.session.data['doug-ihs-question-v20-UR']
     if (contacted == "yes"){
         res.redirect('/v20-UR/applicant-visa-type')
     }
