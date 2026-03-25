@@ -4475,6 +4475,17 @@ router.post('/non-nhs-path-another-job-v20', function(req,res){
 
 })
 
+router.post('/non-nhs-path-another-job-v20-UR', function(req,res){
+    var contacted = req.session.data['non-nhs-path-another-job-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-UR/non-nhs-path-another-job')
+    }
+    else {
+        res.redirect('/v20-UR/ideation/task-list')
+    }
+
+})
+
 router.post('/non-nhs-path-another-job-v20-mvp', function(req,res){
     var contacted = req.session.data['non-nhs-path-another-job-v20']
     if (contacted == "yes"){

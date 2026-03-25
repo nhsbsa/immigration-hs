@@ -8,28 +8,13 @@ Upload evidence
 {% block beforeContent %}
 
 
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-
-    <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
-        new tab)</a> will help us to improve this service.
-    </span>
-  </p>
-</div>
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-{% endblock %}
-
-{% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
 
     <form class="form" action="/v20/extra-information" method="post">
 
-      
+
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--l" for="file-upload-1">
@@ -40,18 +25,19 @@ Upload evidence
         </label>
 
         <!-- start callout box -->
-       <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-        data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Upload payslips from 1 July 2022 to 14 August 2022
-          </h2>
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Upload payslips from 1 July 2022 to 14 September 2022
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p>Based on the dependant's claim period start date, we need to see payslips covering every day during the period from
+              <strong>1 July 2022</strong> to<strong> 14 September 2022</strong>.</p>
+            <p>This is the time not already covered by evidence from the main applicant's claim.</p>
+          </div>
         </div>
-        <div class="govuk-notification-banner__content">
-          <p>Based on the dependant's claim period start date, we need to see payslips covering the period from   <strong>1 July 2022</strong> to<strong> 14 September 2022</strong>.</p>
-          <p>This is the time not already covered by evidence from the main applicant's claim.</p>
-        </div>
-      </div>
         <!-- end callout box -->
 
 
@@ -83,24 +69,40 @@ Upload evidence
         </ul> -->
 
 
-        <h2 class="govuk-heading-m">Upload payslips covering every day in this claim period</h2>
-
-        <p>Select each month to upload payslips for that month.</p>
-
-          <p>If the applicant has payslips that cover days in multiple months, for example because they are paid weekly, you can upload the same payslip into more than one month.</p>
-          
-          <p>You can upload more than one payslip for each month.</p>
-
-
-
 
         
-
-
-
-
-
         
+
+        <h3 class="govuk-heading-s">Payslips we already have from the main applicant's claim</h3>
+        <p>Payslips for these months are not required because they have already been uploaded as part of the main applicant's claim:</p>
+
+       <ul class="govuk-list govuk-list--bullet">
+              <li>March 2022</li>
+              <li>April 2022</li>
+              <li>May 2022</li>
+              <li>June 2022</li>
+              
+            </ul>
+
+
+
+
+
+
+
+
+        <h3 class="govuk-heading-s">Payslips needed to cover the rest of the dependant's claim period</h3>
+<p>Select each month to upload payslips for that month.
+        </p>
+
+        <p>If the applicant has payslips that cover days in multiple months, for example because they are paid weekly,
+          you can upload the same payslip into more than one month.</p>
+
+        <p>You can upload more than one payslip for each month.</p>
+
+
+
+
 
         <!-- <span id="file-upload-1-hint" class="">
             <p>We'll need a scanned copy or photo of the original documents, these must include the applicant's:</p>
