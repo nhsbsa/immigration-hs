@@ -22,7 +22,7 @@ Dependant add
     <form class="form" id="dependant-form" action="/dependant-details-journey" method="post" novalidate>
       <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Application</span>
-        Who are you applying for?
+        What are you wanting to apply for?
       </h1>
 
       <div class="govuk-form-group">
@@ -33,19 +33,11 @@ Dependant add
               <input class="govuk-radios__input" id="route-main-applicant" name="dependantRoute" type="radio"
                 value="/v20-UR/ihs-question">
               <label class="govuk-label govuk-radios__label" for="route-main-applicant">
-                Main applicant only
+                Make a new application for an IHS reimbursement
               </label>
             </div>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="route-main-and-dependants" name="dependantRoute" type="radio"
-                value="/v20-UR/ihs-question">
-              <label class="govuk-label govuk-radios__label" for="route-main-and-dependants">
-                Main applicant and dependants
-              </label>
-              <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
-Dependants are people eligible to live in the UK because of their relationship with the main applicant.              </div>
-            </div>
+            
 
             <div class="govuk-radios__divider">or</div>
 
@@ -56,7 +48,8 @@ Dependants are people eligible to live in the UK because of their relationship w
                 Apply for a dependant connected to an existing claim
               </label>
               <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
-                You'll need the BSA reference number for that application. This was included in the confirmation email we sent the applicant.
+                You'll need the BSA reference number for that application. This was included in the confirmation email
+                we sent the applicant.
               </div>
             </div>
           </div>
