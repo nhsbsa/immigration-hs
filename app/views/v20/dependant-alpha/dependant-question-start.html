@@ -22,33 +22,26 @@ Dependant add
     <form class="form" id="dependant-form" action="/dependant-details-journey" method="post" novalidate>
       <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Application</span>
-        Who are you applying for?
+        What are you applying for?
       </h1>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="whereTo-route-hint">
           <div class="govuk-radios" data-module="govuk-radios" id="dependant-route-radios">
-            <div class="govuk-radios__item">
-              <!-- value points directly at the route target for simplicity -->
-              <input class="govuk-radios__input" id="route-main-applicant" name="dependantRoute" type="radio"
-                value="/v20-UR/ihs-question">
-              <label class="govuk-label govuk-radios__label" for="route-main-applicant">
-                Main applicant only
-              </label>
-            </div>
+           
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="route-main-and-dependants" name="dependantRoute" type="radio"
                 value="/v20-UR/ihs-question">
               <label class="govuk-label govuk-radios__label" for="route-main-and-dependants">
-                Main applicant and dependants
+               A new application for an IHS reimbursement
               </label>
               <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
-                Dependants are people eligible to live in the UK because of their relationship with the main applicant.
+               You can also apply for any dependants to be added to your application.
               </div>
             </div>
 
-            <div class="govuk-radios__divider">or</div>
+    
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="route-add-to-existing" name="dependantRoute" type="radio"
