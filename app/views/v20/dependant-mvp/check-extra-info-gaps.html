@@ -1,0 +1,139 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Add another contract
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="#">feedback</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- IMPORTANT: no action, we handle routing in JS -->
+    <form class="form" onsubmit="handleRouting(event)">
+
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">Application</span>
+        Check your extra information
+      </h1>
+
+      <!-- GAP BANNER -->
+      <div class="govuk-notification-banner" role="region">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title">
+            Gaps in payslips
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                July 2022
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a href="july">Upload payslips for July 2022</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- EXTRA INFO -->
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Extra information
+          </dt>
+          <dd class="govuk-summary-list__value-1"></dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="extra-information">Change</a>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- FILES -->
+      <h2 class="govuk-heading-m">Evidence</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            File 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            employer-letter.pdf
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" target="_blank">Preview</a>
+            |
+            <a class="govuk-link" href="#">Delete</a>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- QUESTION -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to add any other extra information?
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes" name="answer" type="radio" value="yes" required>
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no" name="answer" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+<!-- ROUTING SCRIPT -->
+<script>
+function handleRouting(event) {
+  event.preventDefault();
+
+  const answer = document.querySelector('input[name="answer"]:checked');
+
+  if (!answer) return;
+
+  if (answer.value === 'yes') {
+    window.location.href = 'extra-information-gaps';
+  } else {
+    window.location.href = 'check-your-answers-gaps';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.govuk-summary-list__value-1');
+  const extraInfo = localStorage.getItem('extraInfo');
+
+  container.textContent = extraInfo || 'No extra information provided.';
+});
+</script>
+
+{% endblock %}

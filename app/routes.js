@@ -6294,6 +6294,17 @@ router.post('/dependant-details-journey-alpha', function(req,res){
 
 })
 
+router.post('/dependant-details-journey-alpha-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-details')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/check-your-answers-match')
+    }
+
+})
+
 
 
 
@@ -6315,6 +6326,39 @@ router.post('/dependant-details-journey-continue-2', function(req,res){
     }
     else {
         res.redirect('/v20/dependant-alpha/monthly-2-dependant')
+    }
+
+})
+
+router.post('/dependant-details-journey-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/monthly')
+    }
+
+})
+
+router.post('/dependant-details-journey-continue-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/task-list')
+    }
+
+})
+
+router.post('/dependant-details-journey-continue-2-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/task-list-2-dependants')
     }
 
 })
@@ -6377,6 +6421,17 @@ router.post('/alpha-correct-application-2', function(req,res){
 
 })
 
+router.post('/alpha-correct-application-mvp', function(req,res){
+    var contacted = req.session.data['dependant-details-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/wrong-application')
+    }
+
+})
+
 
 
 router.post('/nino-check', (req, res) => {
@@ -6433,6 +6488,34 @@ router.post('/alpha-nino-check', (req, res) => {
   return res.redirect('/v20/dependant-alpha/no-application-found');
 });
 
+
+router.post('/alpha-nino-check-mvp', (req, res) => {
+
+  const correctBsa = 'BSA123456789';
+
+  // Store the expected NINO stripped of spaces and made uppercase
+  const correctNino = 'QQ123456C';
+
+  // Clean user input for BSA
+  const enteredBsa = (req.session.data['bsa-number'] || '')
+    .replace(/\s+/g, '')
+    .toUpperCase()
+    .trim();
+
+  // Clean user input for NINO
+  const enteredNino = (req.session.data['nino'] || '')
+    .replace(/\s+/g, '')    // remove all spaces
+    .toUpperCase()          // uppercase everything
+    .trim();
+
+  // Compare cleaned versions
+  if (enteredBsa === correctBsa && enteredNino === correctNino) {
+    return res.redirect('/v20/dependant-mvp/previous-claim');
+  }
+
+  return res.redirect('/v20/dependant-mvp/no-application-found');
+});
+
 router.post('/alpha-nino-check-2', (req, res) => {
 
   const correctBsa = 'BSA123456789';
@@ -6481,6 +6564,16 @@ router.post('/dependant-start-date-continue', function(req,res){
     }
 })
 
+router.post('/dependant-start-date-continue-mvp', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date-input-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/dependant-details-continue-2')
+    }
+})
+
 router.post('/dependant-start-date-2', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v20']
     if (contacted == "yes"){
@@ -6511,6 +6604,27 @@ router.post('/dependant-start-date-4', function(req,res){
     }
 })
 
+
+router.post('/dependant-start-date-mvp', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date-input')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/dependant-details')
+    }
+})
+
+router.post('/dependant-start-date-continue-mvp', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date-input-continue')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/dependant-details-continue-2')
+    }
+})
+
 router.post('/task-list-dependant', function(req,res){
     var contacted = req.session.data['average-time-v20']
     if (contacted == "yes"){
@@ -6533,6 +6647,55 @@ router.post('/task-list-dependant-2', function(req,res){
     }
 
 })
+
+
+router.post('/dependant-checkbox', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20/dependant-mvp/task-list-2-gap")
+    } else {
+        response.redirect("/v20/dependant-mvp/task-list-2")
+    }
+})
+
+router.post('/two-dependant-checkbox', function(request, response) {
+
+    var checked = request.session.data['waste']
+    if (checked =="checked"){
+        response.redirect("/v20/dependant-mvp/task-list-2-dependants-gap")
+    } else {
+        response.redirect("/v20/dependant-mvp/task-list-3-dependants")
+    }
+})
+
+// Store month status
+router.post('/save-month/:month', function (req, res) {
+  const month = req.params.month;
+  const status = req.body.status;
+
+  if (!req.session.data.months) {
+    req.session.data.months = {};
+  }
+
+  req.session.data.months[month] = status;
+
+  res.redirect('/upload-task-list');
+});
+
+
+// Check if any gaps exist
+router.post('/check-gaps', function (req, res) {
+  const months = req.session.data.months || {};
+
+  const hasGap = Object.values(months).includes('gap');
+
+  if (hasGap) {
+    res.redirect('/extra-information');
+  } else {
+    res.redirect('/next-step'); // change this to your next page
+  }
+});
 
 
 
