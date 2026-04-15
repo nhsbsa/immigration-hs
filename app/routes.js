@@ -4590,7 +4590,7 @@ router.post('/contracts-add-3-v20', function(req,res){
 router.post('/version-20-dependant-question', function(req,res){
     var contacted = req.session.data['dependant-question-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/dependant-claim-period')
+        res.redirect('/v20/dependant-details')
     }
     else {
         res.redirect('/v20/subscription-question')
