@@ -7,12 +7,12 @@ Charity's official UK address - Charity Information - Register your charity's de
 {% block beforeContent %}
 
 {{ govukPhaseBanner({
-  tag: { text: "beta" },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+tag: { text: "beta" },
+html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
 }) }}
 
 
-{% include "includes/back.html" %}
+
 {% endblock %}
 
 {% block content %}
@@ -26,23 +26,23 @@ Charity's official UK address - Charity Information - Register your charity's de
     <form method="post" action="select-address">
       <p class="govuk-!-font-weight-bold">Postcode search</p>
       {{ govukInput({
-        id: "auth--official-2-postcode",
-        classes: "govuk-!-width-one-half",
-        name: "auth--official-2-postcode"
+      id: "auth--official-2-postcode",
+      classes: "govuk-!-width-one-half",
+      name: "auth--official-2-postcode"
       }) }}
 
       <p><a href="enter-address">Authorised official's previous home address does not have a UK postcode</a> &nbsp;</p>
       <div class="govuk-!-padding-bottom-5"></div>
       {{ govukInput({
-        label: {text: "Property name or number (optional)"},
-        id: "auth--official-2-address-line-1",
-        classes: "govuk-!-width-one-half",
-        name: "auth--official-2-address-line-1",
-        hint: { text: "For example, The Mill, 116 or Flat 40"}
+      label: {text: "Property name or number (optional)"},
+      id: "auth--official-2-address-line-1",
+      classes: "govuk-!-width-one-half",
+      name: "auth--official-2-address-line-1",
+      hint: { text: "For example, The Mill, 116 or Flat 40"}
       }) }}
 
       {{ govukButton({
-        text: "Find address"
+      text: "Find address"
       }) }}
 
 
