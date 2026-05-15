@@ -1,0 +1,122 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Dependant application</span>
+
+    <h1 class="govuk-heading-l">Dependant already added to claim</h1>
+
+    <p>The dependant you have provided details for has already been added to this claim.</p>
+
+    <h2 class="govuk-heading-m">Main applicant claim details</h2>
+<dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            BSA reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+          BSA123456789
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Main applicant's sate of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            31 March 1980
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance Number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            QQ 12 34 56 C
+          </dd>
+        </div>
+
+
+
+      </dl>
+    <form class="form" action="/v10/start" method="post">
+    <h2 class="govuk-heading-m">Dependant details</h2>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+           Michelle Philips
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            15 January 2000
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            IHS number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            IHS123456789
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dependant claim start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+           15 March 2022
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dependant claim end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+           14 September 2022
+          </dd>
+        </div>
+
+
+
+      </dl>
+
+      <p class="govuk-body">If you want to add a different dependant to this claim, you can <a href="dependant-start-date">try again</a>.
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
