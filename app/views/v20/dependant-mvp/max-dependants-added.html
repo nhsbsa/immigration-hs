@@ -1,0 +1,74 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Dependant application</span>
+
+    <h1 class="govuk-heading-l">Maximum number of dependants already added to this application</h1>
+
+    <p>The maximum number of dependants have already been added to this claim. You may not add more than 10 dependants to a single claim.</p>
+    <h2 class="govuk-heading-m">Main applicant claim details</h2>
+
+    <form class="form" action="/v10/start" method="post">
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            BSA reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            BSA123456789
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            31 April 1980
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            QQ 12 34 56 C
+          </dd>
+        </div>
+
+
+
+      </dl>
+
+      <p>If you need advice about this specific claim, <a href="">contact us</a>.</p>
+
+      <p class="govuk-body">If you want to add a dependant to a different claim, you can <a href="bsa-reference">try again</a>.
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
