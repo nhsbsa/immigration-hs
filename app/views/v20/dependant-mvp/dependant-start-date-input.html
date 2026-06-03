@@ -38,14 +38,19 @@ Start date of new claim – Immigration Health Surcharge Refund Service
 
     </h1>
 
-  
+
 
 
     <form id="claim-form" class="form" action="start-date-cya" method="get" onsubmit="return validateStartDate(event)">
       <div id="form-group" class="govuk-form-group">
-        
 
-        <p>This is the date the dependant will be reimbursed from.</p>
+<div class="govuk-inset-text">
+          <p>Main applicant claim period:<strong>1 January 2022</strong> to <strong>30 June 2022</strong></p>
+        </div>
+        <p>This is the date the dependant will be reimbursed from. It must fall between the claim period the main
+          applicant has already been reimbursed for.</p>
+
+        
         <div id="passport-issued-hint" class="govuk-hint">For example, 15 03 2022</div>
 
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint"
@@ -117,7 +122,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     //   }
     // }
 
-   
+
 
     // ✅ Store both formatted and raw date parts
     const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
