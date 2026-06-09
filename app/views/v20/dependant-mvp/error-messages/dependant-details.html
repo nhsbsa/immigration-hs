@@ -1,0 +1,220 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Dependant details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" data-module="govuk-error-summary"
+      role="alert" tabindex="-1" autofocus="">
+
+      <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li><a href="#dependant-given-name">Enter the dependant's first or given names</a></li>
+          <li><a href="#dependant-family-name">Enter the dependant's last or family name</a></li>
+          <li><a href="#dependant-date-of-birth-day">Enter the dependant's date of birth</a></li>
+          <li><a href="#dependant-immigration-health-surcharge-number">Enter the dependant's IHS number</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--<h1 class="govuk-fieldset__heading">What are the applicant's dependant details?</h1>-->
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Dependant application</span>
+      Who is the dependant you want to add?
+    </h1>
+
+    <p> Dependants are people eligible to live in the UK because of their relationship with the main applicant.
+    </p>
+
+    <form class="form" action="dependant-add" method="post">
+      <form action="/health/claim/dependant-details" method="POST" autocomplete="on" novalidate="true"
+        spellcheck="false">
+
+        <div class="govuk-form-group">
+          <div id="dependant-given-name-group" class="form-group govuk-form-group govuk-form-group--error">
+            <label for="dependant-given-name" id="dependant-given-name-label" class="govuk-label">
+              <span class="label-text">First or given names</span>
+            </label>
+
+            <span id="dependant-given-name-error" class="govuk-error-message"><span
+                class="govuk-visually-hidden">Error:</span>Enter the dependant's first or given name</span>
+            <div class="govuk-input__wrapper">
+              <input type="text" name="dependant-given-name" id="dependant-given-name"
+                class="form-control govuk-input govuk-input govuk-input--error" aria-required="true" maxlength="50"
+                aria-labelledby="dependant-given-name-error dependant-given-name-label" aria-invalid="true">
+            </div>
+          </div>
+          <div id="dependant-family-name-group" class="form-group govuk-form-group govuk-form-group--error">
+            <label for="dependant-family-name" id="dependant-family-name-label" class="govuk-label">
+              <span class="label-text">Last or family name name</span>
+            </label>
+
+            <span id="dependant-family-name-error" class="govuk-error-message"><span
+                class="govuk-visually-hidden">Error:</span>Enter the dependant's last or family name</span>
+            <div class="govuk-input__wrapper">
+              <input type="text" name="dependant-family-name" id="dependant-family-name"
+                class="form-control govuk-input govuk-input govuk-input--error" aria-required="true" maxlength="50"
+                aria-labelledby="dependant-family-name-error dependant-family-name-label" aria-invalid="true">
+            </div>
+          </div>
+        </div>
+        <div class="govuk-form-group  govuk-form-group--error">
+          <fieldset id="dependant-date-of-birth" role="group"
+            aria-describedby="dependant-date-of-birth-error dependant-date-of-birth-hint" class="govuk-fieldset">
+            <legend class="govuk-label">
+
+              <span class="label-text"> Date of birth</span>
+            </legend>
+            <div id="dependant-date-of-birth-group" class="govuk-fieldset">
+              <div id="dependant-date-of-birth-hint" class="govuk-hint">
+                For example, 31 3 1980
+              </div>
+              <span id="dependant-date-of-birth-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span>
+                Enter the dependant's date of birth
+              </span>
+              <div class="govuk-date-input">
+                <div id="dependant-date-of-birth-day-group" class="form-group govuk-date-input__item">
+                  <label for="dependant-date-of-birth-day" id="dependant-date-of-birth-day-label" class="govuk-label">
+                    <span class="label-text">Day</span>
+                  </label>
+
+
+                  <div class="govuk-input__wrapper">
+                    <input type="text" name="dependant-date-of-birth-day" id="dependant-date-of-birth-day"
+                      class="form-control govuk-input govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
+                      aria-required="false" min="1" max="31" maxlength="2" pattern="[0-9]*"
+                      aria-labelledby="dependant-date-of-birth-error dependant-date-of-birth-day-label"
+                      aria-invalid="true" autocomplete="bday-day">
+                  </div>
+                </div>
+
+                <div id="dependant-date-of-birth-month-group" class="form-group govuk-date-input__item">
+                  <label for="dependant-date-of-birth-month" id="dependant-date-of-birth-month-label"
+                    class="govuk-label">
+                    <span class="label-text">Month</span>
+                  </label>
+
+
+                  <div class="govuk-input__wrapper">
+                    <input type="text" name="dependant-date-of-birth-month" id="dependant-date-of-birth-month"
+                      class="form-control govuk-input govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error"
+                      aria-required="false" min="1" max="12" maxlength="2" pattern="[0-9]*"
+                      aria-labelledby="dependant-date-of-birth-error dependant-date-of-birth-month-label"
+                      aria-invalid="true" autocomplete="bday-month">
+                  </div>
+                </div>
+
+                <div id="dependant-date-of-birth-year-group" class="form-group govuk-date-input__item">
+                  <label for="dependant-date-of-birth-year" id="dependant-date-of-birth-year-label" class="govuk-label">
+                    <span class="label-text">Year</span>
+                  </label>
+
+
+                  <div class="govuk-input__wrapper">
+                    <input type="text" name="dependant-date-of-birth-year" id="dependant-date-of-birth-year"
+                      class="form-control govuk-input govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error"
+                      aria-required="false" maxlength="4" pattern="[0-9]*"
+                      aria-labelledby="dependant-date-of-birth-error dependant-date-of-birth-year-label"
+                      aria-invalid="true" autocomplete="bday-year">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div class="form-group govuk-form-group govuk-form-group--error">
+          <legend class="govuk-label">
+            <span class="label-text"> IHS number</span>
+          </legend>
+          <div id="dependant-immigration-health-surcharge-number-hint" class="govuk-hint">
+            <span id="dependant-immigration-health-surcharge-number-hint" class="govuk-hint">Make sure you enter the IHS
+              number for the dependant's IHS payment, not the applicant's.<br><br>For example, 'IHS123456789' or
+              'IHSC123456789'</span>
+          </div>
+
+          <div class="govuk-input__wrapper">
+            <div id="dependant-immigration-health-surcharge-number-group"
+              class="form-group govuk-form-group">
+              <label for="dependant-immigration-health-surcharge-number"
+                id="dependant-immigration-health-surcharge-number-label" class="govuk-label govuk-visually-hidden">
+                <span class="label-text">IHS number</span>
+              </label>
+
+              <span id="dependant-immigration-health-surcharge-number-error" class="govuk-error-message"><span
+                  class="govuk-visually-hidden">Error:</span>Enter the dependant's IHS number</span>
+              <div class="govuk-input__wrapper">
+                <input type="text" name="dependant-immigration-health-surcharge-number"
+                  id="dependant-immigration-health-surcharge-number"
+                  class="form-control govuk-input govuk-input govuk-input--width-10 govuk-input--error"
+                  aria-required="true" maxlength="13"
+                  aria-labelledby="dependant-immigration-health-surcharge-number-error dependant-immigration-health-surcharge-number-label"
+                  aria-invalid="true">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+        <span id="qualified-health-professional-hint" class="govuk-hint">
+          <details class="govuk-details" data-module="govuk-details" role="group">
+            <summary class="govuk-details__summary" role="button" aria-controls="details-content-0"
+              aria-expanded="false"><span class="govuk-details__summary-text">If the applicant has lost this
+                number</span>
+            </summary>
+            <div class="govuk-details__text" id="details-content-0" aria-hidden="true">
+              If the applicant has lost this number, they need to <a
+                href="https://www.gov.uk/contact-ukvi-inside-outside-uk" target="_blank" class="govuk-link"
+                id="contact-ukvi-inside-outside-uk-link"> contact UK Visas and Immigration for help (opens in new
+                tab)</a>.
+            </div>
+          </details>
+        </span>
+
+
+        <input type="submit" id="continue-button" value="Continue" class="govuk-button" aria-label="Continue">
+
+        
+
+
+        <input type="hidden" name="x-csrf-token" value="6bnMXn8l-rley7DVyHR-kapV97K3JL3ewEZE">
+      </form>
+
+      
+  </div>
+
+
+
+  </form>
+
+</div>
+</div>
+
+{% endblock %}
