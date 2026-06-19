@@ -1,0 +1,118 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">The applicant is not eligible for an immigration health surcharge reimbursement or a
+      refund</h1>
+
+    <form class="form" action="/v10/start" method="post">
+
+      <p class="govuk-body">Based on your answers, the applicant is not eligible to use this service to claim a refund
+        for this claim period start date because it is outside of their visa period.</p>
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Visa start date
+          </dt>
+          <dd class="govuk-summary-list__value" >
+            1 January 2020 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Visa end date
+          </dt>
+          <dd class="govuk-summary-list__value" >
+            31 December 2022
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            IHS reimbursement claim period start date
+          </dt>
+          <dd class="govuk-summary-list__value" >
+            1 January 2026
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+    </form>
+  </div>
+</div>
+
+<script>
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  function formatDate(day, month, year) {
+    if (!day || !month || !year) return "";
+    return `${parseInt(day, 10)} ${monthNames[parseInt(month, 10) - 1]} ${year}`;
+  }
+
+  const visaStart = formatDate(
+    localStorage.getItem("visaStartDay"),
+    localStorage.getItem("visaStartMonth"),
+    localStorage.getItem("visaStartYear")
+  );
+
+  const visaEnd = formatDate(
+    localStorage.getItem("visaEndDay"),
+    localStorage.getItem("visaEndMonth"),
+    localStorage.getItem("visaEndYear")
+  );
+
+  const claimStart = formatDate(
+    localStorage.getItem("claimDay"),
+    localStorage.getItem("claimMonth"),
+    localStorage.getItem("claimYear")
+  );
+
+  document.getElementById("visa-period").textContent =
+    `${visaStart} to ${visaEnd}`;
+
+  document.getElementById("claim-start-date").textContent =
+    claimStart;
+
+    
+</script>
+
+
+{% endblock %}

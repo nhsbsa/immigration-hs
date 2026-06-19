@@ -4470,7 +4470,7 @@ router.post('/non-nhs-path-another-job-v20', function(req,res){
         res.redirect('/v20/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v20/ideation/task-list')
+        res.redirect('/v20/ideation/e-visa')
     }
 
 })
@@ -4481,7 +4481,7 @@ router.post('/non-nhs-path-another-job-v20-UR', function(req,res){
         res.redirect('/v20-UR/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v20-UR/ideation/task-list')
+        res.redirect('/v20-UR/ideation/contract-upload-task')
     }
 
 })
@@ -6436,7 +6436,7 @@ router.post('/alpha-correct-application-mvp', function(req,res){
 
 router.post('/nino-check', (req, res) => {
 
-  const correctBsa = 'BSA123456789';
+  const correctBsa = 'BSA12Z4567';
 
   // Store the expected NINO stripped of spaces and made uppercase
   const correctNino = 'QQ123456C';
@@ -6463,7 +6463,7 @@ router.post('/nino-check', (req, res) => {
 
 router.post('/alpha-nino-check', (req, res) => {
 
-  const correctBsa = 'BSA123456789';
+  const correctBsa = 'BSA12Z4567';
 
   // Store the expected NINO stripped of spaces and made uppercase
   const correctNino = 'QQ123456C';
@@ -6491,7 +6491,7 @@ router.post('/alpha-nino-check', (req, res) => {
 
 router.post('/alpha-nino-check-mvp', (req, res) => {
 
-  const correctBsa = 'BSA123456789';
+  const correctBsa = 'BSA12Z4567';
 
   // Store the expected NINO stripped of spaces and made uppercase
   const correctNino = 'QQ123456C';
@@ -6518,7 +6518,7 @@ router.post('/alpha-nino-check-mvp', (req, res) => {
 
 router.post('/alpha-nino-check-2', (req, res) => {
 
-  const correctBsa = 'BSA123456789';
+  const correctBsa = 'BSA12Z4567';
 
   // Store the expected NINO stripped of spaces and made uppercase
   const correctNino = 'QQ123456C';

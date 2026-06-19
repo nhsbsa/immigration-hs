@@ -71,14 +71,22 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const date = localStorage.getItem('enteredDate');
-    if (date) {
-      document.getElementById('cya-start-date').textContent = date;
-    } else {
-      document.getElementById('cya-start-date').textContent = 'No date entered';
-    }
-  });
+document.addEventListener('DOMContentLoaded', () => {
+
+  const iso = localStorage.getItem('claimStartISO');
+
+  if (!iso) return;
+
+  const date = new Date(iso);
+
+  document.getElementById('cya-start-date').textContent =
+    date.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+});
 </script>
 
 {% endblock %}

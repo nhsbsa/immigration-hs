@@ -79,7 +79,7 @@ Start date of new claim – Immigration Health Surcharge Refund Service
     <p class="govuk-hint" style="margin-top: -25px;">Table last updated: 4 August 2025</p>
     <br> -->
 
-    <form id="claim-form" class="form" action="start-date-cya" method="get" onsubmit="return validateStartDate(event)">
+<form class="form" action="start-date-cya" method="get" onsubmit="return validateStartDate(event)">
       <div id="form-group" class="govuk-form-group">
         <!-- <h2 class="govuk-heading-m">What is the start date of this new claim?</h2> -->
 
@@ -133,88 +133,29 @@ Start date of new claim – Immigration Health Surcharge Refund Service
 </div>
 
 <script>
-  function validateStartDate(event) {
-    const startDay = parseInt(document.getElementById("passport-issued-day").value, 10);
-    const startMonth = parseInt(document.getElementById("passport-issued-month").value, 10);
-    const startYear = parseInt(document.getElementById("passport-issued-year").value, 10);
+function validateStartDate(event) {
 
-    const newStartDate = new Date(startYear, startMonth - 1, startDay);
-    if (isNaN(newStartDate.getTime())) return true;
+  const d = parseInt(document.getElementById("passport-issued-day").value, 10);
+  const m = parseInt(document.getElementById("passport-issued-month").value, 10);
+  const y = parseInt(document.getElementById("passport-issued-year").value, 10);
 
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"];
+  const start = new Date(y, m - 1, d);
 
-    // Updated periods with 2nd claim removed
-    const previousPeriods = [
-      { start: new Date(2021, 0, 1), end: new Date(2021, 5, 30) },
-      { start: new Date(2022, 0, 1), end: new Date(2022, 5, 30) },
-      { start: new Date(2022, 6, 1), end: new Date(2022, 11, 31) },
-      { start: new Date(2023, 0, 1), end: new Date(2023, 5, 30) }
-    ];
+  if (isNaN(start.getTime())) return true;
 
-    // // Identical date check
-    // for (let period of previousPeriods) {
-    //   if (newStartDate.getTime() === period.start.getTime()) {
-    //     event.preventDefault();
-    //     showError("The start date cannot be the same as a previous claim you have made");
-    //     return false;
-    //   }
-    // }
+  const visaStart = new Date(localStorage.getItem("visaStartISO"));
+  const visaEnd = new Date(localStorage.getItem("visaEndISO"));
 
-    // // Overlap check
-    // for (let period of previousPeriods) {
-    //   if (newStartDate >= period.start && newStartDate <= period.end) {
-    //     event.preventDefault();
-    //     showError("The claim period based on this start date cannot overlap with a previous application");
-    //     return false;
-    //   }
-    // }
-
-    // Gap-fill check
-    // for (let i = 1; i < previousPeriods.length; i++) {
-    //   if (newStartDate > previousPeriods[i-1].end && newStartDate < previousPeriods[i].start) {
-    //     event.preventDefault();
-    //     showError("The start date must be after the most recent successful claim end date");
-    //     return false;
-    //   }
-    // }
-
-    // ✅ Store both formatted and raw date parts
-    const formattedDate = `${startDay} ${monthNames[startMonth - 1]} ${startYear}`;
-    localStorage.setItem("enteredDate", formattedDate);
-    localStorage.setItem("claimDay", startDay);
-    localStorage.setItem("claimMonth", startMonth);
-    localStorage.setItem("claimYear", startYear);
-
-    return true;
+  if (start < visaStart || start > visaEnd) {
+    event.preventDefault();
+    window.location.href = "claim-mismatch";
+    return false;
   }
 
-  // function showError(message) {
-  //   const errorSummary = document.getElementById('error-summary');
-  //   const errorSummaryLink = document.getElementById('error-summary-link');
-  //   const formGroup = document.getElementById('form-group');
-  //   const errorMessage = document.getElementById('passport-issued-error');
-  //   const inlineErrorText = document.getElementById('inline-error-text');
-  //   const inputs = [
-  //     document.getElementById("passport-issued-day"),
-  //     document.getElementById("passport-issued-month"),
-  //     document.getElementById("passport-issued-year")
-  //   ];
+  localStorage.setItem("claimStartISO", start.toISOString());
 
-  //   inlineErrorText.textContent = message;
-  //   errorSummaryLink.textContent = message;
-
-  //   errorSummary.classList.remove('govuk-!-display-none');
-  //   errorSummary.focus();
-
-  //   formGroup.classList.add('govuk-form-group--error');
-  //   errorMessage.classList.remove('govuk-!-display-none');
-
-  //   inputs.forEach(input => {
-  //     input.classList.add('govuk-input--error');
-  //     input.setAttribute('aria-invalid', 'true');
-  //   });
-  // }
+  return true;
+}
 </script>
 
 {% endblock %}
