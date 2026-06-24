@@ -1,90 +1,105 @@
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
-  DOB
+DOB
 {% endblock %}
 
 {% block beforeContent %}
-   <div class="govuk-phase-banner">
+<div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    
+
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v20/name">Back</a>
+<a class="govuk-back-link" href="/v20/name">Back</a>
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <!--<h1 class="govuk-fieldset__heading">What's the applicant's date of birth?</h1>-->
+    <!--<h1 class="govuk-fieldset__heading">What's the applicant's date of birth?</h1>-->
 
-      <h1 class="govuk-heading-l">
-          <span class="govuk-caption-l">Application</span>
-          What's the applicant's visa start date?
-      </h1>
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What's the applicant's visa start date?
+    </h1>
 
-      <p>This new claim must be within the applicant's visa validity dates </p>
-<form class="form" action="/v20/visa-end-date" method="post" onsubmit="storeVisaStartDate()">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-            <span id="passport-issued-hint" class="govuk-hint">
-              For example, 31 12 2022
-            </span>
+    <p>This new claim must be within the applicant's visa validity dates </p>
+    <form class="form" action="/v20/visa-end-date" method="post" onsubmit="storeVisaStartDate()">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <span id="passport-issued-hint" class="govuk-hint">
+            For example, 31 12 2022
+          </span>
           </br>
-        </br>
-            <div class="govuk-date-input" id="passport-issued">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                    Day
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
+          </br>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
-          </fieldset>
-        </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
-      </form>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Reimbursement claims within a previous visa period
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If you had a different visa to your current one for the claim period you are applying for, use the visa start
+          date for that old visa.
+      </details>
 
-    </div>
+    </form>
+
   </div>
+</div>
 
-  <script>
-function storeVisaStartDate() {
-  const d = parseInt(document.getElementById("passport-issued-day").value, 10);
-  const m = parseInt(document.getElementById("passport-issued-month").value, 10);
-  const y = parseInt(document.getElementById("passport-issued-year").value, 10);
+<script>
+  function storeVisaStartDate() {
+    const d = parseInt(document.getElementById("passport-issued-day").value, 10);
+    const m = parseInt(document.getElementById("passport-issued-month").value, 10);
+    const y = parseInt(document.getElementById("passport-issued-year").value, 10);
 
-  const date = new Date(y, m - 1, d);
+    const date = new Date(y, m - 1, d);
 
-  if (!isNaN(date.getTime())) {
-    localStorage.setItem("visaStartISO", date.toISOString());
+    if (!isNaN(date.getTime())) {
+      localStorage.setItem("visaStartISO", date.toISOString());
+    }
   }
-}
 </script>
 
 {% endblock %}
