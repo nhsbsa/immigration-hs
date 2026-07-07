@@ -18,35 +18,50 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/check-start-date" method="post">
+    <form class="form" action="email-address" method="post">
       <div class="govuk-form-group">
         <span class="govuk-caption-l">Application</span>
         <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">Check the start date</h1>
+            <h1 class="govuk-fieldset__heading">Check your visa start and end date</h1>
           </legend>
 
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-visually-hidden">Warning</span>
-              You will not be able to change this date again.
+              You will not be able to change these dates again.
             </strong>
           </div>
 
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Claim start date
+                Visa start date
               </dt>
               <dd class="govuk-summary-list__value" id="cya-start-date">
-                <!-- Filled by JavaScript -->
+                1 January 2022
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="/v20/claim-dates-new">Change<span class="govuk-visually-hidden"> start date</span></a>
+                    <a class="govuk-link" href="visa-start-date">Change<span class="govuk-visually-hidden"> start date</span></a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Visa start date
+              </dt>
+              <dd class="govuk-summary-list__value" id="cya-start-date">
+                31 December 2022
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="visa-end-date">Change<span class="govuk-visually-hidden"> start date</span></a>
                   </li>
                 </ul>
               </dd>
@@ -57,7 +72,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="confirm" name="confirm" type="checkbox">
               <label class="govuk-label govuk-checkboxes__label" for="confirm">
-                I confirm this start date is correct.
+                I confirm the visa start and and dates are correct.
               </label>
             </div>
           </div>
@@ -65,7 +80,7 @@
         </fieldset>
       </div>
 
-      <a href="monthly" class="govuk-button" data-module="govuk-button">Continue</a>
+      <a href="email-address" class="govuk-button" data-module="govuk-button">Continue</a>
     </form>
   </div>
 </div>

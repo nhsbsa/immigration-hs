@@ -4470,7 +4470,7 @@ router.post('/non-nhs-path-another-job-v20', function(req,res){
         res.redirect('/v20/non-nhs-path-another-job')
     }
     else {
-        res.redirect('/v20/ideation/e-visa')
+        res.redirect('/v20/share-code')
     }
 
 })
@@ -4489,10 +4489,10 @@ router.post('/non-nhs-path-another-job-v20-UR', function(req,res){
 router.post('/non-nhs-path-another-job-v20-mvp', function(req,res){
     var contacted = req.session.data['non-nhs-path-another-job-v20']
     if (contacted == "yes"){
-        res.redirect('/v20-mvp/non-nhs-path-another-job')
+        res.redirect('/v20-mvp/non-nhs-path')
     }
     else {
-        res.redirect('/v20-mvp/ideation/contract-upload-task')
+        res.redirect('/v20/ideation/contract-upload-task')
     }
 
 })
@@ -4593,7 +4593,7 @@ router.post('/version-20-dependant-question', function(req,res){
         res.redirect('/v20/dependant-details')
     }
     else {
-        res.redirect('/v20/subscription-question')
+        res.redirect('/v20/start-date')
     }
 
 })
@@ -4604,7 +4604,7 @@ router.post('/version-20-dependant-question-mvp', function(req,res){
         res.redirect('/v20-mvp/dependant-details')
     }
     else {
-        res.redirect('/v20-mvp/claim-dates-new')
+        res.redirect('/v20-mvp/start-date')
     }
 
 })
@@ -6036,10 +6036,21 @@ router.post('/live-student/dependant/same-address', function (req, res) {
 router.post('/checklist-evidence', function(req,res){
     var contacted = req.session.data['average-time-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/dependant-question')
+        res.redirect('/v20/subscription-question')
     }
     else {
         res.redirect('/v20/checklist-warning')
+    }
+
+})
+
+router.post('/checklist-evidence-mvp', function(req,res){
+    var contacted = req.session.data['average-time-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/subscription-question')
+    }
+    else {
+        res.redirect('/v20-mvp/checklist-warning')
     }
 
 })

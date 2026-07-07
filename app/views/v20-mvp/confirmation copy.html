@@ -1,0 +1,63 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Application complete
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Application submitted</h1>
+      <div class="govuk-panel__body">
+        Application reference number<br><strong>HDJ2123F</strong>
+      </div>
+    </div>
+
+    <p>This claim for the period from <strong>20 April 2020</strong> to <strong>19 October 2020</strong> has been
+      submitted.</p>
+
+    <p>We've sent a confirmation email to <strong>john.smith@email.com</strong>.</p>
+
+
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p>We'll email you within 6 weeks to let you know if your application is successful. After that, it can take some
+      time for you to get the money.</p>
+    <p>We'll send the money to the account or card originally used to pay for the IHS. If the applicant does not have access to that account, this can make the reimbursement much later.</p>
+    <p>The applicant can contact us to find out what to do if they cannot access the account your money will be sent to.</p>
+
+    <!--
+      <p>A confirmation email will be sent which will contain a link allowing the applicant to sign up to the reminder service. This service will remind the applicant that may need to reapply after 6 months.</p>
+      -->
+
+    <h2 class="govuk-heading-m">Help</h2>
+
+
+    <p class="govuk-body">If you have any questions or if we have not emailed john.smith@email.com within the next 10
+      weeks, <a href="/footer-HSC/contact-us" target="_blank">contact us (opens in new tab)</a>.</p>
+
+    <h2 class="govuk-heading-m">Send us feedback</h2>
+
+    <p><a href="https://www.gov.uk/done/apply-immigration-health-surcharge-refund" target="_blank">Complete our survey
+        to let us know what you think about this service (opens in new tab)</a>. This will take 30 seconds to complete.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
