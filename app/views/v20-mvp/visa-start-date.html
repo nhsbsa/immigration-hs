@@ -1,7 +1,7 @@
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
-DOB
+Visa start date
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,53 +26,76 @@ DOB
 
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Application</span>
-      What's the applicant's visa start date?
-    </h1>
+What is the start date of the visa associated with this IHS claim?    </h1>
 
-    <p>You can find this on your eVisa. This new claim must start within the applicant's visa validity dates. </p>
-    <form class="form" action="visa-end-date" method="post" onsubmit="storeVisaStartDate()">
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-          <span id="passport-issued-hint" class="govuk-hint">
-            For example, 1 1 2022
-          </span>
-          </br>
-          </br>
-          <div class="govuk-date-input" id="passport-issued">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
-                  name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
-                  name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
-                  name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
-              </div>
+    <p>This is the visa you held during the period you're claiming for. </p>
+
+    
+    <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    Your IHS claim period must be within the dates of the visa you held at the time of your refund application.
+  </strong>
+</div>
+
+    <!-- <form class="form" action="visa-end-date" method="post" onsubmit="storeVisaStartDate()"> -->
+    <form class="form" action="visa-end-date" method="post"></form>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <span id="passport-issued-hint" class="govuk-hint">
+          For example, 1 1 2022
+        </span>
+        </br>
+        </br>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
             </div>
           </div>
-        </fieldset>
-      </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where can I find my visa dates?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Visa dates can be found on your eVisa document. This is available online through your <a href="https://www.gov.uk/evisa/set-up-ukvi-account">UKVI account</a>. These dates can also be found on an email from UKVI.
+  </div>
+</details>
 
-      <!-- <details class="govuk-details">
+
+
+    <a href="visa-end-date" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    <!-- <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
             Reimbursement claims within a previous visa period
