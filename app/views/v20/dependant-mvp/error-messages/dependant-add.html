@@ -19,11 +19,31 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/dependant-details-journey-continue-mvp" method="post">
+      <form class="form" action="/dependant-details-journey-alpha-mvp" method="post">
       
+
+
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#bsa-number">You have entered the same dependant more than once. Delete the duplicate dependant to continue.</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+            <span class="govuk-caption-l">Dependant application</span>
+
+               <div class="govuk-form-group govuk-form-group--error">
+
         <!--<h1 class="govuk-fieldset__heading">Dependant details</h1>-->
         <h1 class="govuk-heading-l">
-            <span class="govuk-caption-l">Dependant application</span>
             Check dependant details 
         </h1>
       
@@ -45,7 +65,7 @@
               Michelle Philips
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="dependant-details-continue">
+              <a href="dependant-details">
                 Change
                 <span class="govuk-visually-hidden"> name</span>
               </a>
@@ -59,7 +79,7 @@
               15 January 2000
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="dependant-details-continue">
+              <a href="dependant-details">
                 Change
                 <span class="govuk-visually-hidden"> contact information</span>
               </a>
@@ -73,7 +93,46 @@
               IHS123456789
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="dependant-details-continue">
+              <a href="ihs-number">
+                Change
+                <span class="govuk-visually-hidden"> contact information</span>
+              </a>
+            </dd>
+          </div>
+        </dl> 
+
+        <h2 class="govuk-heading-m" style="display: inline">Dependant 2</h2>
+        <span style="float:right; margin-left: 45px;     font-size: 1.1875rem;">
+          <a href="">Delete dependant
+            <span class="govuk-visually-hidden"> dependant 1</span>
+          </a>
+        </span>
+
+         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <!--<h3 class="govuk-heading-s" style="line-height: 1.25;color: #0b0c0c;font-weight: bold; display: inline">Dependant 1</h3>   <span style="float:right"><a href="#">Delete <span class="govuk-visually-hidden"> dependant 1</span></span></a>-->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Michelle Philips
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="dependant-details">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15 January 2000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="dependant-details">
                 Change
                 <span class="govuk-visually-hidden"> contact information</span>
               </a>
@@ -81,24 +140,16 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Dependant claim start date
+              Immigration health surcharge number
             </dt>
             <dd class="govuk-summary-list__value">
-              15 March 2022
+              IHS123456789
             </dd>
             <dd class="govuk-summary-list__actions">
-              
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Dependant claim <br>end date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              14 September 2022
-            </dd>
-            <dd class="govuk-summary-list__actions">
-             
+              <a href="ihs-number">
+                Change
+                <span class="govuk-visually-hidden"> contact information</span>
+              </a>
             </dd>
           </div>
         </dl> 
@@ -137,5 +188,6 @@
       </form>
     </div>
   </div>
+</div>
 
 {% endblock %}

@@ -6308,7 +6308,7 @@ router.post('/dependant-details-journey-alpha', function(req,res){
 router.post('/dependant-details-journey-alpha-mvp', function(req,res){
     var contacted = req.session.data['dependant-details-v20']
     if (contacted == "yes"){
-        res.redirect('/v20/dependant-mvp/dependant-details')
+        res.redirect('/v20/dependant-mvp/dependant-start-date-2-happy')
     }
     else {
         res.redirect('/v20/dependant-mvp/check-your-answers-match')
@@ -6620,6 +6620,16 @@ router.post('/dependant-start-date-mvp', function(req,res){
     var contacted = req.session.data['doug-ihs-question-v20']
     if (contacted == "yes"){
         res.redirect('/v20/dependant-mvp/dependant-start-date-input')
+    }
+    else {
+        res.redirect('/v20/dependant-mvp/dependant-details')
+    }
+})
+
+router.post('/dependant-start-date-mvp-happy', function(req,res){
+    var contacted = req.session.data['doug-ihs-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20/dependant-mvp/dependant-start-date-input-happy')
     }
     else {
         res.redirect('/v20/dependant-mvp/dependant-details')
