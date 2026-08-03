@@ -21,54 +21,63 @@ Dependant add
   <div class="govuk-grid-column-two-thirds">
     <form class="form" id="dependant-form" action="/dependant-details-journey" method="post" novalidate>
       <h1 class="govuk-heading-l">
-     
+
         What are you applying for?
       </h1>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="whereTo-route-hint">
           <div class="govuk-radios" data-module="govuk-radios" id="dependant-route-radios">
-           
+
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="route-main-and-dependants" name="dependantRoute" type="radio"
                 value="/v20-UR/ihs-question">
               <label class="govuk-label govuk-radios__label" for="route-main-and-dependants">
-               A new claim for an IHS reimbursement
+                A new claim for an IHS reimbursement
               </label>
               <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
-               You can also add any dependants to your application. It can take up to 10 weeks for claims to be approved and paid.
+                You can also add any dependants to your application. It can take up to 10 weeks for claims to be
+                approved and paid.
               </div>
             </div>
 
-    
+
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="route-add-to-existing" name="dependantRoute" type="radio"
                 value="dependant-mini-start">
               <label class="govuk-label govuk-radios__label" for="route-add-to-existing">
-                An IHS reimbursement for a dependant connected to an existing claim
+                An IHS reimbursement for a dependant connected to an existing claim you have already made
               </label>
               <div id="existing-claim-hint" class="govuk-hint govuk-radios__hint">
-                Choose this option if you have already had a claim approved and paid as a main applicant, and you want to add a dependant to the same application.
+                Choose this option if you have already had a claim approved and paid as a main applicant, and you want
+                to add a dependant to the same application.
               </div>
             </div>
           </div>
         </fieldset>
       </div>
 
-      <details class="govuk-details">
+      <!-- <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Who is the main applicant?
+              Who the main applicant is
             </span>
           </summary>
           <div class="govuk-details__text">
             The main applicant is the person eligible for an IHS reimbursement because they work in the health and social care sector. This eligibility means their dependants can also apply for a reimbursement.
           </div>
-        </details>
+        </details> -->
 
-        
+
+      
+        <h3 class="govuk-heading-m">Who the main applicant is</h3>
+
+        <p>The main applicant is the person eligible for an IHS reimbursement because they work in the health and social
+        care sector. <br><br>This eligibility means their dependants can also apply for a reimbursement.</p>
+      
+
 
       <button class="govuk-button" data-module="govuk-button" id="continue-button" type="submit">Continue</button>
     </form>

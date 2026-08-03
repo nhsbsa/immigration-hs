@@ -19,33 +19,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/check-start-date" method="post">
-
-
-
-
-      <div class="govuk-error-summary" data-module="govuk-error-summary">
-      <div role="alert">
-        <h2 class="govuk-error-summary__title">
-          There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-          <ul class="govuk-list govuk-error-summary__list">
-            <li>
-              <a href="#bsa-number">Confirm that this start date is correct</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-    <span class="govuk-caption-l">Dependant application</span>
-      <div class="govuk-form-group govuk-form-group--error">
-        
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Application</span>
         <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-            <h1 class="govuk-fieldset__heading">Check the dependant's start date
-</h1>
+            <h1 class="govuk-fieldset__heading">Check the start date</h1>
           </legend>
 
           <div class="govuk-warning-text">
@@ -61,8 +40,8 @@
               <dt class="govuk-summary-list__key">
                 Claim start date
               </dt>
-              <dd class="govuk-summary-list__value" >
-                15 March 2022
+              <dd class="govuk-summary-list__value" id="cya-start-date">
+                <!-- Filled by JavaScript -->
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
@@ -73,10 +52,6 @@
               </dd>
             </div>
           </dl>
-
-           <p id="whereDoYouLive-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Confirm that this start date is correct
-            </p>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
@@ -90,20 +65,28 @@
         </fieldset>
       </div>
 
-      <a href="dependant-details-continue" class="govuk-button" data-module="govuk-button">Continue</a>
+      <a href="monthly" class="govuk-button" data-module="govuk-button">Continue</a>
     </form>
   </div>
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const date = localStorage.getItem('enteredDate');
-    if (date) {
-      document.getElementById('cya-start-date').textContent = date;
-    } else {
-      document.getElementById('cya-start-date').textContent = 'No date entered';
-    }
-  });
+document.addEventListener('DOMContentLoaded', () => {
+
+  const iso = localStorage.getItem('claimStartISO');
+
+  if (!iso) return;
+
+  const date = new Date(iso);
+
+  document.getElementById('cya-start-date').textContent =
+    date.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+});
 </script>
 
 {% endblock %}

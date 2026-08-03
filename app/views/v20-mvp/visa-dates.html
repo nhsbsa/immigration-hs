@@ -31,7 +31,7 @@ Visa start date
 
     <p>These are the start and end dates of the visa you held during the period you're claiming for. </p>
 
-    <details class="govuk-details">
+    <!-- <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
           Where can I find my visa dates?
@@ -45,7 +45,7 @@ Visa start date
         
 
       </div>
-    </details>
+    </details> -->
 
 
     <details class="govuk-details">
@@ -58,7 +58,7 @@ Visa start date
         For a current visa, dates can be found on your eVisa document. This is available online through your <a
           href="https://www.gov.uk/evisa/set-up-ukvi-account">UKVI account</a>. <br><br>
         For expired visas, dates can be found on:
-        
+
         <ul class="govuk-list govuk-list--bullet">
           <li>the Home Office decision letter (grant letter)</li>
           <li>the visa vignette (sticker) in the passport, if one was issued for that visa</li>
@@ -69,12 +69,12 @@ Visa start date
       </div>
     </details>
 
-    
+
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
         <span class="govuk-visually-hidden">Warning</span>
-If your IHS claim dates are outside the visa dates you provide, your claim will be rejected.      </strong>
+        If your IHS claim dates are outside the visa dates you provide, your claim will be rejected. </strong>
     </div>
 
 
@@ -163,22 +163,37 @@ If your IHS claim dates are outside the visa dates you provide, your claim will 
 
     <hr><br>
 
-   <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    
-    
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          I confirm that the IHS claim period is within the dates of this visa
-        </label>
-      </div>
-      
-      
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+        <h3 class="govuk-heading-m">Declaration</h3>
+        <p>By continuing, you declare and agree that:</p>
+
+         
+<ul class="govuk-list govuk-list--bullet">
+  <li>the 6-month period you are claiming for falls within the period
+          covered by the relevant IHS and visa.</li>
+  <li>you understand and accept that if you withhold
+              information or provide false or misleading information, your application may be refused or withdrawn, and you
+              may be liable to criminal prosecution or civil proceedings.</li>
+
+</ul>
+
+
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              <!-- The 6-month period I am claiming for falls within the period covered by the relevant IHS and Visa.<br><br> -->
+              I declare this information is complete and accurate
+            </label>
+          </div>
+
+
+        </div>
+      </fieldset>
     </div>
-  </fieldset>
-</div>
 
 
 
