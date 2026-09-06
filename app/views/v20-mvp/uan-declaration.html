@@ -1,0 +1,94 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Telephone number
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20-mvp/email-address">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!--<h1 class="govuk-fieldset__heading">What's the applicant's mobile phone number? (optional)</h1>-->
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What's the applicant's Unique Application Number (UAN)? (optional)
+    </h1>
+
+    <form class="form" action="/v20-mvp/dependant-question" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone-number">
+          UAN
+        </label>
+        <div id="telephone-number-hint" class="govuk-hint">
+          For example, 1234-5678-9098-7654 </div>
+
+        <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel"
+          aria-describedby="telephone-number-hint" autocomplete="tel">
+      </div>
+
+      <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where to find your UAN
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    You can find your UAN in emails and documents from UKVI about your visa application. You may also be able to find it by signing in to your UKVI application.
+  </div>
+</details>
+
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+        <h3 class="govuk-heading-m">Declaration</h3>
+        <p>By continuing, you declare and agree that:</p>
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your visa covers the 6-month period you are claiming for and you have provided the IHS reference number for that visa</li>
+          <li>you understand and accept that if you withhold
+            information or provide false or misleading information, your application may be refused or withdrawn, and
+            you
+            may be liable to criminal prosecution or civil proceedings</li>
+
+        </ul>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              <!-- The 6-month period I am claiming for falls within the period covered by the relevant IHS and Visa.<br><br> -->
+              I declare this information is complete and accurate
+            </label>
+          </div>
+
+
+        </div>
+      </fieldset>
+    </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

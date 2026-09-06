@@ -1,0 +1,100 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+  Dependant add
+{% endblock %}
+
+{% block beforeContent %}
+   <div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/dependant-details-v20-mvp" method="post">
+      
+        <!--<h1 class="govuk-fieldset__heading">Dependant details</h1>-->
+        <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Application</span>
+            Check visa details 
+        </h1>
+      
+        <!--via https://github.com/alphagov/govuk-design-system-backlog/issues/210 -->
+        
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <!--<h3 class="govuk-heading-s" style="line-height: 1.25;color: #0b0c0c;font-weight: bold; display: inline">Dependant 1</h3>   <span style="float:right"><a href="#">Delete <span class="govuk-visually-hidden"> dependant 1</span></span></a>-->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Visa start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 January 2022
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Visa end date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              31 December 2026
+            </dd>
+            
+          </div>
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Unique Application Number (UAN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              4367-1892-5746-0912
+            </dd>
+            
+          </div>
+        </dl> 
+        
+        <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+        <h3 class="govuk-heading-m">Declaration</h3>
+        <p>By continuing, you declare and agree that:</p>
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your visa covers the 6-month period you are claiming for and you have provided the IHS reference number for that visa</li>
+          <li>you understand and accept that if you withhold
+            information or provide false or misleading information, your application may be refused or withdrawn, and
+            you
+            may be liable to criminal prosecution or civil proceedings</li>
+            <li>if provided, your UAN is accurate and relates to the visa covering your claim</li>
+
+        </ul>
+
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              <!-- The 6-month period I am claiming for falls within the period covered by the relevant IHS and Visa.<br><br> -->
+              I declare this information is complete and accurate
+            </label>
+          </div>
+
+
+        </div>
+      </fieldset>
+    </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

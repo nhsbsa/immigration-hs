@@ -1,0 +1,92 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Unique application number
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20-mvp/email-address">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!--<h1 class="govuk-fieldset__heading">What's the applicant's mobile phone number? (optional)</h1>-->
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What's the applicant's Unique Application Number? (optional)
+    </h1>
+
+    <p>Providing your Unique Application Number (UAN) means your claim could be processed more quickly. If you do not
+      provide it, we may ask for additional visa evidence to support your application.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        The UAN you provide must be associated with the visa you held during the period you're claiming for </strong>
+    </div>
+
+     <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to find your UAN
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If you've applied for a visa while in the UK, you can find your UAN on your payment successful email. It can
+          also be found on your application successful email (labelled as 'Ref:').<br><br>For visa applications from
+          outside the UK, the UAN will be available from your local visa office during the visa application process. It
+          can also be found on your application confirmation letter.<br><br>Your UAN is also available from your <a
+            href="https://www.gov.uk/evisa/set-up-ukvi-account" target="_blank">UKVI online account (opens in new
+            tab)</a>. It is in the 'Your forms and applications' section and is labelled as 'Unique Application Number
+          (UAN)'. You'll need some identity documents or your UKVI customer number to login to your UKVI
+          account.<br><br><strong>Ensure that you have the correct number before continuing with this
+            application.</strong>
+        </div>
+      </details>
+
+
+
+    <form class="form" action="/v20-mvp/dependant-question" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone-number">
+          Unique Application Number (UAN)
+        </label>
+        <div id="telephone-number-hint" class="govuk-hint">
+          For example, 1234-5678-9098-7654 or 1234-5678-9098-7654/1 </div>
+
+        <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text"> - <input
+          class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
+        - <input class="govuk-input govuk-input--width-4" id="width-4" name="width4" type="text">
+        - <input class="govuk-input" id="width-6" name="width4" type="text" style="width: 120px;">
+
+
+      </div>
+
+      
+
+
+
+
+
+      <a href="uan-cya" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
