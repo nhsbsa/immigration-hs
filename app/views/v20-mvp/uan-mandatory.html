@@ -1,0 +1,181 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Unique application number
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="#" onclick="history.back(); return false;">Back</a>{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">
+  <span class="govuk-caption-l">Application</span>
+  What's the applicant's Unique Application Number (UAN)?
+</h1>
+
+<p>
+  Providing UAN helps us to assess your eligibility for an IHS reimbursement more effectively.
+</p>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    The UAN you provide must be associated with the visa you held during the period you're claiming for.
+  </strong>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where to find your UAN
+    </span>
+  </summary>
+
+  <div class="govuk-details__text">
+
+    <strong>If you've applied for the visa while in the UK</strong>
+    <p>
+      You can find your UAN on your application successful email (it could be labelled a 'Unique Application Number' or 'Ref:').
+      Your UAN is also available from your UKVI online account.
+    </p>
+
+    <strong>If you applied for the visa while outside the UK</strong>
+    <p>
+      Your UAN could be given on your completed visa application (if you downloaded it at the time of submission).
+      Your UAN is also available from your UKVI online account.
+    </p>
+
+    <strong>If you have an eVisa</strong>
+    <p>
+      Use the UAN associated with the visa for the period you are claiming for.
+    </p>
+
+    <strong>If you have a biometric residence permit (BRP)</strong>
+    <p>
+      If you have linked your BRP to an eVisa, use the UAN associated with the visa for the period you are claiming for.
+      Do not use the UAN provided when you first set up the eVisa.
+    </p>
+
+    <strong>UKVI online</strong>
+    <p>
+      Access your
+      <a href="https://www.gov.uk/evisa/set-up-ukvi-account" target="_blank">
+        UKVI online account (opens in new tab)
+      </a>.
+    </p>
+
+  </div>
+</details>
+
+<form class="form" action="/v20-mvp/dependant-question" method="post">
+
+  <div class="govuk-form-group">
+
+    <label class="govuk-label" for="uan-part-1">
+      UAN
+    </label>
+
+    <div id="uan-hint" class="govuk-hint">
+      For example, 1234-5678-9098-7654 or 1234-5678-9098-7654/00
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 8px;">
+
+      <input
+        class="govuk-input govuk-input--width-4"
+        id="uan-part-1"
+        name="uan-part-1"
+        type="text"
+        inputmode="numeric"
+        maxlength="4"
+        aria-describedby="uan-hint">
+
+      <span aria-hidden="true">-</span>
+
+      <input
+        class="govuk-input govuk-input--width-4"
+        id="uan-part-2"
+        name="uan-part-2"
+        type="text"
+        inputmode="numeric"
+        maxlength="4">
+
+      <span aria-hidden="true">-</span>
+
+      <input
+        class="govuk-input govuk-input--width-4"
+        id="uan-part-3"
+        name="uan-part-3"
+        type="text"
+        inputmode="numeric"
+        maxlength="4">
+
+      <span aria-hidden="true">-</span>
+
+      <input
+        class="govuk-input"
+        id="uan-part-4"
+        name="uan-part-4"
+        type="text"
+        maxlength="7"
+        style="width: 120px;">
+
+    </div>
+
+  </div>
+
+  <a href="uan-cya" class="govuk-button" data-module="govuk-button">
+    Continue
+  </a>
+
+</form>
+
+
+  </div>
+</div>
+
+<script>
+  const uanInputs = [
+    document.getElementById('uan-part-1'),
+    document.getElementById('uan-part-2'),
+    document.getElementById('uan-part-3'),
+    document.getElementById('uan-part-4')
+  ];
+
+  uanInputs[0].addEventListener('paste', function (event) {
+    event.preventDefault();
+
+    // Get pasted text
+    const pastedData = event.clipboardData.getData('text');
+
+    // Remove hyphens and spaces but keep forward slash
+    const cleaned = pastedData.replace(/[-\s]/g, '');
+
+    // Split UAN across the four fields
+    uanInputs[0].value = cleaned.substring(0, 4);
+    uanInputs[1].value = cleaned.substring(4, 8);
+    uanInputs[2].value = cleaned.substring(8, 12);
+    uanInputs[3].value = cleaned.substring(12);
+
+    // Move focus to the final field
+    uanInputs[3].focus();
+  });
+</script>
+
+{% endblock %}

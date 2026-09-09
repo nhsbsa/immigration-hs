@@ -6718,6 +6718,17 @@ router.post('/check-gaps', function (req, res) {
   }
 });
 
+router.post('/uan-filter', function(req,res){
+    var contacted = req.session.data['dependant-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/uan-mandatory')
+    }
+    else {
+        res.redirect('/v20-mvp/uan-cya-skipped')
+    }
+
+})
+
 
 
 

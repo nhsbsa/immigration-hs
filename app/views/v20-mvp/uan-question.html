@@ -1,79 +1,117 @@
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
-  Dependant question
+Dependant question
 {% endblock %}
 
 {% block beforeContent %}
-   <div class="govuk-phase-banner">
+<div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-    
+
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
-  <a class="govuk-back-link" href="/v20-mvp/telephone-number">Back</a>
+<a class="govuk-back-link" href="/v20-mvp/telephone-number">Back</a>
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-    
-      <form class="form" action="/version-20-dependant-question-mvp" method="post">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="dependant-question-conditional-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
-              <!--<h1 class="govuk-fieldset__heading">
-                Do you want to add any dependants who have paid an immigration health surcharge?
-              </h1>-->
-              <span class="govuk-caption-l">Application</span>
-              <h1 class="govuk-fieldset__heading">Do you have a Unique Application Number (UAN) for the visa you held during the period you're claiming for? (optional)</h1>
-            </legend> 
 
-            <span id="dependant-question-conditional-hint" class="govuk-hint">
-              This is optional, but by providing this it can make it easier for us to prove your visa status and eligibility.
-            </span>
-          </br>
-        </br>
-            <div class="govuk-radios govuk-radios--inline">
-              <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="dependant-question-conditional" name="dependant-question-v20" type="radio" value="yes" data-aria-controls="conditional-dependant-question-conditional">
-                  <label class="govuk-label govuk-radios__label" for="dependant-question-conditional">
-                    Yes
-                  </label>
-                </div>
+    <form class="form" action="/uan-filter" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          Does the applicant have a Unique Application Number (UAN)?
+        </h1>
 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="dependant-question-conditional-2" name="dependant-question-v20" type="radio" value="no" data-aria-controls="conditional-dependant-question-conditional-2">
-                  <label class="govuk-label govuk-radios__label" for="dependant-question-conditional-2">
-                    No
-                  </label>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-        <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Where to find your UAN
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          You can find your UAN in emails and documents from UKVI about your visa application. You may also be able to
-          find it by signing in to your UKVI application.
-        </div>
-      </details>
+        <p>
+          Providing your UAN helps us to assess your eligibility for an IHS reimbursement more effectively.
+        </p>
         
+        <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    The UAN you provide must be associated with the visa you held during the period you're claiming for.
+  </strong>
+</div>
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-      </form>
-    </div>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where to find your UAN
+    </span>
+  </summary>
+
+  <div class="govuk-details__text">
+
+    <strong>If you've applied for the visa while in the UK</strong>
+    <p>
+      You can find your UAN on your application successful email (it could be labelled a 'Unique Application Number' or 'Ref:').
+      Your UAN is also available from your UKVI online account.
+    </p>
+
+    <strong>If you applied for the visa while outside the UK</strong>
+    <p>
+      Your UAN could be given on your completed visa application (if you downloaded it at the time of submission).
+      Your UAN is also available from your UKVI online account.
+    </p>
+
+    <strong>If you have an eVisa</strong>
+    <p>
+      Use the UAN associated with the visa for the period you are claiming for.
+    </p>
+
+    <strong>If you have a biometric residence permit (BRP)</strong>
+    <p>
+      If you have linked your BRP to an eVisa, use the UAN associated with the visa for the period you are claiming for.
+      Do not use the UAN provided when you first set up the eVisa.
+    </p>
+
+    <strong>UKVI online</strong>
+    <p>
+      Access your
+      <a href="https://www.gov.uk/evisa/set-up-ukvi-account" target="_blank">
+        UKVI online account (opens in new tab)
+      </a>.
+    </p>
+
   </div>
+</details>
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dependant-question-conditional" name="dependant-question-v20"
+                type="radio" value="yes" data-aria-controls="conditional-dependant-question-conditional">
+              <label class="govuk-label govuk-radios__label" for="dependant-question-conditional">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dependant-question-conditional-2" name="dependant-question-v20"
+                type="radio" value="no" data-aria-controls="conditional-dependant-question-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="dependant-question-conditional-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        </fieldset>
+      </div>
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
 
 {% endblock %}
