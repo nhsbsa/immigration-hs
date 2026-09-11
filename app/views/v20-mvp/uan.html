@@ -23,128 +23,113 @@ Unique application number
   <div class="govuk-grid-column-two-thirds">
 
 
-<h1 class="govuk-heading-l">
-  <span class="govuk-caption-l">Application</span>
-  What's the applicant's Unique Application Number? (optional)
-</h1>
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What's the applicant's Unique Application Number (UAN)?
+    </h1>
 
-<p>
-  Providing your Unique Application Number (UAN) helps us to assess your eligibility for an IHS reimbursement more effectively.
-</p>
+    <p>A UAN is a 16-digit reference number that is used to track a person's visa status.</p>
 
-<div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-visually-hidden">Warning</span>
-    The UAN you provide must be associated with the visa you held during the period you're claiming for.
-  </strong>
-</div>
-
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Where to find your UAN
-    </span>
-  </summary>
-
-  <div class="govuk-details__text">
-
-    <strong>If you've applied for the visa while in the UK</strong>
     <p>
-      You can find your UAN on your application successful email (it could be labelled a 'Unique Application Number' or 'Ref:').
-      Your UAN is also available from your UKVI online account.
-    </p>
 
-    <strong>If you applied for the visa while outside the UK</strong>
-    <p>
-      Your UAN could be given on your completed visa application (if you downloaded it at the time of submission).
-      Your UAN is also available from your UKVI online account.
-    </p>
+      Providing a UAN helps us assess the applicant's eligibility for an IHS reimbursement more effectively.</p>
 
-    <strong>If you have an eVisa</strong>
-    <p>
-      Use the UAN associated with the visa for the period you are claiming for.
-    </p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
 
-    <strong>If you have a biometric residence permit (BRP)</strong>
-    <p>
-      If you have linked your BRP to an eVisa, use the UAN associated with the visa for the period you are claiming for.
-      Do not use the UAN provided when you first set up the eVisa.
-    </p>
-
-    <strong>UKVI online</strong>
-    <p>
-      Access your
-      <a href="https://www.gov.uk/evisa/set-up-ukvi-account" target="_blank">
-        UKVI online account (opens in new tab)
-      </a>.
-    </p>
-
-  </div>
-</details>
-
-<form class="form" action="/v20-mvp/dependant-question" method="post">
-
-  <div class="govuk-form-group">
-
-    <label class="govuk-label" for="uan-part-1">
-      UAN
-    </label>
-
-    <div id="uan-hint" class="govuk-hint">
-      For example, 1234-5678-9098-7654 or 1234-5678-9098-7654/00
+        The UAN you provide must be associated with the visa the applicant held during the period they're claiming for.
+      </strong>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 8px;">
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Where to find the UAN
+        </span>
+      </summary>
 
-      <input
-        class="govuk-input govuk-input--width-4"
-        id="uan-part-1"
-        name="uan-part-1"
-        type="text"
-        inputmode="numeric"
-        maxlength="4"
-        aria-describedby="uan-hint">
+      <div class="govuk-details__text">
 
-      <span aria-hidden="true">-</span>
+        <strong>If the visa application was made while the applicant was in the UK</strong>
+        <p>
+          The UAN can be found on the payment confirmation email (labelled as 'Ref') or application successful email
+          (labelled as 'Unique Application Number'). The UAN is also available on a UKVI account.
+        </p>
 
-      <input
-        class="govuk-input govuk-input--width-4"
-        id="uan-part-2"
-        name="uan-part-2"
-        type="text"
-        inputmode="numeric"
-        maxlength="4">
+        <strong>If the visa application was made while the applicant was outside the UK</strong>
+        <p>
+          The UAN can be found on the completed visa application (if you downloaded it at the time of submission).
+        </p>
 
-      <span aria-hidden="true">-</span>
+        <strong>If the applicant is claiming for a period when they held biometric residence permit (BRP)</strong>
+        <p>
+          The BRP will have been converted to an eVisa. You should use the UAN the applicant received when they first
+          made an IHS payment. </p>
 
-      <input
-        class="govuk-input govuk-input--width-4"
-        id="uan-part-3"
-        name="uan-part-3"
-        type="text"
-        inputmode="numeric"
-        maxlength="4">
 
-      <span aria-hidden="true">-</span>
 
-      <input
-        class="govuk-input"
-        id="uan-part-4"
-        name="uan-part-4"
-        type="text"
-        maxlength="7"
-        style="width: 120px;">
+        <strong>Finding the UAN on a UKVI account</strong>
+        <p>
+          Login to the
+          <a href="https://www.gov.uk/evisa/set-up-ukvi-account" target="_blank">
+            UKVI online account (opens in new tab)
+          </a>.The UAN is in the 'Your forms and applications' section and is labelled as 'Unique Application Number
+          (UAN)'.
 
-    </div>
+        </p>
+        <p>
+          You'll need the applicant's identity documents or UKVI customer number to login to their UKVI account. </p>
 
-  </div>
+        <p>
+          Applicants without an account can <a href="https://www.gov.uk/evisa/set-up-ukvi-account">set up a UKVI account
+            online (opens in new tab)</a>.</p>
+      </div>
+    </details>
 
-  <a href="uan-cya" class="govuk-button" data-module="govuk-button">
-    Continue
-  </a>
+    <p>If the applicant previously had a biometric residence permit (BRP) that was converted to an eVisa, they might not have a UAN. In this case, leave the UAN fields empty and click 'Continue' to resume the application.</p>
 
-</form>
+    <form class="form" action="/v20-mvp/dependant-question" method="post">
+
+      <div class="govuk-form-group">
+
+        <label class="govuk-label" for="uan-part-1">
+          UAN
+        </label>
+
+        <div id="uan-hint" class="govuk-hint">
+          For example, 1234-5678-9098-7654 or 1234-5678-9098-7654/00
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+
+          <input class="govuk-input govuk-input--width-4" id="uan-part-1" name="uan-part-1" type="text"
+            inputmode="numeric" maxlength="4" aria-describedby="uan-hint">
+
+          <span aria-hidden="true">-</span>
+
+          <input class="govuk-input govuk-input--width-4" id="uan-part-2" name="uan-part-2" type="text"
+            inputmode="numeric" maxlength="4">
+
+          <span aria-hidden="true">-</span>
+
+          <input class="govuk-input govuk-input--width-4" id="uan-part-3" name="uan-part-3" type="text"
+            inputmode="numeric" maxlength="4">
+
+          <span aria-hidden="true">-</span>
+
+          <input class="govuk-input" id="uan-part-4" name="uan-part-4" type="text" maxlength="7" style="width: 120px;">
+
+        </div>
+
+      </div>
+
+      <a href="uan-cya" class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+
+    </form>
 
 
   </div>
