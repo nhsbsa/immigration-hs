@@ -1,0 +1,105 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Upload evidence
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/v20-mvp/visa-evidence-cya" method="post" enctype="multipart/form-data">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--l" for="file-upload-1">
+          <h1 class="govuk-fieldset__heading">
+            <span class="govuk-caption-l">Application</span>
+            Upload visa evidence
+          </h1>
+        </label>
+
+        <span id="file-upload-1-hint" class="govuk-hint">
+                    <P>If you cannot provide a share code for the visa you held during the period you're claiming for, you must provide alternative evidence.</P>
+
+
+                    <p>Examples of accepted evidence are:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>visa vignette (sticker in passport)</li>
+            <li>Biometric Residence Permit (BRP) </li>
+            <li>Home Office grant letter or email</li>
+            <li>Home Office Immigration status document</li>
+           
+          </ul>
+
+          <!-- <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              If you cannot provide any
+            </strong>
+          </div> -->
+
+          <p>Evidence should include the applicant's:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>name</li>
+            <li>visa start date</li>
+            <li>visa expiry date</li>
+           
+          </ul>
+
+          <h2 class="govuk-heading-m">Files</h2>
+          <p>Files must:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>be clear and readable</li>
+            <li>be in JPG, JPEG, BMP, PNG or PDF format</li>
+            <li>be smaller than 2MB each</li>
+            <li><strong>not</strong> be password protected</li>
+          </ul>
+        </span>
+      </div>
+
+      <div class="govuk-form-group">
+        <label for="file-upload-1" class="govuk-label govuk-label--m">
+          <span class="label-text break-word">Upload file</span>
+        </label>
+
+        <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+      </div>
+
+      <p id="upload-more-files-message" style="display: none;">If you need to upload more contracts, select continue.</p>
+
+
+      <!-- Revealed content -->
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">Continue</button>
+    </form>
+
+  </div>
+</div>
+
+<script>
+  // JavaScript to handle file selection
+  document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('file-upload-1');
+    const message = document.getElementById('upload-more-files-message');
+
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        message.style.display = 'block'; // Show the message
+      } else {
+        message.style.display = 'none'; // Hide the message if no file selected
+      }
+    });
+  });
+</script>
+{% endblock %}

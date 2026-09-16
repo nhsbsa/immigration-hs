@@ -1,0 +1,87 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Dependant question
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
+        new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v20-mvp/telephone-number">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/sharecode-filter" method="post">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Application</span>
+          Does the applicant have a share code which is associated with the visa the held during the period they're claiming for?
+        </h1>
+
+        <p>
+         We will use the share code to verify the applicant's visa status and eligibility. 
+        </p>
+        
+        <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+The share code the UKVI website generates is associated with your current visa. If the applicant held a different visa during the period they're claiming for, this cannot be used to verify visa status.  </strong>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Where to find your share code
+    </span>
+  </summary>
+
+  <div class="govuk-details__text">
+
+    <p>If the applicant does not have a share code, use the <a href="https://www.gov.uk/evisa/view-evisa-get-share-code-prove-immigration-status">view and prove your immigration status (opens in new tab)</a> service to request one.</p>
+
+  </div>
+</details>
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dependant-question-conditional" name="dependant-question-v20"
+                type="radio" value="yes" data-aria-controls="conditional-dependant-question-conditional">
+              <label class="govuk-label govuk-radios__label" for="dependant-question-conditional">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dependant-question-conditional-2" name="dependant-question-v20"
+                type="radio" value="no" data-aria-controls="conditional-dependant-question-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="dependant-question-conditional-2">
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        </fieldset>
+      </div>
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

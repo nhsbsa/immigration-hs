@@ -6729,6 +6729,17 @@ router.post('/uan-filter', function(req,res){
 
 })
 
+router.post('/sharecode-filter', function(req,res){
+    var contacted = req.session.data['dependant-question-v20']
+    if (contacted == "yes"){
+        res.redirect('/v20-mvp/share-code')
+    }
+    else {
+        res.redirect('/v20-mvp/alternative-evidence')
+    }
+
+})
+
 
 
 
