@@ -1,3 +1,4 @@
+
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
@@ -8,19 +9,24 @@
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank">feedback (opens in new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<a class="govuk-back-link" href="#" onclick="history.back(); return false;">Back</a>
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/check-start-date" method="post">
+
+    <form class="form" id="confirm-start-date-form" action="/check-start-date" method="post">
+
       <div class="govuk-form-group">
+
         <span class="govuk-caption-l">Application</span>
+
         <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l visuallyhidden">
@@ -36,26 +42,31 @@
           </div>
 
           <dl class="govuk-summary-list">
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Claim start date
               </dt>
+
               <dd class="govuk-summary-list__value" id="cya-start-date">
-                <!-- Filled by JavaScript -->
               </dd>
+
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="/v20/claim-dates-new">Change<span class="govuk-visually-hidden"> start date</span></a>
+                    <a class="govuk-link" href="/v20/claim-dates-new">
+                      Change<span class="govuk-visually-hidden"> start date</span>
+                    </a>
                   </li>
                 </ul>
               </dd>
             </div>
+
           </dl>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="confirm" name="confirm" type="checkbox">
+              <input class="govuk-checkboxes__input" id="confirm" name="confirm" type="checkbox" required>
               <label class="govuk-label govuk-checkboxes__label" for="confirm">
                 I confirm this start date is correct.
               </label>
@@ -65,28 +76,67 @@
         </fieldset>
       </div>
 
-      <a href="monthly" class="govuk-button" data-module="govuk-button">Continue</a>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
     </form>
   </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
 
-  const iso = localStorage.getItem('claimStartISO');
+    const iso = localStorage.getItem('claimStartISO');
 
-  if (!iso) return;
+    if (!iso) return;
 
-  const date = new Date(iso);
+    const date = new Date(iso);
 
-  document.getElementById('cya-start-date').textContent =
-    date.toLocaleDateString('en-GB', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
+    document.getElementById('cya-start-date').textContent =
+      date.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
 
-});
+  });
+
+  document.getElementById('confirm-start-date-form').addEventListener('submit', function(event) {
+
+    event.preventDefault();
+
+    const visaStartISO = localStorage.getItem('visaStartISO');
+    const visaEndISO = localStorage.getItem('visaEndISO');
+    const claimStartISO = localStorage.getItem('claimStartISO');
+    const claimEndISO = localStorage.getItem('claimEndISO');
+
+    if (!visaStartISO || !visaEndISO || !claimStartISO || !claimEndISO) {
+      return;
+    }
+
+    const visaStart = new Date(visaStartISO);
+    const visaEnd = new Date(visaEndISO);
+    const claimStart = new Date(claimStartISO);
+    const claimEnd = new Date(claimEndISO);
+
+    let reason = "";
+
+    if (claimEnd < visaStart || claimStart > visaEnd) {
+      reason = "full";
+    } else if (claimStart < visaStart) {
+      reason = "start";
+    } else if (claimEnd > visaEnd) {
+      reason = "end";
+    }
+
+    if (reason) {
+      window.location.href = "claim-mismatch?reason=" + reason;
+    } else {
+      window.location.href = "monthly";
+    }
+
+  });
 </script>
 
 {% endblock %}

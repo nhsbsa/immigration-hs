@@ -1,20 +1,18 @@
+
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
-Question page
+Claim period outside visa dates
 {% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in
-        new tab)</a> will help us to improve this service.
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
     </span>
   </p>
 </div>
-
 {% endblock %}
 
 {% block content %}
@@ -22,58 +20,51 @@ Question page
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">The applicant is not eligible for an immigration health surcharge reimbursement or a
-      refund</h1>
+    <h1 class="govuk-heading-l" id="kickout-heading">
+      The applicant's claim period is outside of their visa dates
+    </h1>
 
-    <form class="form" action="/v10/start" method="post">
+    <p class="govuk-body" id="kickout-text">
+      Based on your answers, the applicant is not eligible for an IHS reimbursement because their claim period is outside of their visa dates.
+    </p>
 
-      <!-- <p class="govuk-body">Based on your answers, the applicant is not eligible to use this service to claim a refund
-        for this claim period start date because it is outside of their visa period.</p> 
- -->
+    <dl class="govuk-summary-list">
 
-      <p class="govuk-body">Based on your answers, the applicant is not eligible to use this service to claim a refund
-        for this claim period because the start date is outside of their visa period.</p> 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Visa start date
+        </dt>
+        <dd class="govuk-summary-list__value" id="visa-start-date"></dd>
+      </div>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Visa start date
-          </dt>
-          <dd class="govuk-summary-list__value" >
-            1 January 2022
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Visa end date
-          </dt>
-          <dd class="govuk-summary-list__value" >
-            31 December 2022
-          </dd>
-        </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Visa end date
+        </dt>
+        <dd class="govuk-summary-list__value" id="visa-end-date"></dd>
+      </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            IHS reimbursement claim period start date
-          </dt>
-          <dd class="govuk-summary-list__value" >
-            1 January 2023
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            IHS reimbursement claim period end date
-          </dt>
-          <dd class="govuk-summary-list__value" >
-            30 June 2023
-          </dd>
-        </div>
-      </dl>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          IHS reimbursement claim period start date
+        </dt>
+        <dd class="govuk-summary-list__value" id="claim-start-date"></dd>
+      </div>
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          IHS reimbursement claim period end date
+        </dt>
+        <dd class="govuk-summary-list__value" id="claim-end-date"></dd>
+      </div>
 
+    </dl>
 
+    <p>
+      If you want to apply using a different claim period, you can
+      <a class="govuk-link" href="/v20/start">start a new application</a>.
+    </p>
 
-    </form>
   </div>
 </div>
 
@@ -95,6 +86,7 @@ Question page
 
   function formatDate(day, month, year) {
     if (!day || !month || !year) return "";
+
     return `${parseInt(day, 10)} ${monthNames[parseInt(month, 10) - 1]} ${year}`;
   }
 
@@ -116,14 +108,47 @@ Question page
     localStorage.getItem("claimYear")
   );
 
-  document.getElementById("visa-period").textContent =
-    `${visaStart} to ${visaEnd}`;
+  const claimEnd = formatDate(
+    localStorage.getItem("claimEndDay"),
+    localStorage.getItem("claimEndMonth"),
+    localStorage.getItem("claimEndYear")
+  );
 
-  document.getElementById("claim-start-date").textContent =
-    claimStart;
+  document.getElementById("visa-start-date").textContent = visaStart;
+  document.getElementById("visa-end-date").textContent = visaEnd;
+  document.getElementById("claim-start-date").textContent = claimStart;
+  document.getElementById("claim-end-date").textContent = claimEnd;
 
-    
+  const reason = new URLSearchParams(window.location.search).get("reason");
+
+  const heading = document.getElementById("kickout-heading");
+  const text = document.getElementById("kickout-text");
+
+  if (reason === "start") {
+
+    heading.textContent =
+      "The applicant's claim period start date is outside of their visa dates";
+
+    text.textContent =
+      "Based on your answers, the applicant is not eligible for an IHS reimbursement because their claim period start date is outside of their visa dates.";
+
+  } else if (reason === "end") {
+
+    heading.textContent =
+      "The applicant's claim period end date is outside of their visa dates";
+
+    text.textContent =
+      "Based on your answers, the applicant is not eligible for an IHS reimbursement because their claim period end date is outside of their visa dates.";
+
+  } else {
+
+    heading.textContent =
+      "The applicant's claim period is outside of their visa dates";
+
+    text.textContent =
+      "Based on your answers, the applicant is not eligible for an IHS reimbursement because their claim period is outside of their visa dates.";
+
+  }
 </script>
-
 
 {% endblock %}
