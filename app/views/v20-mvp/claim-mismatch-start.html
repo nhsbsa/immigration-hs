@@ -1,0 +1,98 @@
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Claim period start date outside visa dates
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      The applicant's claim period start date is outside of their visa dates
+    </h1>
+
+    <p class="govuk-body">
+      Based on your answers, the applicant is not eligible for an IHS reimbursement because their claim period start date is outside of their visa dates.
+    </p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        To be eligible for an IHS reimbursement, a claim period must be fully within the dates of a single visa.
+      </strong>
+    </div>
+
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Visa start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 January 2021
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Visa end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          31 December 2021
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          IHS reimbursement claim period start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 December 2020
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          IHS reimbursement claim period end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          31 May 2021
+        </dd>
+      </div>
+
+    </dl>
+
+    <p class="govuk-body">
+      If the applicant's claim period is across two visas, their claim should start from the start date of the second visa.
+    </p>
+
+    <p class="govuk-body">
+      <strong>Example</strong>
+    </p>
+
+    <div class="govuk-inset-text">
+      If the applicant's visa starts on 1 January 2021, their claim should start from this date.
+    </div>
+
+    <p class="govuk-body">
+      If the applicant wants to apply using a different claim period, they can
+      <a class="govuk-link" href="/v20/start">start a new application</a>.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
