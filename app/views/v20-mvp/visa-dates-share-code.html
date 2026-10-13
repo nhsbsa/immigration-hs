@@ -1,0 +1,187 @@
+
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Visa dates
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="#" onclick="history.back(); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What are the dates of the visa associated with this IHS claim?
+    </h1>
+
+    <p>These are the start and end dates of the visa the applicant held during the period they're claiming for.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        If the applicant's IHS claim dates are outside the visa dates you provide, their claim will be rejected.
+      </strong>
+    </div>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Where to find the applicant's visa dates
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        For a current visa, dates can be found on the applicant's eVisa document. This is available online through their
+        <a href="https://www.gov.uk/evisa/set-up-ukvi-account" target="_blank" rel="noopener noreferrer">UKVI account (opens in new tab)</a>.
+
+        <p>For expired visas, dates can be found on:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the Home Office decision letter (grant letter)</li>
+          <li>the visa vignette (sticker) in the passport, if one was issued for that visa</li>
+          <li>the previous Biometric Residence Permit (BRP), if the visa was issued before the move to eVisas</li>
+          <li>an official Home Office email or PDF confirming that the visa was approved</li>
+        </ul>
+      </div>
+    </details>
+
+    <form class="form" action="share-code-question" method="get" onsubmit="return storeVisaDates()">
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Visa start date</h2>
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="visa-start-hint">
+          <div id="visa-start-hint" class="govuk-hint">
+            This is the date the visa was approved, for example, 31 6 2022
+          </div>
+
+          <div class="govuk-date-input" id="visa-start-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="visa-start-day">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="visa-start-day" name="visa-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="visa-start-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="visa-start-month" name="visa-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="visa-start-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                  id="visa-start-year" name="visa-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Visa end date</h2>
+
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="visa-end-hint">
+          <div id="visa-end-hint" class="govuk-hint">
+            This is the date the visa expires, for example, 31 12 2022
+          </div>
+
+          <div class="govuk-date-input" id="visa-end-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="visa-end-day">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="visa-end-day" name="visa-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="visa-end-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="visa-end-month" name="visa-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="visa-end-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                  id="visa-end-year" name="visa-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  function createDate(day, month, year) {
+    const date = new Date(year, month - 1, day);
+
+    if (
+      date.getFullYear() !== year ||
+      date.getMonth() !== month - 1 ||
+      date.getDate() !== day
+    ) {
+      return null;
+    }
+
+    return date;
+  }
+
+  function storeVisaDates() {
+    const startDay = parseInt(document.getElementById("visa-start-day").value, 10);
+    const startMonth = parseInt(document.getElementById("visa-start-month").value, 10);
+    const startYear = parseInt(document.getElementById("visa-start-year").value, 10);
+
+    const endDay = parseInt(document.getElementById("visa-end-day").value, 10);
+    const endMonth = parseInt(document.getElementById("visa-end-month").value, 10);
+    const endYear = parseInt(document.getElementById("visa-end-year").value, 10);
+
+    const visaStart = createDate(startDay, startMonth, startYear);
+    const visaEnd = createDate(endDay, endMonth, endYear);
+
+    if (!visaStart || !visaEnd) {
+      return true;
+    }
+
+    localStorage.setItem("visaStartISO", visaStart.toISOString());
+    localStorage.setItem("visaEndISO", visaEnd.toISOString());
+
+    localStorage.setItem("visaStartDay", startDay);
+    localStorage.setItem("visaStartMonth", startMonth);
+    localStorage.setItem("visaStartYear", startYear);
+
+    localStorage.setItem("visaEndDay", endDay);
+    localStorage.setItem("visaEndMonth", endMonth);
+    localStorage.setItem("visaEndYear", endYear);
+
+    return true;
+  }
+</script>
+
+{% endblock %}
