@@ -21,11 +21,13 @@ Upload evidence
 
     <form class="form" action="/v20-mvp/visa-evidence-cya" method="post" enctype="multipart/form-data">
       <div class="govuk-form-group">
-        
+                <label class="govuk-label govuk-label--l" for="file-upload-1">
+
           <h1 class="govuk-fieldset__heading">
             <span class="govuk-caption-l">Application</span>
             Upload visa evidence
           </h1>
+          </label>
         
 
         <span id="file-upload-1-hint" class="govuk-hint">
@@ -86,7 +88,7 @@ Upload evidence
   </div>
 </div>
 
-<script>
+<!-- <script>
   // JavaScript to handle file selection
   document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('file-upload-1');
@@ -100,5 +102,5 @@ Upload evidence
       }
     });
   });
-</script>
+</script> -->
 {% endblock %}
