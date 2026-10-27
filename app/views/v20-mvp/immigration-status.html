@@ -1,15 +1,17 @@
-html
+
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
-Dependant question
+Immigration status
 {% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <span class="govuk-phase-banner__text">
-      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback</a> (opens in new tab) will help us to improve this service.
+      Your
+      <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback</a>
+      (opens in new tab) will help us to improve this service.
     </span>
   </p>
 </div>
@@ -21,7 +23,7 @@ Dependant question
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" id="dependant-question-form">
+    <form class="form" id="immigration-status-form">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -31,35 +33,77 @@ Dependant question
           </h1>
         </legend>
 
+        <p class="govuk-body">
+          Select the option that best describes the applicant's current status in the UK.
+        </p>
 
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios" data-module="govuk-radios">
 
           <div class="govuk-radios__item">
             <input class="govuk-radios__input"
-                   id="dependant-question-yes"
-                   name="dependant-question-v20"
+                   id="status-visa"
+                   name="immigration-status"
                    type="radio"
-                   value="yes">
-            <label class="govuk-label govuk-radios__label"
-                   for="dependant-question-yes">
-              Yes
+                   value="visa">
+            <label class="govuk-label govuk-radios__label" for="status-visa">
+              I have a UK visa
             </label>
           </div>
 
           <div class="govuk-radios__item">
             <input class="govuk-radios__input"
-                   id="dependant-question-no"
-                   name="dependant-question-v20"
+                   id="status-ilr"
+                   name="immigration-status"
                    type="radio"
-                   value="no">
-            <label class="govuk-label govuk-radios__label"
-                   for="dependant-question-no">
-              No
+                   value="ilr">
+            <label class="govuk-label govuk-radios__label" for="status-ilr">
+              I have indefinite leave to remain (ILR) or settled status
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="status-citizen"
+                   name="immigration-status"
+                   type="radio"
+                   value="citizen">
+            <label class="govuk-label govuk-radios__label" for="status-ilr">
+              I have British citizenship
+            </label>
+          </div>
+
+          
+
+          
+
+          
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="status-no-visa"
+                   name="immigration-status"
+                   type="radio"
+                   value="no-visa">
+            <label class="govuk-label govuk-radios__label" for="status-no-visa">
+              I do not currently hold a UK visa 
+            </label>
+          </div>
+      <div class="govuk-radios__divider">or</div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="status-other"
+                   name="immigration-status"
+                   type="radio"
+                   value="other">
+            <label class="govuk-label govuk-radios__label" for="status-other">
+             Other
             </label>
           </div>
 
         </div>
       </fieldset>
+      <br>
 
       <button class="govuk-button" type="submit" data-module="govuk-button">
         Continue
@@ -71,22 +115,21 @@ Dependant question
 </div>
 
 <script>
-  document.getElementById('dependant-question-form').addEventListener('submit', function(event) {
+  document.getElementById('immigration-status-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var selectedAnswer = document.querySelector('input[name="dependant-question-v20"]:checked');
+    var selectedStatus = document.querySelector('input[name="immigration-status"]:checked');
 
-    if (!selectedAnswer) {
-      alert('Select yes if the applicant currently holds a UK visa, or no if they do not.');
+    if (!selectedStatus) {
+      alert('Select the applicant’s current immigration status.');
       return;
     }
 
-    if (selectedAnswer.value === 'yes') {
-      window.location.href = '/v20-mvp/current-share-code';
-    } else if (selectedAnswer.value === 'no') {
+    if (selectedStatus.value === 'visa') {
+      window.location.href = '/v20-mvp/share-code-current';
+    } else {
       window.location.href = '/v20-mvp/visa-cya-no-visa';
     }
   });
 </script>
 {% endblock %}
-```
