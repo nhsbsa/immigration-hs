@@ -120,11 +120,6 @@ Immigration status
 
     var selectedStatus = document.querySelector('input[name="immigration-status"]:checked');
 
-    if (!selectedStatus) {
-      alert('Select the applicant’s current immigration status.');
-      return;
-    }
-
     if (selectedStatus.value === 'visa') {
       window.location.href = '/v20-mvp/share-code-current';
     } else {
