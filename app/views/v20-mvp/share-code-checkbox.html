@@ -1,0 +1,152 @@
+
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+Share code
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/v19/ihs-number">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      What is the applicant's share code for their current visa?
+    </h1>
+
+    <p>We need the applicant's current visa share code so we can check that the claim period does not cover more than one visa.</p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        You should get a new share code for this visa to prevent any delays with the application.
+      </strong>
+    </div>
+
+    <div class="govuk-inset-text">
+      <h2 class="govuk-heading-m">Get a share code</h2>
+
+      When getting a new share code, select the <strong>'To prove my immigration status for anything else'</strong> option.<br><br>
+
+      Use the <a href="https://www.gov.uk/view-prove-immigration-status"
+        title="View and prove your immigration status (opens in a new tab)"
+        class="govuk-link" target="_blank">GOV.UK View your eVisa and get a share code to prove your immigration status (opens in new tab)</a> service to get a new share code.<br><br>
+
+      Return to this page within 30 minutes or your application session will time out due to inactivity.
+    </div>
+
+    <form class="form" action="" method="post">
+
+      <!-- Share code input -->
+      <div class="govuk-form-group" id="share-code-group">
+
+        <label class="govuk-label" for="share-code">
+          Visa share code
+        </label>
+
+        <div class="govuk-hint" id="share-code-hint">
+          For example, S12 345 67G
+        </div>
+
+        <input class="govuk-input govuk-input--width-10"
+          id="share-code"
+          name="share-code"
+          type="text"
+          spellcheck="false"
+          autocomplete="off"
+          aria-describedby="share-code-hint">
+
+      </div>
+
+      <!-- Cannot generate share code checkbox -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                id="cannot-generate-share-code"
+                name="cannot-generate-share-code"
+                type="checkbox"
+                value="yes">
+
+              <label class="govuk-label govuk-checkboxes__label"
+                for="cannot-generate-share-code">
+                I cannot generate a share code
+              </label>
+            </div>
+
+            <!-- Reason for not generating a share code -->
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+              id="conditional-share-code">
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="share-code-reason">
+                  Tell us why you cannot generate a share code
+                </label>
+
+                <div class="govuk-hint">
+                  For example, you may have returned to your home country or became a British citizen.
+                </div>
+
+                <textarea class="govuk-textarea"
+                  id="share-code-reason"
+                  name="share-code-reason"
+                  rows="5"></textarea>
+              </div>
+
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    var checkbox = document.getElementById('cannot-generate-share-code');
+    var shareCodeGroup = document.getElementById('share-code-group');
+    var conditionalReason = document.getElementById('conditional-share-code');
+
+    function toggleFields() {
+
+      if (checkbox.checked) {
+        shareCodeGroup.style.display = 'none';
+        conditionalReason.classList.remove('govuk-checkboxes__conditional--hidden');
+      } else {
+        shareCodeGroup.style.display = '';
+        conditionalReason.classList.add('govuk-checkboxes__conditional--hidden');
+      }
+
+    }
+
+    checkbox.addEventListener('change', toggleFields);
+
+    toggleFields();
+
+  });
+</script>
+
+{% endblock %}
