@@ -1,4 +1,3 @@
-
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
@@ -46,7 +45,7 @@ Immigration status
                    type="radio"
                    value="visa">
             <label class="govuk-label govuk-radios__label" for="status-visa">
-              I have a UK visa
+              I have a valid UK visa
             </label>
           </div>
 
@@ -61,22 +60,16 @@ Immigration status
             </label>
           </div>
 
-            <div class="govuk-radios__item">
+          <div class="govuk-radios__item">
             <input class="govuk-radios__input"
                    id="status-citizen"
                    name="immigration-status"
                    type="radio"
                    value="citizen">
-            <label class="govuk-label govuk-radios__label" for="status-ilr">
+            <label class="govuk-label govuk-radios__label" for="status-citizen">
               I have British citizenship
             </label>
           </div>
-
-          
-
-          
-
-          
 
           <div class="govuk-radios__item">
             <input class="govuk-radios__input"
@@ -85,10 +78,11 @@ Immigration status
                    type="radio"
                    value="no-visa">
             <label class="govuk-label govuk-radios__label" for="status-no-visa">
-              I do not currently hold a UK visa 
+              I do not currently hold a UK visa
             </label>
           </div>
-      <div class="govuk-radios__divider">or</div>
+
+          <div class="govuk-radios__divider">or</div>
 
           <div class="govuk-radios__item">
             <input class="govuk-radios__input"
@@ -97,12 +91,13 @@ Immigration status
                    type="radio"
                    value="other">
             <label class="govuk-label govuk-radios__label" for="status-other">
-             Other
+              Other
             </label>
           </div>
 
         </div>
       </fieldset>
+
       <br>
 
       <button class="govuk-button" type="submit" data-module="govuk-button">
@@ -125,14 +120,14 @@ Immigration status
       return;
     }
 
-    if (selectedStatus.value === 'visa') {
-      window.location.href = '/v20-mvp/share-code-current';
-    } else if (selectedStatus.value === 'ilr') {
-      window.location.href = '/v20-mvp/share-code-current';
-    } else if (selectedStatus.value === 'citizen') {
-      window.location.href = '/v20-mvp/citizen-evidence';
+    // Save the selected immigration status
+    sessionStorage.setItem('immigrationStatus', selectedStatus.value);
+
+    // Route the applicant based on their selection
+    if (selectedStatus.value === 'visa' || selectedStatus.value === 'ilr') {
+      window.location.href = '/v20-mvp/share-code-current-immigration';
     } else {
-      window.location.href = '/v20-mvp/visa-cya-no-visa';
+      window.location.href = '/v20-mvp/visa-cya-immigration';
     }
   });
 </script>
