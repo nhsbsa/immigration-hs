@@ -1,4 +1,3 @@
-
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
@@ -10,34 +9,14 @@ Check visa details
   <p class="govuk-phase-banner__content">
     <span class="govuk-phase-banner__text">
       Your
-      <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback (opens in new tab)</a>
+      <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank"
+        rel="noopener noreferrer">feedback (opens in new tab)</a>
       will help us to improve this service.
     </span>
   </p>
 </div>
 
-<div class="govuk-notification-banner govuk-notification-banner--success"
-     role="alert"
-     aria-labelledby="govuk-notification-banner-title"
-     data-module="govuk-notification-banner">
 
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title"
-        id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      File 2 has been deleted
-    </h3>
-    <p class="govuk-body">
-      The file has been successfully deleted from your application.
-    </p>
-  </div>
-
-</div>
 
 <a class="govuk-back-link" href="#" onclick="history.back(); return false;">Back</a>
 {% endblock %}
@@ -46,6 +25,23 @@ Check visa details
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+
+  <div class="govuk-notification-banner__content">
+
+    <p class="govuk-body">
+      File named passport.png has been deleted </p>
+  </div>
+
+</div>
 
     <form class="form" action="/dependant-details-v20-mvp" method="post">
 
@@ -111,7 +107,8 @@ Check visa details
 
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              the applicant's visa covers the 6-month period they are claiming for and you have provided the IHS reference number for that visa
+              the applicant's visa covers the 6-month period they are claiming for and you have provided the IHS
+              reference number for that visa
             </li>
             <li>
               the applicant's visa evidence is accurate and relates to the visa covering this claim
@@ -120,17 +117,15 @@ Check visa details
               the applicant's current immigration status is accurate
             </li>
             <li>
-              you understand and accept that if you withhold information or provide false or misleading information, your application may be refused or withdrawn, and you may be liable to criminal prosecution or civil proceedings
+              you understand and accept that if you withhold information or provide false or misleading information,
+              your application may be refused or withdrawn, and you may be liable to criminal prosecution or civil
+              proceedings
             </li>
           </ul>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input"
-                     id="waste"
-                     name="waste"
-                     type="checkbox"
-                     value="carcasses">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
                 I declare this information is complete and accurate
               </label>
