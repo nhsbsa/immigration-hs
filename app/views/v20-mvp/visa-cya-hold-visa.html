@@ -1,3 +1,4 @@
+
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
@@ -66,7 +67,7 @@ Check visa details
             Visa evidence
           </dt>
           <dd class="govuk-summary-list__value">
-            scanned-brp.pdf
+            scanned-passport.pdf
           </dd>
         </div>
 
@@ -75,7 +76,7 @@ Check visa details
             Current immigration status
           </dt>
           <dd class="govuk-summary-list__value" id="immigration-status-summary">
-            Valid UK visa
+            Has a valid UK visa
           </dd>
         </div>
 
@@ -139,18 +140,17 @@ Check visa details
 </div>
 
 <script>
-  var selectedStatus = sessionStorage.getItem('immigrationStatus');
+document.addEventListener('DOMContentLoaded', function() {
 
-  var immigrationStatusLabels = {
-    'visa': 'Valid UK visa',
-    'ilr': 'Indefinite leave to remain or settled status'
-  };
+  var selectedStatusLabel = sessionStorage.getItem('immigrationStatusLabel');
 
   var summaryElement = document.getElementById('immigration-status-summary');
 
-  if (selectedStatus && immigrationStatusLabels[selectedStatus]) {
-    summaryElement.textContent = immigrationStatusLabels[selectedStatus];
+  if (selectedStatusLabel) {
+    summaryElement.textContent = selectedStatusLabel;
   }
+
+});
 </script>
 
 {% endblock %}

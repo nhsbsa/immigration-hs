@@ -1,3 +1,4 @@
+
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
@@ -10,7 +11,7 @@ Check visa details
     <span class="govuk-phase-banner__text">
       Your
       <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback (opens in new tab)</a>
-      will help us to improve this service.
+      (opens in new tab) will help us to improve this service.
     </span>
   </p>
 </div>
@@ -64,7 +65,7 @@ Check visa details
             Visa evidence
           </dt>
           <dd class="govuk-summary-list__value">
-            scanned-brp.pdf
+            scanned-passport.pdf
           </dd>
         </div>
 
@@ -73,6 +74,7 @@ Check visa details
             Current immigration status
           </dt>
           <dd class="govuk-summary-list__value" id="immigration-status-summary">
+            
           </dd>
         </div>
 
@@ -107,6 +109,7 @@ Check visa details
                      name="waste"
                      type="checkbox"
                      value="carcasses">
+
               <label class="govuk-label govuk-checkboxes__label" for="waste">
                 I declare this information is complete and accurate
               </label>
@@ -126,25 +129,19 @@ Check visa details
 </div>
 
 <script>
-  // Get the selected immigration status saved on the previous page.
-  var selectedStatus = sessionStorage.getItem('immigrationStatus');
+document.addEventListener('DOMContentLoaded', function() {
 
-  // Convert the saved value into the text shown in the summary list.
-  var immigrationStatusLabels = {
-    'visa': 'I have a valid UK visa',
-    'ilr': 'Indefinite leave to remain or settled status',
-    'citizen': 'British citizenship',
-    'no-visa': 'No current UK visa',
-    'other': 'Other'
-  };
+  var selectedStatusLabel = sessionStorage.getItem('immigrationStatusLabel');
 
   var summaryElement = document.getElementById('immigration-status-summary');
 
-  if (selectedStatus && immigrationStatusLabels[selectedStatus]) {
-    summaryElement.textContent = immigrationStatusLabels[selectedStatus];
+  if (selectedStatusLabel) {
+    summaryElement.textContent = selectedStatusLabel;
   } else {
     summaryElement.textContent = 'Not provided';
   }
+
+});
 </script>
 
 {% endblock %}

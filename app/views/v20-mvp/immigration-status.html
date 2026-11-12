@@ -1,3 +1,4 @@
+
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
@@ -33,7 +34,7 @@ Immigration status
         </legend>
 
         <p class="govuk-body">
-          Select the option that best describes the applicant's current status in the UK.
+          Select the option that best describes the applicant's current UK immigration status.
         </p>
 
         <div class="govuk-radios" data-module="govuk-radios">
@@ -45,18 +46,7 @@ Immigration status
                    type="radio"
                    value="visa">
             <label class="govuk-label govuk-radios__label" for="status-visa">
-              I have a valid UK visa
-            </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input"
-                   id="status-ilr"
-                   name="immigration-status"
-                   type="radio"
-                   value="ilr">
-            <label class="govuk-label govuk-radios__label" for="status-ilr">
-              I have indefinite leave to remain (ILR) or settled status
+              Has a valid UK visa
             </label>
           </div>
 
@@ -67,7 +57,29 @@ Immigration status
                    type="radio"
                    value="citizen">
             <label class="govuk-label govuk-radios__label" for="status-citizen">
-              I have British citizenship
+              Has British citizenship
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="status-ilr"
+                   name="immigration-status"
+                   type="radio"
+                   value="ilr">
+            <label class="govuk-label govuk-radios__label" for="status-ilr">
+              Has indefinite leave to remain (ILR) or settled status
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input"
+                   id="status-llr"
+                   name="immigration-status"
+                   type="radio"
+                   value="llr">
+            <label class="govuk-label govuk-radios__label" for="status-llr">
+              Has limited leave to remain (LLR)
             </label>
           </div>
 
@@ -78,20 +90,7 @@ Immigration status
                    type="radio"
                    value="no-visa">
             <label class="govuk-label govuk-radios__label" for="status-no-visa">
-              I do not currently hold a UK visa
-            </label>
-          </div>
-
-          <div class="govuk-radios__divider">or</div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input"
-                   id="status-other"
-                   name="immigration-status"
-                   type="radio"
-                   value="other">
-            <label class="govuk-label govuk-radios__label" for="status-other">
-              Other
+              Is living outside the UK and does not hold a UK visa
             </label>
           </div>
 
@@ -110,24 +109,32 @@ Immigration status
 </div>
 
 <script>
-  document.getElementById('immigration-status-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById('immigration-status-form').addEventListener('submit', function(event) {
 
-    var selectedStatus = document.querySelector('input[name="immigration-status"]:checked');
+  event.preventDefault();
 
-    if (!selectedStatus) {
-      return;
-    }
+  var selectedStatus = document.querySelector('input[name="immigration-status"]:checked');
 
-    // Save the selected immigration status for the summary page.
-    sessionStorage.setItem('immigrationStatus', selectedStatus.value);
+  if (!selectedStatus) {
+    return;
+  }
 
-    // Route applicants according to their selected immigration status.
-    if (selectedStatus.value === 'visa' || selectedStatus.value === 'ilr') {
-      window.location.href = '/v20-mvp/share-code-current-immigration';
-    } else {
-      window.location.href = '/v20-mvp/visa-cya-immigration';
-    }
-  });
+  // Save the selected immigration status.
+  sessionStorage.setItem('immigrationStatus', selectedStatus.value);
+  sessionStorage.setItem('immigrationStatusLabel', selectedStatus.nextElementSibling.textContent.trim());
+
+  // Applicants with a UK visa, ILR or LLR need to provide a share code.
+  if (
+    selectedStatus.value === 'visa' ||
+    selectedStatus.value === 'ilr' ||
+    selectedStatus.value === 'llr'
+  ) {
+    window.location.href = '/v20-mvp/share-code-current-immigration';
+  } else {
+    window.location.href = '/v20-mvp/visa-cya-immigration';
+  }
+
+});
 </script>
+
 {% endblock %}
