@@ -18,26 +18,7 @@ IHS question
 {% endblock %}
 
 {% block content %}
-<div id="content">
 
-  <!-- <div class="float--right">
-      <nav aria-label="language-switcher.nav" class="language-switcher">
-        <ul>
-          <li>
-
-         <span>English</span>
-         <span aria-hidden="true"> | </span>
-         <a id="switch-language" href="/help/switch-to-welsh" data-journey-click="Language:Click:Welsh">
-           <span class="visuallyhidden">Newid yr iaith i'r Gymraeg</span>
-           <span aria-hidden="true">Cymraeg</span>
-         </a>
-
-          </li>
-        </ul>
-      </nav>
-    </div>-->
-
-</div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="/doug-ihs-question-live" method="post">
@@ -51,9 +32,9 @@ IHS question
 
         <div id="immigration-health-surcharge-paid-hint" class="govuk-hint">An immigration health surcharge is paid as part of the immigration application process.</div>
           <div class="govuk-radios govuk-radios--inline">
-            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios govuk-radios--conditional govuk-radios--inline" data-module="radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="doug-ihs-question-conditional" name="doug-ihs-question-live"
+                <input class="govuk-radios__input" id="doug-ihs-question-conditional" name="doug-ihs-question-v20"
                   type="radio" value="yes" data-aria-controls="doug-conditional-ihs-question-conditional">
                 <label class="govuk-label govuk-radios__label" for="doug-ihs-question-conditional">
                   Yes
@@ -61,7 +42,7 @@ IHS question
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="doug-ihs-question-conditional-2" name="doug-ihs-question-live"
+                <input class="govuk-radios__input" id="doug-ihs-question-conditional-2" name="doug-ihs-question-v20"
                   type="radio" value="no" data-aria-controls="doug-conditional-ihs-question-conditional-2">
                 <label class="govuk-label govuk-radios__label" for="doug-ihs-question-conditional-2">
                   No
