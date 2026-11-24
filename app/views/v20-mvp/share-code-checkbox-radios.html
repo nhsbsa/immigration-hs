@@ -1,0 +1,192 @@
+
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+Share code
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      Get a new share code for the applicant's current visa
+    </h1>
+
+
+    
+
+   
+      
+
+      <p>When getting a new share code, select the <strong>'To prove my immigration status for anything else'</strong> option.</p>
+
+      <p>Use the <a href="https://www.gov.uk/view-prove-immigration-status" title="view and prove your immigration status (Opens in a new tab)" class="govuk-link" target="_blank">GOV.UK View your eVisa and get a share code to prove your immigration status (opens in new tab)</a> service to get a new share code. Visa share codes expire after 90 days</p>
+
+      <p>Return to this page within 30 minutes or your application session will time out due to inactivity.</p>
+ 
+
+    <form class="form" action="visa-cya-checkbox-radios" method="post" id="share-code-form">
+
+      <div class="govuk-form-group" id="share-code-group">
+        <label class="govuk-label" for="share-code">
+          Visa share code
+        </label>
+
+        <div class="govuk-hint" id="share-code-hint">
+          For example, S12 345 67G
+        </div>
+
+        <input class="govuk-input govuk-input--width-10" id="share-code" name="share-code" type="text"
+          spellcheck="false" autocomplete="off" aria-describedby="share-code-hint">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="cannot-generate-share-code" name="cannot-generate-share-code"
+                type="checkbox" value="yes">
+
+              <label class="govuk-label govuk-checkboxes__label" for="cannot-generate-share-code">
+                The applicant's current immigration status means they cannot get a share code
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+              id="conditional-share-code">
+
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                <div id="contact-hint" class="govuk-hint">
+                  Select the option that best describes the applicant's current UK immigration status.
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="outside-uk">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Is living outside the UK and does not hold a UK visa
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="contact" type="radio"
+                      value="british-citizenship">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      Has British citizenship
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="other"
+                      data-aria-controls="conditional-contact-3">
+                    <label class="govuk-label govuk-radios__label" for="contact-3">
+                      Other
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="conditional-contact-3">
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-text">
+                        Please provide details of the applicant's immigration status
+                      </label>
+                      <textarea class="govuk-textarea" id="contact-by-text" name="contactByText"
+                        rows="3"></textarea>
+                    </div>
+
+                  </div>
+
+                </div>
+              </fieldset>
+
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  var checkbox = document.getElementById('cannot-generate-share-code');
+  var shareCodeGroup = document.getElementById('share-code-group');
+  var conditionalReason = document.getElementById('conditional-share-code');
+  var shareCodeInput = document.getElementById('share-code');
+  var form = document.getElementById('share-code-form');
+
+  var otherDetails = document.getElementById('contact-by-text');
+
+  function toggleFields() {
+    if (checkbox.checked) {
+      shareCodeGroup.style.display = 'none';
+      conditionalReason.classList.remove('govuk-checkboxes__conditional--hidden');
+    } else {
+      shareCodeGroup.style.display = '';
+      conditionalReason.classList.add('govuk-checkboxes__conditional--hidden');
+    }
+  }
+
+  checkbox.addEventListener('change', toggleFields);
+
+  form.addEventListener('submit', function () {
+
+    if (checkbox.checked) {
+
+      var selectedStatus = document.querySelector('input[name="contact"]:checked');
+
+      sessionStorage.setItem('visaShareCode', '');
+      sessionStorage.setItem('cannotGenerateShareCode', 'yes');
+
+      sessionStorage.setItem(
+        'visaShareCodeReason',
+        selectedStatus ? selectedStatus.value : ''
+      );
+
+      sessionStorage.setItem(
+        'visaShareCodeOtherDetails',
+        otherDetails ? otherDetails.value : ''
+      );
+
+    } else {
+
+      sessionStorage.setItem('visaShareCode', shareCodeInput.value);
+      sessionStorage.setItem('cannotGenerateShareCode', 'no');
+      sessionStorage.setItem('visaShareCodeReason', '');
+      sessionStorage.setItem('visaShareCodeOtherDetails', '');
+
+    }
+
+  });
+
+  toggleFields();
+
+});
+</script>
+
+{% endblock %}

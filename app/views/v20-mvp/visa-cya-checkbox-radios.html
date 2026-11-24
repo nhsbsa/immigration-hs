@@ -1,0 +1,190 @@
+
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Check visa details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="#" onclick="history.back(); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/dependant-details-v20-mvp" method="post">
+
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">Application</span>
+        Check visa details
+      </h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            IHS reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            IHS123456789
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Visa start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 January 2022
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Visa end date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            31 December 2026
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Visa evidence
+          </dt>
+          <dd class="govuk-summary-list__value">
+            scanned-passport.pdf
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" id="visa-share-code-label">
+            Current visa share code
+          </dt>
+          <dd class="govuk-summary-list__value" id="visa-share-code-summary">
+            S12 345 67G
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row" id="other-details-row" style="display: none;">
+          <dt class="govuk-summary-list__key">
+            Additional details
+          </dt>
+          <dd class="govuk-summary-list__value" id="other-details-summary">
+          </dd>
+        </div>
+
+      </dl>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+          <h2 class="govuk-heading-m">Declaration</h2>
+
+          <p>By continuing, you declare and agree that:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the applicant's visa covers the 6-month period they are claiming for and you have provided the IHS reference number for that visa</li>
+
+            <li>the applicant's visa evidence is accurate and relates to the visa covering this claim</li>
+
+            <li id="share-code-declaration">
+              the applicant's share code is accurate and relates to their current visa
+            </li>
+
+            <li>you understand and accept that if you withhold information or provide false or misleading information, your application may be refused or withdrawn, and you may be liable to criminal prosecution or civil proceedings</li>
+          </ul>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                I declare this information is complete and accurate
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <a href="email-address" class="govuk-button" data-module="govuk-button">Continue</a>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  var shareCode = sessionStorage.getItem('visaShareCode');
+  var cannotGenerate = sessionStorage.getItem('cannotGenerateShareCode');
+  var reason = sessionStorage.getItem('visaShareCodeReason');
+  var otherDetails = sessionStorage.getItem('visaShareCodeOtherDetails');
+
+  var summary = document.getElementById('visa-share-code-summary');
+  var summaryLabel = document.getElementById('visa-share-code-label');
+  var declaration = document.getElementById('share-code-declaration');
+
+  var otherDetailsRow = document.getElementById('other-details-row');
+  var otherDetailsSummary = document.getElementById('other-details-summary');
+
+  if (cannotGenerate === 'yes') {
+
+    summaryLabel.textContent = 'Reason for not providing a current share code';
+
+    if (reason === 'outside-uk') {
+
+      summary.textContent = 'Is living outside the UK and does not hold a UK visa';
+
+    } else if (reason === 'british-citizenship') {
+
+      summary.textContent = 'Has British citizenship';
+
+    } else if (reason === 'other') {
+
+      summary.textContent = 'Other';
+
+      if (otherDetails && otherDetails.trim() !== '') {
+        otherDetailsSummary.textContent = otherDetails;
+        otherDetailsRow.style.display = '';
+      }
+
+    } else {
+
+      summary.textContent = 'No reason provided';
+
+    }
+
+    declaration.textContent = 'the reason given for not providing a current share code is accurate';
+
+  } else if (shareCode && shareCode.trim() !== '') {
+
+    summaryLabel.textContent = 'Current visa share code';
+    summary.textContent = shareCode;
+
+    declaration.textContent = "the applicant's share code is accurate and relates to their current immigration status";
+
+  } else {
+
+    summaryLabel.textContent = 'Current visa share code';
+    summary.textContent = 'S12 345 67G';
+
+    declaration.textContent = "the applicant's share code is accurate and relates to their current immigration status";
+
+  }
+
+});
+</script>
+
+{% endblock %}

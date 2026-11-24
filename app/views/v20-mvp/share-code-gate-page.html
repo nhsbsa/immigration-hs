@@ -1,0 +1,107 @@
+
+{% extends "/layouts/layout.html" %}
+
+{% block pageTitle %}
+Share code
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363">feedback (opens in new tab)</a> will help us to improve this service.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      We need some additional information about the applicant's current immigration status
+    </h1>
+
+    <p>You have provided evidence of the visa the applicant held during the period they're claiming for.</p>
+    <P>We also need to check their current immigration status to make sure their claim period does not cover more than one visa.</P>
+    <p>To do this, we'll ask you to provide a share code for the applicant's current immigration status.</p>
+
+
+    <p>You must provide a new share code if the applicant can get one with their current immigration status.</p>
+    <form class="form" action="share-code-checkbox-radios" method="post" id="share-code-form">
+
+
+      
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  var checkbox = document.getElementById('cannot-generate-share-code');
+  var shareCodeGroup = document.getElementById('share-code-group');
+  var conditionalReason = document.getElementById('conditional-share-code');
+  var shareCodeInput = document.getElementById('share-code');
+  var form = document.getElementById('share-code-form');
+
+  var otherDetails = document.getElementById('contact-by-text');
+
+  function toggleFields() {
+    if (checkbox.checked) {
+      shareCodeGroup.style.display = 'none';
+      conditionalReason.classList.remove('govuk-checkboxes__conditional--hidden');
+    } else {
+      shareCodeGroup.style.display = '';
+      conditionalReason.classList.add('govuk-checkboxes__conditional--hidden');
+    }
+  }
+
+  checkbox.addEventListener('change', toggleFields);
+
+  form.addEventListener('submit', function () {
+
+    if (checkbox.checked) {
+
+      var selectedStatus = document.querySelector('input[name="contact"]:checked');
+
+      sessionStorage.setItem('visaShareCode', '');
+      sessionStorage.setItem('cannotGenerateShareCode', 'yes');
+
+      sessionStorage.setItem(
+        'visaShareCodeReason',
+        selectedStatus ? selectedStatus.value : ''
+      );
+
+      sessionStorage.setItem(
+        'visaShareCodeOtherDetails',
+        otherDetails ? otherDetails.value : ''
+      );
+
+    } else {
+
+      sessionStorage.setItem('visaShareCode', shareCodeInput.value);
+      sessionStorage.setItem('cannotGenerateShareCode', 'no');
+      sessionStorage.setItem('visaShareCodeReason', '');
+      sessionStorage.setItem('visaShareCodeOtherDetails', '');
+
+    }
+
+  });
+
+  toggleFields();
+
+});
+</script>
+
+{% endblock %}
