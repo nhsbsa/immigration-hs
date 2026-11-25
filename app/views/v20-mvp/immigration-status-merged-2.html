@@ -1,0 +1,113 @@
+
+{% extends "layouts/layout-health.html" %}
+
+{% block pageTitle %}
+Immigration status
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <span class="govuk-phase-banner__text">
+      Your
+      <a class="govuk-link" href="https://wh1.snapsurveys.com/SURVEY_PREVIEW.asp?k=162645215363" target="_blank" rel="noopener noreferrer">feedback</a>
+      (opens in new tab) will help us to improve this service.
+    </span>
+  </p>
+</div>
+
+<a class="govuk-back-link" href="/v20-mvp/telephone-number">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" id="immigration-status-form">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-l">Application</span>
+          <h1 class="govuk-fieldset__heading">
+            What is the applicant's current immigration status?
+          </h1>
+        </legend>
+
+        <p class="govuk-body">
+          Select the option that best describes the applicant's current UK immigration status.
+        </p>
+
+       <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+    
+    
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn">
+         Has valid leave within the UK
+        </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          This includes havig a UK visa, indefinite or limited leave to remain, settled status or a pending status
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn">
+         Has British Citizenship
+        </label>
+        
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login" aria-describedby="signIn-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn-2">
+          No longer has valid leave in the UK
+        </label>
+        
+      </div>
+    </div>
+  </fieldset>
+</div>
+      </fieldset>
+
+      <br>
+
+      <button class="govuk-button" type="submit" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+document.getElementById('immigration-status-form').addEventListener('submit', function(event) {
+
+  event.preventDefault();
+
+  var selectedStatus = document.querySelector('input[name="immigration-status"]:checked');
+
+  if (!selectedStatus) {
+    return;
+  }
+
+  // Save the selected immigration status.
+  sessionStorage.setItem('immigrationStatus', selectedStatus.value);
+  sessionStorage.setItem('immigrationStatusLabel', selectedStatus.nextElementSibling.textContent.trim());
+
+  // Applicants with a UK visa, ILR or LLR need to provide a share code.
+  if (
+    selectedStatus.value === 'visa' ||
+    selectedStatus.value === 'ilr' ||
+    selectedStatus.value === 'llr'
+  ) {
+    window.location.href = '/v20-mvp/share-code-current-immigration';
+  } else {
+    window.location.href = '/v20-mvp/visa-cya-immigration';
+  }
+
+});
+</script>
+
+{% endblock %}
