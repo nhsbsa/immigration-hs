@@ -1,3 +1,4 @@
+
 {% extends "layouts/layout-health.html" %}
 
 {% block pageTitle %}
@@ -40,66 +41,69 @@ Immigration status
         <div class="govuk-radios" data-module="govuk-radios">
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
-              aria-describedby="signIn-item-hint">
-            <label class="govuk-label govuk-radios__label" for="signIn">
+            <input class="govuk-radios__input"
+                   id="status-valid-leave"
+                   name="immigration-status"
+                   type="radio"
+                   value="visa">
+            <label class="govuk-label govuk-radios__label" for="status-valid-leave">
               Has valid leave to remain in the UK
             </label>
-            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            <div class="govuk-hint govuk-radios__hint">
               This includes having a UK visa, indefinite or limited leave to remain, settled status or a pending status
             </div>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
-              aria-describedby="signIn-item-hint">
-            <label class="govuk-label govuk-radios__label" for="signIn">
+            <input class="govuk-radios__input"
+                   id="status-british-citizen"
+                   name="immigration-status"
+                   type="radio"
+                   value="british-citizen">
+            <label class="govuk-label govuk-radios__label" for="status-british-citizen">
               Has British citizenship
             </label>
-            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            <div class="govuk-hint govuk-radios__hint">
               This grants the right to live in the UK without immigration restrictions
             </div>
           </div>
 
-          
-
-
-
-          <!-- <div class="govuk-radios__item">
+          <div class="govuk-radios__item">
             <input class="govuk-radios__input"
-                   id="status-llr"
+                   id="status-no-visa"
                    name="immigration-status"
                    type="radio"
-                   value="llr">
-            <label class="govuk-label govuk-radios__label" for="status-llr">
-              Has limited leave to remain (LLR)
-            </label>
-          </div> -->
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="status-no-visa" name="immigration-status" type="radio"
-              value="no-visa">
+                   value="no-visa">
             <label class="govuk-label govuk-radios__label" for="status-no-visa">
               Is living outside the UK and does not hold a UK visa
             </label>
           </div>
+
           <div class="govuk-radios__divider">or</div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="other"
-              data-aria-controls="conditional-contact-3">
-            <label class="govuk-label govuk-radios__label" for="contact-3">
+            <input class="govuk-radios__input"
+                   id="status-other"
+                   name="immigration-status"
+                   type="radio"
+                   value="other"
+                   data-aria-controls="conditional-status-other">
+            <label class="govuk-label govuk-radios__label" for="status-other">
               Other
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+               id="conditional-status-other">
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-text">
+              <label class="govuk-label" for="status-other-details">
                 Provide details of the applicant's current UK immigration status
               </label>
-              <textarea class="govuk-textarea" id="contact-by-text" name="contactByText" rows="3"></textarea>
+              <textarea class="govuk-textarea"
+                        id="status-other-details"
+                        name="statusOtherDetails"
+                        rows="3"></textarea>
             </div>
 
           </div>
@@ -133,12 +137,8 @@ Immigration status
     sessionStorage.setItem('immigrationStatus', selectedStatus.value);
     sessionStorage.setItem('immigrationStatusLabel', selectedStatus.nextElementSibling.textContent.trim());
 
-    // Applicants with a UK visa, ILR or LLR need to provide a share code.
-    if (
-      selectedStatus.value === 'visa' ||
-      selectedStatus.value === 'ilr' ||
-      selectedStatus.value === 'llr'
-    ) {
+    // Applicants with valid leave to remain need to provide a share code.
+    if (selectedStatus.value === 'visa') {
       window.location.href = '/v20-mvp/share-code-current-immigration';
     } else {
       window.location.href = '/v20-mvp/visa-cya-immigration';
